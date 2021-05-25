@@ -26,7 +26,8 @@ var currentlyLearning = Compose.Observe(me, { progress ->
 )
 ```
 
-### Hi there 👋
+### Hi there 👋 I'm Adrian
+
 - 🔭 I’m currently working on - Turkish Barber App
 - 🌱 I’m currently learning - Jetpack Compose
 - 📫 How to reach me: ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fadrianwita)
