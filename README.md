@@ -5,6 +5,7 @@
 
 
 
+
 ```kotlin
 package com.android.dev.uk.adwi
 
@@ -37,7 +38,14 @@ var jobStatus = Open.for.Work()
 
 - 🔭 I’m currently working on - Turkish Barber App
 - 🌱 I’m currently learning - Jetpack Compose
-- 📫 How to reach me: ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fadrianwita)
+- 📫 How to reach me: 
+
+[![Linkedin Badge](https://img.shields.io/badge/-adrianwitaszak-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adrian-witaszak-860801176/)
+[![Instagram Badge](https://img.shields.io/badge/-adwivlog_f31-purple?style=flat-square&logo=instagram&logoColor=white&link=https://instagram.com/kanna6501/)](https://www.instagram.com/adwivlog_f31/)
+[![Youtube Badge](https://img.shields.io/badge/-adwi-darkred?style=flat-square&logo=youtube&logoColor=white&link=https://www.youtube.com/c/koolkanna)](https://www.youtube.com/channel/UCbDKaGug8Buhfy-RrYq6qrg)
+[![Medium Badge](https://img.shields.io/badge/-@aemmadi-03a57a?style=flat-square&labelColor=000000&logo=Medium&link=https://medium.com/@aemmadi/)](https://medium.com/@aemmadi)
+[![Gmail Badge](https://img.shields.io/badge/-adrianwitaszak@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:adrianwitaszak@gmail.com)](mailto:adrianwitaszak@gmail.com)
+![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fadrianwita)
 
 <a href="https://github.com/adimanwit">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=adimanwit&hide=c%2B%2B,c,matlab,assembly&title_color=6aa6f8&text_color=8a919a&icon_color=6aa6f8&bg_color=22272e" alt="Adrian's GitHub Stats" />
