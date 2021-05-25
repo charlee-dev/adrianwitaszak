@@ -17,13 +17,15 @@ data class User:
    
    
 me = User()[1]
-me.learn -> code -> {
-                    sleep
-                   }
+me.learn -> code -> eat?.apply {
+                        sleep                      
+                    }
                    
 var currentlyLearning = Compose.Observe(me, { progress ->
       make(progress).everyDay
 )
+
+var jobStatus = Open.for.Work()
 ```
 
 ### Hi there 👋 I'm Adrian
