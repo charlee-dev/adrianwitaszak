@@ -33,10 +33,9 @@ var currentlyLearning = Compose.Observe(me, { progress ->
 
 <a href="https://github.com/adimanwit">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=adimanwit&hide=c%2B%2B,c,matlab,assembly&title_color=6aa6f8&text_color=8a919a&icon_color=6aa6f8&bg_color=22272e" alt="Adrian's GitHub Stats" />
-</a>
+</a> [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=adimanwit)](https://github.com/anuraghazra/github-readme-stats)
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=adimanwit)](https://github.com/anuraghazra/github-readme-stats)
-
+--------------- 
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>I love connecting with different people</b> so if you want to say <b>hi, I'll be happy to meet you more!</b> :)</em>
 
