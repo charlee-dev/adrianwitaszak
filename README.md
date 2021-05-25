@@ -44,7 +44,7 @@ var jobStatus = Open.for.Work()
 [![Instagram Badge](https://img.shields.io/badge/-Instagram-purple?style=flat-square&logo=instagram&logoColor=white&link=https://www.instagram.com/adwivlog_f31/)](https://www.instagram.com/adwivlog_f31/)
 [![Youtube Badge](https://img.shields.io/badge/-AdWiVlog-darkred?style=flat-square&logo=youtube&logoColor=white&link=https://www.youtube.com/channel/UCbDKaGug8Buhfy-RrYq6qrg)](https://www.youtube.com/channel/UCbDKaGug8Buhfy-RrYq6qrg)
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:adrianwitaszak@gmail.com)](mailto:adrianwitaszak@gmail.com)
-[![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fadrianwita)](https%3A%2F%2Ftwitter.com%2Fadrianwita)
+[![](https://img.shields.io/twitter/url?style=social&url=https://twitter.com/adrianwita)](https://twitter.com/adrianwita)
 
 <a href="https://github.com/adimanwit">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=adimanwit&hide=c%2B%2B,c,matlab,assembly&title_color=6aa6f8&text_color=8a919a&icon_color=6aa6f8&bg_color=22272e" alt="Adrian's GitHub Stats" />
