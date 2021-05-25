@@ -1,4 +1,6 @@
-### Hi there 👋
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=adimanwit)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+
 
 ```kotlin
 package com.android.dev.uk.adwi
@@ -24,7 +26,7 @@ var currentlyLearning = Compose.Observe(me, { progress ->
 )
 ```
 
-
+### Hi there 👋
 - 🔭 I’m currently working on - Turkish Barber App
 - 🌱 I’m currently learning - Jetpack Compose
 - 📫 How to reach me: ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fadrianwita)
