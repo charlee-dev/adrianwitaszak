@@ -27,7 +27,7 @@ var currentlyLearning = Compose.Observe(me, { progress ->
 
 - 🔭 I’m currently working on - Turkish Barber App
 - 🌱 I’m currently learning - Jetpack Compose
-- 📫 How to reach me: https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fadrianwita
+- 📫 How to reach me: ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fadrianwita)
 
 <a href="https://github.com/adimanwit">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=adimanwit&hide=c%2B%2B,c,matlab,assembly&title_color=6aa6f8&text_color=8a919a&icon_color=6aa6f8&bg_color=22272e" alt="Adrian's GitHub Stats" />
