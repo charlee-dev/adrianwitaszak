@@ -8,15 +8,16 @@ package com.android.dev.uk.adwi
 import com.android.dev.uk.adwi.User
 
 
-data class User:
+class User(
     val firstName: String = "Adrian"
     val lastName: String = "Witaszak"
     var age: Int = 34
     var location: Country = "United Kingdom"
     var nationality: String = "Polish"
+)   
    
-   
-me = User()[1]
+me = User()
+
 me.learn -> code -> eat?.apply {
                         sleep                      
                     }
@@ -26,6 +27,7 @@ var currentlyLearning = Compose.Observe(me, { progress ->
 )
 
 var jobStatus = Open.for.Work()
+
 ```
 
 ### Hi there 👋 I'm Adrian
