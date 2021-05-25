@@ -1,5 +1,6 @@
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=adimanwit)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+![Android](https://img.shields.io/badge/-Android-black?style=flat-square&logo=android)
 ![Kotlin](https://img.shields.io/badge/-Kotlin-black?style=flat-square&logo=kotlin)
 
 
