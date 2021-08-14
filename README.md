@@ -37,7 +37,7 @@ var jobStatus = Open.for.Work()
 
 ### Hi there 👋 I'm Adrian
 
-- 🔭 I’m currently working on - Turkish Barber App
+- 🔭 I’m currently working on - Pex Wallpapers App
 - 🌱 I’m currently learning - Jetpack Compose
 - 📫 How to reach me: 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adrian-witaszak-860801176/)](https://www.linkedin.com/in/adrian-witaszak-860801176/)
