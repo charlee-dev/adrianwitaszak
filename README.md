@@ -15,22 +15,24 @@ import com.android.dev.uk.adwi.User
 class User(
     val firstName: String = "Adrian"
     val lastName: String = "Witaszak"
-    var age: Int = 34
+    var age: Int = 35
     var location: Country = "United Kingdom"
     var nationality: String = "Polish"
 )   
    
 me = User()
 
-me.learn -> code -> eat?.apply {
-                        sleep                      
-                    }
+me.learn { -> code 
+    code.eat?.apply {
+       sleep                      
+    }
+}
                    
 var currentlyLearning = Compose.Observe(me, { progress ->
       make(progress).everyDay
 )
 
-var jobStatus = Open.for.Work()
+var jobStatus = Open.forWork()
 
 ```
 ---------------
@@ -41,8 +43,6 @@ var jobStatus = Open.for.Work()
 - 🌱 I’m currently learning - Jetpack Compose
 - 📫 How to reach me: 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adrian-witaszak-860801176/)](https://www.linkedin.com/in/adrian-witaszak-860801176/)
-[![Instagram Badge](https://img.shields.io/badge/-Instagram-purple?style=flat-square&logo=instagram&logoColor=white&link=https://www.instagram.com/adwivlog_f31/)](https://www.instagram.com/adwivlog_f31/)
-[![Youtube Badge](https://img.shields.io/badge/-AdWiVlog-darkred?style=flat-square&logo=youtube&logoColor=white&link=https://www.youtube.com/channel/UCbDKaGug8Buhfy-RrYq6qrg)](https://www.youtube.com/channel/UCbDKaGug8Buhfy-RrYq6qrg)
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:adrianwitaszak@gmail.com)](mailto:adrianwitaszak@gmail.com)
 [![](https://img.shields.io/twitter/url?style=social&url=https://twitter.com/adrianwita)](https://twitter.com/adrianwita)
 
