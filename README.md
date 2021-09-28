@@ -39,6 +39,7 @@ var jobStatus = Open.forWork()
 
 ### Hi there 👋 I'm Adrian
 
+- <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>I love connecting with different people</b> so if you want to say <b>hi, I'll be happy to meet you more!</b> :)</em>
 - 🔭 I’m currently working on - Pex Wallpapers App
 - 🌱 I’m currently learning - Jetpack Compose
 - 📫 How to reach me: 
@@ -46,7 +47,6 @@ var jobStatus = Open.forWork()
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:adrianwitaszak@gmail.com)](mailto:adrianwitaszak@gmail.com)
 [![](https://img.shields.io/twitter/url?style=social&url=https://twitter.com/adrianwita)](https://twitter.com/adrianwita)
 = I'm a self motivated software engineer :computer: passionate about the mobile space :iphone:
-- <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>I love connecting with different people</b> so if you want to say <b>hi, I'll be happy to meet you more!</b> :)</em>
 
 ---------------
 
