@@ -2,8 +2,8 @@
 ![](https://img.shields.io/github/followers/adrianwitaszak)
 ![](https://img.shields.io/github/stars/adrianwitaszak)
 ![](https://img.shields.io/github/watchers/adrianwitaszak)
-![Android](https://img.shields.io/badge/-Android-black?style=flat-square&logo=android)
-![Kotlin](https://img.shields.io/badge/-Kotlin-black?style=flat-square&logo=kotlin)
+![Android](https://img.shields.io/badge/-Android-black?style=flat&logo=android)
+![Kotlin](https://img.shields.io/badge/-Kotlin-black?style=flat&logo=kotlin)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
 
