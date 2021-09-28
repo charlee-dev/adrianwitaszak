@@ -46,7 +46,7 @@ var jobStatus = Open.forWork()
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adrian-witaszak-860801176/)](https://www.linkedin.com/in/adrian-witaszak-860801176/)
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:adrianwitaszak@gmail.com)](mailto:adrianwitaszak@gmail.com)
 [![](https://img.shields.io/twitter/url?style=social&url=https://twitter.com/adrianwita)](https://twitter.com/adrianwita)
-= I'm a self motivated software engineer :computer: passionate about the mobile space :iphone:
+- I'm a self motivated software engineer :computer: passionate about the mobile space :iphone:
 
 ---------------
 
