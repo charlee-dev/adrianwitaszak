@@ -48,11 +48,11 @@ var jobStatus = Open.forWork()
 
 ---------------
 
-<a href="https://github.com/adimanwit">
+<a href="https://github.com/adrianwitaszak">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=adimanwit&hide=c%2B%2B,c,matlab,assembly&title_color=6aa6f8&text_color=8a919a&icon_color=6aa6f8&bg_color=22272e" alt="Adrian's GitHub Stats" />
 </a> 
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=adimanwit)](https://github.com/anuraghazra/github-readme-stats)
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=adrianwitaszak)](https://github.com/anuraghazra/github-readme-stats)
 
 --------------- 
 I'm a self motivated software engineer :computer: passionate about the mobile space :iphone:
