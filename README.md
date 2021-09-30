@@ -43,7 +43,7 @@ var jobStatus = Open.forWork()
 ### Hi there 👋 I'm Adrian
 
 - <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>I love connecting with different people</b> so if you want to say <b>hi, I'll be happy to meet you more!</b> :)</em>
-- 🔭 I’m currently working on - Pex Wallpapers App
+- 🔭 I’m currently working on - MyTurkishBarber
 - 🌱 I’m currently learning - Jetpack Compose
 - 📫 How to reach me: 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adrian-witaszak-860801176/)](https://www.linkedin.com/in/adrian-witaszak-860801176/)
