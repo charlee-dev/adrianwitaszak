@@ -19,7 +19,7 @@ data class User(
     val firstName: String = "Adrian"
     val lastName: String = "Witaszak"
     var age: Int = 35
-    var location: Country = "United Kingdom"
+    var location: Country = Country.UnitedKingdom
     var nationality: String = "Polish"
 )   
    
