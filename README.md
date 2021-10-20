@@ -35,8 +35,6 @@ var currentlyLearning = Compose.Observe(me, { progress ->
       make(progress).everyDay
 )
 
-var jobStatus = Open.forWork()
-
 ```
 ---------------
 
