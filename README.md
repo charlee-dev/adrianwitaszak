@@ -15,7 +15,7 @@ package com.android.dev.uk.adwi
 import com.android.dev.uk.adwi.User
 
 
-class User(
+data class User(
     val firstName: String = "Adrian"
     val lastName: String = "Witaszak"
     var age: Int = 35
