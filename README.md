@@ -27,7 +27,7 @@ me = User()
 
 me.learn { -> code 
     code.eat?.apply {
-       sleep                      
+       sleep(duration = Duration.SHORT)                      
     }
 }
                    
