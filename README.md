@@ -31,7 +31,7 @@ me.learn { -> code
     }
 }
                    
-var currentlyLearning = Compose.Observe(me, { progress ->
+var currentlyLearning = KMP.Observe(me, { progress ->
       make(progress).everyDay
 )
 
