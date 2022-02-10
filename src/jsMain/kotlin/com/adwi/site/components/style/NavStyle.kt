@@ -3,7 +3,6 @@ package com.adwi.site.components.style
 import com.adwi.site.components.composables.TextStyle
 import com.adwi.site.components.theme.Colors
 import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.fontWeight
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
 import com.varabyte.kobweb.compose.ui.modifiers.border
@@ -16,14 +15,11 @@ import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.transition
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.active
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.hover
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.LineStyle
-import org.jetbrains.compose.web.css.StyleSheet
 import org.jetbrains.compose.web.css.em
-import org.jetbrains.compose.web.css.fontFamily
 import org.jetbrains.compose.web.css.px
 
 val NavItemTextStyle = ComponentStyle("nav-item-text") {

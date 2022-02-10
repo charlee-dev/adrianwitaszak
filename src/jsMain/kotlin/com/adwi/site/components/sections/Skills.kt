@@ -4,10 +4,7 @@ import androidx.compose.runtime.Composable
 import com.adwi.site.components.composables.ColoredText
 import com.adwi.site.components.composables.H1Text
 import com.adwi.site.components.composables.H2Subtitle
-import com.adwi.site.components.composables.LightTextStyleVariant
-import com.adwi.site.components.composables.NormalTextStyle
 import com.adwi.site.components.composables.SectionBody
-import com.adwi.site.components.composables.TextStyle
 import com.adwi.site.components.layouts.FullWidthLayout
 import com.adwi.site.components.theme.Colors
 import com.adwi.site.components.utils.Strings
@@ -22,16 +19,12 @@ import com.varabyte.kobweb.compose.ui.modifiers.boxShadow
 import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
-import com.varabyte.kobweb.compose.ui.modifiers.lineHeight
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.silk.components.icons.fa.FaMobile
-import com.varabyte.kobweb.silk.components.icons.fa.FaMobileAlt
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
-import com.varabyte.kobweb.silk.components.text.Text
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.percent
@@ -63,7 +56,7 @@ fun SkillsContent() {
     H2Subtitle(
         text = Strings.Home.iLikeToCode,
     )
-    ColoredText(text = Strings.Home.languages )
+    ColoredText(text = Strings.Home.languages)
     SectionBody(text = Strings.Home.languagesList)
     ColoredText(text = Strings.Home.devTools)
     tools.forEach {

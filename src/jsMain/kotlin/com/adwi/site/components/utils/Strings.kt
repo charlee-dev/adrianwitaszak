@@ -15,11 +15,11 @@ object Strings {
 
         const val aboutTitle = "Hi, I’m Adrian. Nice to meet you."
         const val aboutSubtitle =
-            "Since beginning my journey as a freelance designer nearly 10 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time."
+            "Since beginning my journey as a freelance designer nearly 2 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time."
 
         const val iLikeToCode = "I like to code things from scratch, and enjoy bringing ideas to life in the browser."
         const val languages = "Languages I speak:"
-        const val languagesList = "Kotlin, Java, HTML, CSS, Swift(learning)"
+        const val languagesList = "Kotlin, Java, Flutter"
         const val devTools = "Dev tools:"
 
         const val recentWork = "My Recent Work"
