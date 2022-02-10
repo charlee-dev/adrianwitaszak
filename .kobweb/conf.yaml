@@ -1,0 +1,13 @@
+site:
+  title: "AW"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/js/packages/awsite/kotlin/awsite.js"
+      api: "build/libs/awsite.jar"
+    prod:
+      siteRoot: "site/"
+
+  port: 8080
