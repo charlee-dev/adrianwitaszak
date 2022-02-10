@@ -8,6 +8,6 @@ server:
       script: "build/js/packages/awsite/kotlin/awsite.js"
       api: "build/libs/awsite.jar"
     prod:
-      siteRoot: "site/"
+      siteRoot: "docs/"
 
   port: 8080
