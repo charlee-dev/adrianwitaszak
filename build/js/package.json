@@ -1,0 +1,18 @@
+{
+  "name": "awsite",
+  "version": "1.0-SNAPSHOT",
+  "private": true,
+  "workspaces": [
+    "packages/awsite",
+    "packages/awsite-test",
+    "packages_imported/kotlin/1.6.10",
+    "packages_imported/kotlin-test-js-runner/1.6.10",
+    "packages_imported/kotlin-test/1.6.10"
+  ],
+  "resolutions": {},
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}

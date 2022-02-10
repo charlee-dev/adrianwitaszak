@@ -1,0 +1,2 @@
+
+$<com.varabyte.kobweb:kobweb-compose>:-com.varabyte.kobweb.compose.foundation.layout:!com.varabyte.kobweb.compose.style:com.varabyte.kobweb.compose.ui:'com.varabyte.kobweb.compose.ui.graphics:(com.varabyte.kobweb.compose.ui.modifiers
