@@ -67,8 +67,8 @@ fun SkillsContent() {
 val SkillsColumnStyle = ComponentStyle("skills-column") {
     base {
         Modifier
-            .fillMaxWidth(90.percent)
-            .maxWidth(900.px)
+            .fillMaxWidth()
+            .maxWidth(1000.px)
             .padding(leftRight = 2.em, topBottom = 3.em)
             .margin(top = (-7).em, bottom = 2.em)
             .backgroundColor(Colors.white)

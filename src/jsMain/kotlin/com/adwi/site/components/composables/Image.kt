@@ -68,20 +68,7 @@ val HeroStyle = ComponentStyle("hero") {
     base {
         Modifier
             .fillMaxWidth(90.percent)
-//            .maxWidth(280.px)
             .margin(bottom = (-3.0).em, top = 2.em)
-    }
-    Breakpoint.SM {
-        Modifier
-//            .maxWidth(660.px)
-    }
-    Breakpoint.MD {
-        Modifier
-//            .maxWidth(860.px)
-    }
-    Breakpoint.LG {
-        Modifier
-//            .maxWidth(1060.px)
     }
 }
 

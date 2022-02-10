@@ -12,6 +12,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.fontStyle
 import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
 import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.opacity
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
@@ -86,6 +87,7 @@ val TextStyle = ComponentStyle("text") {
             .fontFamily("europa", "sans-serif")
             .fontSize(1.em)
             .textAlign(TextAlign.Center)
+            .maxWidth(1000.px)
     }
     Breakpoint.SM {
         Modifier.fontSize(1.2.em)
