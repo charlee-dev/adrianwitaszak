@@ -144,22 +144,22 @@ val works = listOf(
     Work(
         "Pex Wallpapers",
         "Wallpaper app in Jetpack Compose",
-        "/images/wallpapers.png",
+        "images/wallpapers.png",
         "https://github.com/adrianwitaszak/PexWallpapers"),
     Work(
         "Pex Walls XML",
         "Wallpaper app in Xml",
-        "/images/walls.png",
+        "images/walls.png",
         "https://github.com/adrianwitaszak/PexWallpapersXml"),
     Work(
         "Shoppe",
         "Shopping app - for Sellers",
-        "/images/shoppe.png",
+        "images/shoppe.png",
         "https://github.com/adrianwitaszak/shoppe"),
     Work(
         "Shoppe - backend",
         "Backend for Shoppe app",
-        "/images/shoppe-backend.png",
+        "images/shoppe-backend.png",
         "https://github.com/adrianwitaszak/shoppe-backend"),
     Work(
         "Betty",

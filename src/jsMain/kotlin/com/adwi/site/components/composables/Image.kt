@@ -16,7 +16,6 @@ import com.varabyte.kobweb.compose.ui.modifiers.textDecorationLine
 import com.varabyte.kobweb.navigation.Link
 import com.varabyte.kobweb.silk.components.icons.fa.FaDev
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.hover
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.em
@@ -42,7 +41,7 @@ fun AWLogo(
 
 @Composable
 fun AWAvatar(
-    image: String = "/images/avatar.png",
+    image: String = "images/avatar.png",
 ) {
     Img(
         src = image,
@@ -56,7 +55,7 @@ fun AWAvatar(
 
 @Composable
 fun AWHeroImage(
-    image: String = "/images/hero.svg",
+    image: String = "images/hero.svg",
 ) {
     Img(
         src = image,
