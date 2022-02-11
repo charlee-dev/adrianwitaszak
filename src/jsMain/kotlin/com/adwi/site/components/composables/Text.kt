@@ -2,14 +2,12 @@ package com.adwi.site.components.composables
 
 import androidx.compose.runtime.Composable
 import com.adwi.site.components.theme.Colors
-import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
-import com.varabyte.kobweb.compose.ui.modifiers.fontStyle
 import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
@@ -43,7 +41,7 @@ fun H1Text(
 fun H2Subtitle(
     text: String,
     color: String = Colors.darkGray,
-    fonSize: CSSNumeric = 1.em,
+    fontSize: CSSNumeric = 1.em,
     opacity: Number = 1
 ) {
     Text(
@@ -51,7 +49,7 @@ fun H2Subtitle(
         modifier = TextStyle
             .toModifier(LightTextStyleVariant)
             .color(color)
-            .fontSize(fonSize)
+            .fontSize(fontSize)
             .opacity(opacity)
     )
 }

@@ -30,6 +30,7 @@ object Strings {
 
     object Contact {
         const val howCanIHelp = "Thanks for taking the time to reach out. How can I help you today?"
+        const val submit = "Submit"
     }
 
     object Footer {

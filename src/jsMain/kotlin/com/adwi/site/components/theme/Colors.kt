@@ -6,7 +6,7 @@ object Colors {
     const val primary = "#7510F7"
     val white = Color.white.toString()
     val gray = Color.gray.toString()
-    val darkGray = "#141c3a"
+    const val darkGray = "#141c3a"
 }
 
 fun contentColor(

@@ -16,6 +16,7 @@ import kotlinx.browser.document
 @Composable
 fun PageLayout(
     currentPage: NavSections = NavSections.HOME,
+    onClearClick: () -> Unit = {},
     content: @Composable () -> Unit,
 ) {
     LaunchedEffect(currentPage) {
@@ -26,7 +27,10 @@ fun PageLayout(
         modifier = Modifier.fillMaxSize().textAlign(TextAlign.Center),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        NavHeader(currentPage = currentPage)
+        NavHeader(
+        currentPage = currentPage,
+        onClearClick = onClearClick
+        )
         content()
         Footer()
     }

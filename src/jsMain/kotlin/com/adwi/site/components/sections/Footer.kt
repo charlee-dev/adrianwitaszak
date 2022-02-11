@@ -41,13 +41,13 @@ fun Footer() {
             H2Subtitle(
                 text = Strings.Footer.living,
                 color = Colors.white,
-                fonSize = 1.2.em,
+                fontSize = 1.2.em,
                 opacity = .7
             )
             H2Subtitle(
                 text = Strings.Footer.oneDay,
                 color = Colors.white,
-                fonSize = 1.2.em,
+                fontSize = 1.2.em,
                 opacity = .7
             )
             Row(

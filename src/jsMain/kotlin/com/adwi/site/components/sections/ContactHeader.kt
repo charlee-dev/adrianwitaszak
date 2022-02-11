@@ -24,7 +24,7 @@ fun LogoHeader() {
         modifier = Modifier
             .fillMaxWidth()
             .height(120.px)
-            .margin(top = ((-4).em), bottom = 2.em)
+            .margin(top = ((-5).em), bottom = 2.em)
     ) {
         Box(
             modifier = Modifier

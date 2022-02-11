@@ -1,6 +1,10 @@
 package com.adwi.site.pages
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.adwi.site.components.layouts.PageLayout
 import com.adwi.site.components.sections.ContactForm
 import com.adwi.site.components.sections.LogoHeader
@@ -13,7 +17,6 @@ import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
 import com.varabyte.kobweb.core.Page
-import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIf
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
@@ -24,15 +27,33 @@ import org.jetbrains.compose.web.css.px
 @Page()
 @Composable
 fun ContactPage() {
+
+    var name by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var message by remember { mutableStateOf("") }
+
     PageLayout(
-        currentPage = NavSections.CONTACT
+        currentPage = NavSections.CONTACT,
+        onClearClick = {
+            name = ""
+            email = ""
+            message = ""
+            println("cleared")
+        }
     ) {
         LogoHeader()
         Text(
             text = Strings.Contact.howCanIHelp,
             modifier = ContactHeaderStyle.toModifier()
         )
-        ContactForm()
+        ContactForm(
+            name = name,
+            email = email,
+            message = message,
+            onNameChanged = { name = it },
+            onEmailChanged = { email = it },
+            onMessageChanged = { message = it }
+        )
     }
 }
 

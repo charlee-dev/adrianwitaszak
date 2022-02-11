@@ -46,7 +46,7 @@ enum class NavSections(val title: String, val route: String) {
 @Composable
 fun NavHeader(
     currentPage: NavSections,
-    onClearClick: () -> Unit = {},
+    onClearClick: () -> Unit,
 ) {
     FullWidthLayout {
         Row(
