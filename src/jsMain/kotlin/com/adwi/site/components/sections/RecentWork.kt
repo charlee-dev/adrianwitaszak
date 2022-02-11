@@ -5,8 +5,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.adwi.site.components.composables.AWButton
-import com.adwi.site.components.composables.AWLink
+import com.adwi.site.components.composables.ButtonLink
+import com.adwi.site.components.composables.TextLink
 import com.adwi.site.components.composables.ButtonIconStyle
 import com.adwi.site.components.composables.EmSpacer
 import com.adwi.site.components.composables.H1Text
@@ -59,13 +59,13 @@ fun RecentWork() {
             )
             H2Subtitle(text = Strings.Home.recentWorkDescription)
             EmSpacer()
-            AWLink(
+            TextLink(
                 text = Strings.Home.emailMe,
-                href = ""
+                href = "mailto:adrianwitaszak@gmail.com"
             )
             WorkGrid()
-            AWButton(
-                onClick = {},
+            ButtonLink(
+                href = Strings.Footer.githubAWLink,
                 text = Strings.Home.seeMore,
                 icon = { isHovered ->
                     FaGithubAlt(

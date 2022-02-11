@@ -28,6 +28,10 @@ object Strings {
         const val seeMore = "See more on Github"
     }
 
+    object Contact {
+        const val howCanIHelp = "Thanks for taking the time to reach out. How can I help you today?"
+    }
+
     object Footer {
         const val living = "Living, learning, & leveling up"
         const val oneDay = "one day at a time."

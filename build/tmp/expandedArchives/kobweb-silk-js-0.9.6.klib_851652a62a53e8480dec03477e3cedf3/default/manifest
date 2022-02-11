@@ -1,8 +1,0 @@
-builtins_platform=JS
-unique_name=com.varabyte.kobweb\:kobweb-silk
-compiler_version=1.5.31
-depends=com.varabyte.kobweb\:kobweb-silk-widgets com.varabyte.kobweb\:kobweb-core com.varabyte.kobweb\:kobweb-compose com.varabyte.kobweb\:web-compose-ext org.jetbrains.compose.web\:web-core org.jetbrains.compose.web\:internal-web-core-runtime androidx.compose.runtime\:runtime org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:atomicfu kotlin
-jsOutputName=kobweb-kobweb-silk
-abi_version=1.5.0
-metadata_version=1.4.1
-ir_version=1.0.0

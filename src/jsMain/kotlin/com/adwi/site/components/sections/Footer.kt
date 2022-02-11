@@ -1,7 +1,7 @@
 package com.adwi.site.components.sections
 
 import androidx.compose.runtime.Composable
-import com.adwi.site.components.composables.AWLink
+import com.adwi.site.components.composables.TextLink
 import com.adwi.site.components.composables.AWLogo
 import com.adwi.site.components.composables.EmSpacer
 import com.adwi.site.components.composables.H2Subtitle
@@ -127,7 +127,7 @@ fun Footer() {
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.margin(top = .25.em)
             ) {
-                AWLink(
+                TextLink(
                     text = Strings.Footer.composeForWeb,
                     color = Colors.white,
                     href = Strings.Footer.composeForWebLink,
@@ -137,7 +137,7 @@ fun Footer() {
                     color = Colors.white,
                     opacity = .7
                 )
-                AWLink(
+                TextLink(
                     text = Strings.Footer.kobweb,
                     color = Colors.white,
                     href = Strings.Footer.kobwebLink,

@@ -27,7 +27,6 @@ import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.em
-import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
 val tools = listOf("Android Studio", "IntelliJ IDEA")
@@ -50,7 +49,6 @@ fun SkillsContent() {
         modifier = Modifier
             .fontSize(80.px)
             .color(Colors.primary)
-//            .margin(bottom = 1.em)
     )
     H1Text(text = Strings.Home.welcomeHeader)
     H2Subtitle(

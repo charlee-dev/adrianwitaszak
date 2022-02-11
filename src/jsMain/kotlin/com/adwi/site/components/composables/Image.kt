@@ -1,6 +1,7 @@
 package com.adwi.site.components.composables
 
 import androidx.compose.runtime.Composable
+import com.adwi.site.components.sections.NavSections
 import com.adwi.site.components.theme.Colors
 import com.adwi.site.components.utils.Strings
 import com.varabyte.kobweb.compose.css.TextDecorationLine
@@ -18,6 +19,7 @@ import com.varabyte.kobweb.silk.components.icons.fa.FaDev
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.hover
 import com.varabyte.kobweb.silk.components.style.toModifier
+import org.jetbrains.compose.web.css.CSSNumeric
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -26,29 +28,33 @@ import org.jetbrains.compose.web.dom.Img
 @Composable
 fun AWLogo(
     modifier: Modifier = Modifier,
-    link: String = "/",
+    link: String = NavSections.HOME.route,
 ) {
     Link(
         href = link,
-        attrs = Modifier.textDecorationLine(TextDecorationLine.None).asAttributesBuilder()
+        attrs = LinkStyle.toModifier().asAttributesBuilder()
     ) {
         FaDev(
             modifier = modifier
                 .fontSize(48.px)
+                .color(Colors.primary)
         )
     }
 }
 
 @Composable
 fun AWAvatar(
+    modifier: Modifier = Modifier,
     image: String = "images/avatar.png",
+    size: CSSNumeric = 210.px,
+    margin: CSSNumeric = 2.em
 ) {
     Img(
         src = image,
         alt = Strings.Home.logoAlt,
-        attrs = Modifier
-            .size(210.px)
-            .margin(2.em)
+        attrs = modifier
+            .size(size)
+            .margin(margin)
             .asAttributesBuilder()
     )
 }
@@ -80,5 +86,14 @@ val ButtonIconStyle = ComponentStyle("button-icon") {
     }
     hover {
         Modifier.color(Colors.white)
+    }
+}
+
+val LinkStyle = ComponentStyle("link-icon") {
+    base {
+        Modifier.textDecorationLine(TextDecorationLine.None)
+    }
+    hover {
+        Modifier.textDecorationLine(TextDecorationLine.Underline)
     }
 }
