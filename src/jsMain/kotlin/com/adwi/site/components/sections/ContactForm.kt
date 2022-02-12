@@ -1,8 +1,12 @@
 package com.adwi.site.components.sections
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.adwi.site.components.composables.ButtonIconStyle
-import com.adwi.site.components.composables.ButtonLink
+import com.adwi.site.components.composables.ButtonMailto
 import com.adwi.site.components.composables.EmSpacer
 import com.adwi.site.components.composables.H2Subtitle
 import com.adwi.site.components.theme.Colors
@@ -21,7 +25,6 @@ import com.varabyte.kobweb.compose.ui.modifiers.borderColor
 import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
 import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.flexDirection
 import com.varabyte.kobweb.compose.ui.modifiers.flexGrow
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
@@ -32,6 +35,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.overflowX
 import com.varabyte.kobweb.compose.ui.modifiers.overflowY
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.transition
+import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.icons.fa.FaTelegramPlane
 import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIf
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
@@ -39,15 +43,14 @@ import com.varabyte.kobweb.silk.components.style.active
 import com.varabyte.kobweb.silk.components.style.base
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
+import com.varabyte.kobweb.silk.components.text.Text
 import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.attributes.name
 import org.jetbrains.compose.web.css.Color
-import org.jetbrains.compose.web.css.FlexDirection
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Input
-import org.jetbrains.compose.web.dom.TextInput
 
 @Composable
 fun ContactForm(
@@ -99,7 +102,8 @@ fun ContactForm(
                 fontSize = 1.2.em,
                 opacity = .8
             )
-            TextInput(
+            Input(
+                type = InputType.Text,
                 attrs = listOf(InputTextStyle, InputStyle, ResizableStyle).toModifier().asAttributesBuilder() {
                     name(message)
                     onChange { onMessageChanged(it.value) }
@@ -107,8 +111,8 @@ fun ContactForm(
             )
         }
         EmSpacer(2.0)
-        ButtonLink(
-            href = "mailto:adrianwitaszak@gmail.com?subject=Aw-Portfolio-Message-Name-${name.toMailto()}-Email-$email&body=${message.toMailto()}",
+        ButtonMailto(
+            href = "mailto:adrianwitaszak@gmail.com?subject=$name-$email&body=$message",
             text = Strings.Contact.submit,
             icon = { isHovered ->
                 FaTelegramPlane(
@@ -120,26 +124,22 @@ fun ContactForm(
     }
 }
 
-fun String.toMailto() = this.replace(" ", "%")
-
-// Sample
-// https://github.com/varabyte/kobweb/blob/main/examples/todo/src/jsMain/kotlin/todo/components/widgets/TodoForm.kt
+// Sample https://github.com/varabyte/kobweb/blob/main/examples/todo/src/jsMain/kotlin/todo/components/widgets/TodoForm.kt
 
 val ContactFormStyle = ComponentStyle.base("contact-form") {
-        Modifier
-            .padding(left = 1.em, right = 1.em, top = 0.em, bottom = 4.em)
-//            .display(DisplayStyle.Flex)
-            .fillMaxWidth()
-            .maxWidth(800.px)
+    Modifier
+        .padding(left = 1.em, right = 1.em, top = 0.em, bottom = 4.em)
+        .fillMaxWidth()
+        .maxWidth(800.px)
 }
 
 val InputTextStyle = ComponentStyle.base("input-text") {
-        Modifier
-            .fontSize(18.px)
-            .fontWeight(FontWeight.Lighter)
-            .overflowX(Overflow.Hidden)
-            .overflowY(Overflow.Scroll)
-            .margin(top = 1.em, bottom = 1.5.em)
+    Modifier
+        .fontSize(18.px)
+        .fontWeight(FontWeight.Lighter)
+        .overflowX(Overflow.Hidden)
+        .overflowY(Overflow.Scroll)
+        .margin(top = 1.em, bottom = 1.5.em)
 }
 
 val ResizableStyle = ComponentStyle("resizable") {

@@ -11,6 +11,7 @@ import com.adwi.site.components.composables.ButtonIconStyle
 import com.adwi.site.components.composables.EmSpacer
 import com.adwi.site.components.composables.H1Text
 import com.adwi.site.components.composables.H2Subtitle
+import com.adwi.site.components.composables.TextMailto
 import com.adwi.site.components.layouts.FullWidthLayout
 import com.adwi.site.components.theme.Colors
 import com.adwi.site.components.utils.Strings
@@ -59,7 +60,7 @@ fun RecentWork() {
             )
             H2Subtitle(text = Strings.Home.recentWorkDescription)
             EmSpacer()
-            TextLink(
+            TextMailto(
                 text = Strings.Home.emailMe,
                 href = "mailto:adrianwitaszak@gmail.com"
             )

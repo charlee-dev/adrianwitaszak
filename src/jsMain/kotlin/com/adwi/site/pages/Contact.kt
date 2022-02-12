@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.adwi.site.components.composables.EmSpacer
 import com.adwi.site.components.layouts.PageLayout
 import com.adwi.site.components.sections.ContactForm
 import com.adwi.site.components.sections.LogoHeader
@@ -54,6 +55,7 @@ fun ContactPage() {
             onEmailChanged = { email = it },
             onMessageChanged = { message = it }
         )
+        EmSpacer(4.0)
     }
 }
 

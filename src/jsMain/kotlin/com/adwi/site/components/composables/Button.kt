@@ -40,6 +40,7 @@ import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.A
 
 @Composable
 fun TextLink(
@@ -49,6 +50,28 @@ fun TextLink(
 ) {
     var isHovered by remember { mutableStateOf(false) }
     Link(
+        href = href,
+        attrs = Modifier.textDecorationLine(if (isHovered) TextDecorationLine.Underline else TextDecorationLine.None)
+            .asAttributesBuilder()
+    ) {
+        Text(
+            text = text,
+            modifier = LinkTextStyle.toModifier()
+                .color(color)
+                .onMouseEnter { isHovered = true }
+                .onMouseLeave { isHovered = false }
+        )
+    }
+}
+
+@Composable
+fun TextMailto(
+    text: String,
+    href: String,
+    color: String = Colors.primary,
+) {
+    var isHovered by remember { mutableStateOf(false) }
+    A(
         href = href,
         attrs = Modifier.textDecorationLine(if (isHovered) TextDecorationLine.Underline else TextDecorationLine.None)
             .asAttributesBuilder()
@@ -102,12 +125,50 @@ fun ButtonLink(
 }
 
 @Composable
+fun ButtonMailto(
+    href: String,
+    text: String = Strings.Navigation.sayHello,
+    icon: @Composable (isHovered: Boolean) -> Unit,
+) {
+    var isHovered by remember { mutableStateOf(false) }
+
+    A(
+        href = href,
+        attrs = Modifier
+            .textDecorationLine(TextDecorationLine.None)
+            .asAttributesBuilder()
+    ) {
+        Button(
+            onClick = {},
+            modifier = OutlinedButtonStyle
+                .toModifier()
+                .onMouseEnter { isHovered = true }
+                .onMouseLeave { isHovered = false }
+                .backgroundColor(if (isHovered) Colors.primary else Colors.white)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+            ) {
+                icon(isHovered)
+                Text(
+                    text = text,
+                    variant = LightTextStyleVariant,
+                    modifier = TextStyle.toModifier()
+                        .color(if (isHovered) Colors.white else Colors.primary)
+                )
+            }
+        }
+    }
+}
+
+@Composable
 fun IconLink(
     modifier: Modifier = Modifier,
     href: String,
     icon: @Composable () -> Unit,
 ) {
-    var isHovered by remember { mutableStateOf(false) }
+    val isHovered by remember { mutableStateOf(false) }
 
     Link(
         href = href,

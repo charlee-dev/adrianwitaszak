@@ -9,6 +9,7 @@ import com.adwi.site.components.composables.IconLink
 import com.adwi.site.components.composables.TextLink
 import com.adwi.site.components.layouts.FullWidthLayout
 import com.adwi.site.components.theme.Colors
+import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.foundation.layout.Spacer
@@ -16,11 +17,13 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
 import com.varabyte.kobweb.compose.ui.modifiers.color
+import com.varabyte.kobweb.compose.ui.modifiers.cursor
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
 import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.modifiers.onClick
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.transition
 import com.varabyte.kobweb.silk.components.forms.Button
@@ -35,6 +38,7 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.px
+import org.w3c.xhr.XMLHttpRequest
 
 enum class NavSections(val title: String, val route: String) {
     HOME("Home", "/"),
@@ -46,7 +50,6 @@ enum class NavSections(val title: String, val route: String) {
 @Composable
 fun NavHeader(
     currentPage: NavSections,
-    onClearClick: () -> Unit,
 ) {
     FullWidthLayout {
         Row(
@@ -75,16 +78,13 @@ fun NavHeader(
                 )
             } else {
                 EmSpacer(2.0)
-                Button(onClick = onClearClick, modifier = Modifier.backgroundColor(Color.white)) {
-                    FaRedo(
-                        modifier = IconLinkStyle
-                        .toModifier()
-                        .fontSize(20.px)
-                    )
-                }
-                EmSpacer(2.0)
                 IconLink(href = NavSections.HOME.route) {
-                    FaWindowClose(modifier = IconLinkStyle.toModifier(), style = IconStyle.OUTLINE)
+                    FaWindowClose(
+                        style = IconStyle.OUTLINE,
+                        modifier = IconLinkStyle.toModifier()
+                            .onClick {  }
+                            .cursor(Cursor.Pointer)
+                    )
                 }
             }
         }
