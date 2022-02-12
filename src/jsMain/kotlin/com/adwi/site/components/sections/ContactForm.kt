@@ -127,7 +127,7 @@ fun String.toMailto() = this.replace(" ", "%")
 
 val ContactFormStyle = ComponentStyle.base("contact-form") {
         Modifier
-            .padding(left = 1.em, right = 1.em, top = 0.em, bottom = 3.em)
+            .padding(left = 1.em, right = 1.em, top = 0.em, bottom = 4.em)
 //            .display(DisplayStyle.Flex)
             .fillMaxWidth()
             .maxWidth(800.px)
