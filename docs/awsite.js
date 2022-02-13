@@ -331,8 +331,6 @@
   Week.prototype.constructor = Week;
   InputEventListener.prototype = Object.create(SyntheticEventListener.prototype);
   InputEventListener.prototype.constructor = InputEventListener;
-  ChangeEventListener.prototype = Object.create(SyntheticEventListener.prototype);
-  ChangeEventListener.prototype.constructor = ChangeEventListener;
   MouseEventListener.prototype = Object.create(SyntheticEventListener.prototype);
   MouseEventListener.prototype.constructor = MouseEventListener;
   KeyboardEventListener.prototype = Object.create(SyntheticEventListener.prototype);
@@ -349,8 +347,6 @@
   PseudoClassInternal.prototype.constructor = PseudoClassInternal;
   ElementScopeImpl.prototype = Object.create(ElementScopeBase.prototype);
   ElementScopeImpl.prototype.constructor = ElementScopeImpl;
-  SyntheticChangeEvent.prototype = Object.create(SyntheticEvent.prototype);
-  SyntheticChangeEvent.prototype.constructor = SyntheticChangeEvent;
   SyntheticInputEvent.prototype = Object.create(SyntheticEvent.prototype);
   SyntheticInputEvent.prototype.constructor = SyntheticInputEvent;
   SyntheticKeyboardEvent.prototype = Object.create(SyntheticEvent.prototype);
@@ -391,10 +387,10 @@
   IconStyle.prototype.constructor = IconStyle;
   IconCategory.prototype = Object.create(Enum.prototype);
   IconCategory.prototype.constructor = IconCategory;
-  _no_name_provided__403.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__403.prototype.constructor = _no_name_provided__403;
-  _no_name_provided__474.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__474.prototype.constructor = _no_name_provided__474;
+  _no_name_provided__400.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__400.prototype.constructor = _no_name_provided__400;
+  _no_name_provided__487.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__487.prototype.constructor = _no_name_provided__487;
   NavSections.prototype = Object.create(Enum.prototype);
   NavSections.prototype.constructor = NavSections;
   function indexOf(_this_, element) {
@@ -2482,8 +2478,8 @@
     CoroutineSingletons_UNDECIDED_instance = new CoroutineSingletons('UNDECIDED', 1);
     CoroutineSingletons_RESUMED_instance = new CoroutineSingletons('RESUMED', 2);
   }
-  function CoroutineSingletons(name_0, ordinal) {
-    Enum.call(this, name_0, ordinal);
+  function CoroutineSingletons(name, ordinal) {
+    Enum.call(this, name, ordinal);
   }
   CoroutineSingletons.$metadata$ = {
     simpleName: 'CoroutineSingletons',
@@ -3690,26 +3686,26 @@
     } else {
       var tmp$ret$0;
       $l$block: {
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         var tmp0_div_0 = new Long(-1, 2147483647);
         var tmp1_div_0 = 1000000;
         tmp$ret$0 = tmp0_div_0.div_wiekkq_k$(toLong(tmp1_div_0));
         break $l$block;
       }
       if (value.compareTo_wiekkq_k$(tmp$ret$0) > 0) {
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         tmp = new Long(-1, 2147483647);
       } else {
         var tmp$ret$1;
         $l$block_0: {
-          Companion_getInstance_8();
+          Companion_getInstance_7();
           var tmp2_div_0 = new Long(0, -2147483648);
           var tmp3_div_0 = 1000000;
           tmp$ret$1 = tmp2_div_0.div_wiekkq_k$(toLong(tmp3_div_0));
           break $l$block_0;
         }
         if (value.compareTo_wiekkq_k$(tmp$ret$1) < 0) {
-          Companion_getInstance_8();
+          Companion_getInstance_7();
           tmp = new Long(0, -2147483648);
         } else {
           {
@@ -6464,14 +6460,14 @@
     if (isNaN_0(_this_)) {
       throw IllegalArgumentException_init_$Create$('Cannot round NaN value.');
     } else {
-      Companion_getInstance_8();
+      Companion_getInstance_7();
       if (_this_ > (new Long(-1, 2147483647)).toDouble_0_k$()) {
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         tmp = new Long(-1, 2147483647);
       } else {
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         if (_this_ < (new Long(0, -2147483648)).toDouble_0_k$()) {
-          Companion_getInstance_8();
+          Companion_getInstance_7();
           tmp = new Long(0, -2147483648);
         } else {
           {
@@ -7783,71 +7779,6 @@
     }
     return tmp;
   }
-  function Companion_6() {
-    Companion_instance_5 = this;
-    this._patternEscape = new RegExp('[\\\\^$*+?.()|[\\]{}]', 'g');
-    this._replacementEscape = new RegExp('[\\\\$]', 'g');
-    this._nativeReplacementEscape = new RegExp('\\$', 'g');
-  }
-  Companion_6.prototype.escape_6wfw3l_k$ = function (literal) {
-    var tmp$ret$1;
-    $l$block_0: {
-      var tmp0_nativeReplace_0 = this._patternEscape;
-      var tmp$ret$0;
-      $l$block: {
-        tmp$ret$0 = literal;
-        break $l$block;
-      }
-      tmp$ret$1 = tmp$ret$0.replace(tmp0_nativeReplace_0, '\\$&');
-      break $l$block_0;
-    }
-    return tmp$ret$1;
-  };
-  Companion_6.prototype.nativeEscapeReplacement_6wfw3l_k$ = function (literal) {
-    var tmp$ret$1;
-    $l$block_0: {
-      var tmp0_nativeReplace_0 = this._nativeReplacementEscape;
-      var tmp$ret$0;
-      $l$block: {
-        tmp$ret$0 = literal;
-        break $l$block;
-      }
-      tmp$ret$1 = tmp$ret$0.replace(tmp0_nativeReplace_0, '$$$$');
-      break $l$block_0;
-    }
-    return tmp$ret$1;
-  };
-  Companion_6.$metadata$ = {
-    simpleName: 'Companion',
-    kind: 'object',
-    interfaces: []
-  };
-  var Companion_instance_5;
-  function Companion_getInstance_5() {
-    if (Companion_instance_5 == null)
-      new Companion_6();
-    return Companion_instance_5;
-  }
-  function replace(_this_, oldValue, newValue, ignoreCase) {
-    var tmp$ret$1;
-    $l$block_0: {
-      var tmp0_nativeReplace_0 = new RegExp(Companion_getInstance_5().escape_6wfw3l_k$(oldValue), ignoreCase ? 'gui' : 'gu');
-      var tmp1_nativeReplace_0 = Companion_getInstance_5().nativeEscapeReplacement_6wfw3l_k$(newValue);
-      var tmp$ret$0;
-      $l$block: {
-        tmp$ret$0 = _this_;
-        break $l$block;
-      }
-      tmp$ret$1 = tmp$ret$0.replace(tmp0_nativeReplace_0, tmp1_nativeReplace_0);
-      break $l$block_0;
-    }
-    return tmp$ret$1;
-  }
-  function replace$default(_this_, oldValue, newValue, ignoreCase, $mask0, $handler) {
-    if (!(($mask0 & 4) === 0))
-      ignoreCase = false;
-    return replace(_this_, oldValue, newValue, ignoreCase);
-  }
   function regionMatches(_this_, thisOffset, other, otherOffset, length, ignoreCase) {
     return regionMatchesImpl(_this_, thisOffset, other, otherOffset, length, ignoreCase);
   }
@@ -7964,8 +7895,8 @@
     DurationUnit_HOURS_instance = new DurationUnit('HOURS', 5, 3.6E12);
     DurationUnit_DAYS_instance = new DurationUnit('DAYS', 6, 8.64E13);
   }
-  function DurationUnit(name_0, ordinal, scale) {
-    Enum.call(this, name_0, ordinal);
+  function DurationUnit(name, ordinal, scale) {
+    Enum.call(this, name, ordinal);
     this._scale = scale;
   }
   DurationUnit.$metadata$ = {
@@ -7985,8 +7916,8 @@
     DurationUnit_initEntries();
     return DurationUnit_MILLISECONDS_instance;
   }
-  function Companion_7() {
-    Companion_instance_6 = this;
+  function Companion_6() {
+    Companion_instance_5 = this;
     this._MIN_VALUE_0 = new Char(0);
     this._MAX_VALUE_0 = new Char(65535);
     this._MIN_HIGH_SURROGATE = new Char(55296);
@@ -7998,19 +7929,19 @@
     this._SIZE_BYTES_0 = 2;
     this._SIZE_BITS_0 = 16;
   }
-  Companion_7.$metadata$ = {
+  Companion_6.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_6;
-  function Companion_getInstance_6() {
-    if (Companion_instance_6 == null)
-      new Companion_7();
-    return Companion_instance_6;
+  var Companion_instance_5;
+  function Companion_getInstance_5() {
+    if (Companion_instance_5 == null)
+      new Companion_6();
+    return Companion_instance_5;
   }
   function Char(code) {
-    Companion_getInstance_6();
+    Companion_getInstance_5();
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -8138,23 +8069,23 @@
     kind: 'interface',
     interfaces: [Iterable]
   };
-  function Companion_8() {
-    Companion_instance_7 = this;
+  function Companion_7() {
+    Companion_instance_6 = this;
   }
-  Companion_8.$metadata$ = {
+  Companion_7.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_7;
-  function Companion_getInstance_7() {
-    if (Companion_instance_7 == null)
-      new Companion_8();
-    return Companion_instance_7;
+  var Companion_instance_6;
+  function Companion_getInstance_6() {
+    if (Companion_instance_6 == null)
+      new Companion_7();
+    return Companion_instance_6;
   }
-  function Enum(name_0, ordinal) {
-    Companion_getInstance_7();
-    this._name = name_0;
+  function Enum(name, ordinal) {
+    Companion_getInstance_6();
+    this._name = name;
     this._ordinal = ordinal;
   }
   Enum.prototype._get_name__0_k$ = function () {
@@ -8359,7 +8290,7 @@
         var tmp_0;
         var tmp$ret$2;
         $l$block_1: {
-          Companion_getInstance_6();
+          Companion_getInstance_5();
           var tmp0__get_code__0_1 = new Char(0);
           tmp$ret$2 = tmp0__get_code__0_1.toInt_0_k$();
           break $l$block_1;
@@ -8370,7 +8301,7 @@
           {
             var tmp$ret$3;
             $l$block_2: {
-              Companion_getInstance_6();
+              Companion_getInstance_5();
               var tmp1__get_code__0_2 = new Char(65535);
               tmp$ret$3 = tmp1__get_code__0_2.toInt_0_k$();
               break $l$block_2;
@@ -8709,10 +8640,10 @@
       this_.cause = cause;
     }this_.name = Object.getPrototypeOf(this_).constructor.name;
   }
-  function hasOwnPrototypeProperty(o, name_0) {
+  function hasOwnPrototypeProperty(o, name) {
     var tmp$ret$0;
     $l$block: {
-      var tmp0_unsafeCast_0 = Object.getPrototypeOf(o).hasOwnProperty(name_0);
+      var tmp0_unsafeCast_0 = Object.getPrototypeOf(o).hasOwnProperty(name);
       tmp$ret$0 = tmp0_unsafeCast_0;
       break $l$block;
     }
@@ -8742,8 +8673,8 @@
   function THROW_CCE() {
     throw ClassCastException_init_$Create$();
   }
-  function throwUninitializedPropertyAccessException(name_0) {
-    throw UninitializedPropertyAccessException_init_$Create$('' + 'lateinit property ' + name_0 + ' has not been initialized');
+  function throwUninitializedPropertyAccessException(name) {
+    throw UninitializedPropertyAccessException_init_$Create$('' + 'lateinit property ' + name + ' has not been initialized');
   }
   function THROW_ISE() {
     throw IllegalStateException_init_$Create$();
@@ -8824,26 +8755,26 @@
       }
     }return result;
   }
-  function Companion_9() {
-    Companion_instance_8 = this;
+  function Companion_8() {
+    Companion_instance_7 = this;
     this._MIN_VALUE_1 = new Long(0, -2147483648);
     this._MAX_VALUE_1 = new Long(-1, 2147483647);
     this._SIZE_BYTES_1 = 8;
     this._SIZE_BITS_1 = 64;
   }
-  Companion_9.$metadata$ = {
+  Companion_8.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_8;
-  function Companion_getInstance_8() {
-    if (Companion_instance_8 == null)
-      new Companion_9();
-    return Companion_instance_8;
+  var Companion_instance_7;
+  function Companion_getInstance_7() {
+    if (Companion_instance_7 == null)
+      new Companion_8();
+    return Companion_instance_7;
   }
   function Long(low, high) {
-    Companion_getInstance_8();
+    Companion_getInstance_7();
     Number_0.call(this);
     this._low = low;
     this._high = high;
@@ -9270,10 +9201,10 @@
     return new IntRange(start_0, endInclusive);
   }
   var propertyRefClassMetadataCache;
-  function getPropertyCallableRef(name_0, paramCount, type_0, getter, setter) {
+  function getPropertyCallableRef(name, paramCount, type_0, getter, setter) {
     getter.get = getter;
     getter.set = setter;
-    getter.callableName = name_0;
+    getter.callableName = name;
     var tmp$ret$0;
     $l$block: {
       var tmp0_unsafeCast_0 = getPropertyRefClass(getter, getKPropMetadata(paramCount, setter, type_0));
@@ -9293,8 +9224,8 @@
       mdata.interfaces.push(type_0);
     }return mdata;
   }
-  function getLocalDelegateReference(name_0, type_0, mutable, lambda) {
-    return getPropertyCallableRef(name_0, 0, type_0, lambda, mutable ? lambda : null);
+  function getLocalDelegateReference(name, type_0, mutable, lambda) {
+    return getPropertyCallableRef(name, 0, type_0, lambda, mutable ? lambda : null);
   }
   function propertyRefClassMetadataCache$init$() {
     var tmp$ret$17;
@@ -11756,8 +11687,8 @@
     CoroutineStart_ATOMIC_instance = new CoroutineStart('ATOMIC', 2);
     CoroutineStart_UNDISPATCHED_instance = new CoroutineStart('UNDISPATCHED', 3);
   }
-  function CoroutineStart(name_0, ordinal) {
-    Enum.call(this, name_0, ordinal);
+  function CoroutineStart(name, ordinal) {
+    Enum.call(this, name, ordinal);
   }
   CoroutineStart.prototype.invoke_huaxoh_k$ = function (block, receiver, completion) {
     var tmp0_subject = this;
@@ -16168,15 +16099,15 @@
       $this._reader.beginEmpty_sv8swh_k$();
       var startIndex = $this._writer._currentGroup;
       if (isNode_0)
-        $this._writer.startNode_qi8yb4_k$(Companion_getInstance_9()._Empty);
+        $this._writer.startNode_qi8yb4_k$(Companion_getInstance_8()._Empty);
       else if (!(data == null)) {
         var tmp = $this._writer;
         var tmp0_elvis_lhs = objectKey_0;
-        tmp.startData_sdxrn6_k$(key_0, tmp0_elvis_lhs == null ? Companion_getInstance_9()._Empty : tmp0_elvis_lhs, data);
+        tmp.startData_sdxrn6_k$(key_0, tmp0_elvis_lhs == null ? Companion_getInstance_8()._Empty : tmp0_elvis_lhs, data);
       } else {
         var tmp_0 = $this._writer;
         var tmp1_elvis_lhs = objectKey_0;
-        tmp_0.startGroup_d6z93j_k$(key_0, tmp1_elvis_lhs == null ? Companion_getInstance_9()._Empty : tmp1_elvis_lhs);
+        tmp_0.startGroup_d6z93j_k$(key_0, tmp1_elvis_lhs == null ? Companion_getInstance_8()._Empty : tmp1_elvis_lhs);
       }
       var tmp2_safe_receiver = $this._pending;
       if (tmp2_safe_receiver == null)
@@ -16231,15 +16162,15 @@
         $this._writer.beginInsert_sv8swh_k$();
         var startIndex_0 = $this._writer._currentGroup;
         if (isNode_0)
-          $this._writer.startNode_qi8yb4_k$(Companion_getInstance_9()._Empty);
+          $this._writer.startNode_qi8yb4_k$(Companion_getInstance_8()._Empty);
         else if (!(data == null)) {
           var tmp_1 = $this._writer;
           var tmp3_elvis_lhs = objectKey_0;
-          tmp_1.startData_sdxrn6_k$(key_0, tmp3_elvis_lhs == null ? Companion_getInstance_9()._Empty : tmp3_elvis_lhs, data);
+          tmp_1.startData_sdxrn6_k$(key_0, tmp3_elvis_lhs == null ? Companion_getInstance_8()._Empty : tmp3_elvis_lhs, data);
         } else {
           var tmp_2 = $this._writer;
           var tmp4_elvis_lhs = objectKey_0;
-          tmp_2.startGroup_d6z93j_k$(key_0, tmp4_elvis_lhs == null ? Companion_getInstance_9()._Empty : tmp4_elvis_lhs);
+          tmp_2.startGroup_d6z93j_k$(key_0, tmp4_elvis_lhs == null ? Companion_getInstance_8()._Empty : tmp4_elvis_lhs);
         }
         $this._insertAnchor = $this._writer.anchor_ha5a7z_k$(startIndex_0);
         var insertKeyInfo = new KeyInfo(key_0, -1, insertedGroupVirtualIndex($this, startIndex_0), -1, 0);
@@ -16670,7 +16601,7 @@
                 }
                 var tmp$ret$2;
                 $l$block_1: {
-                  tmp$ret$2 = equals_0(tmp0_safe_receiver_3, Companion_getInstance_9()._Empty) ? tmp0_let_0 : hashCode(tmp0_safe_receiver_3);
+                  tmp$ret$2 = equals_0(tmp0_safe_receiver_3, Companion_getInstance_8()._Empty) ? tmp0_let_0 : hashCode(tmp0_safe_receiver_3);
                   break $l$block_1;
                 }
                 tmp$ret$3 = tmp$ret$2;
@@ -16985,7 +16916,7 @@
     }}
   function updateCompoundKeyWhenWeEnterGroup($this, groupKey, dataKey, data) {
     if (dataKey == null)
-      if ((!(data == null) ? groupKey === 207 : false) ? !equals_0(data, Companion_getInstance_9()._Empty) : false)
+      if ((!(data == null) ? groupKey === 207 : false) ? !equals_0(data, Companion_getInstance_8()._Empty) : false)
         updateCompoundKeyWhenWeEnterGroupKeyHash($this, hashCode(data));
       else
         updateCompoundKeyWhenWeEnterGroupKeyHash($this, groupKey);
@@ -17009,7 +16940,7 @@
   }
   function updateCompoundKeyWhenWeExitGroup($this, groupKey, dataKey, data) {
     if (dataKey == null)
-      if ((!(data == null) ? groupKey === 207 : false) ? !equals_0(data, Companion_getInstance_9()._Empty) : false)
+      if ((!(data == null) ? groupKey === 207 : false) ? !equals_0(data, Companion_getInstance_8()._Empty) : false)
         updateCompoundKeyWhenWeExitGroupKeyHash($this, hashCode(data));
       else
         updateCompoundKeyWhenWeExitGroupKeyHash($this, groupKey);
@@ -17806,7 +17737,7 @@
     var tmp;
     if (this._inserting) {
       validateNodeNotExpected(this);
-      tmp = Companion_getInstance_9()._Empty;
+      tmp = Companion_getInstance_8()._Empty;
     } else {
       var tmp$ret$1;
       $l$block_0: {
@@ -17815,7 +17746,7 @@
         }
         var tmp$ret$0;
         $l$block: {
-          tmp$ret$0 = this._reusing ? Companion_getInstance_9()._Empty : tmp0_let_0;
+          tmp$ret$0 = this._reusing ? Companion_getInstance_8()._Empty : tmp0_let_0;
           break $l$block;
         }
         tmp$ret$1 = tmp$ret$0;
@@ -18114,21 +18045,21 @@
     kind: 'class',
     interfaces: []
   };
-  function Companion_10() {
-    Companion_instance_9 = this;
+  function Companion_9() {
+    Companion_instance_8 = this;
     var tmp = this;
     tmp._Empty = new _no_name_provided__71();
   }
-  Companion_10.$metadata$ = {
+  Companion_9.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_9;
-  function Companion_getInstance_9() {
-    if (Companion_instance_9 == null)
-      new Companion_10();
-    return Companion_instance_9;
+  var Companion_instance_8;
+  function Companion_getInstance_8() {
+    if (Companion_instance_8 == null)
+      new Companion_9();
+    return Companion_instance_8;
   }
   function Composer() {
   }
@@ -18160,8 +18091,8 @@
     InvalidationResult_DEFERRED_instance = new InvalidationResult('DEFERRED', 2);
     InvalidationResult_IMMINENT_instance = new InvalidationResult('IMMINENT', 3);
   }
-  function InvalidationResult(name_0, ordinal) {
-    Enum.call(this, name_0, ordinal);
+  function InvalidationResult(name, ordinal) {
+    Enum.call(this, name, ordinal);
   }
   InvalidationResult.$metadata$ = {
     simpleName: 'InvalidationResult',
@@ -20230,7 +20161,7 @@
           var tmp$ret$1;
           $l$block_0: {
             var tmp;
-            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
               var tmp$ret$0;
               $l$block: {
                 var tmp0_return_8 = new LaunchedEffectImpl(applyContext, block);
@@ -20328,7 +20259,7 @@
           var tmp$ret$1;
           $l$block_0: {
             var tmp;
-            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
               var tmp$ret$0;
               $l$block: {
                 var tmp0_return_8 = new DisposableEffectImpl(effect);
@@ -21106,7 +21037,7 @@
         var token_1 = Trace_getInstance().beginSection_6wfw3l_k$('Recomposer:animation');
         try {
           this._this$0_19._broadcastFrameClock.sendFrame_kdfck9_k$(frameTime);
-          tmp$ret$0 = Companion_getInstance_15().sendApplyNotifications_sv8swh_k$();
+          tmp$ret$0 = Companion_getInstance_14().sendApplyNotifications_sv8swh_k$();
           break $l$block;
         }finally {
           Trace_getInstance().endSection_qi8yb4_k$(token_1);
@@ -21390,8 +21321,8 @@
     interfaces: [],
     suspendArity: [1]
   };
-  function State(name_0, ordinal) {
-    Enum.call(this, name_0, ordinal);
+  function State(name, ordinal) {
+    Enum.call(this, name, ordinal);
   }
   State.$metadata$ = {
     simpleName: 'State',
@@ -21691,7 +21622,7 @@
     var tmp;
     var tmp$ret$2;
     $l$block_1: {
-      var snapshot_1 = Companion_getInstance_15().takeMutableSnapshot_sefk9o_k$(readObserverOf($this, composition), writeObserverOf($this, composition, modifiedValues));
+      var snapshot_1 = Companion_getInstance_14().takeMutableSnapshot_sefk9o_k$(readObserverOf($this, composition), writeObserverOf($this, composition, modifiedValues));
       try {
         var tmp$ret$1;
         $l$block_0: {
@@ -21765,20 +21696,20 @@
     }
     return tmp;
   }
-  function Companion_11() {
-    Companion_instance_10 = this;
+  function Companion_10() {
+    Companion_instance_9 = this;
     this.__runningRecomposers = MutableStateFlow_0(persistentSetOf());
   }
-  Companion_11.$metadata$ = {
+  Companion_10.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_10;
-  function Companion_getInstance_10() {
-    if (Companion_instance_10 == null)
-      new Companion_11();
-    return Companion_instance_10;
+  var Companion_instance_9;
+  function Companion_getInstance_9() {
+    if (Companion_instance_9 == null)
+      new Companion_10();
+    return Companion_instance_9;
   }
   function _no_name_provided__83(this$0) {
     this._this$0_21 = this$0;
@@ -22020,9 +21951,9 @@
             this._callingJob0 = _get_job_(this._$this$withContext._get_coroutineContext__0_k$());
             registerRunnerJob(this._this$0_24, this._callingJob0);
             var tmp_0 = this;
-            var tmp_1 = Companion_getInstance_15();
+            var tmp_1 = Companion_getInstance_14();
             tmp_0._unregisterApplyObserver1 = tmp_1.registerApplyObserver_ja8wvw_k$(_no_name_provided_$factory_75(this._this$0_24));
-            addRunning(Companion_getInstance_10(), this._this$0_24._recomposerInfo);
+            addRunning(Companion_getInstance_9(), this._this$0_24._recomposerInfo);
             this._state_1 = 1;
             continue $sm;
           case 1:
@@ -22060,7 +21991,7 @@
             }
             deriveStateLocked(this._this$0_24);
             Unit_getInstance();
-            removeRunning(Companion_getInstance_10(), this._this$0_24._recomposerInfo);
+            removeRunning(Companion_getInstance_9(), this._this$0_24._recomposerInfo);
             return Unit_getInstance();
           case 4:
             this._exceptionState = 5;
@@ -22072,7 +22003,7 @@
             }
             deriveStateLocked(this._this$0_24);
             Unit_getInstance();
-            removeRunning(Companion_getInstance_10(), this._this$0_24._recomposerInfo);
+            removeRunning(Companion_getInstance_9(), this._this$0_24._recomposerInfo);
             throw t;
           case 5:
             throw this._exception_0;
@@ -22239,7 +22170,7 @@
     interfaces: []
   };
   function Recomposer(effectCoroutineContext) {
-    Companion_getInstance_10();
+    Companion_getInstance_9();
     CompositionContext.call(this);
     this._changeCount = new Long(0, 0);
     var tmp = this;
@@ -22358,7 +22289,7 @@
     var composerWasComposing = composition._get_isComposing__0_k$();
     var tmp$ret$1;
     $l$block_0: {
-      var snapshot_1 = Companion_getInstance_15().takeMutableSnapshot_sefk9o_k$(readObserverOf(this, composition), writeObserverOf(this, composition, null));
+      var snapshot_1 = Companion_getInstance_14().takeMutableSnapshot_sefk9o_k$(readObserverOf(this, composition), writeObserverOf(this, composition, null));
       try {
         var tmp$ret$0;
         $l$block: {
@@ -22377,7 +22308,7 @@
       }
     }
     if (!composerWasComposing) {
-      Companion_getInstance_15().notifyObjectsInitialized_sv8swh_k$();
+      Companion_getInstance_14().notifyObjectsInitialized_sv8swh_k$();
     }var tmp$ret$2;
     $l$block_1: {
       var tmp0_synchronized_0 = this._stateLock;
@@ -22395,7 +22326,7 @@
     }
     composition.applyChanges_sv8swh_k$();
     if (!composerWasComposing) {
-      Companion_getInstance_15().notifyObjectsInitialized_sv8swh_k$();
+      Companion_getInstance_14().notifyObjectsInitialized_sv8swh_k$();
     }};
   Recomposer.$metadata$ = {
     simpleName: 'Recomposer',
@@ -22504,8 +22435,8 @@
       insertGroups($this, 1);
       var current_0 = $this._currentGroup;
       var currentAddress = groupIndexToAddress($this, current_0);
-      var hasObjectKey_0 = !(objectKey_0 === Companion_getInstance_9()._Empty);
-      var hasAux_0 = !isNode_0 ? !(aux_0 === Companion_getInstance_9()._Empty) : false;
+      var hasObjectKey_0 = !(objectKey_0 === Companion_getInstance_8()._Empty);
+      var hasAux_0 = !isNode_0 ? !(aux_0 === Companion_getInstance_8()._Empty) : false;
       initGroup($this._groups, currentAddress, key_0, isNode_0, hasObjectKey_0, hasAux_0, $this._parent_1, $this._currentSlot);
       $this._currentSlotEnd = $this._currentSlot;
       var dataSlotsNeeded = ((isNode_0 ? 1 : 0) + (hasObjectKey_0 ? 1 : 0) | 0) + (hasAux_0 ? 1 : 0) | 0;
@@ -22537,7 +22468,7 @@
       saveCurrentGroupEnd($this);
       var currentGroup = $this._currentGroup;
       var currentGroupAddress = groupIndexToAddress($this, currentGroup);
-      if (!equals_0(aux_0, Companion_getInstance_9()._Empty)) {
+      if (!equals_0(aux_0, Companion_getInstance_8()._Empty)) {
         if (isNode_0)
           $this.updateNode_qi8yb4_k$(aux_0);
         else
@@ -23226,7 +23157,7 @@
   };
   SlotWriter.prototype.groupAux_ha5a7z_k$ = function (index) {
     var address = groupIndexToAddress(this, index);
-    return hasAux(this._groups, address) ? this._slots_0[auxIndex(this._groups, this, address)] : Companion_getInstance_9()._Empty;
+    return hasAux(this._groups, address) ? this._slots_0[auxIndex(this._groups, this, address)] : Companion_getInstance_8()._Empty;
   };
   SlotWriter.prototype.node_ha5a7z_k$ = function (index) {
     var address = groupIndexToAddress(this, index);
@@ -23472,13 +23403,13 @@
         var message_1 = tmp$ret$0;
         throw IllegalArgumentException_init_$Create$(toString_1(message_1));
       }}
-    startGroup_1(this, 0, Companion_getInstance_9()._Empty, false, Companion_getInstance_9()._Empty);
+    startGroup_1(this, 0, Companion_getInstance_8()._Empty, false, Companion_getInstance_8()._Empty);
   };
   SlotWriter.prototype.startGroup_d6z93j_k$ = function (key_0, dataKey) {
-    return startGroup_1(this, key_0, dataKey, false, Companion_getInstance_9()._Empty);
+    return startGroup_1(this, key_0, dataKey, false, Companion_getInstance_8()._Empty);
   };
   SlotWriter.prototype.startNode_qi8yb4_k$ = function (key_0) {
-    return startGroup_1(this, 125, key_0, true, Companion_getInstance_9()._Empty);
+    return startGroup_1(this, 125, key_0, true, Companion_getInstance_8()._Empty);
   };
   SlotWriter.prototype.startData_sdxrn6_k$ = function (key_0, objectKey_0, aux_0) {
     return startGroup_1(this, key_0, objectKey_0, false, aux_0);
@@ -24376,7 +24307,7 @@
     if (isNode(_this_, index)) {
       tmp = $this._slots_2[nodeIndex_0(_this_, index)];
     } else {
-      tmp = Companion_getInstance_9()._Empty;
+      tmp = Companion_getInstance_8()._Empty;
     }
     return tmp;
   }
@@ -24385,7 +24316,7 @@
     if (hasAux(_this_, index)) {
       tmp = $this._slots_2[auxIndex_0(_this_, index)];
     } else {
-      tmp = Companion_getInstance_9()._Empty;
+      tmp = Companion_getInstance_8()._Empty;
     }
     return tmp;
   }
@@ -24479,7 +24410,7 @@
   };
   SlotReader.prototype.next_0_k$ = function () {
     if (this._emptyCount > 0 ? true : this._currentSlot_0 >= this._currentSlotEnd_0)
-      return Companion_getInstance_9()._Empty;
+      return Companion_getInstance_8()._Empty;
     var tmp0_this = this;
     var tmp1 = tmp0_this._currentSlot_0;
     tmp0_this._currentSlot_0 = tmp1 + 1 | 0;
@@ -24891,7 +24822,7 @@
     var tmp$ret$5;
     $l$block_4: {
       var tmp0_withCurrent_0 = this._next_3;
-      var tmp1__anonymous__1 = current(tmp0_withCurrent_0, Companion_getInstance_15()._get_current__0_k$());
+      var tmp1__anonymous__1 = current(tmp0_withCurrent_0, Companion_getInstance_14()._get_current__0_k$());
       var tmp;
       if (!this._get_policy__0_k$().equivalent_1qgdm_k$(tmp1__anonymous__1._value_5, value)) {
         var tmp$ret$4;
@@ -24907,7 +24838,7 @@
                 var tmp0_synchronized_0_5 = lock;
                 var tmp$ret$0;
                 $l$block: {
-                  snapshot_1_3 = Companion_getInstance_15()._get_current__0_k$();
+                  snapshot_1_3 = Companion_getInstance_14()._get_current__0_k$();
                   var tmp3__anonymous__4_6 = overwritableRecord(tmp2_overwritable_0_2, this, snapshot_1_3, tmp1__anonymous__1);
                   tmp3__anonymous__4_6._value_5 = value;
                   tmp$ret$0 = Unit_getInstance();
@@ -24983,7 +24914,7 @@
       var tmp0_withCurrent_0 = this._next_3;
       var tmp$ret$0;
       $l$block: {
-        var tmp1__anonymous__1 = current(tmp0_withCurrent_0, Companion_getInstance_15()._get_current__0_k$());
+        var tmp1__anonymous__1 = current(tmp0_withCurrent_0, Companion_getInstance_14()._get_current__0_k$());
         tmp$ret$0 = '' + 'MutableState(value=' + tmp1__anonymous__1._value_5 + ')@' + hashCode(this);
         break $l$block;
       }
@@ -26139,10 +26070,10 @@
     interfaces: [Set, ImmutableCollection]
   };
   function persistentHashMapOf() {
-    return Companion_getInstance_12().emptyOf_7dfbla_k$();
+    return Companion_getInstance_11().emptyOf_7dfbla_k$();
   }
   function persistentSetOf() {
-    return Companion_getInstance_14().emptyOf_1gxw8l_k$();
+    return Companion_getInstance_13().emptyOf_1gxw8l_k$();
   }
   function persistentListOf() {
     return persistentVectorOf();
@@ -26364,8 +26295,8 @@
     kind: 'class',
     interfaces: []
   };
-  function Companion_12() {
-    Companion_instance_11 = this;
+  function Companion_11() {
+    Companion_instance_10 = this;
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -26374,19 +26305,19 @@
     }
     tmp._EMPTY_0 = new SmallPersistentVector(tmp$ret$0);
   }
-  Companion_12.$metadata$ = {
+  Companion_11.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_11;
-  function Companion_getInstance_11() {
-    if (Companion_instance_11 == null)
-      new Companion_12();
-    return Companion_instance_11;
+  var Companion_instance_10;
+  function Companion_getInstance_10() {
+    if (Companion_instance_10 == null)
+      new Companion_11();
+    return Companion_instance_10;
   }
   function SmallPersistentVector(buffer) {
-    Companion_getInstance_11();
+    Companion_getInstance_10();
     AbstractPersistentList.call(this);
     this._buffer_1 = buffer;
     assert(this._buffer_1.length <= 32);
@@ -26479,7 +26410,7 @@
     interfaces: []
   };
   function persistentVectorOf() {
-    return Companion_getInstance_11()._EMPTY_0;
+    return Companion_getInstance_10()._EMPTY_0;
   }
   function presizedBufferWith(element) {
     var tmp$ret$0;
@@ -26501,27 +26432,27 @@
   function createEntries($this) {
     return new PersistentHashMapEntries($this);
   }
-  function Companion_13() {
-    Companion_instance_12 = this;
-    this._EMPTY_1 = new PersistentHashMap(Companion_getInstance_13()._EMPTY_2, 0);
+  function Companion_12() {
+    Companion_instance_11 = this;
+    this._EMPTY_1 = new PersistentHashMap(Companion_getInstance_12()._EMPTY_2, 0);
   }
-  Companion_13.prototype.emptyOf_7dfbla_k$ = function () {
+  Companion_12.prototype.emptyOf_7dfbla_k$ = function () {
     var tmp = this._EMPTY_1;
     return tmp instanceof PersistentHashMap ? tmp : THROW_CCE();
   };
-  Companion_13.$metadata$ = {
+  Companion_12.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_12;
-  function Companion_getInstance_12() {
-    if (Companion_instance_12 == null)
-      new Companion_13();
-    return Companion_instance_12;
+  var Companion_instance_11;
+  function Companion_getInstance_11() {
+    if (Companion_instance_11 == null)
+      new Companion_12();
+    return Companion_instance_11;
   }
   function PersistentHashMap(node_0, size_1) {
-    Companion_getInstance_12();
+    Companion_getInstance_11();
     AbstractMap.call(this);
     this._node = node_0;
     this._size_6 = size_1;
@@ -26585,7 +26516,7 @@
     if (this._node === newNode) {
       return this;
     }if (newNode == null) {
-      return Companion_getInstance_12().emptyOf_7dfbla_k$();
+      return Companion_getInstance_11().emptyOf_7dfbla_k$();
     }return new PersistentHashMap(newNode, this._size_6 - 1 | 0);
   };
   PersistentHashMap.$metadata$ = {
@@ -26646,7 +26577,7 @@
     interfaces: []
   };
   function TrieNodeBaseIterator() {
-    this._buffer_2 = Companion_getInstance_13()._EMPTY_2._buffer_3;
+    this._buffer_2 = Companion_getInstance_12()._EMPTY_2._buffer_3;
     this._dataSize = 0;
     this._index_7 = 0;
   }
@@ -26739,7 +26670,7 @@
           return Unit_getInstance();
         }if (i > 0) {
           $this._path_0[i - 1 | 0].moveToNextNode_sv8swh_k$();
-        }$this._path_0[i].reset_tvwza9_k$(Companion_getInstance_13()._EMPTY_2._buffer_3, 0);
+        }$this._path_0[i].reset_tvwza9_k$(Companion_getInstance_12()._EMPTY_2._buffer_3, 0);
       }
        while (0 <= inductionVariable);
     $this._hasNext_0 = false;
@@ -27184,8 +27115,8 @@
   function replaceNode($this, targetNode, newNode, nodeIndex_1, positionMask) {
     return newNode == null ? removeNodeAtIndex($this, nodeIndex_1, positionMask) : !(targetNode === newNode) ? updateNodeAtIndex($this, nodeIndex_1, positionMask, newNode) : $this;
   }
-  function Companion_14() {
-    Companion_instance_13 = this;
+  function Companion_13() {
+    Companion_instance_12 = this;
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -27194,19 +27125,19 @@
     }
     tmp._EMPTY_2 = TrieNode_init_$Create$(0, 0, tmp$ret$0);
   }
-  Companion_14.$metadata$ = {
+  Companion_13.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_13;
-  function Companion_getInstance_13() {
-    if (Companion_instance_13 == null)
-      new Companion_14();
-    return Companion_instance_13;
+  var Companion_instance_12;
+  function Companion_getInstance_12() {
+    if (Companion_instance_12 == null)
+      new Companion_13();
+    return Companion_instance_12;
   }
   function TrieNode(dataMap, nodeMap, buffer, ownedBy) {
-    Companion_getInstance_13();
+    Companion_getInstance_12();
     this._dataMap = dataMap;
     this._nodeMap = nodeMap;
     this._ownedBy = ownedBy;
@@ -27479,26 +27410,26 @@
     Unit_getInstance();
     return newBuffer;
   }
-  function Companion_15() {
-    Companion_instance_14 = this;
-    this._EMPTY_3 = new PersistentOrderedSet(EndOfChain_getInstance(), EndOfChain_getInstance(), Companion_getInstance_12().emptyOf_7dfbla_k$());
+  function Companion_14() {
+    Companion_instance_13 = this;
+    this._EMPTY_3 = new PersistentOrderedSet(EndOfChain_getInstance(), EndOfChain_getInstance(), Companion_getInstance_11().emptyOf_7dfbla_k$());
   }
-  Companion_15.prototype.emptyOf_1gxw8l_k$ = function () {
+  Companion_14.prototype.emptyOf_1gxw8l_k$ = function () {
     return this._EMPTY_3;
   };
-  Companion_15.$metadata$ = {
+  Companion_14.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_14;
-  function Companion_getInstance_14() {
-    if (Companion_instance_14 == null)
-      new Companion_15();
-    return Companion_instance_14;
+  var Companion_instance_13;
+  function Companion_getInstance_13() {
+    if (Companion_instance_13 == null)
+      new Companion_14();
+    return Companion_instance_13;
   }
   function PersistentOrderedSet(firstElement, lastElement, hashMap) {
-    Companion_getInstance_14();
+    Companion_getInstance_13();
     AbstractSet.call(this);
     this._firstElement = firstElement;
     this._lastElement = lastElement;
@@ -27736,7 +27667,7 @@
     composer.startReplaceableGroup_majfzk_k$(key_0);
     var slot = composer.rememberedValue_0_k$();
     var tmp;
-    if (slot === Companion_getInstance_9()._Empty) {
+    if (slot === Companion_getInstance_8()._Empty) {
       var value = new ComposableLambdaImpl(key_0, tracked);
       composer.updateRememberedValue_qi8yb4_k$(value);
       tmp = value;
@@ -27916,13 +27847,13 @@
     kind: 'class',
     interfaces: [ObserverHandle]
   };
-  function Companion_16() {
-    Companion_instance_15 = this;
+  function Companion_15() {
+    Companion_instance_14 = this;
   }
-  Companion_16.prototype._get_current__0_k$ = function () {
+  Companion_15.prototype._get_current__0_k$ = function () {
     return currentSnapshot();
   };
-  Companion_16.prototype.takeMutableSnapshot_sefk9o_k$ = function (readObserver, writeObserver) {
+  Companion_15.prototype.takeMutableSnapshot_sefk9o_k$ = function (readObserver, writeObserver) {
     var tmp = currentSnapshot();
     var tmp0_safe_receiver = tmp instanceof MutableSnapshot ? tmp : null;
     var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.takeNestedMutableSnapshot_sefk9o_k$(readObserver, writeObserver);
@@ -27934,7 +27865,7 @@
     }
     return tmp_0;
   };
-  Companion_16.prototype.registerApplyObserver_ja8wvw_k$ = function (observer) {
+  Companion_15.prototype.registerApplyObserver_ja8wvw_k$ = function (observer) {
     advanceGlobalSnapshot(emptyLambda);
     var tmp$ret$2;
     $l$block_1: {
@@ -27955,7 +27886,7 @@
     Unit_getInstance();
     return new _no_name_provided__93(observer);
   };
-  Companion_16.prototype.registerGlobalWriteObserver_ejofcn_k$ = function (observer) {
+  Companion_15.prototype.registerGlobalWriteObserver_ejofcn_k$ = function (observer) {
     var tmp$ret$2;
     $l$block_1: {
       var tmp$ret$1;
@@ -27976,10 +27907,10 @@
     advanceGlobalSnapshot_0();
     return new _no_name_provided__94(observer);
   };
-  Companion_16.prototype.notifyObjectsInitialized_sv8swh_k$ = function () {
+  Companion_15.prototype.notifyObjectsInitialized_sv8swh_k$ = function () {
     return currentSnapshot().notifyObjectsInitialized_sv8swh_k$();
   };
-  Companion_16.prototype.sendApplyNotifications_sv8swh_k$ = function () {
+  Companion_15.prototype.sendApplyNotifications_sv8swh_k$ = function () {
     var tmp$ret$3;
     $l$block_2: {
       var tmp$ret$2;
@@ -28012,19 +27943,19 @@
     if (changes)
       advanceGlobalSnapshot_0();
   };
-  Companion_16.$metadata$ = {
+  Companion_15.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_15;
-  function Companion_getInstance_15() {
-    if (Companion_instance_15 == null)
-      new Companion_16();
-    return Companion_instance_15;
+  var Companion_instance_14;
+  function Companion_getInstance_14() {
+    if (Companion_instance_14 == null)
+      new Companion_15();
+    return Companion_instance_14;
   }
   function Snapshot(id, invalid) {
-    Companion_getInstance_15();
+    Companion_getInstance_14();
     this._invalid = invalid;
     this._id = id;
     this._disposed_0 = false;
@@ -28106,7 +28037,7 @@
     this._readObserver = readObserver;
     this._writeObserver = writeObserver;
     this._modified = null;
-    this._previousIds = Companion_getInstance_16()._EMPTY_4;
+    this._previousIds = Companion_getInstance_15()._EMPTY_4;
     this._snapshots = 1;
     this._applied = false;
     this._$stable_5 = 8;
@@ -29440,7 +29371,7 @@
     $l$block: {
       var tmp0 = nextSnapshotId;
       nextSnapshotId = tmp0 + 1 | 0;
-      var tmp0_also_0 = new GlobalSnapshot(tmp0, Companion_getInstance_16()._EMPTY_4);
+      var tmp0_also_0 = new GlobalSnapshot(tmp0, Companion_getInstance_15()._EMPTY_4);
       {
       }
       {
@@ -29451,20 +29382,20 @@
     }
     return new AtomicReference(tmp$ret$0);
   }
-  function Companion_17() {
-    Companion_instance_16 = this;
+  function Companion_16() {
+    Companion_instance_15 = this;
     this._EMPTY_4 = new SnapshotIdSet(new Long(0, 0), new Long(0, 0), 0, null);
   }
-  Companion_17.$metadata$ = {
+  Companion_16.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_16;
-  function Companion_getInstance_16() {
-    if (Companion_instance_16 == null)
-      new Companion_17();
-    return Companion_instance_16;
+  var Companion_instance_15;
+  function Companion_getInstance_15() {
+    if (Companion_instance_15 == null)
+      new Companion_16();
+    return Companion_instance_15;
   }
   function _no_name_provided__102(this$0, resultContinuation) {
     this._this$0_28 = this$0;
@@ -29520,7 +29451,7 @@
           case 4:
             if (!this._this$0_28._lowerSet.equals(new Long(0, 0))) {
               var tmp_0 = this;
-              Companion_getInstance_8();
+              Companion_getInstance_7();
               tmp_0._tmp1_iterator3 = until(0, 64).iterator_0_k$();
               this._state_1 = 5;
               continue $sm;
@@ -29560,7 +29491,7 @@
           case 9:
             if (!this._this$0_28._upperSet.equals(new Long(0, 0))) {
               var tmp_1 = this;
-              Companion_getInstance_8();
+              Companion_getInstance_7();
               tmp_1._tmp2_iterator5 = until(0, 64).iterator_0_k$();
               this._state_1 = 10;
               continue $sm;
@@ -29578,7 +29509,7 @@
             this._index6 = this._tmp2_iterator5.next_0_k$();
             if (!this._this$0_28._upperSet.and_wiekkq_k$((new Long(1, 0)).shl_ha5a7z_k$(this._index6)).equals(new Long(0, 0))) {
               this._state_1 = 11;
-              Companion_getInstance_8();
+              Companion_getInstance_7();
               suspendResult = this._$this$sequence_0.yield_iav7o_k$((this._index6 + 64 | 0) + this._this$0_28._lowerBound | 0, this);
               if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                 return suspendResult;
@@ -29624,7 +29555,7 @@
     suspendArity: [1]
   };
   function SnapshotIdSet(upperSet, lowerSet, lowerBound, belowBound) {
-    Companion_getInstance_16();
+    Companion_getInstance_15();
     this._upperSet = upperSet;
     this._lowerSet = lowerSet;
     this._lowerBound = lowerBound;
@@ -29634,7 +29565,7 @@
     var offset = bit - this._lowerBound | 0;
     var tmp;
     if (offset >= 0) {
-      Companion_getInstance_8();
+      Companion_getInstance_7();
       tmp = offset < 64;
     } else {
       tmp = false;
@@ -29643,9 +29574,9 @@
       return !(new Long(1, 0)).shl_ha5a7z_k$(offset).and_wiekkq_k$(this._lowerSet).equals(new Long(0, 0));
     } else {
       var tmp_0;
-      Companion_getInstance_8();
+      Companion_getInstance_7();
       if (offset >= 64) {
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         tmp_0 = offset < imul(64, 2);
       } else {
         {
@@ -29654,7 +29585,7 @@
       }
       if (tmp_0) {
         var tmp_1 = new Long(1, 0);
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         return !tmp_1.shl_ha5a7z_k$(offset - 64 | 0).and_wiekkq_k$(this._upperSet).equals(new Long(0, 0));
       } else {
         if (offset > 0) {
@@ -29691,7 +29622,7 @@
     var offset = bit - this._lowerBound | 0;
     var tmp;
     if (offset >= 0) {
-      Companion_getInstance_8();
+      Companion_getInstance_7();
       tmp = offset < 64;
     } else {
       tmp = false;
@@ -29702,9 +29633,9 @@
         return new SnapshotIdSet(this._upperSet, this._lowerSet.or_wiekkq_k$(mask), this._lowerBound, this._belowBound);
       }} else {
       var tmp_0;
-      Companion_getInstance_8();
+      Companion_getInstance_7();
       if (offset >= 64) {
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         tmp_0 = offset < imul(64, 2);
       } else {
         {
@@ -29713,12 +29644,12 @@
       }
       if (tmp_0) {
         var tmp_1 = new Long(1, 0);
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         var mask_0 = tmp_1.shl_ha5a7z_k$(offset - 64 | 0);
         if (this._upperSet.and_wiekkq_k$(mask_0).equals(new Long(0, 0))) {
           return new SnapshotIdSet(this._upperSet.or_wiekkq_k$(mask_0), this._lowerSet, this._lowerBound, this._belowBound);
         }} else {
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         if (offset >= imul(64, 2)) {
           if (!this.get_ha5a7z_k$(bit)) {
             var newUpperSet = this._upperSet;
@@ -29726,9 +29657,9 @@
             var newLowerBound = this._lowerBound;
             var newBelowBound = null;
             var tmp_2 = bit + 1 | 0;
-            Companion_getInstance_8();
+            Companion_getInstance_7();
             var tmp_3 = tmp_2 / 64 | 0;
-            Companion_getInstance_8();
+            Companion_getInstance_7();
             var targetLowerBound = imul(tmp_3, 64);
             $l$break: while (newLowerBound < targetLowerBound) {
               if (!newLowerSet.equals(new Long(0, 0))) {
@@ -29775,7 +29706,7 @@
                   }
                   newBelowBound = tmp$ret$2;
                 }{
-                  Companion_getInstance_8();
+                  Companion_getInstance_7();
                   var tmp1_repeat_0 = 64;
                   {
                   }
@@ -29799,7 +29730,7 @@
               }newLowerSet = newUpperSet;
               newUpperSet = new Long(0, 0);
               var tmp_4 = newLowerBound;
-              Companion_getInstance_8();
+              Companion_getInstance_7();
               newLowerBound = tmp_4 + 64 | 0;
             }
             var tmp_5 = newUpperSet;
@@ -29898,7 +29829,7 @@
     var offset = bit - this._lowerBound | 0;
     var tmp;
     if (offset >= 0) {
-      Companion_getInstance_8();
+      Companion_getInstance_7();
       tmp = offset < 64;
     } else {
       tmp = false;
@@ -29909,9 +29840,9 @@
         return new SnapshotIdSet(this._upperSet, this._lowerSet.and_wiekkq_k$(mask.inv_0_k$()), this._lowerBound, this._belowBound);
       }} else {
       var tmp_0;
-      Companion_getInstance_8();
+      Companion_getInstance_7();
       if (offset >= 64) {
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         tmp_0 = offset < imul(64, 2);
       } else {
         {
@@ -29920,7 +29851,7 @@
       }
       if (tmp_0) {
         var tmp_1 = new Long(1, 0);
-        Companion_getInstance_8();
+        Companion_getInstance_7();
         var mask_0 = tmp_1.shl_ha5a7z_k$(offset - 64 | 0);
         if (!this._upperSet.and_wiekkq_k$(mask_0).equals(new Long(0, 0))) {
           return new SnapshotIdSet(this._upperSet.and_wiekkq_k$(mask_0.inv_0_k$()), this._lowerSet, this._lowerBound, this._belowBound);
@@ -30002,10 +29933,10 @@
     return this;
   };
   SnapshotIdSet.prototype.andNot_b6l5po_k$ = function (bits) {
-    if (bits === Companion_getInstance_16()._EMPTY_4)
+    if (bits === Companion_getInstance_15()._EMPTY_4)
       return this;
-    if (this === Companion_getInstance_16()._EMPTY_4)
-      return Companion_getInstance_16()._EMPTY_4;
+    if (this === Companion_getInstance_15()._EMPTY_4)
+      return Companion_getInstance_15()._EMPTY_4;
     var tmp;
     if (bits._lowerBound === this._lowerBound ? bits._belowBound === this._belowBound : false) {
       tmp = new SnapshotIdSet(this._upperSet.and_wiekkq_k$(bits._upperSet.inv_0_k$()), this._lowerSet.and_wiekkq_k$(bits._lowerSet.inv_0_k$()), this._lowerBound, this._belowBound);
@@ -30032,9 +29963,9 @@
     return tmp;
   };
   SnapshotIdSet.prototype.or_b6l5po_k$ = function (bits) {
-    if (bits === Companion_getInstance_16()._EMPTY_4)
+    if (bits === Companion_getInstance_15()._EMPTY_4)
       return this;
-    if (this === Companion_getInstance_16()._EMPTY_4)
+    if (this === Companion_getInstance_15()._EMPTY_4)
       return bits;
     var tmp;
     if (bits._lowerBound === this._lowerBound ? bits._belowBound === this._belowBound : false) {
@@ -30094,7 +30025,7 @@
     if (!this._lowerSet.equals(new Long(0, 0)))
       return this._lowerBound + lowestBitOf(this._lowerSet) | 0;
     if (!this._upperSet.equals(new Long(0, 0))) {
-      Companion_getInstance_8();
+      Companion_getInstance_7();
       return (this._lowerBound + 64 | 0) + lowestBitOf(this._upperSet) | 0;
     }return default_0;
   };
@@ -30398,7 +30329,7 @@
   function Trace() {
     Trace_instance = this;
   }
-  Trace.prototype.beginSection_6wfw3l_k$ = function (name_0) {
+  Trace.prototype.beginSection_6wfw3l_k$ = function (name) {
     return null;
   };
   Trace.prototype.endSection_qi8yb4_k$ = function (token) {
@@ -30774,7 +30705,7 @@
   }
   _no_name_provided__107.prototype.invoke_sv8swh_k$ = function () {
     GlobalSnapshotManager_getInstance()._commitPending = false;
-    Companion_getInstance_15().sendApplyNotifications_sv8swh_k$();
+    Companion_getInstance_14().sendApplyNotifications_sv8swh_k$();
   };
   _no_name_provided__107.prototype.invoke_0_k$ = function () {
     this.invoke_sv8swh_k$();
@@ -30884,7 +30815,7 @@
   GlobalSnapshotManager.prototype.ensureStarted_sv8swh_k$ = function () {
     if (!this._started) {
       this._started = true;
-      this._removeWriteObserver = Companion_getInstance_15().registerGlobalWriteObserver_ejofcn_k$(this._globalWriteObserver);
+      this._removeWriteObserver = Companion_getInstance_14().registerGlobalWriteObserver_ejofcn_k$(this._globalWriteObserver);
     }};
   GlobalSnapshotManager.$metadata$ = {
     simpleName: 'GlobalSnapshotManager',
@@ -31078,8 +31009,8 @@
   var setInputValue;
   var setTextAreaDefaultValue;
   var setCheckedValue;
-  function name(_this_, value) {
-    return _this_.attr_jg38oy_k$('name', value);
+  function href(_this_, value) {
+    return _this_.attr_jg38oy_k$('href', value);
   }
   function alt(_this_, value) {
     return _this_.attr_jg38oy_k$('alt', value);
@@ -31089,9 +31020,6 @@
   }
   function type(_this_, value) {
     return _this_.attr_jg38oy_k$('type', value._typeStr);
-  }
-  function href(_this_, value) {
-    return _this_.attr_jg38oy_k$('href', value);
   }
   function _no_name_provided__114() {
   }
@@ -31169,8 +31097,8 @@
     return _no_name_provided_$factory_97();
   }
   var setClassList;
-  function Companion_18() {
-    Companion_instance_17 = this;
+  function Companion_17() {
+    Companion_instance_16 = this;
     this._CLASS = 'class';
     this._ID = 'id';
     this._HIDDEN = 'hidden';
@@ -31182,19 +31110,19 @@
     this._TAB_INDEX = 'tabindex';
     this._SPELLCHECK = 'spellcheck';
   }
-  Companion_18.$metadata$ = {
+  Companion_17.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_17;
-  function Companion_getInstance_17() {
-    if (Companion_instance_17 == null)
-      new Companion_18();
-    return Companion_instance_17;
+  var Companion_instance_16;
+  function Companion_getInstance_16() {
+    if (Companion_instance_16 == null)
+      new Companion_17();
+    return Companion_instance_16;
   }
   function AttrsBuilder() {
-    Companion_getInstance_17();
+    Companion_getInstance_16();
     EventsListenerBuilder.call(this);
     var tmp = this;
     var tmp$ret$0;
@@ -31234,7 +31162,7 @@
     return this.prop_uki2ek_k$(setClassList, classes);
   };
   AttrsBuilder.prototype.tabIndex_ha5a7z_k$ = function (value) {
-    Companion_getInstance_17();
+    Companion_getInstance_16();
     return this.attr_jg38oy_k$('tabindex', value.toString());
   };
   AttrsBuilder.prototype.attr_jg38oy_k$ = function (attr, value) {
@@ -31293,8 +31221,8 @@
   function setClassList$init$() {
     return _no_name_provided_$factory_98();
   }
-  function Companion_19() {
-    Companion_instance_18 = this;
+  function Companion_18() {
+    Companion_instance_17 = this;
     this._COPY = 'copy';
     this._CUT = 'cut';
     this._PASTE = 'paste';
@@ -31339,19 +31267,19 @@
     this._SUBMIT = 'submit';
     this._RESET = 'reset';
   }
-  Companion_19.$metadata$ = {
+  Companion_18.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_18;
-  function Companion_getInstance_18() {
-    if (Companion_instance_18 == null)
-      new Companion_19();
-    return Companion_instance_18;
+  var Companion_instance_17;
+  function Companion_getInstance_17() {
+    if (Companion_instance_17 == null)
+      new Companion_18();
+    return Companion_instance_17;
   }
   function EventsListenerBuilder() {
-    Companion_getInstance_18();
+    Companion_getInstance_17();
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -31365,22 +31293,22 @@
     return this._listeners;
   };
   EventsListenerBuilder.prototype.onClick_hxe0av_k$ = function (listener) {
-    Companion_getInstance_18();
+    Companion_getInstance_17();
     this._listeners.add_2bq_k$(new MouseEventListener('click', listener));
     Unit_getInstance();
   };
   EventsListenerBuilder.prototype.onMouseEnter_hxe0av_k$ = function (listener) {
-    Companion_getInstance_18();
+    Companion_getInstance_17();
     this._listeners.add_2bq_k$(new MouseEventListener('mouseenter', listener));
     Unit_getInstance();
   };
   EventsListenerBuilder.prototype.onMouseLeave_hxe0av_k$ = function (listener) {
-    Companion_getInstance_18();
+    Companion_getInstance_17();
     this._listeners.add_2bq_k$(new MouseEventListener('mouseleave', listener));
     Unit_getInstance();
   };
   EventsListenerBuilder.prototype.onKeyDown_gwp2we_k$ = function (listener) {
-    Companion_getInstance_18();
+    Companion_getInstance_17();
     this._listeners.add_2bq_k$(new KeyboardEventListener('keydown', listener));
     Unit_getInstance();
   };
@@ -31716,8 +31644,8 @@
       new Week();
     return Week_instance;
   }
-  function InputTypeWithStringValue(name_0) {
-    InputType.call(this, name_0);
+  function InputTypeWithStringValue(name) {
+    InputType.call(this, name);
     this._$stable_38 = 0;
   }
   InputTypeWithStringValue.prototype.inputValue_5tgw3j_k$ = function (event) {
@@ -31728,8 +31656,8 @@
     kind: 'class',
     interfaces: []
   };
-  function InputTypeWithUnitValue(name_0) {
-    InputType.call(this, name_0);
+  function InputTypeWithUnitValue(name) {
+    InputType.call(this, name);
     this._$stable_39 = 0;
   }
   InputTypeWithUnitValue.prototype.inputValue_xfv2uo_k$ = function (event) {
@@ -31744,8 +31672,8 @@
     kind: 'class',
     interfaces: []
   };
-  function InputTypeCheckedValue(name_0) {
-    InputType.call(this, name_0);
+  function InputTypeCheckedValue(name) {
+    InputType.call(this, name);
     this._$stable_40 = 0;
   }
   InputTypeCheckedValue.prototype.inputValue_5tgw3j_k$ = function (event) {
@@ -31782,8 +31710,8 @@
     kind: 'class',
     interfaces: []
   };
-  function InputTypeNumberValue(name_0) {
-    InputType.call(this, name_0);
+  function InputTypeNumberValue(name) {
+    InputType.call(this, name);
     this._$stable_41 = 0;
   }
   InputTypeNumberValue.prototype.inputValue_5tgw3j_k$ = function (event) {
@@ -31808,10 +31736,10 @@
     kind: 'class',
     interfaces: []
   };
-  function Companion_20() {
-    Companion_instance_19 = this;
+  function Companion_19() {
+    Companion_instance_18 = this;
   }
-  Companion_20.prototype.fromString_6wfw3l_k$ = function (type_0) {
+  Companion_19.prototype.fromString_6wfw3l_k$ = function (type_0) {
     var tmp0_subject = type_0;
     var tmp;
     switch (tmp0_subject) {
@@ -31880,19 +31808,19 @@
     }
     return tmp;
   };
-  Companion_20.$metadata$ = {
+  Companion_19.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_19;
-  function Companion_getInstance_19() {
-    if (Companion_instance_19 == null)
-      new Companion_20();
-    return Companion_instance_19;
+  var Companion_instance_18;
+  function Companion_getInstance_18() {
+    if (Companion_instance_18 == null)
+      new Companion_19();
+    return Companion_instance_18;
   }
   function InputType(typeStr) {
-    Companion_getInstance_19();
+    Companion_getInstance_18();
     this._typeStr = typeStr;
     this._$stable_42 = 0;
   }
@@ -31980,23 +31908,6 @@
     kind: 'class',
     interfaces: [NamedEventListener]
   };
-  function ChangeEventListener(inputType, listener) {
-    Companion_getInstance_18();
-    SyntheticEventListener.call(this, 'change', listener);
-    this._inputType_0 = inputType;
-  }
-  ChangeEventListener.prototype.handleEvent_xfv2uo_k$ = function (event) {
-    var value = this._inputType_0.inputValue_5tgw3j_k$(event);
-    this._get_listener__0_k$()(new SyntheticChangeEvent(value, event));
-  };
-  ChangeEventListener.prototype.handleEvent = function (event) {
-    return this.handleEvent_xfv2uo_k$(event);
-  };
-  ChangeEventListener.$metadata$ = {
-    simpleName: 'ChangeEventListener',
-    kind: 'class',
-    interfaces: []
-  };
   function MouseEventListener(event, listener) {
     SyntheticEventListener.call(this, event, listener);
   }
@@ -32049,11 +31960,11 @@
   };
   function InputAttrsBuilder(inputType) {
     AttrsBuilder.call(this);
-    this._inputType_1 = inputType;
+    this._inputType_0 = inputType;
     this._$stable_44 = 0;
   }
   InputAttrsBuilder.prototype.value_6wfw3l_k$ = function (value) {
-    var tmp0_subject = this._inputType_1;
+    var tmp0_subject = this._inputType_0;
     if (((equals_0(tmp0_subject, Checkbox_getInstance()) ? true : equals_0(tmp0_subject, Radio_getInstance())) ? true : equals_0(tmp0_subject, Hidden_getInstance())) ? true : equals_0(tmp0_subject, Submit_getInstance())) {
       this.attr_jg38oy_k$('value', value);
       Unit_getInstance();
@@ -32063,12 +31974,8 @@
   };
   InputAttrsBuilder.prototype.onInput_2uzpqg_k$ = function (listener) {
     var tmp = this._get_listeners__0_k$();
-    Companion_getInstance_18();
-    tmp.add_2bq_k$(new InputEventListener('input', this._inputType_1, listener));
-    Unit_getInstance();
-  };
-  InputAttrsBuilder.prototype.onChange_sl84ts_k$ = function (listener) {
-    this._get_listeners__0_k$().add_2bq_k$(new ChangeEventListener(this._inputType_1, listener));
+    Companion_getInstance_17();
+    tmp.add_2bq_k$(new InputEventListener('input', this._inputType_0, listener));
     Unit_getInstance();
   };
   InputAttrsBuilder.$metadata$ = {
@@ -32123,7 +32030,7 @@
       element.value = toString_0(controlledInputsValuesWeakMap.get(element));
     }}
   function restoreControlledInputState(inputElement) {
-    var type_0 = Companion_getInstance_19().fromString_6wfw3l_k$(inputElement.type);
+    var type_0 = Companion_getInstance_18().fromString_6wfw3l_k$(inputElement.type);
     if (controlledInputsValuesWeakMap.has(inputElement)) {
       if (equals_0(type_0, Radio_getInstance())) {
         var tmp0_safe_receiver = controlledRadioGroups.get_2bw_k$(inputElement.name);
@@ -32224,6 +32131,20 @@
     }
     return tmp$ret$0;
   }
+  function Companion_20() {
+    Companion_instance_19 = this;
+  }
+  Companion_20.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_19;
+  function Companion_getInstance_19() {
+    if (Companion_instance_19 == null)
+      new Companion_20();
+    return Companion_instance_19;
+  }
   function Companion_21() {
     Companion_instance_20 = this;
   }
@@ -32308,20 +32229,6 @@
       new Companion_26();
     return Companion_instance_25;
   }
-  function Companion_27() {
-    Companion_instance_26 = this;
-  }
-  Companion_27.$metadata$ = {
-    simpleName: 'Companion',
-    kind: 'object',
-    interfaces: []
-  };
-  var Companion_instance_26;
-  function Companion_getInstance_26() {
-    if (Companion_instance_26 == null)
-      new Companion_27();
-    return Companion_instance_26;
-  }
   function CSSNamedKeyframes() {
   }
   CSSNamedKeyframes.$metadata$ = {
@@ -32387,8 +32294,8 @@
     kind: 'class',
     interfaces: [Atomic]
   };
-  function MediaFeature(name_0, value) {
-    this._name_1 = name_0;
+  function MediaFeature(name, value) {
+    this._name_1 = name;
     this._value_9 = value;
     this._$stable_46 = 8;
   }
@@ -32549,25 +32456,25 @@
     kind: 'class',
     interfaces: [CSSStyleRuleBuilder]
   };
-  function Companion_28() {
-    Companion_instance_27 = this;
+  function Companion_27() {
+    Companion_instance_26 = this;
   }
-  Companion_28.$metadata$ = {
+  Companion_27.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_27;
-  function Companion_getInstance_27() {
-    if (Companion_instance_27 == null)
-      new Companion_28();
-    return Companion_instance_27;
+  var Companion_instance_26;
+  function Companion_getInstance_26() {
+    if (Companion_instance_26 == null)
+      new Companion_27();
+    return Companion_instance_26;
   }
   function _get_px_(_this_) {
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_px__0 = Companion_getInstance_27();
+      var tmp0__get_px__0 = Companion_getInstance_26();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -32587,7 +32494,7 @@
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_ms__0 = Companion_getInstance_27();
+      var tmp0__get_ms__0 = Companion_getInstance_26();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -32607,7 +32514,7 @@
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_rem__0 = Companion_getInstance_27();
+      var tmp0__get_rem__0 = Companion_getInstance_26();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -32627,7 +32534,7 @@
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_vh__0 = Companion_getInstance_27();
+      var tmp0__get_vh__0 = Companion_getInstance_26();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -32647,7 +32554,7 @@
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_vw__0 = Companion_getInstance_27();
+      var tmp0__get_vw__0 = Companion_getInstance_26();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -32667,7 +32574,7 @@
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_em__0 = Companion_getInstance_27();
+      var tmp0__get_em__0 = Companion_getInstance_26();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -32687,7 +32594,7 @@
     var tmp = numberToDouble(_this_);
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0__get_percent__0 = Companion_getInstance_27();
+      var tmp0__get_percent__0 = Companion_getInstance_26();
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -32764,12 +32671,12 @@
       new Color_0();
     return Color_instance_0;
   }
-  function Color_1(name_0) {
+  function Color_1(name) {
     var tmp$ret$1;
     $l$block_0: {
       var tmp$ret$0;
       $l$block: {
-        tmp$ret$0 = name_0;
+        tmp$ret$0 = name;
         break $l$block;
       }
       tmp$ret$1 = tmp$ret$0;
@@ -32931,8 +32838,8 @@
     kind: 'class',
     interfaces: [StyleBuilder, StyleHolder]
   };
-  function StylePropertyDeclaration(name_0, value) {
-    this._name_2 = name_0;
+  function StylePropertyDeclaration(name, value) {
+    this._name_2 = name;
     this._value_11 = value;
     this._$stable_53 = 8;
   }
@@ -33021,23 +32928,23 @@
   function StyleSheet_init_$Create$(rulesHolder, usePrefix, $mask0, $marker) {
     return StyleSheet_init_$Init$(rulesHolder, usePrefix, $mask0, $marker, Object.create(StyleSheet_0.prototype));
   }
-  function Companion_29() {
-    Companion_instance_28 = this;
+  function Companion_28() {
+    Companion_instance_27 = this;
     this._counter_0 = 0;
   }
-  Companion_29.$metadata$ = {
+  Companion_28.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_28;
-  function Companion_getInstance_28() {
-    if (Companion_instance_28 == null)
-      new Companion_29();
-    return Companion_instance_28;
+  var Companion_instance_27;
+  function Companion_getInstance_27() {
+    if (Companion_instance_27 == null)
+      new Companion_28();
+    return Companion_instance_27;
   }
   function StyleSheet_0(rulesHolder, usePrefix) {
-    Companion_getInstance_28();
+    Companion_getInstance_27();
     this._rulesHolder = rulesHolder;
     this._usePrefix = usePrefix;
     var tmp = this;
@@ -33508,9 +33415,9 @@
       new Universal();
     return Universal_instance;
   }
-  function PseudoClassInternal(name_0) {
+  function PseudoClassInternal(name) {
     CSSSelector.call(this);
-    this._name_3 = name_0;
+    this._name_3 = name;
   }
   PseudoClassInternal.prototype.equals = function (other) {
     var tmp;
@@ -33605,7 +33512,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = new ElementScopeImpl();
@@ -34130,7 +34037,7 @@
           var tmp$ret$1;
           $l$block_0: {
             var tmp;
-            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
               var tmp$ret$0;
               $l$block: {
                 var tmp0_return_8 = new DomDisposableEffectHolder(this);
@@ -34312,326 +34219,6 @@
     kind: 'class',
     interfaces: [ElementBuilder]
   };
-  function Img$composable(src_0, alt_0, attrs, $composer, $changed, $default) {
-    var alt_1 = {_v: alt_0};
-    var attrs_0 = {_v: attrs};
-    var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(587207521);
-    sourceInformation($composer_0, 'C(Img$composable)P(2)');
-    var $dirty = $changed;
-    if (!(($default & 1) === 0))
-      $dirty = $dirty | 6;
-    else if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(src_0) ? 4 : 2);
-    if (!(($default & 2) === 0))
-      $dirty = $dirty | 48;
-    else if (($changed & 112) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(alt_1._v) ? 32 : 16);
-    if (!(($default & 4) === 0))
-      $dirty = $dirty | 384;
-    else if (($changed & 896) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs_0._v) ? 256 : 128);
-    if (!(($dirty & 731 ^ 146) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      if (!(($default & 2) === 0))
-        alt_1._v = '';
-      if (!(($default & 4) === 0))
-        attrs_0._v = null;
-      var tmp$ret$3;
-      $l$block_2: {
-        var tmp0_remember$composable_0 = alt_1._v;
-        var tmp1_remember$composable_0 = attrs_0._v;
-        var tmp2_remember$composable_0 = _no_name_provided_$factory_114(src_0, alt_1, attrs_0);
-        var tmp3_remember$composable_0 = $composer_0;
-        var tmp4_remember$composable_0 = 14 & $dirty | 112 & $dirty | 896 & $dirty;
-        var $composer_1 = tmp3_remember$composable_0;
-        $composer_1.startReplaceableGroup_majfzk_k$(884180712);
-        sourceInformation($composer_1, 'C(remember$composable)P(1,2,3):Composables.kt#9igjgp');
-        var tmp$ret$2;
-        $l$block_1: {
-          var tmp1_cache_0_3 = $composer_1;
-          var tmp2_cache_0_4 = !!(!!($composer_1.changed_wi7j7l_k$(src_0) | $composer_1.changed_wi7j7l_k$(tmp0_remember$composable_0)) | $composer_1.changed_wi7j7l_k$(tmp1_remember$composable_0));
-          var tmp$ret$1;
-          $l$block_0: {
-            var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
-            {
-            }
-            var tmp$ret$0;
-            $l$block: {
-              var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
-                var value_2_2_6 = tmp2_remember$composable_0();
-                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
-                tmp = value_2_2_6;
-              } else {
-                tmp = tmp0_let_0_5;
-              }
-              tmp$ret$0 = tmp;
-              break $l$block;
-            }
-            tmp$ret$1 = tmp$ret$0;
-            break $l$block_0;
-          }
-          var tmp_0 = tmp$ret$1;
-          tmp$ret$2 = (tmp_0 == null ? true : isObject(tmp_0)) ? tmp_0 : THROW_CCE();
-          break $l$block_1;
-        }
-        var tmp0_2 = tmp$ret$2;
-        $composer_1.endReplaceableGroup_sv8swh_k$();
-        tmp$ret$3 = tmp0_2;
-        break $l$block_2;
-      }
-      TagElement$composable(Img, tmp$ret$3, null, $composer_0, 384);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
-    if (tmp0_safe_receiver === null)
-      null;
-    else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_115(src_0, alt_1, attrs_0, $changed, $default));
-    }
-  }
-  function H1$composable(attrs, content, $composer, $changed, $default) {
-    var attrs_0 = {_v: attrs};
-    var content_0 = {_v: content};
-    var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-2018873974);
-    sourceInformation($composer_0, 'C(H1$composable)');
-    var $dirty = $changed;
-    if (!(($default & 1) === 0))
-      $dirty = $dirty | 6;
-    else if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs_0._v) ? 4 : 2);
-    if (!(($default & 2) === 0))
-      $dirty = $dirty | 48;
-    else if (($changed & 112) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content_0._v) ? 32 : 16);
-    if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      if (!(($default & 1) === 0))
-        attrs_0._v = null;
-      if (!(($default & 2) === 0))
-        content_0._v = null;
-      TagElement$composable(H1, attrs_0._v, content_0._v, $composer_0, 112 & $dirty << 3 | 896 & $dirty << 3);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
-    if (tmp0_safe_receiver === null)
-      null;
-    else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_116(attrs_0, content_0, $changed, $default));
-    }
-  }
-  function Input$composable(type_0, attrs, $composer, $changed) {
-    var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1424843685);
-    sourceInformation($composer_0, 'C(Input$composable)P(1)');
-    var $dirty = $changed;
-    if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(type_0) ? 4 : 2);
-    if (($changed & 112) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs) ? 32 : 16);
-    if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp$ret$4;
-      $l$block_3: {
-        var tmp0_remember$composable_0 = $composer_0;
-        var $composer_1 = tmp0_remember$composable_0;
-        $composer_1.startReplaceableGroup_majfzk_k$(884179566);
-        sourceInformation($composer_1, 'C(remember$composable):Composables.kt#9igjgp');
-        var tmp$ret$3;
-        $l$block_2: {
-          var tmp1_cache_0_3 = $composer_1;
-          var tmp$ret$2;
-          $l$block_1: {
-            var tmp0_let_0_4 = tmp1_cache_0_3.rememberedValue_0_k$();
-            {
-            }
-            var tmp$ret$1;
-            $l$block_0: {
-              var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
-                var tmp$ret$0;
-                $l$block: {
-                  var tmp0_return_7 = mutableStateOf$default(0, null, 2, null);
-                  tmp$ret$0 = tmp0_return_7;
-                  break $l$block;
-                }
-                var value_2_2_5 = tmp$ret$0;
-                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_5);
-                tmp = value_2_2_5;
-              } else {
-                tmp = tmp0_let_0_4;
-              }
-              tmp$ret$1 = tmp;
-              break $l$block_0;
-            }
-            tmp$ret$2 = tmp$ret$1;
-            break $l$block_1;
-          }
-          var tmp_0 = tmp$ret$2;
-          tmp$ret$3 = (tmp_0 == null ? true : isObject(tmp_0)) ? tmp_0 : THROW_CCE();
-          break $l$block_2;
-        }
-        var tmp0_2 = tmp$ret$3;
-        $composer_1.endReplaceableGroup_sv8swh_k$();
-        tmp$ret$4 = tmp0_2;
-        break $l$block_3;
-      }
-      var keyForRestoringControlledState = tmp$ret$4;
-      var tmp$ret$8;
-      $l$block_7: {
-        var tmp1_remember$composable_0 = _no_name_provided_$factory_117(type_0, attrs, keyForRestoringControlledState);
-        var tmp2_remember$composable_0 = $composer_0;
-        var tmp3_remember$composable_0 = 14 & $dirty | 896 & $dirty << 3;
-        var $composer_1_0 = tmp2_remember$composable_0;
-        $composer_1_0.startReplaceableGroup_majfzk_k$(884180712);
-        sourceInformation($composer_1_0, 'C(remember$composable)P(1,2,3):Composables.kt#9igjgp');
-        var tmp$ret$7;
-        $l$block_6: {
-          var tmp1_cache_0_3_0 = $composer_1_0;
-          var tmp2_cache_0_4 = !!(!!($composer_1_0.changed_wi7j7l_k$(type_0) | $composer_1_0.changed_wi7j7l_k$(keyForRestoringControlledState)) | $composer_1_0.changed_wi7j7l_k$(attrs));
-          var tmp$ret$6;
-          $l$block_5: {
-            var tmp0_let_0_5 = tmp1_cache_0_3_0.rememberedValue_0_k$();
-            {
-            }
-            var tmp$ret$5;
-            $l$block_4: {
-              var tmp_1;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
-                var value_2_2_6 = tmp1_remember$composable_0();
-                tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6);
-                tmp_1 = value_2_2_6;
-              } else {
-                tmp_1 = tmp0_let_0_5;
-              }
-              tmp$ret$5 = tmp_1;
-              break $l$block_4;
-            }
-            tmp$ret$6 = tmp$ret$5;
-            break $l$block_5;
-          }
-          var tmp_2 = tmp$ret$6;
-          tmp$ret$7 = (tmp_2 == null ? true : isObject(tmp_2)) ? tmp_2 : THROW_CCE();
-          break $l$block_6;
-        }
-        var tmp0_2_0 = tmp$ret$7;
-        $composer_1_0.endReplaceableGroup_sv8swh_k$();
-        tmp$ret$8 = tmp0_2_0;
-        break $l$block_7;
-      }
-      var tmp_3 = tmp$ret$8;
-      var tmp_4 = $composer_0;
-      TagElement$composable(Input, tmp_3, composableLambda(tmp_4, -819916666, true, _no_name_provided_$factory_118(type_0, keyForRestoringControlledState)), $composer_0, 384);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
-    if (tmp0_safe_receiver === null)
-      null;
-    else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_119(type_0, attrs, $changed));
-    }
-  }
-  function Span$composable(attrs, content, $composer, $changed, $default) {
-    var attrs_0 = {_v: attrs};
-    var content_0 = {_v: content};
-    var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1070707096);
-    sourceInformation($composer_0, 'C(Span$composable)');
-    var $dirty = $changed;
-    if (!(($default & 1) === 0))
-      $dirty = $dirty | 6;
-    else if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs_0._v) ? 4 : 2);
-    if (!(($default & 2) === 0))
-      $dirty = $dirty | 48;
-    else if (($changed & 112) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content_0._v) ? 32 : 16);
-    if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      if (!(($default & 1) === 0))
-        attrs_0._v = null;
-      if (!(($default & 2) === 0))
-        content_0._v = null;
-      TagElement$composable(Span, attrs_0._v, content_0._v, $composer_0, 112 & $dirty << 3 | 896 & $dirty << 3);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
-    if (tmp0_safe_receiver === null)
-      null;
-    else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_120(attrs_0, content_0, $changed, $default));
-    }
-  }
-  function Text$composable(value, $composer, $changed) {
-    var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1487809921);
-    sourceInformation($composer_0, 'C(Text$composable)');
-    var $dirty = $changed;
-    if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(value) ? 4 : 2);
-    if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      {
-        var tmp0_ComposeNode$composable_0 = _no_name_provided_$factory_121();
-        var tmp1_ComposeNode$composable_0 = $composer_0;
-        var $composer_1 = tmp1_ComposeNode$composable_0;
-        $composer_1.startReplaceableGroup_majfzk_k$(-440989678);
-        sourceInformation($composer_1, 'C(ComposeNode$composable):Composables.kt#9igjgp');
-        var tmp = $composer_1._get_applier__0_k$();
-        if (!(tmp instanceof DomApplier))
-          invalidApplier();
-        else {
-        }
-        $composer_1.startNode_sv8swh_k$();
-        if ($composer_1._get_inserting__0_k$()) {
-          var tmp_0 = $composer_1;
-          tmp_0.createNode_469i9b_k$(_no_name_provided_$factory_122(tmp0_ComposeNode$composable_0));
-        } else {
-          $composer_1.useNode_sv8swh_k$();
-        }
-        {
-          var tmp2__anonymous__3 = _Updater___init__impl_($composer_1);
-          Updater__set_impl(tmp2__anonymous__3, value, _no_name_provided_$factory_123());
-        }
-        $composer_1.endNode_sv8swh_k$();
-        $composer_1.endReplaceableGroup_sv8swh_k$();
-      }
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
-    if (tmp0_safe_receiver === null)
-      null;
-    else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_124(value, $changed));
-    }
-  }
-  function Div$composable(attrs, content, $composer, $changed, $default) {
-    var attrs_0 = {_v: attrs};
-    var content_0 = {_v: content};
-    var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-739431656);
-    sourceInformation($composer_0, 'C(Div$composable)');
-    var $dirty = $changed;
-    if (!(($default & 1) === 0))
-      $dirty = $dirty | 6;
-    else if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs_0._v) ? 4 : 2);
-    if (!(($default & 2) === 0))
-      $dirty = $dirty | 48;
-    else if (($changed & 112) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content_0._v) ? 32 : 16);
-    if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      if (!(($default & 1) === 0))
-        attrs_0._v = null;
-      if (!(($default & 2) === 0))
-        content_0._v = null;
-      TagElement$composable(Div, attrs_0._v, content_0._v, $composer_0, 112 & $dirty << 3 | 896 & $dirty << 3);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
-    if (tmp0_safe_receiver === null)
-      null;
-    else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_125(attrs_0, content_0, $changed, $default));
-    }
-  }
   function A$composable(href_0, attrs, content, $composer, $changed, $default) {
     var href_1 = {_v: href_0};
     var attrs_0 = {_v: attrs};
@@ -34663,7 +34250,7 @@
       $l$block_2: {
         var tmp0_remember$composable_0 = href_1._v;
         var tmp1_remember$composable_0 = attrs_0._v;
-        var tmp2_remember$composable_0 = _no_name_provided_$factory_126(href_1, attrs_0);
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_114(href_1, attrs_0);
         var tmp3_remember$composable_0 = $composer_0;
         var tmp4_remember$composable_0 = 14 & $dirty | 112 & $dirty;
         var $composer_1 = tmp3_remember$composable_0;
@@ -34681,7 +34268,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp2_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -34710,7 +34297,327 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_127(href_1, attrs_0, content_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_115(href_1, attrs_0, content_0, $changed, $default));
+    }
+  }
+  function Img$composable(src_0, alt_0, attrs, $composer, $changed, $default) {
+    var alt_1 = {_v: alt_0};
+    var attrs_0 = {_v: attrs};
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(587207521);
+    sourceInformation($composer_0, 'C(Img$composable)P(2)');
+    var $dirty = $changed;
+    if (!(($default & 1) === 0))
+      $dirty = $dirty | 6;
+    else if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(src_0) ? 4 : 2);
+    if (!(($default & 2) === 0))
+      $dirty = $dirty | 48;
+    else if (($changed & 112) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(alt_1._v) ? 32 : 16);
+    if (!(($default & 4) === 0))
+      $dirty = $dirty | 384;
+    else if (($changed & 896) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs_0._v) ? 256 : 128);
+    if (!(($dirty & 731 ^ 146) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      if (!(($default & 2) === 0))
+        alt_1._v = '';
+      if (!(($default & 4) === 0))
+        attrs_0._v = null;
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0_remember$composable_0 = alt_1._v;
+        var tmp1_remember$composable_0 = attrs_0._v;
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_116(src_0, alt_1, attrs_0);
+        var tmp3_remember$composable_0 = $composer_0;
+        var tmp4_remember$composable_0 = 14 & $dirty | 112 & $dirty | 896 & $dirty;
+        var $composer_1 = tmp3_remember$composable_0;
+        $composer_1.startReplaceableGroup_majfzk_k$(884180712);
+        sourceInformation($composer_1, 'C(remember$composable)P(1,2,3):Composables.kt#9igjgp');
+        var tmp$ret$2;
+        $l$block_1: {
+          var tmp1_cache_0_3 = $composer_1;
+          var tmp2_cache_0_4 = !!(!!($composer_1.changed_wi7j7l_k$(src_0) | $composer_1.changed_wi7j7l_k$(tmp0_remember$composable_0)) | $composer_1.changed_wi7j7l_k$(tmp1_remember$composable_0));
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$0;
+            $l$block: {
+              var tmp;
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
+                var value_2_2_6 = tmp2_remember$composable_0();
+                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
+                tmp = value_2_2_6;
+              } else {
+                tmp = tmp0_let_0_5;
+              }
+              tmp$ret$0 = tmp;
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0;
+            break $l$block_0;
+          }
+          var tmp_0 = tmp$ret$1;
+          tmp$ret$2 = (tmp_0 == null ? true : isObject(tmp_0)) ? tmp_0 : THROW_CCE();
+          break $l$block_1;
+        }
+        var tmp0_2 = tmp$ret$2;
+        $composer_1.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$3 = tmp0_2;
+        break $l$block_2;
+      }
+      TagElement$composable(Img, tmp$ret$3, null, $composer_0, 384);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_117(src_0, alt_1, attrs_0, $changed, $default));
+    }
+  }
+  function H1$composable(attrs, content, $composer, $changed, $default) {
+    var attrs_0 = {_v: attrs};
+    var content_0 = {_v: content};
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-2018873974);
+    sourceInformation($composer_0, 'C(H1$composable)');
+    var $dirty = $changed;
+    if (!(($default & 1) === 0))
+      $dirty = $dirty | 6;
+    else if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs_0._v) ? 4 : 2);
+    if (!(($default & 2) === 0))
+      $dirty = $dirty | 48;
+    else if (($changed & 112) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content_0._v) ? 32 : 16);
+    if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      if (!(($default & 1) === 0))
+        attrs_0._v = null;
+      if (!(($default & 2) === 0))
+        content_0._v = null;
+      TagElement$composable(H1, attrs_0._v, content_0._v, $composer_0, 112 & $dirty << 3 | 896 & $dirty << 3);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_118(attrs_0, content_0, $changed, $default));
+    }
+  }
+  function Input$composable(type_0, attrs, $composer, $changed) {
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1424843685);
+    sourceInformation($composer_0, 'C(Input$composable)P(1)');
+    var $dirty = $changed;
+    if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(type_0) ? 4 : 2);
+    if (($changed & 112) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs) ? 32 : 16);
+    if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var tmp$ret$4;
+      $l$block_3: {
+        var tmp0_remember$composable_0 = $composer_0;
+        var $composer_1 = tmp0_remember$composable_0;
+        $composer_1.startReplaceableGroup_majfzk_k$(884179566);
+        sourceInformation($composer_1, 'C(remember$composable):Composables.kt#9igjgp');
+        var tmp$ret$3;
+        $l$block_2: {
+          var tmp1_cache_0_3 = $composer_1;
+          var tmp$ret$2;
+          $l$block_1: {
+            var tmp0_let_0_4 = tmp1_cache_0_3.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$1;
+            $l$block_0: {
+              var tmp;
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
+                var tmp$ret$0;
+                $l$block: {
+                  var tmp0_return_7 = mutableStateOf$default(0, null, 2, null);
+                  tmp$ret$0 = tmp0_return_7;
+                  break $l$block;
+                }
+                var value_2_2_5 = tmp$ret$0;
+                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_5);
+                tmp = value_2_2_5;
+              } else {
+                tmp = tmp0_let_0_4;
+              }
+              tmp$ret$1 = tmp;
+              break $l$block_0;
+            }
+            tmp$ret$2 = tmp$ret$1;
+            break $l$block_1;
+          }
+          var tmp_0 = tmp$ret$2;
+          tmp$ret$3 = (tmp_0 == null ? true : isObject(tmp_0)) ? tmp_0 : THROW_CCE();
+          break $l$block_2;
+        }
+        var tmp0_2 = tmp$ret$3;
+        $composer_1.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$4 = tmp0_2;
+        break $l$block_3;
+      }
+      var keyForRestoringControlledState = tmp$ret$4;
+      var tmp$ret$8;
+      $l$block_7: {
+        var tmp1_remember$composable_0 = _no_name_provided_$factory_119(type_0, attrs, keyForRestoringControlledState);
+        var tmp2_remember$composable_0 = $composer_0;
+        var tmp3_remember$composable_0 = 14 & $dirty | 896 & $dirty << 3;
+        var $composer_1_0 = tmp2_remember$composable_0;
+        $composer_1_0.startReplaceableGroup_majfzk_k$(884180712);
+        sourceInformation($composer_1_0, 'C(remember$composable)P(1,2,3):Composables.kt#9igjgp');
+        var tmp$ret$7;
+        $l$block_6: {
+          var tmp1_cache_0_3_0 = $composer_1_0;
+          var tmp2_cache_0_4 = !!(!!($composer_1_0.changed_wi7j7l_k$(type_0) | $composer_1_0.changed_wi7j7l_k$(keyForRestoringControlledState)) | $composer_1_0.changed_wi7j7l_k$(attrs));
+          var tmp$ret$6;
+          $l$block_5: {
+            var tmp0_let_0_5 = tmp1_cache_0_3_0.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$5;
+            $l$block_4: {
+              var tmp_1;
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
+                var value_2_2_6 = tmp1_remember$composable_0();
+                tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6);
+                tmp_1 = value_2_2_6;
+              } else {
+                tmp_1 = tmp0_let_0_5;
+              }
+              tmp$ret$5 = tmp_1;
+              break $l$block_4;
+            }
+            tmp$ret$6 = tmp$ret$5;
+            break $l$block_5;
+          }
+          var tmp_2 = tmp$ret$6;
+          tmp$ret$7 = (tmp_2 == null ? true : isObject(tmp_2)) ? tmp_2 : THROW_CCE();
+          break $l$block_6;
+        }
+        var tmp0_2_0 = tmp$ret$7;
+        $composer_1_0.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$8 = tmp0_2_0;
+        break $l$block_7;
+      }
+      var tmp_3 = tmp$ret$8;
+      var tmp_4 = $composer_0;
+      TagElement$composable(Input, tmp_3, composableLambda(tmp_4, -819916666, true, _no_name_provided_$factory_120(type_0, keyForRestoringControlledState)), $composer_0, 384);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_121(type_0, attrs, $changed));
+    }
+  }
+  function Span$composable(attrs, content, $composer, $changed, $default) {
+    var attrs_0 = {_v: attrs};
+    var content_0 = {_v: content};
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1070707096);
+    sourceInformation($composer_0, 'C(Span$composable)');
+    var $dirty = $changed;
+    if (!(($default & 1) === 0))
+      $dirty = $dirty | 6;
+    else if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs_0._v) ? 4 : 2);
+    if (!(($default & 2) === 0))
+      $dirty = $dirty | 48;
+    else if (($changed & 112) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content_0._v) ? 32 : 16);
+    if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      if (!(($default & 1) === 0))
+        attrs_0._v = null;
+      if (!(($default & 2) === 0))
+        content_0._v = null;
+      TagElement$composable(Span, attrs_0._v, content_0._v, $composer_0, 112 & $dirty << 3 | 896 & $dirty << 3);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_122(attrs_0, content_0, $changed, $default));
+    }
+  }
+  function Text$composable(value, $composer, $changed) {
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1487809921);
+    sourceInformation($composer_0, 'C(Text$composable)');
+    var $dirty = $changed;
+    if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(value) ? 4 : 2);
+    if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      {
+        var tmp0_ComposeNode$composable_0 = _no_name_provided_$factory_123();
+        var tmp1_ComposeNode$composable_0 = $composer_0;
+        var $composer_1 = tmp1_ComposeNode$composable_0;
+        $composer_1.startReplaceableGroup_majfzk_k$(-440989678);
+        sourceInformation($composer_1, 'C(ComposeNode$composable):Composables.kt#9igjgp');
+        var tmp = $composer_1._get_applier__0_k$();
+        if (!(tmp instanceof DomApplier))
+          invalidApplier();
+        else {
+        }
+        $composer_1.startNode_sv8swh_k$();
+        if ($composer_1._get_inserting__0_k$()) {
+          var tmp_0 = $composer_1;
+          tmp_0.createNode_469i9b_k$(_no_name_provided_$factory_124(tmp0_ComposeNode$composable_0));
+        } else {
+          $composer_1.useNode_sv8swh_k$();
+        }
+        {
+          var tmp2__anonymous__3 = _Updater___init__impl_($composer_1);
+          Updater__set_impl(tmp2__anonymous__3, value, _no_name_provided_$factory_125());
+        }
+        $composer_1.endNode_sv8swh_k$();
+        $composer_1.endReplaceableGroup_sv8swh_k$();
+      }
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_126(value, $changed));
+    }
+  }
+  function Div$composable(attrs, content, $composer, $changed, $default) {
+    var attrs_0 = {_v: attrs};
+    var content_0 = {_v: content};
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-739431656);
+    sourceInformation($composer_0, 'C(Div$composable)');
+    var $dirty = $changed;
+    if (!(($default & 1) === 0))
+      $dirty = $dirty | 6;
+    else if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(attrs_0._v) ? 4 : 2);
+    if (!(($default & 2) === 0))
+      $dirty = $dirty | 48;
+    else if (($changed & 112) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content_0._v) ? 32 : 16);
+    if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      if (!(($default & 1) === 0))
+        attrs_0._v = null;
+      if (!(($default & 2) === 0))
+        content_0._v = null;
+      TagElement$composable(Div, attrs_0._v, content_0._v, $composer_0, 112 & $dirty << 3 | 896 & $dirty << 3);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_127(attrs_0, content_0, $changed, $default));
     }
   }
   function Style$composable(applyAttrs, cssRules, $composer, $changed, $default) {
@@ -34751,7 +34658,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -34785,8 +34692,14 @@
       tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_130(applyAttrs_0, cssRules, $changed, $default));
     }
   }
+  function A$composable$lambda($href, $attrs) {
+    return _no_name_provided_$factory_131($href, $attrs);
+  }
+  function A$composable$lambda_0($href, $attrs, $content, $$changed, $$default, $composer, $force) {
+    return A$composable($href._v, $attrs._v, $content._v, $composer, $$changed | 1, $$default);
+  }
   function Img$composable$lambda($src, $alt, $attrs) {
-    return _no_name_provided_$factory_131($src, $alt, $attrs);
+    return _no_name_provided_$factory_132($src, $alt, $attrs);
   }
   function Img$composable$lambda_0($src, $alt, $attrs, $$changed, $$default, $composer, $force) {
     return Img$composable($src, $alt._v, $attrs._v, $composer, $$changed | 1, $$default);
@@ -34795,7 +34708,7 @@
     return H1$composable($attrs._v, $content._v, $composer, $$changed | 1, $$default);
   }
   function Input$composable$lambda($type, $attrs, $keyForRestoringControlledState) {
-    return _no_name_provided_$factory_132($type, $attrs, $keyForRestoringControlledState);
+    return _no_name_provided_$factory_133($type, $attrs, $keyForRestoringControlledState);
   }
   function Input$composable$lambda_0($type, $attrs, $$changed, $composer, $force) {
     return Input$composable($type, $attrs, $composer, $$changed | 1);
@@ -34808,12 +34721,6 @@
   }
   function Div$composable$lambda($attrs, $content, $$changed, $$default, $composer, $force) {
     return Div$composable($attrs._v, $content._v, $composer, $$changed | 1, $$default);
-  }
-  function A$composable$lambda($href, $attrs) {
-    return _no_name_provided_$factory_133($href, $attrs);
-  }
-  function A$composable$lambda_0($href, $attrs, $content, $$changed, $$default, $composer, $force) {
-    return A$composable($href._v, $attrs._v, $content._v, $composer, $$changed | 1, $$default);
   }
   function Style$composable$lambda($applyAttrs) {
     return _no_name_provided_$factory_134($applyAttrs);
@@ -34849,27 +34756,26 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__133($src, $alt, $attrs) {
-    this._$src = $src;
-    this._$alt = $alt;
+  function _no_name_provided__133($href, $attrs) {
+    this._$href = $href;
     this._$attrs = $attrs;
   }
   _no_name_provided__133.prototype.invoke_0_k$ = function () {
-    return Img$composable$lambda(this._$src, this._$alt, this._$attrs);
+    return A$composable$lambda(this._$href, this._$attrs);
   };
   _no_name_provided__133.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__134($src, $alt, $attrs, $$changed, $$default) {
-    this._$src_0 = $src;
-    this._$alt_0 = $alt;
+  function _no_name_provided__134($href, $attrs, $content, $$changed, $$default) {
+    this._$href_0 = $href;
     this._$attrs_0 = $attrs;
+    this._$content_2 = $content;
     this._$$changed_0 = $$changed;
     this._$$default = $$default;
   }
   _no_name_provided__134.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Img$composable$lambda_0(this._$src_0, this._$alt_0, this._$attrs_0, this._$$changed_0, this._$$default, p0, p1);
+    return A$composable$lambda_0(this._$href_0, this._$attrs_0, this._$content_2, this._$$changed_0, this._$$default, p0, p1);
   };
   _no_name_provided__134.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -34880,41 +34786,72 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__135($attrs, $content, $$changed, $$default) {
+  function _no_name_provided__135($src, $alt, $attrs) {
+    this._$src = $src;
+    this._$alt = $alt;
     this._$attrs_1 = $attrs;
-    this._$content_2 = $content;
-    this._$$changed_1 = $$changed;
-    this._$$default_0 = $$default;
   }
-  _no_name_provided__135.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return H1$composable$lambda(this._$attrs_1, this._$content_2, this._$$changed_1, this._$$default_0, p0, p1);
-  };
-  _no_name_provided__135.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__135.prototype.invoke_0_k$ = function () {
+    return Img$composable$lambda(this._$src, this._$alt, this._$attrs_1);
   };
   _no_name_provided__135.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__136($type, $attrs, $keyForRestoringControlledState) {
-    this._$type = $type;
+  function _no_name_provided__136($src, $alt, $attrs, $$changed, $$default) {
+    this._$src_0 = $src;
+    this._$alt_0 = $alt;
     this._$attrs_2 = $attrs;
-    this._$keyForRestoringControlledState = $keyForRestoringControlledState;
+    this._$$changed_1 = $$changed;
+    this._$$default_0 = $$default;
   }
-  _no_name_provided__136.prototype.invoke_0_k$ = function () {
-    return Input$composable$lambda(this._$type, this._$attrs_2, this._$keyForRestoringControlledState);
+  _no_name_provided__136.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return Img$composable$lambda_0(this._$src_0, this._$alt_0, this._$attrs_2, this._$$changed_1, this._$$default_0, p0, p1);
+  };
+  _no_name_provided__136.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__136.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__137($type, $keyForRestoringControlledState) {
+  function _no_name_provided__137($attrs, $content, $$changed, $$default) {
+    this._$attrs_3 = $attrs;
+    this._$content_3 = $content;
+    this._$$changed_2 = $$changed;
+    this._$$default_1 = $$default;
+  }
+  _no_name_provided__137.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return H1$composable$lambda(this._$attrs_3, this._$content_3, this._$$changed_2, this._$$default_1, p0, p1);
+  };
+  _no_name_provided__137.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__137.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__138($type, $attrs, $keyForRestoringControlledState) {
+    this._$type = $type;
+    this._$attrs_4 = $attrs;
+    this._$keyForRestoringControlledState = $keyForRestoringControlledState;
+  }
+  _no_name_provided__138.prototype.invoke_0_k$ = function () {
+    return Input$composable$lambda(this._$type, this._$attrs_4, this._$keyForRestoringControlledState);
+  };
+  _no_name_provided__138.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__139($type, $keyForRestoringControlledState) {
     this._$type_0 = $type;
     this._$keyForRestoringControlledState_0 = $keyForRestoringControlledState;
   }
-  _no_name_provided__137.prototype.invoke_4423ec_k$ = function ($this$TagElement, $composer, $changed) {
+  _no_name_provided__139.prototype.invoke_4423ec_k$ = function ($this$TagElement, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
@@ -34928,65 +34865,46 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__137.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__139.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_4423ec_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__137.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__138($type, $attrs, $$changed) {
-    this._$type_1 = $type;
-    this._$attrs_3 = $attrs;
-    this._$$changed_2 = $$changed;
-  }
-  _no_name_provided__138.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Input$composable$lambda_0(this._$type_1, this._$attrs_3, this._$$changed_2, p0, p1);
-  };
-  _no_name_provided__138.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__138.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__139($attrs, $content, $$changed, $$default) {
-    this._$attrs_4 = $attrs;
-    this._$content_3 = $content;
-    this._$$changed_3 = $$changed;
-    this._$$default_1 = $$default;
-  }
-  _no_name_provided__139.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Span$composable$lambda(this._$attrs_4, this._$content_3, this._$$changed_3, this._$$default_1, p0, p1);
-  };
-  _no_name_provided__139.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__139.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__140() {
+  function _no_name_provided__140($type, $attrs, $$changed) {
+    this._$type_1 = $type;
+    this._$attrs_5 = $attrs;
+    this._$$changed_3 = $$changed;
   }
-  _no_name_provided__140.prototype.invoke_0_k$ = function () {
-    return new DomNodeWrapper(document.createTextNode(''));
+  _no_name_provided__140.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return Input$composable$lambda_0(this._$type_1, this._$attrs_5, this._$$changed_3, p0, p1);
+  };
+  _no_name_provided__140.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__140.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__141($tmp0_ComposeNode$composable_0) {
-    this._$tmp0_ComposeNode$composable_0 = $tmp0_ComposeNode$composable_0;
+  function _no_name_provided__141($attrs, $content, $$changed, $$default) {
+    this._$attrs_6 = $attrs;
+    this._$content_4 = $content;
+    this._$$changed_4 = $$changed;
+    this._$$default_2 = $$default;
   }
-  _no_name_provided__141.prototype.invoke_0_k$ = function () {
-    return this._$tmp0_ComposeNode$composable_0();
+  _no_name_provided__141.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return Span$composable$lambda(this._$attrs_6, this._$content_4, this._$$changed_4, this._$$default_2, p0, p1);
+  };
+  _no_name_provided__141.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__141.$metadata$ = {
     kind: 'class',
@@ -34994,73 +34912,62 @@
   };
   function _no_name_provided__142() {
   }
-  _no_name_provided__142.prototype.invoke_51nd1v_k$ = function ($this$set, value) {
-    var tmp = $this$set._get_node__0_k$();
-    (tmp instanceof Text ? tmp : THROW_CCE()).data = value;
-  };
-  _no_name_provided__142.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = p1 instanceof DomNodeWrapper ? p1 : THROW_CCE();
-    this.invoke_51nd1v_k$(tmp, (!(p2 == null) ? typeof p2 === 'string' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__142.prototype.invoke_0_k$ = function () {
+    return new DomNodeWrapper(document.createTextNode(''));
   };
   _no_name_provided__142.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__143($value, $$changed) {
-    this._$value_2 = $value;
-    this._$$changed_4 = $$changed;
+  function _no_name_provided__143($tmp0_ComposeNode$composable_0) {
+    this._$tmp0_ComposeNode$composable_0 = $tmp0_ComposeNode$composable_0;
   }
-  _no_name_provided__143.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Text$composable$lambda(this._$value_2, this._$$changed_4, p0, p1);
-  };
-  _no_name_provided__143.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__143.prototype.invoke_0_k$ = function () {
+    return this._$tmp0_ComposeNode$composable_0();
   };
   _no_name_provided__143.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__144($attrs, $content, $$changed, $$default) {
-    this._$attrs_5 = $attrs;
-    this._$content_4 = $content;
-    this._$$changed_5 = $$changed;
-    this._$$default_2 = $$default;
+  function _no_name_provided__144() {
   }
-  _no_name_provided__144.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Div$composable$lambda(this._$attrs_5, this._$content_4, this._$$changed_5, this._$$default_2, p0, p1);
+  _no_name_provided__144.prototype.invoke_51nd1v_k$ = function ($this$set, value) {
+    var tmp = $this$set._get_node__0_k$();
+    (tmp instanceof Text ? tmp : THROW_CCE()).data = value;
   };
   _no_name_provided__144.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    var tmp = p1 instanceof DomNodeWrapper ? p1 : THROW_CCE();
+    this.invoke_51nd1v_k$(tmp, (!(p2 == null) ? typeof p2 === 'string' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__144.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__145($href, $attrs) {
-    this._$href = $href;
-    this._$attrs_6 = $attrs;
+  function _no_name_provided__145($value, $$changed) {
+    this._$value_2 = $value;
+    this._$$changed_5 = $$changed;
   }
-  _no_name_provided__145.prototype.invoke_0_k$ = function () {
-    return A$composable$lambda(this._$href, this._$attrs_6);
+  _no_name_provided__145.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return Text$composable$lambda(this._$value_2, this._$$changed_5, p0, p1);
+  };
+  _no_name_provided__145.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__145.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__146($href, $attrs, $content, $$changed, $$default) {
-    this._$href_0 = $href;
+  function _no_name_provided__146($attrs, $content, $$changed, $$default) {
     this._$attrs_7 = $attrs;
     this._$content_5 = $content;
     this._$$changed_6 = $$changed;
     this._$$default_3 = $$default;
   }
   _no_name_provided__146.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return A$composable$lambda_0(this._$href_0, this._$attrs_7, this._$content_5, this._$$changed_6, this._$$default_3, p0, p1);
+    return Div$composable$lambda(this._$attrs_7, this._$content_5, this._$$changed_6, this._$$default_3, p0, p1);
   };
   _no_name_provided__146.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -35167,73 +35074,73 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__152($src, $alt, $attrs) {
-    this._$src_1 = $src;
-    this._$alt_1 = $alt;
+  function _no_name_provided__152($href, $attrs) {
+    this._$href_1 = $href;
     this._$attrs_8 = $attrs;
   }
-  _no_name_provided__152.prototype.invoke_ksytq9_k$ = function ($this$TagElement) {
-    alt(src($this$TagElement, this._$src_1), this._$alt_1._v);
-    Unit_getInstance();
-    if (!(this._$attrs_8._v == null)) {
+  _no_name_provided__152.prototype.invoke_m2exwv_k$ = function ($this$TagElement) {
+    if (!(this._$href_1._v == null)) {
+      href($this$TagElement, this._$href_1._v);
+      Unit_getInstance();
+    }if (!(this._$attrs_8._v == null)) {
       this._$attrs_8._v($this$TagElement);
     }};
   _no_name_provided__152.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_ksytq9_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
+    this.invoke_m2exwv_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__152.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__153($keyForRestoringControlledState) {
-    this._$keyForRestoringControlledState_1 = $keyForRestoringControlledState;
+  function _no_name_provided__153($src, $alt, $attrs) {
+    this._$src_1 = $src;
+    this._$alt_1 = $alt;
+    this._$attrs_9 = $attrs;
   }
-  _no_name_provided__153.prototype.invoke_629ikt_k$ = function (it) {
-    this._$keyForRestoringControlledState_1._set_value__iav7o_k$(this._$keyForRestoringControlledState_1._get_value__0_k$() + 1 | 0);
-  };
+  _no_name_provided__153.prototype.invoke_ksytq9_k$ = function ($this$TagElement) {
+    alt(src($this$TagElement, this._$src_1), this._$alt_1._v);
+    Unit_getInstance();
+    if (!(this._$attrs_9._v == null)) {
+      this._$attrs_9._v($this$TagElement);
+    }};
   _no_name_provided__153.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_629ikt_k$(p1 instanceof SyntheticInputEvent ? p1 : THROW_CCE());
+    this.invoke_ksytq9_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__153.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__154($type, $attrs, $keyForRestoringControlledState) {
-    this._$type_2 = $type;
-    this._$attrs_9 = $attrs;
-    this._$keyForRestoringControlledState_2 = $keyForRestoringControlledState;
+  function _no_name_provided__154($keyForRestoringControlledState) {
+    this._$keyForRestoringControlledState_1 = $keyForRestoringControlledState;
   }
-  _no_name_provided__154.prototype.invoke_v5d180_k$ = function ($this$TagElement) {
-    var inputAttrsBuilder = new InputAttrsBuilder(this._$type_2);
-    type(inputAttrsBuilder, this._$type_2);
-    Unit_getInstance();
-    inputAttrsBuilder.onInput_2uzpqg_k$(_no_name_provided_$factory_137(this._$keyForRestoringControlledState_2));
-    this._$attrs_9(inputAttrsBuilder);
-    $this$TagElement.copyFrom_wgjdvi_k$(inputAttrsBuilder);
+  _no_name_provided__154.prototype.invoke_629ikt_k$ = function (it) {
+    this._$keyForRestoringControlledState_1._set_value__iav7o_k$(this._$keyForRestoringControlledState_1._get_value__0_k$() + 1 | 0);
   };
   _no_name_provided__154.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_v5d180_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
+    this.invoke_629ikt_k$(p1 instanceof SyntheticInputEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__154.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__155($href, $attrs) {
-    this._$href_1 = $href;
+  function _no_name_provided__155($type, $attrs, $keyForRestoringControlledState) {
+    this._$type_2 = $type;
     this._$attrs_10 = $attrs;
+    this._$keyForRestoringControlledState_2 = $keyForRestoringControlledState;
   }
-  _no_name_provided__155.prototype.invoke_m2exwv_k$ = function ($this$TagElement) {
-    if (!(this._$href_1._v == null)) {
-      href($this$TagElement, this._$href_1._v);
-      Unit_getInstance();
-    }if (!(this._$attrs_10._v == null)) {
-      this._$attrs_10._v($this$TagElement);
-    }};
+  _no_name_provided__155.prototype.invoke_v5d180_k$ = function ($this$TagElement) {
+    var inputAttrsBuilder = new InputAttrsBuilder(this._$type_2);
+    type(inputAttrsBuilder, this._$type_2);
+    Unit_getInstance();
+    inputAttrsBuilder.onInput_2uzpqg_k$(_no_name_provided_$factory_137(this._$keyForRestoringControlledState_2));
+    this._$attrs_10(inputAttrsBuilder);
+    $this$TagElement.copyFrom_wgjdvi_k$(inputAttrsBuilder);
+  };
   _no_name_provided__155.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_m2exwv_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
+    this.invoke_v5d180_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__155.$metadata$ = {
@@ -35280,94 +35187,94 @@
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_114($src, $alt, $attrs) {
-    var i = new _no_name_provided__133($src, $alt, $attrs);
+  function _no_name_provided_$factory_114($href, $attrs) {
+    var i = new _no_name_provided__133($href, $attrs);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_115($src, $alt, $attrs, $$changed, $$default) {
-    var i = new _no_name_provided__134($src, $alt, $attrs, $$changed, $$default);
+  function _no_name_provided_$factory_115($href, $attrs, $content, $$changed, $$default) {
+    var i = new _no_name_provided__134($href, $attrs, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_116($attrs, $content, $$changed, $$default) {
-    var i = new _no_name_provided__135($attrs, $content, $$changed, $$default);
+  function _no_name_provided_$factory_116($src, $alt, $attrs) {
+    var i = new _no_name_provided__135($src, $alt, $attrs);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_117($src, $alt, $attrs, $$changed, $$default) {
+    var i = new _no_name_provided__136($src, $alt, $attrs, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_117($type, $attrs, $keyForRestoringControlledState) {
-    var i = new _no_name_provided__136($type, $attrs, $keyForRestoringControlledState);
+  function _no_name_provided_$factory_118($attrs, $content, $$changed, $$default) {
+    var i = new _no_name_provided__137($attrs, $content, $$changed, $$default);
+    return function (p1, p2) {
+      i.invoke_xtxync_k$(p1, p2);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_119($type, $attrs, $keyForRestoringControlledState) {
+    var i = new _no_name_provided__138($type, $attrs, $keyForRestoringControlledState);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_118($type, $keyForRestoringControlledState) {
-    var i = new _no_name_provided__137($type, $keyForRestoringControlledState);
+  function _no_name_provided_$factory_120($type, $keyForRestoringControlledState) {
+    var i = new _no_name_provided__139($type, $keyForRestoringControlledState);
     return function (p1, p2, p3) {
       i.invoke_4423ec_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_119($type, $attrs, $$changed) {
-    var i = new _no_name_provided__138($type, $attrs, $$changed);
+  function _no_name_provided_$factory_121($type, $attrs, $$changed) {
+    var i = new _no_name_provided__140($type, $attrs, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_120($attrs, $content, $$changed, $$default) {
-    var i = new _no_name_provided__139($attrs, $content, $$changed, $$default);
+  function _no_name_provided_$factory_122($attrs, $content, $$changed, $$default) {
+    var i = new _no_name_provided__141($attrs, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_121() {
-    var i = new _no_name_provided__140();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_122($tmp0_ComposeNode$composable_0) {
-    var i = new _no_name_provided__141($tmp0_ComposeNode$composable_0);
-    return function () {
-      return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_123() {
     var i = new _no_name_provided__142();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_124($tmp0_ComposeNode$composable_0) {
+    var i = new _no_name_provided__143($tmp0_ComposeNode$composable_0);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_125() {
+    var i = new _no_name_provided__144();
     return function (p1, p2) {
       i.invoke_51nd1v_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_124($value, $$changed) {
-    var i = new _no_name_provided__143($value, $$changed);
+  function _no_name_provided_$factory_126($value, $$changed) {
+    var i = new _no_name_provided__145($value, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_125($attrs, $content, $$changed, $$default) {
-    var i = new _no_name_provided__144($attrs, $content, $$changed, $$default);
-    return function (p1, p2) {
-      i.invoke_xtxync_k$(p1, p2);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_126($href, $attrs) {
-    var i = new _no_name_provided__145($href, $attrs);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_127($href, $attrs, $content, $$changed, $$default) {
-    var i = new _no_name_provided__146($href, $attrs, $content, $$changed, $$default);
+  function _no_name_provided_$factory_127($attrs, $content, $$changed, $$default) {
+    var i = new _no_name_provided__146($attrs, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -35393,24 +35300,24 @@
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_131($src, $alt, $attrs) {
-    var i = new _no_name_provided__152($src, $alt, $attrs);
+  function _no_name_provided_$factory_131($href, $attrs) {
+    var i = new _no_name_provided__152($href, $attrs);
+    return function (p1) {
+      i.invoke_m2exwv_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_132($src, $alt, $attrs) {
+    var i = new _no_name_provided__153($src, $alt, $attrs);
     return function (p1) {
       i.invoke_ksytq9_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_132($type, $attrs, $keyForRestoringControlledState) {
-    var i = new _no_name_provided__154($type, $attrs, $keyForRestoringControlledState);
+  function _no_name_provided_$factory_133($type, $attrs, $keyForRestoringControlledState) {
+    var i = new _no_name_provided__155($type, $attrs, $keyForRestoringControlledState);
     return function (p1) {
       i.invoke_v5d180_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_133($href, $attrs) {
-    var i = new _no_name_provided__155($href, $attrs);
-    return function (p1) {
-      i.invoke_m2exwv_k$(p1);
       return Unit_getInstance();
     };
   }
@@ -35436,7 +35343,7 @@
     };
   }
   function _no_name_provided_$factory_137($keyForRestoringControlledState) {
-    var i = new _no_name_provided__153($keyForRestoringControlledState);
+    var i = new _no_name_provided__154($keyForRestoringControlledState);
     return function (p1) {
       i.invoke_629ikt_k$(p1);
       return Unit_getInstance();
@@ -35447,131 +35354,6 @@
   }
   function inputRestoreControlledStateEffect$init$() {
     return _no_name_provided_$factory_112();
-  }
-  function TextInput$composable(value, attrs, $composer, $changed, $default) {
-    var value_0 = {_v: value};
-    var attrs_0 = {_v: attrs};
-    var $composer_0 = $composer;
-    $composer_0.startReplaceableGroup_majfzk_k$(-1654646072);
-    sourceInformation($composer_0, 'C(TextInput$composable)P(1)');
-    if (!(($default & 1) === 0))
-      value_0._v = '';
-    if (!(($default & 2) === 0)) {
-      attrs_0._v = _no_name_provided_$factory_138();
-    }var tmp = Text_getInstance();
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0_remember$composable_0 = value_0._v;
-      var tmp1_remember$composable_0 = attrs_0._v;
-      var tmp2_remember$composable_0 = _no_name_provided_$factory_139(value_0, attrs_0);
-      var tmp3_remember$composable_0 = $composer_0;
-      var tmp4_remember$composable_0 = 14 & $changed | 112 & $changed;
-      var $composer_1 = tmp3_remember$composable_0;
-      $composer_1.startReplaceableGroup_majfzk_k$(884180255);
-      sourceInformation($composer_1, 'C(remember$composable)P(1,2):Composables.kt#9igjgp');
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp1_cache_0_3 = $composer_1;
-        var tmp2_cache_0_4 = !!($composer_1.changed_wi7j7l_k$(tmp0_remember$composable_0) | $composer_1.changed_wi7j7l_k$(tmp1_remember$composable_0));
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
-          {
-          }
-          var tmp$ret$0;
-          $l$block: {
-            var tmp_0;
-            if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
-              var value_2_2_6 = tmp2_remember$composable_0();
-              tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
-              tmp_0 = value_2_2_6;
-            } else {
-              tmp_0 = tmp0_let_0_5;
-            }
-            tmp$ret$0 = tmp_0;
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        var tmp_1 = tmp$ret$1;
-        tmp$ret$2 = (tmp_1 == null ? true : isObject(tmp_1)) ? tmp_1 : THROW_CCE();
-        break $l$block_1;
-      }
-      var tmp0_2 = tmp$ret$2;
-      $composer_1.endReplaceableGroup_sv8swh_k$();
-      tmp$ret$3 = tmp0_2;
-      break $l$block_2;
-    }
-    Input$composable(tmp, tmp$ret$3, $composer_0, 6);
-    $composer_0.endReplaceableGroup_sv8swh_k$();
-  }
-  function applyAttrsWithStringValue(_this_, value, attrs) {
-    _this_.value_6wfw3l_k$(value);
-    Unit_getInstance();
-    attrs(_this_);
-  }
-  function TextInput$composable$lambda($value, $attrs) {
-    return _no_name_provided_$factory_140($value, $attrs);
-  }
-  function _no_name_provided__157() {
-  }
-  _no_name_provided__157.prototype.invoke_uku1vi_k$ = function ($this$null) {
-    return Unit_getInstance();
-  };
-  _no_name_provided__157.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_uku1vi_k$(p1 instanceof InputAttrsBuilder ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__157.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__158($value, $attrs) {
-    this._$value_3 = $value;
-    this._$attrs_11 = $attrs;
-  }
-  _no_name_provided__158.prototype.invoke_0_k$ = function () {
-    return TextInput$composable$lambda(this._$value_3, this._$attrs_11);
-  };
-  _no_name_provided__158.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__159($value, $attrs) {
-    this._$value_4 = $value;
-    this._$attrs_12 = $attrs;
-  }
-  _no_name_provided__159.prototype.invoke_uku1vi_k$ = function ($this$Input) {
-    applyAttrsWithStringValue($this$Input, this._$value_4._v, this._$attrs_12._v);
-  };
-  _no_name_provided__159.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_uku1vi_k$(p1 instanceof InputAttrsBuilder ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__159.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided_$factory_138() {
-    var i = new _no_name_provided__157();
-    return function (p1) {
-      i.invoke_uku1vi_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_139($value, $attrs) {
-    var i = new _no_name_provided__158($value, $attrs);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_140($value, $attrs) {
-    var i = new _no_name_provided__159($value, $attrs);
-    return function (p1) {
-      i.invoke_uku1vi_k$(p1);
-      return Unit_getInstance();
-    };
   }
   var radioGroupScopeImpl;
   var generatedRadioGroupNamesCounter;
@@ -35585,36 +35367,36 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__160() {
+  function _no_name_provided__157() {
   }
-  _no_name_provided__160.prototype.invoke_0_k$ = function () {
+  _no_name_provided__157.prototype.invoke_0_k$ = function () {
     {
       throw IllegalStateException_init_$Create$_0('No radio group checked value provided');
     }
   };
-  _no_name_provided__160.$metadata$ = {
+  _no_name_provided__157.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__161() {
+  function _no_name_provided__158() {
   }
-  _no_name_provided__161.prototype.invoke_0_k$ = function () {
+  _no_name_provided__158.prototype.invoke_0_k$ = function () {
     {
       throw IllegalStateException_init_$Create$_0('No radio group name provided');
     }
   };
-  _no_name_provided__161.$metadata$ = {
+  _no_name_provided__158.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_141() {
-    var i = new _no_name_provided__160();
+  function _no_name_provided_$factory_138() {
+    var i = new _no_name_provided__157();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_142() {
-    var i = new _no_name_provided__161();
+  function _no_name_provided_$factory_139() {
+    var i = new _no_name_provided__158();
     return function () {
       return i.invoke_0_k$();
     };
@@ -35756,11 +35538,11 @@
       }
     }
   }
-  function setProperty(style, name_0, value) {
-    style.setProperty(name_0, toString_1(value));
+  function setProperty(style, name, value) {
+    style.setProperty(name, toString_1(value));
   }
-  function setVariable(style, name_0, value) {
-    style.setProperty('' + '--' + name_0, toString_1(value));
+  function setVariable(style, name, value) {
+    style.setProperty('' + '--' + name, toString_1(value));
   }
   function addRule_1(_this_, cssRuleDeclaration) {
     var tmp0_safe_receiver = addRule_3(_this_, '' + cssRuleDeclaration._get_header__0_k$() + ' {}');
@@ -35809,16 +35591,6 @@
     }
     return _this_.cssRules.item(_this_.cssRules.length - 1 | 0);
   }
-  function SyntheticChangeEvent(value, nativeEvent) {
-    SyntheticEvent.call(this, nativeEvent);
-    this._value_12 = value;
-    this._$stable_60 = 0;
-  }
-  SyntheticChangeEvent.$metadata$ = {
-    simpleName: 'SyntheticChangeEvent',
-    kind: 'class',
-    interfaces: []
-  };
   function SyntheticEvent(nativeEvent) {
     this._nativeEvent = nativeEvent;
     var tmp = this;
@@ -35843,7 +35615,7 @@
     this._timestamp = this._nativeEvent.timeStamp;
     this._type = this._nativeEvent.type;
     this._isTrusted = this._nativeEvent.isTrusted;
-    this._$stable_61 = 0;
+    this._$stable_60 = 0;
   }
   SyntheticEvent.prototype.preventDefault_sv8swh_k$ = function () {
     return this._nativeEvent.preventDefault();
@@ -35855,7 +35627,7 @@
   };
   function SyntheticInputEvent(value, nativeEvent) {
     SyntheticEvent.call(this, nativeEvent);
-    this._value_13 = value;
+    this._value_12 = value;
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -35912,7 +35684,7 @@
       }
       tmp_4 = tmp$ret$5;
     }
-    tmp_3._inputType_2 = tmp_4;
+    tmp_3._inputType_1 = tmp_4;
     var tmp_5 = this;
     var tmp$ret$6;
     $l$block_5: {
@@ -35933,7 +35705,7 @@
     }
     var tmp1_elvis_lhs = tmp_6;
     tmp_5._isComposing_0 = tmp1_elvis_lhs == null ? false : tmp1_elvis_lhs;
-    this._$stable_62 = 8;
+    this._$stable_61 = 8;
   }
   SyntheticInputEvent.$metadata$ = {
     simpleName: 'SyntheticInputEvent',
@@ -35960,7 +35732,7 @@
     this._metaKey = nativeEvent.metaKey;
     this._repeat = nativeEvent.repeat;
     this._shiftKey = nativeEvent.shiftKey;
-    this._$stable_63 = 0;
+    this._$stable_62 = 0;
   }
   SyntheticKeyboardEvent.$metadata$ = {
     simpleName: 'SyntheticKeyboardEvent',
@@ -36006,18 +35778,63 @@
     this._shiftKey_0 = nativeEvent.shiftKey;
     this._x = nativeEvent.x;
     this._y = nativeEvent.y;
-    this._$stable_64 = 0;
+    this._$stable_63 = 0;
   }
   SyntheticMouseEvent.$metadata$ = {
     simpleName: 'SyntheticMouseEvent',
     kind: 'class',
     interfaces: []
   };
+  function Companion_29() {
+    Companion_instance_28 = this;
+  }
+  Companion_29.prototype._get_Pointer__0_k$ = function () {
+    return new Cursor('pointer');
+  };
+  Companion_29.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_28;
+  function Companion_getInstance_28() {
+    if (Companion_instance_28 == null)
+      new Companion_29();
+    return Companion_instance_28;
+  }
+  function Cursor(value) {
+    Companion_getInstance_28();
+    this._value_13 = value;
+    this._$stable_64 = 0;
+  }
+  Cursor.$metadata$ = {
+    simpleName: 'Cursor',
+    kind: 'class',
+    interfaces: []
+  };
+  function cursor(_this_, cursor_1) {
+    _this_.property_wbz76b_k$('cursor', cursor_1._value_13);
+  }
+  function StringFontWeight(value) {
+    this._value_14 = value;
+    this._$stable_65 = 0;
+  }
+  StringFontWeight.$metadata$ = {
+    simpleName: 'StringFontWeight',
+    kind: 'class',
+    interfaces: [FontWeight]
+  };
   function Companion_30() {
     Companion_instance_29 = this;
   }
-  Companion_30.prototype._get_Pointer__0_k$ = function () {
-    return new Cursor('pointer');
+  Companion_30.prototype._get_Normal__0_k$ = function () {
+    return new StringFontWeight('normal');
+  };
+  Companion_30.prototype._get_Bold__0_k$ = function () {
+    return new StringFontWeight('bold');
+  };
+  Companion_30.prototype._get_Lighter__0_k$ = function () {
+    return new StringFontWeight('lighter');
   };
   Companion_30.$metadata$ = {
     simpleName: 'Companion',
@@ -36030,39 +35847,53 @@
       new Companion_30();
     return Companion_instance_29;
   }
-  function Cursor(value) {
-    Companion_getInstance_29();
-    this._value_14 = value;
-    this._$stable_65 = 0;
+  function FontWeight() {
   }
-  Cursor.$metadata$ = {
-    simpleName: 'Cursor',
-    kind: 'class',
+  FontWeight.$metadata$ = {
+    simpleName: 'FontWeight',
+    kind: 'interface',
     interfaces: []
   };
-  function cursor(_this_, cursor_1) {
-    _this_.property_wbz76b_k$('cursor', cursor_1._value_14);
+  function fontWeight(_this_, weight) {
+    var tmp0_subject = weight;
+    if (tmp0_subject instanceof StringFontWeight)
+      _this_.property_wbz76b_k$('font-weight', weight._value_14);
+    else {
+      if (tmp0_subject instanceof IntFontWeight) {
+        {
+          var containsArg = weight._value_15;
+          var tmp0_require_0 = 1 <= containsArg ? containsArg <= 1000 : false;
+          {
+          }
+          if (!tmp0_require_0) {
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = '' + 'Font weight must be between 1 and 1000. Got: ' + weight._value_15;
+              break $l$block;
+            }
+            var message_1 = tmp$ret$0;
+            throw IllegalArgumentException_init_$Create$(toString_1(message_1));
+          }}
+        _this_.property_qkzl0l_k$('font-weight', weight._value_15);
+      } else {
+      }
+    }
   }
-  function StringFontWeight(value) {
-    this._value_15 = value;
-    this._$stable_66 = 0;
+  function IntFontWeight() {
   }
-  StringFontWeight.$metadata$ = {
-    simpleName: 'StringFontWeight',
+  IntFontWeight.$metadata$ = {
+    simpleName: 'IntFontWeight',
     kind: 'class',
     interfaces: [FontWeight]
   };
   function Companion_31() {
     Companion_instance_30 = this;
   }
-  Companion_31.prototype._get_Normal__0_k$ = function () {
-    return new StringFontWeight('normal');
+  Companion_31.prototype._get_Hidden__0_k$ = function () {
+    return new Overflow('hidden');
   };
-  Companion_31.prototype._get_Bold__0_k$ = function () {
-    return new StringFontWeight('bold');
-  };
-  Companion_31.prototype._get_Lighter__0_k$ = function () {
-    return new StringFontWeight('lighter');
+  Companion_31.prototype._get_Scroll__0_k$ = function () {
+    return new Overflow('scroll');
   };
   Companion_31.$metadata$ = {
     simpleName: 'Companion',
@@ -36075,53 +35906,27 @@
       new Companion_31();
     return Companion_instance_30;
   }
-  function FontWeight() {
+  function Overflow(value) {
+    Companion_getInstance_30();
+    this._value_16 = value;
+    this._$stable_66 = 0;
   }
-  FontWeight.$metadata$ = {
-    simpleName: 'FontWeight',
-    kind: 'interface',
+  Overflow.$metadata$ = {
+    simpleName: 'Overflow',
+    kind: 'class',
     interfaces: []
   };
-  function fontWeight(_this_, weight) {
-    var tmp0_subject = weight;
-    if (tmp0_subject instanceof StringFontWeight)
-      _this_.property_wbz76b_k$('font-weight', weight._value_15);
-    else {
-      if (tmp0_subject instanceof IntFontWeight) {
-        {
-          var containsArg = weight._value_16;
-          var tmp0_require_0 = 1 <= containsArg ? containsArg <= 1000 : false;
-          {
-          }
-          if (!tmp0_require_0) {
-            var tmp$ret$0;
-            $l$block: {
-              tmp$ret$0 = '' + 'Font weight must be between 1 and 1000. Got: ' + weight._value_16;
-              break $l$block;
-            }
-            var message_1 = tmp$ret$0;
-            throw IllegalArgumentException_init_$Create$(toString_1(message_1));
-          }}
-        _this_.property_qkzl0l_k$('font-weight', weight._value_16);
-      } else {
-      }
-    }
+  function overflowY(_this_, overflowY_1) {
+    _this_.property_wbz76b_k$('overflow-y', overflowY_1._value_16);
   }
-  function IntFontWeight() {
+  function overflowX(_this_, overflowX_1) {
+    _this_.property_wbz76b_k$('overflow-x', overflowX_1._value_16);
   }
-  IntFontWeight.$metadata$ = {
-    simpleName: 'IntFontWeight',
-    kind: 'class',
-    interfaces: [FontWeight]
-  };
   function Companion_32() {
     Companion_instance_31 = this;
   }
-  Companion_32.prototype._get_Hidden__0_k$ = function () {
-    return new Overflow('hidden');
-  };
-  Companion_32.prototype._get_Scroll__0_k$ = function () {
-    return new Overflow('scroll');
+  Companion_32.prototype._get_None__0_k$ = function () {
+    return new UserSelect('none');
   };
   Companion_32.$metadata$ = {
     simpleName: 'Companion',
@@ -36134,27 +35939,24 @@
       new Companion_32();
     return Companion_instance_31;
   }
-  function Overflow(value) {
+  function UserSelect(value) {
     Companion_getInstance_31();
     this._value_17 = value;
     this._$stable_67 = 0;
   }
-  Overflow.$metadata$ = {
-    simpleName: 'Overflow',
+  UserSelect.$metadata$ = {
+    simpleName: 'UserSelect',
     kind: 'class',
     interfaces: []
   };
-  function overflowY(_this_, overflowY_1) {
-    _this_.property_wbz76b_k$('overflow-y', overflowY_1._value_17);
-  }
-  function overflowX(_this_, overflowX_1) {
-    _this_.property_wbz76b_k$('overflow-x', overflowX_1._value_17);
-  }
   function Companion_33() {
     Companion_instance_32 = this;
   }
+  Companion_33.prototype._get_Underline__0_k$ = function () {
+    return new TextDecorationLine('underline');
+  };
   Companion_33.prototype._get_None__0_k$ = function () {
-    return new UserSelect('none');
+    return new TextDecorationLine('none');
   };
   Companion_33.$metadata$ = {
     simpleName: 'Companion',
@@ -36167,24 +35969,27 @@
       new Companion_33();
     return Companion_instance_32;
   }
-  function UserSelect(value) {
+  function TextDecorationLine(value) {
     Companion_getInstance_32();
     this._value_18 = value;
     this._$stable_68 = 0;
   }
-  UserSelect.$metadata$ = {
-    simpleName: 'UserSelect',
+  TextDecorationLine.$metadata$ = {
+    simpleName: 'TextDecorationLine',
     kind: 'class',
     interfaces: []
   };
   function Companion_34() {
     Companion_instance_33 = this;
   }
-  Companion_34.prototype._get_Underline__0_k$ = function () {
-    return new TextDecorationLine('underline');
+  Companion_34.prototype._get_Center__0_k$ = function () {
+    return new TextAlign('center');
   };
-  Companion_34.prototype._get_None__0_k$ = function () {
-    return new TextDecorationLine('none');
+  Companion_34.prototype._get_Justify__0_k$ = function () {
+    return new TextAlign('justify');
+  };
+  Companion_34.prototype._get_Start__0_k$ = function () {
+    return new TextAlign('start');
   };
   Companion_34.$metadata$ = {
     simpleName: 'Companion',
@@ -36197,24 +36002,21 @@
       new Companion_34();
     return Companion_instance_33;
   }
-  function TextDecorationLine(value) {
+  function TextAlign(value) {
     Companion_getInstance_33();
     this._value_19 = value;
     this._$stable_69 = 0;
   }
-  TextDecorationLine.$metadata$ = {
-    simpleName: 'TextDecorationLine',
+  TextAlign.$metadata$ = {
+    simpleName: 'TextAlign',
     kind: 'class',
     interfaces: []
   };
   function Companion_35() {
     Companion_instance_34 = this;
   }
-  Companion_35.prototype._get_Center__0_k$ = function () {
-    return new TextAlign('center');
-  };
-  Companion_35.prototype._get_Justify__0_k$ = function () {
-    return new TextAlign('justify');
+  Companion_35.prototype._get_PreWrap__0_k$ = function () {
+    return new WhiteSpace('pre-wrap');
   };
   Companion_35.$metadata$ = {
     simpleName: 'Companion',
@@ -36227,21 +36029,51 @@
       new Companion_35();
     return Companion_instance_34;
   }
-  function TextAlign(value) {
+  function WhiteSpace(value) {
     Companion_getInstance_34();
     this._value_20 = value;
     this._$stable_70 = 0;
   }
-  TextAlign.$metadata$ = {
-    simpleName: 'TextAlign',
+  WhiteSpace.$metadata$ = {
+    simpleName: 'WhiteSpace',
     kind: 'class',
     interfaces: []
   };
+  function userSelect(_this_, userSelect_1) {
+    _this_.property_wbz76b_k$('user-select', userSelect_1._value_17);
+  }
+  function textDecorationLine(_this_, textDecorationLines) {
+    _this_.property_wbz76b_k$('text-decoration-line', joinToString$default(textDecorationLines, ' ', null, null, 0, null, _no_name_provided_$factory_140(), 30, null));
+  }
+  function textAlign(_this_, textAlign_1) {
+    _this_.property_wbz76b_k$('text-align', textAlign_1._value_19);
+  }
+  function whiteSpace(_this_, whiteSpace_1) {
+    _this_.property_wbz76b_k$('white-space', whiteSpace_1._value_20);
+  }
+  function _no_name_provided__159() {
+  }
+  _no_name_provided__159.prototype.invoke_rzusz4_k$ = function (it) {
+    return it._value_18;
+  };
+  _no_name_provided__159.prototype.invoke_20e8_k$ = function (p1) {
+    return this.invoke_rzusz4_k$(p1 instanceof TextDecorationLine ? p1 : THROW_CCE());
+  };
+  _no_name_provided__159.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided_$factory_140() {
+    var i = new _no_name_provided__159();
+    return function (p1) {
+      return i.invoke_rzusz4_k$(p1);
+    };
+  }
   function Companion_36() {
     Companion_instance_35 = this;
   }
-  Companion_36.prototype._get_PreWrap__0_k$ = function () {
-    return new WhiteSpace('pre-wrap');
+  Companion_36.prototype._get_Inherit__0_k$ = function () {
+    return new TransitionDuration('inherit');
   };
   Companion_36.$metadata$ = {
     simpleName: 'Companion',
@@ -36254,51 +36086,21 @@
       new Companion_36();
     return Companion_instance_35;
   }
-  function WhiteSpace(value) {
+  function TransitionDuration(value) {
     Companion_getInstance_35();
     this._value_21 = value;
     this._$stable_71 = 0;
   }
-  WhiteSpace.$metadata$ = {
-    simpleName: 'WhiteSpace',
+  TransitionDuration.$metadata$ = {
+    simpleName: 'TransitionDuration',
     kind: 'class',
     interfaces: []
   };
-  function userSelect(_this_, userSelect_1) {
-    _this_.property_wbz76b_k$('user-select', userSelect_1._value_18);
-  }
-  function textDecorationLine(_this_, textDecorationLines) {
-    _this_.property_wbz76b_k$('text-decoration-line', joinToString$default(textDecorationLines, ' ', null, null, 0, null, _no_name_provided_$factory_143(), 30, null));
-  }
-  function textAlign(_this_, textAlign_1) {
-    _this_.property_wbz76b_k$('text-align', textAlign_1._value_20);
-  }
-  function whiteSpace(_this_, whiteSpace_1) {
-    _this_.property_wbz76b_k$('white-space', whiteSpace_1._value_21);
-  }
-  function _no_name_provided__162() {
-  }
-  _no_name_provided__162.prototype.invoke_rzusz4_k$ = function (it) {
-    return it._value_19;
-  };
-  _no_name_provided__162.prototype.invoke_20e8_k$ = function (p1) {
-    return this.invoke_rzusz4_k$(p1 instanceof TextDecorationLine ? p1 : THROW_CCE());
-  };
-  _no_name_provided__162.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided_$factory_143() {
-    var i = new _no_name_provided__162();
-    return function (p1) {
-      return i.invoke_rzusz4_k$(p1);
-    };
-  }
   function Companion_37() {
     Companion_instance_36 = this;
   }
   Companion_37.prototype._get_Inherit__0_k$ = function () {
-    return new TransitionDuration('inherit');
+    return new TransitionProperty('inherit');
   };
   Companion_37.$metadata$ = {
     simpleName: 'Companion',
@@ -36311,37 +36113,10 @@
       new Companion_37();
     return Companion_instance_36;
   }
-  function TransitionDuration(value) {
+  function TransitionProperty(value) {
     Companion_getInstance_36();
     this._value_22 = value;
     this._$stable_72 = 0;
-  }
-  TransitionDuration.$metadata$ = {
-    simpleName: 'TransitionDuration',
-    kind: 'class',
-    interfaces: []
-  };
-  function Companion_38() {
-    Companion_instance_37 = this;
-  }
-  Companion_38.prototype._get_Inherit__0_k$ = function () {
-    return new TransitionProperty('inherit');
-  };
-  Companion_38.$metadata$ = {
-    simpleName: 'Companion',
-    kind: 'object',
-    interfaces: []
-  };
-  var Companion_instance_37;
-  function Companion_getInstance_37() {
-    if (Companion_instance_37 == null)
-      new Companion_38();
-    return Companion_instance_37;
-  }
-  function TransitionProperty(value) {
-    Companion_getInstance_37();
-    this._value_23 = value;
-    this._$stable_73 = 0;
   }
   TransitionProperty.$metadata$ = {
     simpleName: 'TransitionProperty',
@@ -36355,42 +36130,42 @@
     _this_.property_wbz76b_k$('transition-property', joinToString$default(properties, ' ', null, null, 0, null, null, 62, null));
   }
   function transitionDuration_0(_this_, duration) {
-    _this_.property_wbz76b_k$('transition-duration', duration._value_22);
+    _this_.property_wbz76b_k$('transition-duration', duration._value_21);
   }
   function transitionProperty_0(_this_, property) {
-    transitionProperty(_this_, [property._value_23]);
+    transitionProperty(_this_, [property._value_22]);
   }
   function clearFocus(_this_) {
     var dynElement = _this_;
     dynElement.blur();
   }
+  function _no_name_provided__160() {
+  }
+  _no_name_provided__160.$metadata$ = {
+    kind: 'class',
+    interfaces: [Horizontal]
+  };
+  function _no_name_provided__161() {
+  }
+  _no_name_provided__161.$metadata$ = {
+    kind: 'class',
+    interfaces: [Horizontal]
+  };
+  function _no_name_provided__162() {
+  }
+  _no_name_provided__162.$metadata$ = {
+    kind: 'class',
+    interfaces: [Vertical]
+  };
   function _no_name_provided__163() {
   }
   _no_name_provided__163.$metadata$ = {
     kind: 'class',
-    interfaces: [Horizontal]
+    interfaces: [Vertical]
   };
   function _no_name_provided__164() {
   }
   _no_name_provided__164.$metadata$ = {
-    kind: 'class',
-    interfaces: [Horizontal]
-  };
-  function _no_name_provided__165() {
-  }
-  _no_name_provided__165.$metadata$ = {
-    kind: 'class',
-    interfaces: [Vertical]
-  };
-  function _no_name_provided__166() {
-  }
-  _no_name_provided__166.$metadata$ = {
-    kind: 'class',
-    interfaces: [Vertical]
-  };
-  function _no_name_provided__167() {
-  }
-  _no_name_provided__167.$metadata$ = {
     kind: 'class',
     interfaces: [HorizontalOrVertical]
   };
@@ -36415,29 +36190,29 @@
     kind: 'interface',
     interfaces: [Horizontal, Vertical]
   };
-  function Companion_39() {
-    Companion_instance_38 = this;
+  function Companion_38() {
+    Companion_instance_37 = this;
     var tmp = this;
-    tmp._End = new _no_name_provided__163();
+    tmp._End = new _no_name_provided__160();
     var tmp_0 = this;
-    tmp_0._Start = new _no_name_provided__164();
+    tmp_0._Start = new _no_name_provided__161();
     var tmp_1 = this;
-    tmp_1._Top = new _no_name_provided__165();
+    tmp_1._Top = new _no_name_provided__162();
     var tmp_2 = this;
-    tmp_2._Bottom = new _no_name_provided__166();
+    tmp_2._Bottom = new _no_name_provided__163();
     var tmp_3 = this;
-    tmp_3._Center = new _no_name_provided__167();
+    tmp_3._Center = new _no_name_provided__164();
   }
-  Companion_39.$metadata$ = {
+  Companion_38.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_38;
-  function Companion_getInstance_38() {
-    if (Companion_instance_38 == null)
-      new Companion_39();
-    return Companion_instance_38;
+  var Companion_instance_37;
+  function Companion_getInstance_37() {
+    if (Companion_instance_37 == null)
+      new Companion_38();
+    return Companion_instance_37;
   }
   function Box$composable(modifier, contentAlignment, content, $composer, $changed, $default) {
     var modifier_0 = {_v: modifier};
@@ -36461,9 +36236,9 @@
       $composer_0.startDefaults_sv8swh_k$();
       if (($changed & 1) === 0 ? true : $composer_0._get_defaultsInvalid__0_k$()) {
         if (!(($default & 1) === 0))
-          modifier_0._v = Companion_getInstance_40();
+          modifier_0._v = Companion_getInstance_39();
         if (!(($default & 2) === 0)) {
-          contentAlignment_0._v = Companion_getInstance_39()._TopStart;
+          contentAlignment_0._v = Companion_getInstance_38()._TopStart;
           $dirty = $dirty & -113;
         }if (!(($default & 4) === 0))
           content_0._v = ComposableSingletons$BoxKt_getInstance()._lambda_1_0;
@@ -36474,49 +36249,49 @@
       }
       $composer_0.endDefaults_sv8swh_k$();
       var tmp = modifier_0._v;
-      var tmp_0 = asAttributesBuilder(tmp, _no_name_provided_$factory_144(contentAlignment_0));
+      var tmp_0 = asAttributesBuilder(tmp, _no_name_provided_$factory_141(contentAlignment_0));
       var tmp_1 = $composer_0;
-      Div$composable(tmp_0, composableLambda(tmp_1, -819894873, true, _no_name_provided_$factory_145(content_0, $dirty)), $composer_0, 48, 0);
+      Div$composable(tmp_0, composableLambda(tmp_1, -819894873, true, _no_name_provided_$factory_142(content_0, $dirty)), $composer_0, 48, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_146(modifier_0, contentAlignment_0, content_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_143(modifier_0, contentAlignment_0, content_0, $changed, $default));
     }
   }
   function BoxScope() {
-    this._$stable_74 = 0;
+    this._$stable_73 = 0;
   }
   BoxScope.$metadata$ = {
     simpleName: 'BoxScope',
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__168() {
+  function _no_name_provided__165() {
   }
-  _no_name_provided__168.prototype.invoke_jpel0v_k$ = function ($this$null, $composer, $changed) {
+  _no_name_provided__165.prototype.invoke_jpel0v_k$ = function ($this$null, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       Unit_getInstance();
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__168.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__165.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof BoxScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_jpel0v_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__168.$metadata$ = {
+  _no_name_provided__165.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$BoxKt() {
     ComposableSingletons$BoxKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_0 = composableLambdaInstance(-985533459, false, _no_name_provided_$factory_147());
+    tmp._lambda_1_0 = composableLambdaInstance(-985533459, false, _no_name_provided_$factory_144());
   }
   ComposableSingletons$BoxKt.$metadata$ = {
     simpleName: 'ComposableSingletons$BoxKt',
@@ -36532,25 +36307,25 @@
   function Box$composable$lambda($modifier, $contentAlignment, $content, $$changed, $$default, $composer, $force) {
     return Box$composable($modifier._v, $contentAlignment._v, $content._v, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__169($contentAlignment) {
+  function _no_name_provided__166($contentAlignment) {
     this._$contentAlignment = $contentAlignment;
   }
-  _no_name_provided__169.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
+  _no_name_provided__166.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
     $this$asAttributesBuilder.classes_70f81e_k$(['kobweb-box', toClassName_0(this._$contentAlignment._v)]);
   };
-  _no_name_provided__169.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__166.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_4sn14n_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__169.$metadata$ = {
+  _no_name_provided__166.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__170($content, $$dirty) {
+  function _no_name_provided__167($content, $$dirty) {
     this._$content_6 = $content;
     this._$$dirty_0 = $$dirty;
   }
-  _no_name_provided__170.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
+  _no_name_provided__167.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._$content_6._v;
@@ -36562,58 +36337,58 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__170.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__167.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_ovmwdp_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__170.$metadata$ = {
+  _no_name_provided__167.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__171($modifier, $contentAlignment, $content, $$changed, $$default) {
+  function _no_name_provided__168($modifier, $contentAlignment, $content, $$changed, $$default) {
     this._$modifier = $modifier;
     this._$contentAlignment_0 = $contentAlignment;
     this._$content_7 = $content;
     this._$$changed_8 = $$changed;
     this._$$default_5 = $$default;
   }
-  _no_name_provided__171.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__168.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return Box$composable$lambda(this._$modifier, this._$contentAlignment_0, this._$content_7, this._$$changed_8, this._$$default_5, p0, p1);
   };
-  _no_name_provided__171.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__168.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__171.$metadata$ = {
+  _no_name_provided__168.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_144($contentAlignment) {
-    var i = new _no_name_provided__169($contentAlignment);
+  function _no_name_provided_$factory_141($contentAlignment) {
+    var i = new _no_name_provided__166($contentAlignment);
     return function (p1) {
       i.invoke_4sn14n_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_145($content, $$dirty) {
-    var i = new _no_name_provided__170($content, $$dirty);
+  function _no_name_provided_$factory_142($content, $$dirty) {
+    var i = new _no_name_provided__167($content, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_ovmwdp_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_146($modifier, $contentAlignment, $content, $$changed, $$default) {
-    var i = new _no_name_provided__171($modifier, $contentAlignment, $content, $$changed, $$default);
+  function _no_name_provided_$factory_143($modifier, $contentAlignment, $content, $$changed, $$default) {
+    var i = new _no_name_provided__168($modifier, $contentAlignment, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_147() {
-    var i = new _no_name_provided__168();
+  function _no_name_provided_$factory_144() {
+    var i = new _no_name_provided__165();
     return function (p1, p2, p3) {
       i.invoke_jpel0v_k$(p1, p2, p3);
       return Unit_getInstance();
@@ -36643,12 +36418,12 @@
       $composer_0.startDefaults_sv8swh_k$();
       if (($changed & 1) === 0 ? true : $composer_0._get_defaultsInvalid__0_k$()) {
         if (!(($default & 1) === 0))
-          modifier_0._v = Companion_getInstance_40();
+          modifier_0._v = Companion_getInstance_39();
         if (!(($default & 2) === 0)) {
-          verticalArrangement_0._v = Companion_getInstance_38()._Top;
+          verticalArrangement_0._v = Companion_getInstance_37()._Top;
           $dirty = $dirty & -113;
         }if (!(($default & 4) === 0)) {
-          horizontalAlignment_0._v = Companion_getInstance_39()._Start_0;
+          horizontalAlignment_0._v = Companion_getInstance_38()._Start_0;
           $dirty = $dirty & -897;
         }} else {
         $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -36659,20 +36434,20 @@
       }
       $composer_0.endDefaults_sv8swh_k$();
       var tmp = modifier_0._v;
-      var tmp_0 = asAttributesBuilder(tmp, _no_name_provided_$factory_148(verticalArrangement_0, horizontalAlignment_0));
+      var tmp_0 = asAttributesBuilder(tmp, _no_name_provided_$factory_145(verticalArrangement_0, horizontalAlignment_0));
       var tmp_1 = $composer_0;
-      Div$composable(tmp_0, composableLambda(tmp_1, -819894996, true, _no_name_provided_$factory_149(content, $dirty)), $composer_0, 48, 0);
+      Div$composable(tmp_0, composableLambda(tmp_1, -819894996, true, _no_name_provided_$factory_146(content, $dirty)), $composer_0, 48, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_150(modifier_0, verticalArrangement_0, horizontalAlignment_0, content, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_147(modifier_0, verticalArrangement_0, horizontalAlignment_0, content, $changed, $default));
     }
   }
   function ColumnScope() {
-    this._$stable_75 = 0;
+    this._$stable_74 = 0;
   }
   ColumnScope.$metadata$ = {
     simpleName: 'ColumnScope',
@@ -36682,26 +36457,26 @@
   function Column$composable$lambda($modifier, $verticalArrangement, $horizontalAlignment, $content, $$changed, $$default, $composer, $force) {
     return Column$composable($modifier._v, $verticalArrangement._v, $horizontalAlignment._v, $content, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__172($verticalArrangement, $horizontalAlignment) {
+  function _no_name_provided__169($verticalArrangement, $horizontalAlignment) {
     this._$verticalArrangement = $verticalArrangement;
     this._$horizontalAlignment = $horizontalAlignment;
   }
-  _no_name_provided__172.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
+  _no_name_provided__169.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
     $this$asAttributesBuilder.classes_70f81e_k$(['kobweb-col', toClassName_3(this._$verticalArrangement._v), toClassName_1(this._$horizontalAlignment._v)]);
   };
-  _no_name_provided__172.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__169.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_4sn14n_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__172.$metadata$ = {
+  _no_name_provided__169.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__173($content, $$dirty) {
+  function _no_name_provided__170($content, $$dirty) {
     this._$content_8 = $content;
     this._$$dirty_1 = $$dirty;
   }
-  _no_name_provided__173.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
+  _no_name_provided__170.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._$content_8;
@@ -36713,17 +36488,17 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__173.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__170.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_ovmwdp_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__173.$metadata$ = {
+  _no_name_provided__170.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__174($modifier, $verticalArrangement, $horizontalAlignment, $content, $$changed, $$default) {
+  function _no_name_provided__171($modifier, $verticalArrangement, $horizontalAlignment, $content, $$changed, $$default) {
     this._$modifier_0 = $modifier;
     this._$verticalArrangement_0 = $verticalArrangement;
     this._$horizontalAlignment_0 = $horizontalAlignment;
@@ -36731,34 +36506,34 @@
     this._$$changed_9 = $$changed;
     this._$$default_6 = $$default;
   }
-  _no_name_provided__174.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__171.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return Column$composable$lambda(this._$modifier_0, this._$verticalArrangement_0, this._$horizontalAlignment_0, this._$content_9, this._$$changed_9, this._$$default_6, p0, p1);
   };
-  _no_name_provided__174.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__171.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__174.$metadata$ = {
+  _no_name_provided__171.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_148($verticalArrangement, $horizontalAlignment) {
-    var i = new _no_name_provided__172($verticalArrangement, $horizontalAlignment);
+  function _no_name_provided_$factory_145($verticalArrangement, $horizontalAlignment) {
+    var i = new _no_name_provided__169($verticalArrangement, $horizontalAlignment);
     return function (p1) {
       i.invoke_4sn14n_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_149($content, $$dirty) {
-    var i = new _no_name_provided__173($content, $$dirty);
+  function _no_name_provided_$factory_146($content, $$dirty) {
+    var i = new _no_name_provided__170($content, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_ovmwdp_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_150($modifier, $verticalArrangement, $horizontalAlignment, $content, $$changed, $$default) {
-    var i = new _no_name_provided__174($modifier, $verticalArrangement, $horizontalAlignment, $content, $$changed, $$default);
+  function _no_name_provided_$factory_147($modifier, $verticalArrangement, $horizontalAlignment, $content, $$changed, $$default) {
+    var i = new _no_name_provided__171($modifier, $verticalArrangement, $horizontalAlignment, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -36788,12 +36563,12 @@
       $composer_0.startDefaults_sv8swh_k$();
       if (($changed & 1) === 0 ? true : $composer_0._get_defaultsInvalid__0_k$()) {
         if (!(($default & 1) === 0))
-          modifier_0._v = Companion_getInstance_40();
+          modifier_0._v = Companion_getInstance_39();
         if (!(($default & 2) === 0)) {
-          horizontalArrangement_0._v = Companion_getInstance_38()._Start;
+          horizontalArrangement_0._v = Companion_getInstance_37()._Start;
           $dirty = $dirty & -113;
         }if (!(($default & 4) === 0)) {
-          verticalAlignment_0._v = Companion_getInstance_39()._Top_0;
+          verticalAlignment_0._v = Companion_getInstance_38()._Top_0;
           $dirty = $dirty & -897;
         }} else {
         $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -36804,20 +36579,20 @@
       }
       $composer_0.endDefaults_sv8swh_k$();
       var tmp = modifier_0._v;
-      var tmp_0 = asAttributesBuilder(tmp, _no_name_provided_$factory_151(horizontalArrangement_0, verticalAlignment_0));
+      var tmp_0 = asAttributesBuilder(tmp, _no_name_provided_$factory_148(horizontalArrangement_0, verticalAlignment_0));
       var tmp_1 = $composer_0;
-      Div$composable(tmp_0, composableLambda(tmp_1, -819895015, true, _no_name_provided_$factory_152(content, $dirty)), $composer_0, 48, 0);
+      Div$composable(tmp_0, composableLambda(tmp_1, -819895015, true, _no_name_provided_$factory_149(content, $dirty)), $composer_0, 48, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_153(modifier_0, horizontalArrangement_0, verticalAlignment_0, content, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_150(modifier_0, horizontalArrangement_0, verticalAlignment_0, content, $changed, $default));
     }
   }
   function RowScope() {
-    this._$stable_76 = 0;
+    this._$stable_75 = 0;
   }
   RowScope.$metadata$ = {
     simpleName: 'RowScope',
@@ -36827,26 +36602,26 @@
   function Row$composable$lambda($modifier, $horizontalArrangement, $verticalAlignment, $content, $$changed, $$default, $composer, $force) {
     return Row$composable($modifier._v, $horizontalArrangement._v, $verticalAlignment._v, $content, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__175($horizontalArrangement, $verticalAlignment) {
+  function _no_name_provided__172($horizontalArrangement, $verticalAlignment) {
     this._$horizontalArrangement = $horizontalArrangement;
     this._$verticalAlignment = $verticalAlignment;
   }
-  _no_name_provided__175.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
+  _no_name_provided__172.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
     $this$asAttributesBuilder.classes_70f81e_k$(['kobweb-row', toClassName_2(this._$horizontalArrangement._v), toClassName(this._$verticalAlignment._v)]);
   };
-  _no_name_provided__175.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__172.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_4sn14n_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__175.$metadata$ = {
+  _no_name_provided__172.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__176($content, $$dirty) {
+  function _no_name_provided__173($content, $$dirty) {
     this._$content_10 = $content;
     this._$$dirty_2 = $$dirty;
   }
-  _no_name_provided__176.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
+  _no_name_provided__173.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._$content_10;
@@ -36858,17 +36633,17 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__176.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__173.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_ovmwdp_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__176.$metadata$ = {
+  _no_name_provided__173.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__177($modifier, $horizontalArrangement, $verticalAlignment, $content, $$changed, $$default) {
+  function _no_name_provided__174($modifier, $horizontalArrangement, $verticalAlignment, $content, $$changed, $$default) {
     this._$modifier_1 = $modifier;
     this._$horizontalArrangement_0 = $horizontalArrangement;
     this._$verticalAlignment_0 = $verticalAlignment;
@@ -36876,34 +36651,34 @@
     this._$$changed_10 = $$changed;
     this._$$default_7 = $$default;
   }
-  _no_name_provided__177.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__174.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return Row$composable$lambda(this._$modifier_1, this._$horizontalArrangement_0, this._$verticalAlignment_0, this._$content_11, this._$$changed_10, this._$$default_7, p0, p1);
   };
-  _no_name_provided__177.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__174.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__177.$metadata$ = {
+  _no_name_provided__174.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_151($horizontalArrangement, $verticalAlignment) {
-    var i = new _no_name_provided__175($horizontalArrangement, $verticalAlignment);
+  function _no_name_provided_$factory_148($horizontalArrangement, $verticalAlignment) {
+    var i = new _no_name_provided__172($horizontalArrangement, $verticalAlignment);
     return function (p1) {
       i.invoke_4sn14n_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_152($content, $$dirty) {
-    var i = new _no_name_provided__176($content, $$dirty);
+  function _no_name_provided_$factory_149($content, $$dirty) {
+    var i = new _no_name_provided__173($content, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_ovmwdp_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_153($modifier, $horizontalArrangement, $verticalAlignment, $content, $$changed, $$default) {
-    var i = new _no_name_provided__177($modifier, $horizontalArrangement, $verticalAlignment, $content, $$changed, $$default);
+  function _no_name_provided_$factory_150($modifier, $horizontalArrangement, $verticalAlignment, $content, $$changed, $$default) {
+    var i = new _no_name_provided__174($modifier, $horizontalArrangement, $verticalAlignment, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -36914,7 +36689,7 @@
     $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1227892913);
     sourceInformation($composer_0, 'C(Spacer$composable)');
     if (!($changed === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = _no_name_provided_$factory_154();
+      var tmp = _no_name_provided_$factory_151();
       Div$composable(tmp, null, $composer_0, 6, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -36922,49 +36697,49 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_155($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_152($changed));
     }
   }
   function Spacer$composable$lambda($$changed, $composer, $force) {
     return Spacer$composable($composer, $$changed | 1);
   }
-  function _no_name_provided__178() {
+  function _no_name_provided__175() {
   }
-  _no_name_provided__178.prototype.invoke_4sn14n_k$ = function ($this$Div) {
+  _no_name_provided__175.prototype.invoke_4sn14n_k$ = function ($this$Div) {
     $this$Div.classes_70f81e_k$(['kobweb-spacer']);
   };
-  _no_name_provided__178.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__175.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_4sn14n_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__178.$metadata$ = {
+  _no_name_provided__175.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__179($$changed) {
+  function _no_name_provided__176($$changed) {
     this._$$changed_11 = $$changed;
   }
-  _no_name_provided__179.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__176.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return Spacer$composable$lambda(this._$$changed_11, p0, p1);
   };
-  _no_name_provided__179.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__176.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__179.$metadata$ = {
+  _no_name_provided__176.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_154() {
-    var i = new _no_name_provided__178();
+  function _no_name_provided_$factory_151() {
+    var i = new _no_name_provided__175();
     return function (p1) {
       i.invoke_4sn14n_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_155($$changed) {
-    var i = new _no_name_provided__179($$changed);
+  function _no_name_provided_$factory_152($$changed) {
+    var i = new _no_name_provided__176($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -36973,11 +36748,11 @@
   function toClassName(_this_) {
     var tmp0_subject = _this_;
     var tmp;
-    if (equals_0(tmp0_subject, Companion_getInstance_39()._Top_0)) {
+    if (equals_0(tmp0_subject, Companion_getInstance_38()._Top_0)) {
       tmp = 'kobweb-align-top';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._CenterVertically)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._CenterVertically)) {
       tmp = 'kobweb-align-center-vert';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._Bottom_0)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._Bottom_0)) {
       tmp = 'kobweb-align-bottom';
     } else {
       var tmp0_error_0 = '' + 'Unexpected alignment: ' + _this_;
@@ -36988,23 +36763,23 @@
   function toClassName_0(_this_) {
     var tmp0_subject = _this_;
     var tmp;
-    if (equals_0(tmp0_subject, Companion_getInstance_39()._TopStart)) {
+    if (equals_0(tmp0_subject, Companion_getInstance_38()._TopStart)) {
       tmp = 'kobweb-align-top-start';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._TopCenter)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._TopCenter)) {
       tmp = 'kobweb-align-top-center';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._TopEnd)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._TopEnd)) {
       tmp = 'kobweb-align-top-end';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._CenterStart)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._CenterStart)) {
       tmp = 'kobweb-align-center-start';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._Center_0)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._Center_0)) {
       tmp = 'kobweb-align-center';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._CenterEnd)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._CenterEnd)) {
       tmp = 'kobweb-align-center-end';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._BottomStart)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._BottomStart)) {
       tmp = 'kobweb-align-bottom-start';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._BottomCenter)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._BottomCenter)) {
       tmp = 'kobweb-align-bottom-center';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._BottomEnd)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._BottomEnd)) {
       tmp = 'kobweb-align-bottom-end';
     } else {
       var tmp0_error_0 = '' + 'Unexpected alignment: ' + _this_;
@@ -37015,11 +36790,11 @@
   function toClassName_1(_this_) {
     var tmp0_subject = _this_;
     var tmp;
-    if (equals_0(tmp0_subject, Companion_getInstance_39()._Start_0)) {
+    if (equals_0(tmp0_subject, Companion_getInstance_38()._Start_0)) {
       tmp = 'kobweb-align-start';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._CenterHorizontally)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._CenterHorizontally)) {
       tmp = 'kobweb-align-center-horiz';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_39()._End_0)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._End_0)) {
       tmp = 'kobweb-align-end';
     } else {
       var tmp0_error_0 = '' + 'Unexpected alignment: ' + _this_;
@@ -37030,12 +36805,12 @@
   function toClassName_2(_this_) {
     var tmp0_subject = _this_;
     var tmp;
-    if (equals_0(tmp0_subject, Companion_getInstance_38()._End)) {
+    if (equals_0(tmp0_subject, Companion_getInstance_37()._End)) {
       tmp = 'kobweb-arrange-end';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._Start)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_37()._Start)) {
       tmp = 'kobweb-arrange-start';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._Center)) {
-      tmp = toClassName_4(Companion_getInstance_38()._Center);
+    } else if (equals_0(tmp0_subject, Companion_getInstance_37()._Center)) {
+      tmp = toClassName_4(Companion_getInstance_37()._Center);
     } else {
       var tmp0_error_0 = '' + 'Unexpected arrangement: ' + _this_;
       throw IllegalStateException_init_$Create$_0(toString_1(tmp0_error_0));
@@ -37045,12 +36820,12 @@
   function toClassName_3(_this_) {
     var tmp0_subject = _this_;
     var tmp;
-    if (equals_0(tmp0_subject, Companion_getInstance_38()._Top)) {
+    if (equals_0(tmp0_subject, Companion_getInstance_37()._Top)) {
       tmp = 'kobweb-arrange-top';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._Bottom)) {
+    } else if (equals_0(tmp0_subject, Companion_getInstance_37()._Bottom)) {
       tmp = 'kobweb-arrange-bottom';
-    } else if (equals_0(tmp0_subject, Companion_getInstance_38()._Center)) {
-      tmp = toClassName_4(Companion_getInstance_38()._Center);
+    } else if (equals_0(tmp0_subject, Companion_getInstance_37()._Center)) {
+      tmp = toClassName_4(Companion_getInstance_37()._Center);
     } else {
       var tmp0_error_0 = '' + 'Unexpected arrangement: ' + _this_;
       throw IllegalStateException_init_$Create$_0(toString_1(tmp0_error_0));
@@ -37060,7 +36835,7 @@
   function toClassName_4(_this_) {
     var tmp0_subject = _this_;
     var tmp;
-    if (equals_0(tmp0_subject, Companion_getInstance_38()._Center)) {
+    if (equals_0(tmp0_subject, Companion_getInstance_37()._Center)) {
       tmp = 'kobweb-arrange-center';
     } else {
       var tmp0_error_0 = '' + 'Unexpected arrangement: ' + _this_;
@@ -37069,59 +36844,59 @@
     return tmp;
   }
   function initBox($this) {
-    $this.invoke_4x08vx_k$('.kobweb-box', _no_name_provided_$factory_156());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-top-start', _no_name_provided_$factory_157());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-top-center', _no_name_provided_$factory_158());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-top-end', _no_name_provided_$factory_159());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-center-start', _no_name_provided_$factory_160());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-center', _no_name_provided_$factory_161());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-center-end', _no_name_provided_$factory_162());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-bottom-start', _no_name_provided_$factory_163());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-bottom-center', _no_name_provided_$factory_164());
-    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-bottom-end', _no_name_provided_$factory_165());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-top-start-self', _no_name_provided_$factory_166());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-top-center-self', _no_name_provided_$factory_167());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-top-end-self', _no_name_provided_$factory_168());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-center-start-self', _no_name_provided_$factory_169());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-center-self', _no_name_provided_$factory_170());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-center-end-self', _no_name_provided_$factory_171());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-bottom-start-self', _no_name_provided_$factory_172());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-bottom-center-self', _no_name_provided_$factory_173());
-    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-bottom-end-self', _no_name_provided_$factory_174());
+    $this.invoke_4x08vx_k$('.kobweb-box', _no_name_provided_$factory_153());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-top-start', _no_name_provided_$factory_154());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-top-center', _no_name_provided_$factory_155());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-top-end', _no_name_provided_$factory_156());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-center-start', _no_name_provided_$factory_157());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-center', _no_name_provided_$factory_158());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-center-end', _no_name_provided_$factory_159());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-bottom-start', _no_name_provided_$factory_160());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-bottom-center', _no_name_provided_$factory_161());
+    $this.invoke_4x08vx_k$('.kobweb-box.kobweb-align-bottom-end', _no_name_provided_$factory_162());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-top-start-self', _no_name_provided_$factory_163());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-top-center-self', _no_name_provided_$factory_164());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-top-end-self', _no_name_provided_$factory_165());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-center-start-self', _no_name_provided_$factory_166());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-center-self', _no_name_provided_$factory_167());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-center-end-self', _no_name_provided_$factory_168());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-bottom-start-self', _no_name_provided_$factory_169());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-bottom-center-self', _no_name_provided_$factory_170());
+    $this.invoke_4x08vx_k$('.kobweb-box > .kobweb-align-bottom-end-self', _no_name_provided_$factory_171());
   }
   function initRow($this) {
-    $this.invoke_4x08vx_k$('.kobweb-row', _no_name_provided_$factory_175());
-    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-arrange-start', _no_name_provided_$factory_176());
-    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-arrange-center', _no_name_provided_$factory_177());
-    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-arrange-end', _no_name_provided_$factory_178());
-    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-align-top', _no_name_provided_$factory_179());
-    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-align-center-vert', _no_name_provided_$factory_180());
-    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-align-bottom', _no_name_provided_$factory_181());
-    $this.invoke_4x08vx_k$('.kobweb-row > .kobweb-align-top-self', _no_name_provided_$factory_182());
-    $this.invoke_4x08vx_k$('.kobweb-row > .kobweb-align-center-vert-self', _no_name_provided_$factory_183());
-    $this.invoke_4x08vx_k$('.kobweb-row > .kobweb-align-bottom-self', _no_name_provided_$factory_184());
+    $this.invoke_4x08vx_k$('.kobweb-row', _no_name_provided_$factory_172());
+    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-arrange-start', _no_name_provided_$factory_173());
+    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-arrange-center', _no_name_provided_$factory_174());
+    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-arrange-end', _no_name_provided_$factory_175());
+    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-align-top', _no_name_provided_$factory_176());
+    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-align-center-vert', _no_name_provided_$factory_177());
+    $this.invoke_4x08vx_k$('.kobweb-row.kobweb-align-bottom', _no_name_provided_$factory_178());
+    $this.invoke_4x08vx_k$('.kobweb-row > .kobweb-align-top-self', _no_name_provided_$factory_179());
+    $this.invoke_4x08vx_k$('.kobweb-row > .kobweb-align-center-vert-self', _no_name_provided_$factory_180());
+    $this.invoke_4x08vx_k$('.kobweb-row > .kobweb-align-bottom-self', _no_name_provided_$factory_181());
   }
   function initCol($this) {
-    $this.invoke_4x08vx_k$('.kobweb-col', _no_name_provided_$factory_185());
-    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-arrange-top', _no_name_provided_$factory_186());
-    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-arrange-center', _no_name_provided_$factory_187());
-    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-arrange-bottom', _no_name_provided_$factory_188());
-    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-align-start', _no_name_provided_$factory_189());
-    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-align-center-horiz', _no_name_provided_$factory_190());
-    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-align-end', _no_name_provided_$factory_191());
-    $this.invoke_4x08vx_k$('.kobweb-col > .kobweb-align-start-self', _no_name_provided_$factory_192());
-    $this.invoke_4x08vx_k$('.kobweb-col > .kobweb-align-center-horiz-self', _no_name_provided_$factory_193());
-    $this.invoke_4x08vx_k$('.kobweb-col > .kobweb-align-end-self', _no_name_provided_$factory_194());
+    $this.invoke_4x08vx_k$('.kobweb-col', _no_name_provided_$factory_182());
+    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-arrange-top', _no_name_provided_$factory_183());
+    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-arrange-center', _no_name_provided_$factory_184());
+    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-arrange-bottom', _no_name_provided_$factory_185());
+    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-align-start', _no_name_provided_$factory_186());
+    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-align-center-horiz', _no_name_provided_$factory_187());
+    $this.invoke_4x08vx_k$('.kobweb-col.kobweb-align-end', _no_name_provided_$factory_188());
+    $this.invoke_4x08vx_k$('.kobweb-col > .kobweb-align-start-self', _no_name_provided_$factory_189());
+    $this.invoke_4x08vx_k$('.kobweb-col > .kobweb-align-center-horiz-self', _no_name_provided_$factory_190());
+    $this.invoke_4x08vx_k$('.kobweb-col > .kobweb-align-end-self', _no_name_provided_$factory_191());
   }
   function initSpacer($this) {
-    $this.invoke_4x08vx_k$('.kobweb-spacer', _no_name_provided_$factory_195());
+    $this.invoke_4x08vx_k$('.kobweb-spacer', _no_name_provided_$factory_192());
   }
-  function _no_name_provided__180() {
+  function _no_name_provided__177() {
   }
-  _no_name_provided__180.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__177.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Grid__0 = Companion_getInstance_20();
+      var tmp0__get_Grid__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -37144,20 +36919,20 @@
     gridTemplateColumns($this$invoke, '1fr');
     gridTemplateRows($this$invoke, '1fr');
   };
-  _no_name_provided__180.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__177.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__180.$metadata$ = {
+  _no_name_provided__177.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__181() {
+  function _no_name_provided__178() {
   }
-  _no_name_provided__181.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__178.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Start__0 = Companion_getInstance_22();
+      var tmp0__get_Start__0 = Companion_getInstance_21();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -37181,7 +36956,223 @@
     $l$block_9: {
       var tmp$ret$7;
       $l$block_6: {
-        var tmp1__get_Start__0 = Companion_getInstance_22();
+        var tmp1__get_Start__0 = Companion_getInstance_21();
+        var tmp$ret$6;
+        $l$block_5: {
+          var tmp$ret$5;
+          $l$block_4: {
+            var tmp$ret$4;
+            $l$block_3: {
+              tmp$ret$4 = 'start';
+              break $l$block_3;
+            }
+            tmp$ret$5 = tmp$ret$4;
+            break $l$block_4;
+          }
+          tmp$ret$6 = tmp$ret$5;
+          break $l$block_5;
+        }
+        tmp$ret$7 = tmp$ret$6;
+        break $l$block_6;
+      }
+      var tmp2__get_value__0 = tmp$ret$7;
+      var tmp$ret$9;
+      $l$block_8: {
+        var tmp$ret$8;
+        $l$block_7: {
+          tmp$ret$8 = tmp2__get_value__0;
+          break $l$block_7;
+        }
+        tmp$ret$9 = tmp$ret$8;
+        break $l$block_8;
+      }
+      tmp$ret$10 = tmp$ret$9;
+      break $l$block_9;
+    }
+    justifyItems($this$invoke, tmp$ret$10);
+  };
+  _no_name_provided__178.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__178.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__179() {
+  }
+  _no_name_provided__179.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_Start__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'start';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
+    var tmp$ret$10;
+    $l$block_9: {
+      var tmp$ret$7;
+      $l$block_6: {
+        var tmp1__get_Center__0 = Companion_getInstance_21();
+        var tmp$ret$6;
+        $l$block_5: {
+          var tmp$ret$5;
+          $l$block_4: {
+            var tmp$ret$4;
+            $l$block_3: {
+              tmp$ret$4 = 'center';
+              break $l$block_3;
+            }
+            tmp$ret$5 = tmp$ret$4;
+            break $l$block_4;
+          }
+          tmp$ret$6 = tmp$ret$5;
+          break $l$block_5;
+        }
+        tmp$ret$7 = tmp$ret$6;
+        break $l$block_6;
+      }
+      var tmp2__get_value__0 = tmp$ret$7;
+      var tmp$ret$9;
+      $l$block_8: {
+        var tmp$ret$8;
+        $l$block_7: {
+          tmp$ret$8 = tmp2__get_value__0;
+          break $l$block_7;
+        }
+        tmp$ret$9 = tmp$ret$8;
+        break $l$block_8;
+      }
+      tmp$ret$10 = tmp$ret$9;
+      break $l$block_9;
+    }
+    justifyItems($this$invoke, tmp$ret$10);
+  };
+  _no_name_provided__179.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__179.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__180() {
+  }
+  _no_name_provided__180.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_Start__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'start';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
+    var tmp$ret$10;
+    $l$block_9: {
+      var tmp$ret$7;
+      $l$block_6: {
+        var tmp1__get_End__0 = Companion_getInstance_21();
+        var tmp$ret$6;
+        $l$block_5: {
+          var tmp$ret$5;
+          $l$block_4: {
+            var tmp$ret$4;
+            $l$block_3: {
+              tmp$ret$4 = 'end';
+              break $l$block_3;
+            }
+            tmp$ret$5 = tmp$ret$4;
+            break $l$block_4;
+          }
+          tmp$ret$6 = tmp$ret$5;
+          break $l$block_5;
+        }
+        tmp$ret$7 = tmp$ret$6;
+        break $l$block_6;
+      }
+      var tmp2__get_value__0 = tmp$ret$7;
+      var tmp$ret$9;
+      $l$block_8: {
+        var tmp$ret$8;
+        $l$block_7: {
+          tmp$ret$8 = tmp2__get_value__0;
+          break $l$block_7;
+        }
+        tmp$ret$9 = tmp$ret$8;
+        break $l$block_8;
+      }
+      tmp$ret$10 = tmp$ret$9;
+      break $l$block_9;
+    }
+    justifyItems($this$invoke, tmp$ret$10);
+  };
+  _no_name_provided__180.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__180.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__181() {
+  }
+  _no_name_provided__181.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_Center__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'center';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
+    var tmp$ret$10;
+    $l$block_9: {
+      var tmp$ret$7;
+      $l$block_6: {
+        var tmp1__get_Start__0 = Companion_getInstance_21();
         var tmp$ret$6;
         $l$block_5: {
           var tmp$ret$5;
@@ -37229,14 +37220,14 @@
   _no_name_provided__182.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Start__0 = Companion_getInstance_22();
+      var tmp0__get_Center__0 = Companion_getInstance_21();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
         $l$block_0: {
           var tmp$ret$0;
           $l$block: {
-            tmp$ret$0 = 'start';
+            tmp$ret$0 = 'center';
             break $l$block;
           }
           tmp$ret$1 = tmp$ret$0;
@@ -37253,7 +37244,7 @@
     $l$block_9: {
       var tmp$ret$7;
       $l$block_6: {
-        var tmp1__get_Center__0 = Companion_getInstance_22();
+        var tmp1__get_Center__0 = Companion_getInstance_21();
         var tmp$ret$6;
         $l$block_5: {
           var tmp$ret$5;
@@ -37299,6 +37290,294 @@
   function _no_name_provided__183() {
   }
   _no_name_provided__183.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$6;
+    $l$block_5: {
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0__get_End__0 = Companion_getInstance_21();
+        var tmp$ret$2;
+        $l$block_1: {
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = 'end';
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0;
+            break $l$block_0;
+          }
+          tmp$ret$2 = tmp$ret$1;
+          break $l$block_1;
+        }
+        tmp$ret$3 = tmp$ret$2;
+        break $l$block_2;
+      }
+      var tmp1__get_value__0 = tmp$ret$3;
+      var tmp$ret$5;
+      $l$block_4: {
+        var tmp$ret$4;
+        $l$block_3: {
+          tmp$ret$4 = tmp1__get_value__0;
+          break $l$block_3;
+        }
+        tmp$ret$5 = tmp$ret$4;
+        break $l$block_4;
+      }
+      tmp$ret$6 = tmp$ret$5;
+      break $l$block_5;
+    }
+    justifyItems($this$invoke, tmp$ret$6);
+    var tmp$ret$10;
+    $l$block_9: {
+      var tmp2__get_Center__0 = Companion_getInstance_21();
+      var tmp$ret$9;
+      $l$block_8: {
+        var tmp$ret$8;
+        $l$block_7: {
+          var tmp$ret$7;
+          $l$block_6: {
+            tmp$ret$7 = 'center';
+            break $l$block_6;
+          }
+          tmp$ret$8 = tmp$ret$7;
+          break $l$block_7;
+        }
+        tmp$ret$9 = tmp$ret$8;
+        break $l$block_8;
+      }
+      tmp$ret$10 = tmp$ret$9;
+      break $l$block_9;
+    }
+    alignItems($this$invoke, tmp$ret$10);
+  };
+  _no_name_provided__183.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__183.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__184() {
+  }
+  _no_name_provided__184.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$6;
+    $l$block_5: {
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0__get_Start__0 = Companion_getInstance_21();
+        var tmp$ret$2;
+        $l$block_1: {
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = 'start';
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0;
+            break $l$block_0;
+          }
+          tmp$ret$2 = tmp$ret$1;
+          break $l$block_1;
+        }
+        tmp$ret$3 = tmp$ret$2;
+        break $l$block_2;
+      }
+      var tmp1__get_value__0 = tmp$ret$3;
+      var tmp$ret$5;
+      $l$block_4: {
+        var tmp$ret$4;
+        $l$block_3: {
+          tmp$ret$4 = tmp1__get_value__0;
+          break $l$block_3;
+        }
+        tmp$ret$5 = tmp$ret$4;
+        break $l$block_4;
+      }
+      tmp$ret$6 = tmp$ret$5;
+      break $l$block_5;
+    }
+    justifyItems($this$invoke, tmp$ret$6);
+    var tmp$ret$10;
+    $l$block_9: {
+      var tmp2__get_End__0 = Companion_getInstance_21();
+      var tmp$ret$9;
+      $l$block_8: {
+        var tmp$ret$8;
+        $l$block_7: {
+          var tmp$ret$7;
+          $l$block_6: {
+            tmp$ret$7 = 'end';
+            break $l$block_6;
+          }
+          tmp$ret$8 = tmp$ret$7;
+          break $l$block_7;
+        }
+        tmp$ret$9 = tmp$ret$8;
+        break $l$block_8;
+      }
+      tmp$ret$10 = tmp$ret$9;
+      break $l$block_9;
+    }
+    alignItems($this$invoke, tmp$ret$10);
+  };
+  _no_name_provided__184.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__184.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__185() {
+  }
+  _no_name_provided__185.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$6;
+    $l$block_5: {
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0__get_Center__0 = Companion_getInstance_21();
+        var tmp$ret$2;
+        $l$block_1: {
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = 'center';
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0;
+            break $l$block_0;
+          }
+          tmp$ret$2 = tmp$ret$1;
+          break $l$block_1;
+        }
+        tmp$ret$3 = tmp$ret$2;
+        break $l$block_2;
+      }
+      var tmp1__get_value__0 = tmp$ret$3;
+      var tmp$ret$5;
+      $l$block_4: {
+        var tmp$ret$4;
+        $l$block_3: {
+          tmp$ret$4 = tmp1__get_value__0;
+          break $l$block_3;
+        }
+        tmp$ret$5 = tmp$ret$4;
+        break $l$block_4;
+      }
+      tmp$ret$6 = tmp$ret$5;
+      break $l$block_5;
+    }
+    justifyItems($this$invoke, tmp$ret$6);
+    var tmp$ret$10;
+    $l$block_9: {
+      var tmp2__get_End__0 = Companion_getInstance_21();
+      var tmp$ret$9;
+      $l$block_8: {
+        var tmp$ret$8;
+        $l$block_7: {
+          var tmp$ret$7;
+          $l$block_6: {
+            tmp$ret$7 = 'end';
+            break $l$block_6;
+          }
+          tmp$ret$8 = tmp$ret$7;
+          break $l$block_7;
+        }
+        tmp$ret$9 = tmp$ret$8;
+        break $l$block_8;
+      }
+      tmp$ret$10 = tmp$ret$9;
+      break $l$block_9;
+    }
+    alignItems($this$invoke, tmp$ret$10);
+  };
+  _no_name_provided__185.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__185.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__186() {
+  }
+  _no_name_provided__186.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$6;
+    $l$block_5: {
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0__get_End__0 = Companion_getInstance_21();
+        var tmp$ret$2;
+        $l$block_1: {
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = 'end';
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0;
+            break $l$block_0;
+          }
+          tmp$ret$2 = tmp$ret$1;
+          break $l$block_1;
+        }
+        tmp$ret$3 = tmp$ret$2;
+        break $l$block_2;
+      }
+      var tmp1__get_value__0 = tmp$ret$3;
+      var tmp$ret$5;
+      $l$block_4: {
+        var tmp$ret$4;
+        $l$block_3: {
+          tmp$ret$4 = tmp1__get_value__0;
+          break $l$block_3;
+        }
+        tmp$ret$5 = tmp$ret$4;
+        break $l$block_4;
+      }
+      tmp$ret$6 = tmp$ret$5;
+      break $l$block_5;
+    }
+    justifyItems($this$invoke, tmp$ret$6);
+    var tmp$ret$10;
+    $l$block_9: {
+      var tmp2__get_End__0 = Companion_getInstance_21();
+      var tmp$ret$9;
+      $l$block_8: {
+        var tmp$ret$8;
+        $l$block_7: {
+          var tmp$ret$7;
+          $l$block_6: {
+            tmp$ret$7 = 'end';
+            break $l$block_6;
+          }
+          tmp$ret$8 = tmp$ret$7;
+          break $l$block_7;
+        }
+        tmp$ret$9 = tmp$ret$8;
+        break $l$block_8;
+      }
+      tmp$ret$10 = tmp$ret$9;
+      break $l$block_9;
+    }
+    alignItems($this$invoke, tmp$ret$10);
+  };
+  _no_name_provided__186.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__186.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__187() {
+  }
+  _no_name_provided__187.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
       var tmp0__get_Start__0 = Companion_getInstance_22();
@@ -37320,79 +37599,7 @@
       tmp$ret$3 = tmp$ret$2;
       break $l$block_2;
     }
-    alignItems($this$invoke, tmp$ret$3);
-    var tmp$ret$10;
-    $l$block_9: {
-      var tmp$ret$7;
-      $l$block_6: {
-        var tmp1__get_End__0 = Companion_getInstance_22();
-        var tmp$ret$6;
-        $l$block_5: {
-          var tmp$ret$5;
-          $l$block_4: {
-            var tmp$ret$4;
-            $l$block_3: {
-              tmp$ret$4 = 'end';
-              break $l$block_3;
-            }
-            tmp$ret$5 = tmp$ret$4;
-            break $l$block_4;
-          }
-          tmp$ret$6 = tmp$ret$5;
-          break $l$block_5;
-        }
-        tmp$ret$7 = tmp$ret$6;
-        break $l$block_6;
-      }
-      var tmp2__get_value__0 = tmp$ret$7;
-      var tmp$ret$9;
-      $l$block_8: {
-        var tmp$ret$8;
-        $l$block_7: {
-          tmp$ret$8 = tmp2__get_value__0;
-          break $l$block_7;
-        }
-        tmp$ret$9 = tmp$ret$8;
-        break $l$block_8;
-      }
-      tmp$ret$10 = tmp$ret$9;
-      break $l$block_9;
-    }
-    justifyItems($this$invoke, tmp$ret$10);
-  };
-  _no_name_provided__183.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__183.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__184() {
-  }
-  _no_name_provided__184.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_22();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'center';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignItems($this$invoke, tmp$ret$3);
+    alignSelf($this$invoke, tmp$ret$3);
     var tmp$ret$10;
     $l$block_9: {
       var tmp$ret$7;
@@ -37430,29 +37637,29 @@
       tmp$ret$10 = tmp$ret$9;
       break $l$block_9;
     }
-    justifyItems($this$invoke, tmp$ret$10);
+    justifySelf($this$invoke, tmp$ret$10);
   };
-  _no_name_provided__184.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__187.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__184.$metadata$ = {
+  _no_name_provided__187.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__185() {
+  function _no_name_provided__188() {
   }
-  _no_name_provided__185.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__188.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_22();
+      var tmp0__get_Start__0 = Companion_getInstance_22();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
         $l$block_0: {
           var tmp$ret$0;
           $l$block: {
-            tmp$ret$0 = 'center';
+            tmp$ret$0 = 'start';
             break $l$block;
           }
           tmp$ret$1 = tmp$ret$0;
@@ -37464,7 +37671,7 @@
       tmp$ret$3 = tmp$ret$2;
       break $l$block_2;
     }
-    alignItems($this$invoke, tmp$ret$3);
+    alignSelf($this$invoke, tmp$ret$3);
     var tmp$ret$10;
     $l$block_9: {
       var tmp$ret$7;
@@ -37502,223 +37709,7 @@
       tmp$ret$10 = tmp$ret$9;
       break $l$block_9;
     }
-    justifyItems($this$invoke, tmp$ret$10);
-  };
-  _no_name_provided__185.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__185.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__186() {
-  }
-  _no_name_provided__186.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$6;
-    $l$block_5: {
-      var tmp$ret$3;
-      $l$block_2: {
-        var tmp0__get_End__0 = Companion_getInstance_22();
-        var tmp$ret$2;
-        $l$block_1: {
-          var tmp$ret$1;
-          $l$block_0: {
-            var tmp$ret$0;
-            $l$block: {
-              tmp$ret$0 = 'end';
-              break $l$block;
-            }
-            tmp$ret$1 = tmp$ret$0;
-            break $l$block_0;
-          }
-          tmp$ret$2 = tmp$ret$1;
-          break $l$block_1;
-        }
-        tmp$ret$3 = tmp$ret$2;
-        break $l$block_2;
-      }
-      var tmp1__get_value__0 = tmp$ret$3;
-      var tmp$ret$5;
-      $l$block_4: {
-        var tmp$ret$4;
-        $l$block_3: {
-          tmp$ret$4 = tmp1__get_value__0;
-          break $l$block_3;
-        }
-        tmp$ret$5 = tmp$ret$4;
-        break $l$block_4;
-      }
-      tmp$ret$6 = tmp$ret$5;
-      break $l$block_5;
-    }
-    justifyItems($this$invoke, tmp$ret$6);
-    var tmp$ret$10;
-    $l$block_9: {
-      var tmp2__get_Center__0 = Companion_getInstance_22();
-      var tmp$ret$9;
-      $l$block_8: {
-        var tmp$ret$8;
-        $l$block_7: {
-          var tmp$ret$7;
-          $l$block_6: {
-            tmp$ret$7 = 'center';
-            break $l$block_6;
-          }
-          tmp$ret$8 = tmp$ret$7;
-          break $l$block_7;
-        }
-        tmp$ret$9 = tmp$ret$8;
-        break $l$block_8;
-      }
-      tmp$ret$10 = tmp$ret$9;
-      break $l$block_9;
-    }
-    alignItems($this$invoke, tmp$ret$10);
-  };
-  _no_name_provided__186.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__186.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__187() {
-  }
-  _no_name_provided__187.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$6;
-    $l$block_5: {
-      var tmp$ret$3;
-      $l$block_2: {
-        var tmp0__get_Start__0 = Companion_getInstance_22();
-        var tmp$ret$2;
-        $l$block_1: {
-          var tmp$ret$1;
-          $l$block_0: {
-            var tmp$ret$0;
-            $l$block: {
-              tmp$ret$0 = 'start';
-              break $l$block;
-            }
-            tmp$ret$1 = tmp$ret$0;
-            break $l$block_0;
-          }
-          tmp$ret$2 = tmp$ret$1;
-          break $l$block_1;
-        }
-        tmp$ret$3 = tmp$ret$2;
-        break $l$block_2;
-      }
-      var tmp1__get_value__0 = tmp$ret$3;
-      var tmp$ret$5;
-      $l$block_4: {
-        var tmp$ret$4;
-        $l$block_3: {
-          tmp$ret$4 = tmp1__get_value__0;
-          break $l$block_3;
-        }
-        tmp$ret$5 = tmp$ret$4;
-        break $l$block_4;
-      }
-      tmp$ret$6 = tmp$ret$5;
-      break $l$block_5;
-    }
-    justifyItems($this$invoke, tmp$ret$6);
-    var tmp$ret$10;
-    $l$block_9: {
-      var tmp2__get_End__0 = Companion_getInstance_22();
-      var tmp$ret$9;
-      $l$block_8: {
-        var tmp$ret$8;
-        $l$block_7: {
-          var tmp$ret$7;
-          $l$block_6: {
-            tmp$ret$7 = 'end';
-            break $l$block_6;
-          }
-          tmp$ret$8 = tmp$ret$7;
-          break $l$block_7;
-        }
-        tmp$ret$9 = tmp$ret$8;
-        break $l$block_8;
-      }
-      tmp$ret$10 = tmp$ret$9;
-      break $l$block_9;
-    }
-    alignItems($this$invoke, tmp$ret$10);
-  };
-  _no_name_provided__187.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__187.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__188() {
-  }
-  _no_name_provided__188.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$6;
-    $l$block_5: {
-      var tmp$ret$3;
-      $l$block_2: {
-        var tmp0__get_Center__0 = Companion_getInstance_22();
-        var tmp$ret$2;
-        $l$block_1: {
-          var tmp$ret$1;
-          $l$block_0: {
-            var tmp$ret$0;
-            $l$block: {
-              tmp$ret$0 = 'center';
-              break $l$block;
-            }
-            tmp$ret$1 = tmp$ret$0;
-            break $l$block_0;
-          }
-          tmp$ret$2 = tmp$ret$1;
-          break $l$block_1;
-        }
-        tmp$ret$3 = tmp$ret$2;
-        break $l$block_2;
-      }
-      var tmp1__get_value__0 = tmp$ret$3;
-      var tmp$ret$5;
-      $l$block_4: {
-        var tmp$ret$4;
-        $l$block_3: {
-          tmp$ret$4 = tmp1__get_value__0;
-          break $l$block_3;
-        }
-        tmp$ret$5 = tmp$ret$4;
-        break $l$block_4;
-      }
-      tmp$ret$6 = tmp$ret$5;
-      break $l$block_5;
-    }
-    justifyItems($this$invoke, tmp$ret$6);
-    var tmp$ret$10;
-    $l$block_9: {
-      var tmp2__get_End__0 = Companion_getInstance_22();
-      var tmp$ret$9;
-      $l$block_8: {
-        var tmp$ret$8;
-        $l$block_7: {
-          var tmp$ret$7;
-          $l$block_6: {
-            tmp$ret$7 = 'end';
-            break $l$block_6;
-          }
-          tmp$ret$8 = tmp$ret$7;
-          break $l$block_7;
-        }
-        tmp$ret$9 = tmp$ret$8;
-        break $l$block_8;
-      }
-      tmp$ret$10 = tmp$ret$9;
-      break $l$block_9;
-    }
-    alignItems($this$invoke, tmp$ret$10);
+    justifySelf($this$invoke, tmp$ret$10);
   };
   _no_name_provided__188.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -37731,81 +37722,9 @@
   function _no_name_provided__189() {
   }
   _no_name_provided__189.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$6;
-    $l$block_5: {
-      var tmp$ret$3;
-      $l$block_2: {
-        var tmp0__get_End__0 = Companion_getInstance_22();
-        var tmp$ret$2;
-        $l$block_1: {
-          var tmp$ret$1;
-          $l$block_0: {
-            var tmp$ret$0;
-            $l$block: {
-              tmp$ret$0 = 'end';
-              break $l$block;
-            }
-            tmp$ret$1 = tmp$ret$0;
-            break $l$block_0;
-          }
-          tmp$ret$2 = tmp$ret$1;
-          break $l$block_1;
-        }
-        tmp$ret$3 = tmp$ret$2;
-        break $l$block_2;
-      }
-      var tmp1__get_value__0 = tmp$ret$3;
-      var tmp$ret$5;
-      $l$block_4: {
-        var tmp$ret$4;
-        $l$block_3: {
-          tmp$ret$4 = tmp1__get_value__0;
-          break $l$block_3;
-        }
-        tmp$ret$5 = tmp$ret$4;
-        break $l$block_4;
-      }
-      tmp$ret$6 = tmp$ret$5;
-      break $l$block_5;
-    }
-    justifyItems($this$invoke, tmp$ret$6);
-    var tmp$ret$10;
-    $l$block_9: {
-      var tmp2__get_End__0 = Companion_getInstance_22();
-      var tmp$ret$9;
-      $l$block_8: {
-        var tmp$ret$8;
-        $l$block_7: {
-          var tmp$ret$7;
-          $l$block_6: {
-            tmp$ret$7 = 'end';
-            break $l$block_6;
-          }
-          tmp$ret$8 = tmp$ret$7;
-          break $l$block_7;
-        }
-        tmp$ret$9 = tmp$ret$8;
-        break $l$block_8;
-      }
-      tmp$ret$10 = tmp$ret$9;
-      break $l$block_9;
-    }
-    alignItems($this$invoke, tmp$ret$10);
-  };
-  _no_name_provided__189.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__189.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__190() {
-  }
-  _no_name_provided__190.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Start__0 = Companion_getInstance_23();
+      var tmp0__get_Start__0 = Companion_getInstance_22();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -37829,7 +37748,79 @@
     $l$block_9: {
       var tmp$ret$7;
       $l$block_6: {
-        var tmp1__get_Start__0 = Companion_getInstance_23();
+        var tmp1__get_End__0 = Companion_getInstance_22();
+        var tmp$ret$6;
+        $l$block_5: {
+          var tmp$ret$5;
+          $l$block_4: {
+            var tmp$ret$4;
+            $l$block_3: {
+              tmp$ret$4 = 'end';
+              break $l$block_3;
+            }
+            tmp$ret$5 = tmp$ret$4;
+            break $l$block_4;
+          }
+          tmp$ret$6 = tmp$ret$5;
+          break $l$block_5;
+        }
+        tmp$ret$7 = tmp$ret$6;
+        break $l$block_6;
+      }
+      var tmp2__get_value__0 = tmp$ret$7;
+      var tmp$ret$9;
+      $l$block_8: {
+        var tmp$ret$8;
+        $l$block_7: {
+          tmp$ret$8 = tmp2__get_value__0;
+          break $l$block_7;
+        }
+        tmp$ret$9 = tmp$ret$8;
+        break $l$block_8;
+      }
+      tmp$ret$10 = tmp$ret$9;
+      break $l$block_9;
+    }
+    justifySelf($this$invoke, tmp$ret$10);
+  };
+  _no_name_provided__189.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__189.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__190() {
+  }
+  _no_name_provided__190.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_Center__0 = Companion_getInstance_22();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'center';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignSelf($this$invoke, tmp$ret$3);
+    var tmp$ret$10;
+    $l$block_9: {
+      var tmp$ret$7;
+      $l$block_6: {
+        var tmp1__get_Start__0 = Companion_getInstance_22();
         var tmp$ret$6;
         $l$block_5: {
           var tmp$ret$5;
@@ -37877,14 +37868,14 @@
   _no_name_provided__191.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Start__0 = Companion_getInstance_23();
+      var tmp0__get_Center__0 = Companion_getInstance_22();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
         $l$block_0: {
           var tmp$ret$0;
           $l$block: {
-            tmp$ret$0 = 'start';
+            tmp$ret$0 = 'center';
             break $l$block;
           }
           tmp$ret$1 = tmp$ret$0;
@@ -37901,7 +37892,7 @@
     $l$block_9: {
       var tmp$ret$7;
       $l$block_6: {
-        var tmp1__get_Center__0 = Companion_getInstance_23();
+        var tmp1__get_Center__0 = Companion_getInstance_22();
         var tmp$ret$6;
         $l$block_5: {
           var tmp$ret$5;
@@ -37947,227 +37938,11 @@
   function _no_name_provided__192() {
   }
   _no_name_provided__192.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_Start__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'start';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
-    var tmp$ret$10;
-    $l$block_9: {
-      var tmp$ret$7;
-      $l$block_6: {
-        var tmp1__get_End__0 = Companion_getInstance_23();
-        var tmp$ret$6;
-        $l$block_5: {
-          var tmp$ret$5;
-          $l$block_4: {
-            var tmp$ret$4;
-            $l$block_3: {
-              tmp$ret$4 = 'end';
-              break $l$block_3;
-            }
-            tmp$ret$5 = tmp$ret$4;
-            break $l$block_4;
-          }
-          tmp$ret$6 = tmp$ret$5;
-          break $l$block_5;
-        }
-        tmp$ret$7 = tmp$ret$6;
-        break $l$block_6;
-      }
-      var tmp2__get_value__0 = tmp$ret$7;
-      var tmp$ret$9;
-      $l$block_8: {
-        var tmp$ret$8;
-        $l$block_7: {
-          tmp$ret$8 = tmp2__get_value__0;
-          break $l$block_7;
-        }
-        tmp$ret$9 = tmp$ret$8;
-        break $l$block_8;
-      }
-      tmp$ret$10 = tmp$ret$9;
-      break $l$block_9;
-    }
-    justifySelf($this$invoke, tmp$ret$10);
-  };
-  _no_name_provided__192.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__192.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__193() {
-  }
-  _no_name_provided__193.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'center';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
-    var tmp$ret$10;
-    $l$block_9: {
-      var tmp$ret$7;
-      $l$block_6: {
-        var tmp1__get_Start__0 = Companion_getInstance_23();
-        var tmp$ret$6;
-        $l$block_5: {
-          var tmp$ret$5;
-          $l$block_4: {
-            var tmp$ret$4;
-            $l$block_3: {
-              tmp$ret$4 = 'start';
-              break $l$block_3;
-            }
-            tmp$ret$5 = tmp$ret$4;
-            break $l$block_4;
-          }
-          tmp$ret$6 = tmp$ret$5;
-          break $l$block_5;
-        }
-        tmp$ret$7 = tmp$ret$6;
-        break $l$block_6;
-      }
-      var tmp2__get_value__0 = tmp$ret$7;
-      var tmp$ret$9;
-      $l$block_8: {
-        var tmp$ret$8;
-        $l$block_7: {
-          tmp$ret$8 = tmp2__get_value__0;
-          break $l$block_7;
-        }
-        tmp$ret$9 = tmp$ret$8;
-        break $l$block_8;
-      }
-      tmp$ret$10 = tmp$ret$9;
-      break $l$block_9;
-    }
-    justifySelf($this$invoke, tmp$ret$10);
-  };
-  _no_name_provided__193.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__193.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__194() {
-  }
-  _no_name_provided__194.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'center';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
-    var tmp$ret$10;
-    $l$block_9: {
-      var tmp$ret$7;
-      $l$block_6: {
-        var tmp1__get_Center__0 = Companion_getInstance_23();
-        var tmp$ret$6;
-        $l$block_5: {
-          var tmp$ret$5;
-          $l$block_4: {
-            var tmp$ret$4;
-            $l$block_3: {
-              tmp$ret$4 = 'center';
-              break $l$block_3;
-            }
-            tmp$ret$5 = tmp$ret$4;
-            break $l$block_4;
-          }
-          tmp$ret$6 = tmp$ret$5;
-          break $l$block_5;
-        }
-        tmp$ret$7 = tmp$ret$6;
-        break $l$block_6;
-      }
-      var tmp2__get_value__0 = tmp$ret$7;
-      var tmp$ret$9;
-      $l$block_8: {
-        var tmp$ret$8;
-        $l$block_7: {
-          tmp$ret$8 = tmp2__get_value__0;
-          break $l$block_7;
-        }
-        tmp$ret$9 = tmp$ret$8;
-        break $l$block_8;
-      }
-      tmp$ret$10 = tmp$ret$9;
-      break $l$block_9;
-    }
-    justifySelf($this$invoke, tmp$ret$10);
-  };
-  _no_name_provided__194.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__194.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__195() {
-  }
-  _no_name_provided__195.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$6;
     $l$block_5: {
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0__get_End__0 = Companion_getInstance_23();
+        var tmp0__get_End__0 = Companion_getInstance_22();
         var tmp$ret$2;
         $l$block_1: {
           var tmp$ret$1;
@@ -38203,7 +37978,7 @@
     justifySelf($this$invoke, tmp$ret$6);
     var tmp$ret$10;
     $l$block_9: {
-      var tmp2__get_Center__0 = Companion_getInstance_23();
+      var tmp2__get_Center__0 = Companion_getInstance_22();
       var tmp$ret$9;
       $l$block_8: {
         var tmp$ret$8;
@@ -38224,22 +37999,22 @@
     }
     alignSelf($this$invoke, tmp$ret$10);
   };
-  _no_name_provided__195.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__192.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__195.$metadata$ = {
+  _no_name_provided__192.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__196() {
+  function _no_name_provided__193() {
   }
-  _no_name_provided__196.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__193.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$6;
     $l$block_5: {
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0__get_Start__0 = Companion_getInstance_23();
+        var tmp0__get_Start__0 = Companion_getInstance_22();
         var tmp$ret$2;
         $l$block_1: {
           var tmp$ret$1;
@@ -38275,7 +38050,7 @@
     justifySelf($this$invoke, tmp$ret$6);
     var tmp$ret$10;
     $l$block_9: {
-      var tmp2__get_End__0 = Companion_getInstance_23();
+      var tmp2__get_End__0 = Companion_getInstance_22();
       var tmp$ret$9;
       $l$block_8: {
         var tmp$ret$8;
@@ -38296,22 +38071,22 @@
     }
     alignSelf($this$invoke, tmp$ret$10);
   };
-  _no_name_provided__196.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__193.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__196.$metadata$ = {
+  _no_name_provided__193.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__197() {
+  function _no_name_provided__194() {
   }
-  _no_name_provided__197.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__194.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$6;
     $l$block_5: {
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0__get_Center__0 = Companion_getInstance_23();
+        var tmp0__get_Center__0 = Companion_getInstance_22();
         var tmp$ret$2;
         $l$block_1: {
           var tmp$ret$1;
@@ -38347,7 +38122,7 @@
     justifySelf($this$invoke, tmp$ret$6);
     var tmp$ret$10;
     $l$block_9: {
-      var tmp2__get_End__0 = Companion_getInstance_23();
+      var tmp2__get_End__0 = Companion_getInstance_22();
       var tmp$ret$9;
       $l$block_8: {
         var tmp$ret$8;
@@ -38368,22 +38143,22 @@
     }
     alignSelf($this$invoke, tmp$ret$10);
   };
-  _no_name_provided__197.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__194.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__197.$metadata$ = {
+  _no_name_provided__194.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__198() {
+  function _no_name_provided__195() {
   }
-  _no_name_provided__198.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__195.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$6;
     $l$block_5: {
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0__get_End__0 = Companion_getInstance_23();
+        var tmp0__get_End__0 = Companion_getInstance_22();
         var tmp$ret$2;
         $l$block_1: {
           var tmp$ret$1;
@@ -38419,7 +38194,7 @@
     justifySelf($this$invoke, tmp$ret$6);
     var tmp$ret$10;
     $l$block_9: {
-      var tmp2__get_End__0 = Companion_getInstance_23();
+      var tmp2__get_End__0 = Companion_getInstance_22();
       var tmp$ret$9;
       $l$block_8: {
         var tmp$ret$8;
@@ -38440,20 +38215,20 @@
     }
     alignSelf($this$invoke, tmp$ret$10);
   };
-  _no_name_provided__198.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__195.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__198.$metadata$ = {
+  _no_name_provided__195.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__199() {
+  function _no_name_provided__196() {
   }
-  _no_name_provided__199.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__196.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_20();
+      var tmp0__get_Flex__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -38475,7 +38250,7 @@
     display($this$invoke, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Row__0 = Companion_getInstance_24();
+      var tmp1__get_Row__0 = Companion_getInstance_23();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -38497,7 +38272,7 @@
     flexDirection($this$invoke, tmp$ret$7);
     var tmp$ret$11;
     $l$block_10: {
-      var tmp2__get_Wrap__0 = Companion_getInstance_25();
+      var tmp2__get_Wrap__0 = Companion_getInstance_24();
       var tmp$ret$10;
       $l$block_9: {
         var tmp$ret$9;
@@ -38518,20 +38293,20 @@
     }
     flexWrap($this$invoke, tmp$ret$11);
   };
-  _no_name_provided__199.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__196.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__199.$metadata$ = {
+  _no_name_provided__196.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__200() {
+  function _no_name_provided__197() {
   }
-  _no_name_provided__200.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__197.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_FlexStart__0 = Companion_getInstance_26();
+      var tmp0__get_FlexStart__0 = Companion_getInstance_25();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -38552,20 +38327,20 @@
     }
     justifyContent($this$invoke, tmp$ret$3);
   };
-  _no_name_provided__200.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__197.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__200.$metadata$ = {
+  _no_name_provided__197.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__201() {
+  function _no_name_provided__198() {
   }
-  _no_name_provided__201.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__198.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_26();
+      var tmp0__get_Center__0 = Companion_getInstance_25();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -38586,20 +38361,20 @@
     }
     justifyContent($this$invoke, tmp$ret$3);
   };
-  _no_name_provided__201.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__198.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__201.$metadata$ = {
+  _no_name_provided__198.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__202() {
+  function _no_name_provided__199() {
   }
-  _no_name_provided__202.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__199.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_FlexEnd__0 = Companion_getInstance_26();
+      var tmp0__get_FlexEnd__0 = Companion_getInstance_25();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -38619,6 +38394,108 @@
       break $l$block_2;
     }
     justifyContent($this$invoke, tmp$ret$3);
+  };
+  _no_name_provided__199.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__199.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__200() {
+  }
+  _no_name_provided__200.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_FlexStart__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'flex-start';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
+  };
+  _no_name_provided__200.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__200.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__201() {
+  }
+  _no_name_provided__201.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_Center__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'center';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
+  };
+  _no_name_provided__201.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__201.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__202() {
+  }
+  _no_name_provided__202.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_FlexEnd__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'flex-end';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
   };
   _no_name_provided__202.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -38652,7 +38529,7 @@
       tmp$ret$3 = tmp$ret$2;
       break $l$block_2;
     }
-    alignItems($this$invoke, tmp$ret$3);
+    alignSelf($this$invoke, tmp$ret$3);
   };
   _no_name_provided__203.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -38686,7 +38563,7 @@
       tmp$ret$3 = tmp$ret$2;
       break $l$block_2;
     }
-    alignItems($this$invoke, tmp$ret$3);
+    alignSelf($this$invoke, tmp$ret$3);
   };
   _no_name_provided__204.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -38720,7 +38597,7 @@
       tmp$ret$3 = tmp$ret$2;
       break $l$block_2;
     }
-    alignItems($this$invoke, tmp$ret$3);
+    alignSelf($this$invoke, tmp$ret$3);
   };
   _no_name_provided__205.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -38735,109 +38612,7 @@
   _no_name_provided__206.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_FlexStart__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'flex-start';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
-  };
-  _no_name_provided__206.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__206.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__207() {
-  }
-  _no_name_provided__207.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'center';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
-  };
-  _no_name_provided__207.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__207.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__208() {
-  }
-  _no_name_provided__208.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_FlexEnd__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'flex-end';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
-  };
-  _no_name_provided__208.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__208.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__209() {
-  }
-  _no_name_provided__209.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_Flex__0 = Companion_getInstance_20();
+      var tmp0__get_Flex__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -38859,7 +38634,7 @@
     display($this$invoke, tmp$ret$3);
     var tmp$ret$7;
     $l$block_6: {
-      var tmp1__get_Column__0 = Companion_getInstance_24();
+      var tmp1__get_Column__0 = Companion_getInstance_23();
       var tmp$ret$6;
       $l$block_5: {
         var tmp$ret$5;
@@ -38880,20 +38655,20 @@
     }
     flexDirection($this$invoke, tmp$ret$7);
   };
-  _no_name_provided__209.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__206.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__209.$metadata$ = {
+  _no_name_provided__206.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__210() {
+  function _no_name_provided__207() {
   }
-  _no_name_provided__210.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__207.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_FlexStart__0 = Companion_getInstance_26();
+      var tmp0__get_FlexStart__0 = Companion_getInstance_25();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -38914,20 +38689,20 @@
     }
     justifyContent($this$invoke, tmp$ret$3);
   };
-  _no_name_provided__210.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__207.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__210.$metadata$ = {
+  _no_name_provided__207.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__211() {
+  function _no_name_provided__208() {
   }
-  _no_name_provided__211.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__208.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_26();
+      var tmp0__get_Center__0 = Companion_getInstance_25();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -38948,20 +38723,20 @@
     }
     justifyContent($this$invoke, tmp$ret$3);
   };
-  _no_name_provided__211.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__208.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__211.$metadata$ = {
+  _no_name_provided__208.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__212() {
+  function _no_name_provided__209() {
   }
-  _no_name_provided__212.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+  _no_name_provided__209.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_FlexEnd__0 = Companion_getInstance_26();
+      var tmp0__get_FlexEnd__0 = Companion_getInstance_25();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -38981,6 +38756,108 @@
       break $l$block_2;
     }
     justifyContent($this$invoke, tmp$ret$3);
+  };
+  _no_name_provided__209.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__209.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__210() {
+  }
+  _no_name_provided__210.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_FlexStart__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'flex-start';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
+  };
+  _no_name_provided__210.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__210.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__211() {
+  }
+  _no_name_provided__211.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_Center__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'center';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
+  };
+  _no_name_provided__211.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__211.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__212() {
+  }
+  _no_name_provided__212.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_FlexEnd__0 = Companion_getInstance_21();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'flex-end';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    alignItems($this$invoke, tmp$ret$3);
   };
   _no_name_provided__212.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -39014,7 +38891,7 @@
       tmp$ret$3 = tmp$ret$2;
       break $l$block_2;
     }
-    alignItems($this$invoke, tmp$ret$3);
+    alignSelf($this$invoke, tmp$ret$3);
   };
   _no_name_provided__213.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -39048,7 +38925,7 @@
       tmp$ret$3 = tmp$ret$2;
       break $l$block_2;
     }
-    alignItems($this$invoke, tmp$ret$3);
+    alignSelf($this$invoke, tmp$ret$3);
   };
   _no_name_provided__214.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -39082,7 +38959,7 @@
       tmp$ret$3 = tmp$ret$2;
       break $l$block_2;
     }
-    alignItems($this$invoke, tmp$ret$3);
+    alignSelf($this$invoke, tmp$ret$3);
   };
   _no_name_provided__215.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
@@ -39095,115 +38972,13 @@
   function _no_name_provided__216() {
   }
   _no_name_provided__216.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_FlexStart__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'flex-start';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
+    flexGrow($this$invoke, 1);
   };
   _no_name_provided__216.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__216.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__217() {
-  }
-  _no_name_provided__217.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_Center__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'center';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
-  };
-  _no_name_provided__217.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__217.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__218() {
-  }
-  _no_name_provided__218.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_FlexEnd__0 = Companion_getInstance_23();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'flex-end';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    alignSelf($this$invoke, tmp$ret$3);
-  };
-  _no_name_provided__218.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__218.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__219() {
-  }
-  _no_name_provided__219.prototype.invoke_dzfmrm_k$ = function ($this$invoke) {
-    flexGrow($this$invoke, 1);
-  };
-  _no_name_provided__219.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__219.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -39214,7 +38989,7 @@
     initCol(this);
     initRow(this);
     initSpacer(this);
-    this._$stable_77 = 0;
+    this._$stable_76 = 0;
   }
   KobwebComposeStyleSheet.prototype.style_ro2ux6_k$ = function (selector, cssRule) {
     return this.style_9sv35b_k$(selector, cssRule);
@@ -39229,6 +39004,27 @@
     if (KobwebComposeStyleSheet_instance == null)
       new KobwebComposeStyleSheet();
     return KobwebComposeStyleSheet_instance;
+  }
+  function _no_name_provided_$factory_153() {
+    var i = new _no_name_provided__177();
+    return function (p1) {
+      i.invoke_dzfmrm_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_154() {
+    var i = new _no_name_provided__178();
+    return function (p1) {
+      i.invoke_dzfmrm_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_155() {
+    var i = new _no_name_provided__179();
+    return function (p1) {
+      i.invoke_dzfmrm_k$(p1);
+      return Unit_getInstance();
+    };
   }
   function _no_name_provided_$factory_156() {
     var i = new _no_name_provided__180();
@@ -39489,27 +39285,24 @@
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_193() {
-    var i = new _no_name_provided__217();
-    return function (p1) {
-      i.invoke_dzfmrm_k$(p1);
-      return Unit_getInstance();
-    };
+  function _no_name_provided__217() {
   }
-  function _no_name_provided_$factory_194() {
-    var i = new _no_name_provided__218();
-    return function (p1) {
-      i.invoke_dzfmrm_k$(p1);
-      return Unit_getInstance();
-    };
+  _no_name_provided__217.$metadata$ = {
+    kind: 'class',
+    interfaces: [Alignment]
+  };
+  function _no_name_provided__218() {
   }
-  function _no_name_provided_$factory_195() {
-    var i = new _no_name_provided__219();
-    return function (p1) {
-      i.invoke_dzfmrm_k$(p1);
-      return Unit_getInstance();
-    };
+  _no_name_provided__218.$metadata$ = {
+    kind: 'class',
+    interfaces: [Alignment]
+  };
+  function _no_name_provided__219() {
   }
+  _no_name_provided__219.$metadata$ = {
+    kind: 'class',
+    interfaces: [Alignment]
+  };
   function _no_name_provided__220() {
   }
   _no_name_provided__220.$metadata$ = {
@@ -39550,53 +39343,35 @@
   }
   _no_name_provided__226.$metadata$ = {
     kind: 'class',
-    interfaces: [Alignment]
+    interfaces: [Vertical_0]
   };
   function _no_name_provided__227() {
   }
   _no_name_provided__227.$metadata$ = {
     kind: 'class',
-    interfaces: [Alignment]
+    interfaces: [Vertical_0]
   };
   function _no_name_provided__228() {
   }
   _no_name_provided__228.$metadata$ = {
     kind: 'class',
-    interfaces: [Alignment]
+    interfaces: [Vertical_0]
   };
   function _no_name_provided__229() {
   }
   _no_name_provided__229.$metadata$ = {
     kind: 'class',
-    interfaces: [Vertical_0]
+    interfaces: [Horizontal_0]
   };
   function _no_name_provided__230() {
   }
   _no_name_provided__230.$metadata$ = {
     kind: 'class',
-    interfaces: [Vertical_0]
+    interfaces: [Horizontal_0]
   };
   function _no_name_provided__231() {
   }
   _no_name_provided__231.$metadata$ = {
-    kind: 'class',
-    interfaces: [Vertical_0]
-  };
-  function _no_name_provided__232() {
-  }
-  _no_name_provided__232.$metadata$ = {
-    kind: 'class',
-    interfaces: [Horizontal_0]
-  };
-  function _no_name_provided__233() {
-  }
-  _no_name_provided__233.$metadata$ = {
-    kind: 'class',
-    interfaces: [Horizontal_0]
-  };
-  function _no_name_provided__234() {
-  }
-  _no_name_provided__234.$metadata$ = {
     kind: 'class',
     interfaces: [Horizontal_0]
   };
@@ -39614,49 +39389,49 @@
     kind: 'interface',
     interfaces: []
   };
-  function Companion_40() {
-    Companion_instance_39 = this;
+  function Companion_39() {
+    Companion_instance_38 = this;
     var tmp = this;
-    tmp._TopStart = new _no_name_provided__220();
+    tmp._TopStart = new _no_name_provided__217();
     var tmp_0 = this;
-    tmp_0._TopCenter = new _no_name_provided__221();
+    tmp_0._TopCenter = new _no_name_provided__218();
     var tmp_1 = this;
-    tmp_1._TopEnd = new _no_name_provided__222();
+    tmp_1._TopEnd = new _no_name_provided__219();
     var tmp_2 = this;
-    tmp_2._CenterStart = new _no_name_provided__223();
+    tmp_2._CenterStart = new _no_name_provided__220();
     var tmp_3 = this;
-    tmp_3._Center_0 = new _no_name_provided__224();
+    tmp_3._Center_0 = new _no_name_provided__221();
     var tmp_4 = this;
-    tmp_4._CenterEnd = new _no_name_provided__225();
+    tmp_4._CenterEnd = new _no_name_provided__222();
     var tmp_5 = this;
-    tmp_5._BottomStart = new _no_name_provided__226();
+    tmp_5._BottomStart = new _no_name_provided__223();
     var tmp_6 = this;
-    tmp_6._BottomCenter = new _no_name_provided__227();
+    tmp_6._BottomCenter = new _no_name_provided__224();
     var tmp_7 = this;
-    tmp_7._BottomEnd = new _no_name_provided__228();
+    tmp_7._BottomEnd = new _no_name_provided__225();
     var tmp_8 = this;
-    tmp_8._Top_0 = new _no_name_provided__229();
+    tmp_8._Top_0 = new _no_name_provided__226();
     var tmp_9 = this;
-    tmp_9._CenterVertically = new _no_name_provided__230();
+    tmp_9._CenterVertically = new _no_name_provided__227();
     var tmp_10 = this;
-    tmp_10._Bottom_0 = new _no_name_provided__231();
+    tmp_10._Bottom_0 = new _no_name_provided__228();
     var tmp_11 = this;
-    tmp_11._Start_0 = new _no_name_provided__232();
+    tmp_11._Start_0 = new _no_name_provided__229();
     var tmp_12 = this;
-    tmp_12._CenterHorizontally = new _no_name_provided__233();
+    tmp_12._CenterHorizontally = new _no_name_provided__230();
     var tmp_13 = this;
-    tmp_13._End_0 = new _no_name_provided__234();
+    tmp_13._End_0 = new _no_name_provided__231();
   }
-  Companion_40.$metadata$ = {
+  Companion_39.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_39;
-  function Companion_getInstance_39() {
-    if (Companion_instance_39 == null)
-      new Companion_40();
-    return Companion_instance_39;
+  var Companion_instance_38;
+  function Companion_getInstance_38() {
+    if (Companion_instance_38 == null)
+      new Companion_39();
+    return Companion_instance_38;
   }
   function Alignment() {
   }
@@ -39675,30 +39450,30 @@
     kind: 'interface',
     interfaces: [Modifier]
   };
-  function Companion_41() {
-    Companion_instance_40 = this;
+  function Companion_40() {
+    Companion_instance_39 = this;
   }
-  Companion_41.prototype.fold_2jxrc2_k$ = function (initial, operation) {
+  Companion_40.prototype.fold_2jxrc2_k$ = function (initial, operation) {
     return initial;
   };
-  Companion_41.prototype.then_7hhy4d_k$ = function (other) {
+  Companion_40.prototype.then_7hhy4d_k$ = function (other) {
     return other;
   };
-  Companion_41.$metadata$ = {
+  Companion_40.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: [Modifier]
   };
-  var Companion_instance_40;
-  function Companion_getInstance_40() {
-    if (Companion_instance_40 == null)
-      new Companion_41();
-    return Companion_instance_40;
+  var Companion_instance_39;
+  function Companion_getInstance_39() {
+    if (Companion_instance_39 == null)
+      new Companion_40();
+    return Companion_instance_39;
   }
   function Modifier() {
   }
   Modifier.prototype.then_7hhy4d_k$ = function (other) {
-    return other === Companion_getInstance_40() ? this : new ChainedModifier(this, other);
+    return other === Companion_getInstance_39() ? this : new ChainedModifier(this, other);
   };
   Modifier.$metadata$ = {
     simpleName: 'Modifier',
@@ -39722,7 +39497,7 @@
   }
   function asStyleBuilder(_this_, finalHandler) {
     var firstModifier = _this_;
-    return _no_name_provided_$factory_196(firstModifier, finalHandler);
+    return _no_name_provided_$factory_193(firstModifier, finalHandler);
   }
   function asStyleBuilder$default(_this_, finalHandler, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
@@ -39731,7 +39506,7 @@
   }
   function asAttributesBuilder(_this_, finalHandler) {
     var firstModifier = _this_;
-    return _no_name_provided_$factory_197(firstModifier, finalHandler);
+    return _no_name_provided_$factory_194(firstModifier, finalHandler);
   }
   function asAttributesBuilder$default(_this_, finalHandler, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
@@ -39743,7 +39518,7 @@
   }
   function StyleModifier(styles) {
     this._styles = styles;
-    this._$stable_78 = 0;
+    this._$stable_77 = 0;
   }
   StyleModifier.$metadata$ = {
     simpleName: 'StyleModifier',
@@ -39752,7 +39527,7 @@
   };
   function AttrsModifier(attrs) {
     this._attrs = attrs;
-    this._$stable_79 = 0;
+    this._$stable_78 = 0;
   }
   AttrsModifier.$metadata$ = {
     simpleName: 'AttrsModifier',
@@ -39766,13 +39541,70 @@
     kind: 'interface',
     interfaces: [Element_1]
   };
-  function _no_name_provided__235($this_null) {
+  function _no_name_provided__232($this_null) {
     this._$this_null = $this_null;
   }
-  _no_name_provided__235.prototype.invoke_84gwk3_k$ = function (_anonymous_parameter_0_, element) {
+  _no_name_provided__232.prototype.invoke_84gwk3_k$ = function (_anonymous_parameter_0_, element) {
     if (element instanceof StyleModifier) {
       element._styles(this._$this_null);
     } else {
+    }
+  };
+  _no_name_provided__232.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = p1 instanceof Unit ? p1 : THROW_CCE();
+    this.invoke_84gwk3_k$(tmp, (!(p2 == null) ? isInterface(p2, Element_1) : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__232.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__233($firstModifier, $finalHandler) {
+    this._$firstModifier = $firstModifier;
+    this._$finalHandler = $finalHandler;
+  }
+  _no_name_provided__233.prototype.invoke_k9hshx_k$ = function ($this$null) {
+    this._$firstModifier.fold_2jxrc2_k$(Unit_getInstance(), _no_name_provided_$factory_195($this$null));
+    var tmp0_safe_receiver = this._$finalHandler;
+    if (tmp0_safe_receiver == null)
+      null;
+    else
+      tmp0_safe_receiver($this$null);
+    Unit_getInstance();
+  };
+  _no_name_provided__233.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__233.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__234($element) {
+    this._$element = $element;
+  }
+  _no_name_provided__234.prototype.invoke_k9hshx_k$ = function ($this$style) {
+    this._$element._styles($this$style);
+  };
+  _no_name_provided__234.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__234.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__235($this_null) {
+    this._$this_null_0 = $this_null;
+  }
+  _no_name_provided__235.prototype.invoke_84gwk3_k$ = function (_anonymous_parameter_0_, element) {
+    if (element instanceof AttrsModifier) {
+      element._attrs(this._$this_null_0);
+    } else {
+      if (element instanceof StyleModifier) {
+        this._$this_null_0.style_gcyay2_k$(_no_name_provided_$factory_197(element));
+      } else {
+      }
     }
   };
   _no_name_provided__235.prototype.invoke_osx4an_k$ = function (p1, p2) {
@@ -39785,68 +39617,11 @@
     interfaces: []
   };
   function _no_name_provided__236($firstModifier, $finalHandler) {
-    this._$firstModifier = $firstModifier;
-    this._$finalHandler = $finalHandler;
-  }
-  _no_name_provided__236.prototype.invoke_k9hshx_k$ = function ($this$null) {
-    this._$firstModifier.fold_2jxrc2_k$(Unit_getInstance(), _no_name_provided_$factory_198($this$null));
-    var tmp0_safe_receiver = this._$finalHandler;
-    if (tmp0_safe_receiver == null)
-      null;
-    else
-      tmp0_safe_receiver($this$null);
-    Unit_getInstance();
-  };
-  _no_name_provided__236.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__236.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__237($element) {
-    this._$element = $element;
-  }
-  _no_name_provided__237.prototype.invoke_k9hshx_k$ = function ($this$style) {
-    this._$element._styles($this$style);
-  };
-  _no_name_provided__237.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__237.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__238($this_null) {
-    this._$this_null_0 = $this_null;
-  }
-  _no_name_provided__238.prototype.invoke_84gwk3_k$ = function (_anonymous_parameter_0_, element) {
-    if (element instanceof AttrsModifier) {
-      element._attrs(this._$this_null_0);
-    } else {
-      if (element instanceof StyleModifier) {
-        this._$this_null_0.style_gcyay2_k$(_no_name_provided_$factory_200(element));
-      } else {
-      }
-    }
-  };
-  _no_name_provided__238.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = p1 instanceof Unit ? p1 : THROW_CCE();
-    this.invoke_84gwk3_k$(tmp, (!(p2 == null) ? isInterface(p2, Element_1) : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__238.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__239($firstModifier, $finalHandler) {
     this._$firstModifier_0 = $firstModifier;
     this._$finalHandler_0 = $finalHandler;
   }
-  _no_name_provided__239.prototype.invoke_1g6ult_k$ = function ($this$null) {
-    this._$firstModifier_0.fold_2jxrc2_k$(Unit_getInstance(), _no_name_provided_$factory_199($this$null));
+  _no_name_provided__236.prototype.invoke_1g6ult_k$ = function ($this$null) {
+    this._$firstModifier_0.fold_2jxrc2_k$(Unit_getInstance(), _no_name_provided_$factory_196($this$null));
     var tmp0_safe_receiver = this._$finalHandler_0;
     if (tmp0_safe_receiver == null)
       null;
@@ -39854,64 +39629,64 @@
       tmp0_safe_receiver($this$null);
     Unit_getInstance();
   };
-  _no_name_provided__239.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__236.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_1g6ult_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__239.$metadata$ = {
+  _no_name_provided__236.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_196($firstModifier, $finalHandler) {
-    var i = new _no_name_provided__236($firstModifier, $finalHandler);
+  function _no_name_provided_$factory_193($firstModifier, $finalHandler) {
+    var i = new _no_name_provided__233($firstModifier, $finalHandler);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_197($firstModifier, $finalHandler) {
-    var i = new _no_name_provided__239($firstModifier, $finalHandler);
+  function _no_name_provided_$factory_194($firstModifier, $finalHandler) {
+    var i = new _no_name_provided__236($firstModifier, $finalHandler);
     return function (p1) {
       i.invoke_1g6ult_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_198($this_null) {
+  function _no_name_provided_$factory_195($this_null) {
+    var i = new _no_name_provided__232($this_null);
+    return function (p1, p2) {
+      i.invoke_84gwk3_k$(p1, p2);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_196($this_null) {
     var i = new _no_name_provided__235($this_null);
     return function (p1, p2) {
       i.invoke_84gwk3_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_199($this_null) {
-    var i = new _no_name_provided__238($this_null);
-    return function (p1, p2) {
-      i.invoke_84gwk3_k$(p1, p2);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_200($element) {
-    var i = new _no_name_provided__237($element);
+  function _no_name_provided_$factory_197($element) {
+    var i = new _no_name_provided__234($element);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
   function Rgb(value) {
-    this._value_24 = value;
-    this._$stable_80 = 0;
+    this._value_23 = value;
+    this._$stable_79 = 0;
   }
   Rgb.prototype._get_red__0_k$ = function () {
-    return this._value_24 >> 16 & 255;
+    return this._value_23 >> 16 & 255;
   };
   Rgb.prototype._get_green__0_k$ = function () {
-    return this._value_24 >> 8 & 255;
+    return this._value_23 >> 8 & 255;
   };
   Rgb.prototype._get_blue__0_k$ = function () {
-    return this._value_24 >> 0 & 255;
+    return this._value_23 >> 0 & 255;
   };
   Rgb.prototype._get_alpha__0_k$ = function () {
-    return this._value_24 >> 24 & 255;
+    return this._value_23 >> 24 & 255;
   };
   Rgb.prototype._get_redf__0_k$ = function () {
     return toColorFloat(this._get_red__0_k$());
@@ -39926,7 +39701,7 @@
     return toColorFloat(this._get_alpha__0_k$());
   };
   Rgb.prototype.inverted_0_k$ = function () {
-    return Companion_getInstance_41().rgba_w0xdj4_k$(255 - this._get_red__0_k$() | 0, 255 - this._get_green__0_k$() | 0, 255 - this._get_blue__0_k$() | 0, this._get_alpha__0_k$());
+    return Companion_getInstance_40().rgba_w0xdj4_k$(255 - this._get_red__0_k$() | 0, 255 - this._get_green__0_k$() | 0, 255 - this._get_blue__0_k$() | 0, this._get_alpha__0_k$());
   };
   Rgb.prototype.darkened_dbmacu_k$ = function (byPercent) {
     {
@@ -39945,7 +39720,7 @@
     if (byPercent === 0.0)
       return this;
     var darkeningMultiplier = 1.0 - byPercent;
-    return Companion_getInstance_41().rgba_bha9a8_k$(this._get_redf__0_k$() * darkeningMultiplier, this._get_greenf__0_k$() * darkeningMultiplier, this._get_bluef__0_k$() * darkeningMultiplier, this._get_alphaf__0_k$());
+    return Companion_getInstance_40().rgba_bha9a8_k$(this._get_redf__0_k$() * darkeningMultiplier, this._get_greenf__0_k$() * darkeningMultiplier, this._get_bluef__0_k$() * darkeningMultiplier, this._get_alphaf__0_k$());
   };
   Rgb.prototype.toString = function () {
     return this._get_alpha__0_k$() === 255 ? '' + 'rgb(r=' + this._get_red__0_k$() + ' g=' + this._get_green__0_k$() + ' b=' + this._get_blue__0_k$() + ')' : '' + 'rgba(r=' + this._get_red__0_k$() + ' g=' + this._get_green__0_k$() + ' b=' + this._get_blue__0_k$() + ' a=' + this._get_alpha__0_k$() + ')';
@@ -39955,29 +39730,29 @@
     kind: 'class',
     interfaces: [Color_2]
   };
-  function Companion_42() {
-    Companion_instance_41 = this;
+  function Companion_41() {
+    Companion_instance_40 = this;
     this._DEFAULT_SHIFTING_PERCENT = 0.3;
   }
-  Companion_42.prototype.rgb_fcwjfj_k$ = function (r, g, b) {
+  Companion_41.prototype.rgb_fcwjfj_k$ = function (r, g, b) {
     return this.rgba_w0xdj4_k$(r, g, b, 255);
   };
-  Companion_42.prototype.rgba_w0xdj4_k$ = function (r, g, b, a) {
+  Companion_41.prototype.rgba_w0xdj4_k$ = function (r, g, b, a) {
     return new Rgb((r & 255) << 16 | (g & 255) << 8 | (b & 255) << 0 | (a & 255) << 24);
   };
-  Companion_42.prototype.rgba_bha9a8_k$ = function (r, g, b, a) {
+  Companion_41.prototype.rgba_bha9a8_k$ = function (r, g, b, a) {
     return this.rgba_w0xdj4_k$(toColorInt(r), toColorInt(g), toColorInt(b), toColorInt(a));
   };
-  Companion_42.$metadata$ = {
+  Companion_41.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_41;
-  function Companion_getInstance_41() {
-    if (Companion_instance_41 == null)
-      new Companion_42();
-    return Companion_instance_41;
+  var Companion_instance_40;
+  function Companion_getInstance_40() {
+    if (Companion_instance_40 == null)
+      new Companion_41();
+    return Companion_instance_40;
   }
   function Color_2() {
   }
@@ -39988,7 +39763,7 @@
   };
   function Colors() {
     Colors_instance = this;
-    this._$stable_81 = 0;
+    this._$stable_80 = 0;
   }
   Colors.$metadata$ = {
     simpleName: 'Colors',
@@ -40029,13 +39804,76 @@
     return tmp;
   }
   function role(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_201(value));
+    return styleModifier(_this_, _no_name_provided_$factory_198(value));
   }
-  function _no_name_provided__240($value) {
-    this._$value_5 = $value;
+  function _no_name_provided__237($value) {
+    this._$value_3 = $value;
+  }
+  _no_name_provided__237.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    $this$styleModifier.property_wbz76b_k$('role', this._$value_3);
+  };
+  _no_name_provided__237.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__237.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided_$factory_198($value) {
+    var i = new _no_name_provided__237($value);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function borderRadius_0(_this_, r) {
+    return styleModifier(_this_, _no_name_provided_$factory_199(r));
+  }
+  function border_0(_this_, width_1, style, color_2) {
+    return styleModifier(_this_, _no_name_provided_$factory_200(width_1, style, color_2));
+  }
+  function borderColor(_this_, color_2) {
+    return styleModifier(_this_, _no_name_provided_$factory_201(color_2));
+  }
+  function borderWidth_0(_this_, width_1) {
+    return styleModifier(_this_, _no_name_provided_$factory_202(width_1));
+  }
+  function _no_name_provided__238($r) {
+    this._$r = $r;
+  }
+  _no_name_provided__238.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    borderRadius($this$styleModifier, this._$r);
+  };
+  _no_name_provided__238.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__238.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__239($width, $style, $color) {
+    this._$width = $width;
+    this._$style = $style;
+    this._$color = $color;
+  }
+  _no_name_provided__239.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    border($this$styleModifier, this._$width, this._$style, this._$color);
+  };
+  _no_name_provided__239.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__239.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__240($color) {
+    this._$color_0 = $color;
   }
   _no_name_provided__240.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    $this$styleModifier.property_wbz76b_k$('role', this._$value_5);
+    $this$styleModifier.property_t4iuxv_k$('border-color', this._$color_0);
   };
   _no_name_provided__240.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40045,30 +39883,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_201($value) {
-    var i = new _no_name_provided__240($value);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function borderRadius_0(_this_, r) {
-    return styleModifier(_this_, _no_name_provided_$factory_202(r));
-  }
-  function border_0(_this_, width_1, style, color_2) {
-    return styleModifier(_this_, _no_name_provided_$factory_203(width_1, style, color_2));
-  }
-  function borderColor(_this_, color_2) {
-    return styleModifier(_this_, _no_name_provided_$factory_204(color_2));
-  }
-  function borderWidth_0(_this_, width_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_205(width_1));
-  }
-  function _no_name_provided__241($r) {
-    this._$r = $r;
+  function _no_name_provided__241($width) {
+    this._$width_0 = $width;
   }
   _no_name_provided__241.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    borderRadius($this$styleModifier, this._$r);
+    borderWidth($this$styleModifier, this._$width_0);
   };
   _no_name_provided__241.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40078,13 +39897,60 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__242($width, $style, $color) {
-    this._$width = $width;
-    this._$style = $style;
-    this._$color = $color;
+  function _no_name_provided_$factory_199($r) {
+    var i = new _no_name_provided__238($r);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_200($width, $style, $color) {
+    var i = new _no_name_provided__239($width, $style, $color);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_201($color) {
+    var i = new _no_name_provided__240($color);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_202($width) {
+    var i = new _no_name_provided__241($width);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function backgroundColor_0(_this_, color_2) {
+    return styleModifier(_this_, _no_name_provided_$factory_203(color_2));
+  }
+  function color_0(_this_, color_2) {
+    return styleModifier(_this_, _no_name_provided_$factory_204(color_2));
+  }
+  function color_1(_this_, value) {
+    return styleModifier(_this_, _no_name_provided_$factory_205(value));
+  }
+  function backgroundColor_1(_this_, value) {
+    return styleModifier(_this_, _no_name_provided_$factory_206(value));
+  }
+  function backgroundColor_2(_this_, color_2) {
+    return styleModifier(_this_, _no_name_provided_$factory_207(color_2));
+  }
+  function opacity_1(_this_, value) {
+    return styleModifier(_this_, _no_name_provided_$factory_208(value));
+  }
+  function opacity_2(_this_, value) {
+    return styleModifier(_this_, _no_name_provided_$factory_209(value));
+  }
+  function _no_name_provided__242($color) {
+    this._$color_1 = $color;
   }
   _no_name_provided__242.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    border($this$styleModifier, this._$width, this._$style, this._$color);
+    backgroundColor($this$styleModifier, toCssColor(this._$color_1));
   };
   _no_name_provided__242.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40095,10 +39961,10 @@
     interfaces: []
   };
   function _no_name_provided__243($color) {
-    this._$color_0 = $color;
+    this._$color_2 = $color;
   }
   _no_name_provided__243.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    $this$styleModifier.property_t4iuxv_k$('border-color', this._$color_0);
+    color($this$styleModifier, toCssColor(this._$color_2));
   };
   _no_name_provided__243.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40108,11 +39974,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__244($width) {
-    this._$width_0 = $width;
+  function _no_name_provided__244($value) {
+    this._$value_4 = $value;
   }
   _no_name_provided__244.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    borderWidth($this$styleModifier, this._$width_0);
+    $this$styleModifier.property_wbz76b_k$('color', this._$value_4);
   };
   _no_name_provided__244.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40122,60 +39988,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_202($r) {
-    var i = new _no_name_provided__241($r);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_203($width, $style, $color) {
-    var i = new _no_name_provided__242($width, $style, $color);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_204($color) {
-    var i = new _no_name_provided__243($color);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_205($width) {
-    var i = new _no_name_provided__244($width);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function backgroundColor_0(_this_, color_2) {
-    return styleModifier(_this_, _no_name_provided_$factory_206(color_2));
-  }
-  function color_0(_this_, color_2) {
-    return styleModifier(_this_, _no_name_provided_$factory_207(color_2));
-  }
-  function color_1(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_208(value));
-  }
-  function backgroundColor_1(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_209(value));
-  }
-  function opacity_1(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_210(value));
-  }
-  function backgroundColor_2(_this_, color_2) {
-    return styleModifier(_this_, _no_name_provided_$factory_211(color_2));
-  }
-  function opacity_2(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_212(value));
-  }
-  function _no_name_provided__245($color) {
-    this._$color_1 = $color;
+  function _no_name_provided__245($value) {
+    this._$value_5 = $value;
   }
   _no_name_provided__245.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    backgroundColor($this$styleModifier, toCssColor(this._$color_1));
+    $this$styleModifier.property_wbz76b_k$('background-color', this._$value_5);
   };
   _no_name_provided__245.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40186,10 +40003,10 @@
     interfaces: []
   };
   function _no_name_provided__246($color) {
-    this._$color_2 = $color;
+    this._$color_3 = $color;
   }
   _no_name_provided__246.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    color($this$styleModifier, toCssColor(this._$color_2));
+    backgroundColor($this$styleModifier, this._$color_3);
   };
   _no_name_provided__246.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40203,7 +40020,7 @@
     this._$value_6 = $value;
   }
   _no_name_provided__247.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    $this$styleModifier.property_wbz76b_k$('color', this._$value_6);
+    opacity($this$styleModifier, this._$value_6);
   };
   _no_name_provided__247.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40217,7 +40034,7 @@
     this._$value_7 = $value;
   }
   _no_name_provided__248.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    $this$styleModifier.property_wbz76b_k$('background-color', this._$value_7);
+    opacity_0($this$styleModifier, this._$value_7);
   };
   _no_name_provided__248.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40227,50 +40044,29 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__249($value) {
-    this._$value_8 = $value;
+  function _no_name_provided_$factory_203($color) {
+    var i = new _no_name_provided__242($color);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
   }
-  _no_name_provided__249.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    opacity($this$styleModifier, this._$value_8);
-  };
-  _no_name_provided__249.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__249.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__250($color) {
-    this._$color_3 = $color;
+  function _no_name_provided_$factory_204($color) {
+    var i = new _no_name_provided__243($color);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
   }
-  _no_name_provided__250.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    backgroundColor($this$styleModifier, this._$color_3);
-  };
-  _no_name_provided__250.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__250.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__251($value) {
-    this._$value_9 = $value;
+  function _no_name_provided_$factory_205($value) {
+    var i = new _no_name_provided__244($value);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
   }
-  _no_name_provided__251.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    opacity_0($this$styleModifier, this._$value_9);
-  };
-  _no_name_provided__251.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__251.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided_$factory_206($color) {
-    var i = new _no_name_provided__245($color);
+  function _no_name_provided_$factory_206($value) {
+    var i = new _no_name_provided__245($value);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
@@ -40297,6 +40093,23 @@
       return Unit_getInstance();
     };
   }
+  function boxShadow(_this_, value) {
+    return styleModifier(_this_, _no_name_provided_$factory_210(value));
+  }
+  function _no_name_provided__249($value) {
+    this._$value_8 = $value;
+  }
+  _no_name_provided__249.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    $this$styleModifier.property_wbz76b_k$('box-shadow', this._$value_8);
+  };
+  _no_name_provided__249.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__249.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function _no_name_provided_$factory_210($value) {
     var i = new _no_name_provided__249($value);
     return function (p1) {
@@ -40304,13 +40117,47 @@
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_211($color) {
-    var i = new _no_name_provided__250($color);
+  function classNames(_this_, classes) {
+    return attrsModifier(_this_, _no_name_provided_$factory_211(classes));
+  }
+  function _no_name_provided__250($classes) {
+    this._$classes = $classes;
+  }
+  _no_name_provided__250.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
+    $this$attrsModifier.classes_70f81e_k$(this._$classes.slice());
+  };
+  _no_name_provided__250.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__250.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided_$factory_211($classes) {
+    var i = new _no_name_provided__250($classes);
     return function (p1) {
-      i.invoke_k9hshx_k$(p1);
+      i.invoke_n0ngqi_k$(p1);
       return Unit_getInstance();
     };
   }
+  function flexGrow_0(_this_, value) {
+    return styleModifier(_this_, _no_name_provided_$factory_212(value));
+  }
+  function _no_name_provided__251($value) {
+    this._$value_9 = $value;
+  }
+  _no_name_provided__251.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    flexGrow($this$styleModifier, this._$value_9);
+  };
+  _no_name_provided__251.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__251.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function _no_name_provided_$factory_212($value) {
     var i = new _no_name_provided__251($value);
     return function (p1) {
@@ -40318,14 +40165,32 @@
       return Unit_getInstance();
     };
   }
-  function boxShadow(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_213(value));
+  function userSelect_0(_this_, userSelect_1) {
+    return styleModifier(_this_, _no_name_provided_$factory_213(userSelect_1));
   }
-  function _no_name_provided__252($value) {
-    this._$value_10 = $value;
+  function cursor_0(_this_, cursor_1) {
+    return styleModifier(_this_, _no_name_provided_$factory_214(cursor_1));
+  }
+  function onMouseLeave(_this_, onMouseLeave_0) {
+    return attrsModifier(_this_, _no_name_provided_$factory_215(onMouseLeave_0));
+  }
+  function onMouseEnter(_this_, onMouseEnter_0) {
+    return attrsModifier(_this_, _no_name_provided_$factory_216(onMouseEnter_0));
+  }
+  function onClick(_this_, onClick_0) {
+    return attrsModifier(_this_, _no_name_provided_$factory_217(onClick_0));
+  }
+  function onKeyDown(_this_, onKeyDown_0) {
+    return attrsModifier(_this_, _no_name_provided_$factory_218(onKeyDown_0));
+  }
+  function tabIndex(_this_, value) {
+    return attrsModifier(_this_, _no_name_provided_$factory_219(value));
+  }
+  function _no_name_provided__252($userSelect) {
+    this._$userSelect = $userSelect;
   }
   _no_name_provided__252.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    $this$styleModifier.property_wbz76b_k$('box-shadow', this._$value_10);
+    userSelect($this$styleModifier, this._$userSelect);
   };
   _no_name_provided__252.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40335,160 +40200,112 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_213($value) {
-    var i = new _no_name_provided__252($value);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
+  function _no_name_provided__253($cursor) {
+    this._$cursor = $cursor;
   }
-  function classNames(_this_, classes) {
-    return attrsModifier(_this_, _no_name_provided_$factory_214(classes));
-  }
-  function _no_name_provided__253($classes) {
-    this._$classes = $classes;
-  }
-  _no_name_provided__253.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
-    $this$attrsModifier.classes_70f81e_k$(this._$classes.slice());
+  _no_name_provided__253.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    cursor($this$styleModifier, this._$cursor);
   };
   _no_name_provided__253.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__253.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_214($classes) {
-    var i = new _no_name_provided__253($classes);
-    return function (p1) {
-      i.invoke_n0ngqi_k$(p1);
-      return Unit_getInstance();
-    };
+  function _no_name_provided__254($onMouseLeave) {
+    this._$onMouseLeave = $onMouseLeave;
   }
-  function flexGrow_0(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_215(value));
-  }
-  function _no_name_provided__254($value) {
-    this._$value_11 = $value;
-  }
-  _no_name_provided__254.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    flexGrow($this$styleModifier, this._$value_11);
+  _no_name_provided__254.prototype.invoke_9dcepc_k$ = function (evt) {
+    this._$onMouseLeave(evt);
   };
   _no_name_provided__254.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__254.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_215($value) {
-    var i = new _no_name_provided__254($value);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
+  function _no_name_provided__255($onMouseLeave) {
+    this._$onMouseLeave_0 = $onMouseLeave;
   }
-  function userSelect_0(_this_, userSelect_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_216(userSelect_1));
-  }
-  function cursor_0(_this_, cursor_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_217(cursor_1));
-  }
-  function onMouseLeave(_this_, onMouseLeave_0) {
-    return attrsModifier(_this_, _no_name_provided_$factory_218(onMouseLeave_0));
-  }
-  function onMouseEnter(_this_, onMouseEnter_0) {
-    return attrsModifier(_this_, _no_name_provided_$factory_219(onMouseEnter_0));
-  }
-  function onKeyDown(_this_, onKeyDown_0) {
-    return attrsModifier(_this_, _no_name_provided_$factory_220(onKeyDown_0));
-  }
-  function tabIndex(_this_, value) {
-    return attrsModifier(_this_, _no_name_provided_$factory_221(value));
-  }
-  function onClick(_this_, onClick_0) {
-    return attrsModifier(_this_, _no_name_provided_$factory_222(onClick_0));
-  }
-  function _no_name_provided__255($userSelect) {
-    this._$userSelect = $userSelect;
-  }
-  _no_name_provided__255.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    userSelect($this$styleModifier, this._$userSelect);
+  _no_name_provided__255.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
+    $this$attrsModifier.onMouseLeave_hxe0av_k$(_no_name_provided_$factory_220(this._$onMouseLeave_0));
   };
   _no_name_provided__255.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__255.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__256($cursor) {
-    this._$cursor = $cursor;
+  function _no_name_provided__256($onMouseEnter) {
+    this._$onMouseEnter = $onMouseEnter;
   }
-  _no_name_provided__256.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    cursor($this$styleModifier, this._$cursor);
+  _no_name_provided__256.prototype.invoke_9dcepc_k$ = function (evt) {
+    this._$onMouseEnter(evt);
   };
   _no_name_provided__256.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__256.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__257($onMouseLeave) {
-    this._$onMouseLeave = $onMouseLeave;
+  function _no_name_provided__257($onMouseEnter) {
+    this._$onMouseEnter_0 = $onMouseEnter;
   }
-  _no_name_provided__257.prototype.invoke_9dcepc_k$ = function (evt) {
-    this._$onMouseLeave(evt);
+  _no_name_provided__257.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
+    $this$attrsModifier.onMouseEnter_hxe0av_k$(_no_name_provided_$factory_221(this._$onMouseEnter_0));
   };
   _no_name_provided__257.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__257.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__258($onMouseLeave) {
-    this._$onMouseLeave_0 = $onMouseLeave;
+  function _no_name_provided__258($onClick) {
+    this._$onClick = $onClick;
   }
-  _no_name_provided__258.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
-    $this$attrsModifier.onMouseLeave_hxe0av_k$(_no_name_provided_$factory_223(this._$onMouseLeave_0));
+  _no_name_provided__258.prototype.invoke_9dcepc_k$ = function (evt) {
+    this._$onClick(evt);
   };
   _no_name_provided__258.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__258.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__259($onMouseEnter) {
-    this._$onMouseEnter = $onMouseEnter;
+  function _no_name_provided__259($onClick) {
+    this._$onClick_0 = $onClick;
   }
-  _no_name_provided__259.prototype.invoke_9dcepc_k$ = function (evt) {
-    this._$onMouseEnter(evt);
+  _no_name_provided__259.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
+    $this$attrsModifier.onClick_hxe0av_k$(_no_name_provided_$factory_222(this._$onClick_0));
   };
   _no_name_provided__259.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__259.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__260($onMouseEnter) {
-    this._$onMouseEnter_0 = $onMouseEnter;
+  function _no_name_provided__260($onKeyDown) {
+    this._$onKeyDown = $onKeyDown;
   }
-  _no_name_provided__260.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
-    $this$attrsModifier.onMouseEnter_hxe0av_k$(_no_name_provided_$factory_224(this._$onMouseEnter_0));
+  _no_name_provided__260.prototype.invoke_ozral7_k$ = function (evt) {
+    this._$onKeyDown(evt);
   };
   _no_name_provided__260.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
+    this.invoke_ozral7_k$(p1 instanceof SyntheticKeyboardEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__260.$metadata$ = {
@@ -40496,24 +40313,25 @@
     interfaces: []
   };
   function _no_name_provided__261($onKeyDown) {
-    this._$onKeyDown = $onKeyDown;
+    this._$onKeyDown_0 = $onKeyDown;
   }
-  _no_name_provided__261.prototype.invoke_ozral7_k$ = function (evt) {
-    this._$onKeyDown(evt);
+  _no_name_provided__261.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
+    $this$attrsModifier.onKeyDown_gwp2we_k$(_no_name_provided_$factory_223(this._$onKeyDown_0));
   };
   _no_name_provided__261.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_ozral7_k$(p1 instanceof SyntheticKeyboardEvent ? p1 : THROW_CCE());
+    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__261.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__262($onKeyDown) {
-    this._$onKeyDown_0 = $onKeyDown;
+  function _no_name_provided__262($value) {
+    this._$value_10 = $value;
   }
   _no_name_provided__262.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
-    $this$attrsModifier.onKeyDown_gwp2we_k$(_no_name_provided_$factory_225(this._$onKeyDown_0));
+    $this$attrsModifier.tabIndex_ha5a7z_k$(this._$value_10);
+    Unit_getInstance();
   };
   _no_name_provided__262.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
@@ -40523,152 +40341,109 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__263($value) {
-    this._$value_12 = $value;
-  }
-  _no_name_provided__263.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
-    $this$attrsModifier.tabIndex_ha5a7z_k$(this._$value_12);
-    Unit_getInstance();
-  };
-  _no_name_provided__263.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__263.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__264($onClick) {
-    this._$onClick = $onClick;
-  }
-  _no_name_provided__264.prototype.invoke_9dcepc_k$ = function (evt) {
-    this._$onClick(evt);
-  };
-  _no_name_provided__264.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__264.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__265($onClick) {
-    this._$onClick_0 = $onClick;
-  }
-  _no_name_provided__265.prototype.invoke_n0ngqi_k$ = function ($this$attrsModifier) {
-    $this$attrsModifier.onClick_hxe0av_k$(_no_name_provided_$factory_226(this._$onClick_0));
-  };
-  _no_name_provided__265.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_n0ngqi_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__265.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided_$factory_216($userSelect) {
-    var i = new _no_name_provided__255($userSelect);
+  function _no_name_provided_$factory_213($userSelect) {
+    var i = new _no_name_provided__252($userSelect);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_217($cursor) {
-    var i = new _no_name_provided__256($cursor);
+  function _no_name_provided_$factory_214($cursor) {
+    var i = new _no_name_provided__253($cursor);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_218($onMouseLeave) {
-    var i = new _no_name_provided__258($onMouseLeave);
+  function _no_name_provided_$factory_215($onMouseLeave) {
+    var i = new _no_name_provided__255($onMouseLeave);
     return function (p1) {
       i.invoke_n0ngqi_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_219($onMouseEnter) {
-    var i = new _no_name_provided__260($onMouseEnter);
+  function _no_name_provided_$factory_216($onMouseEnter) {
+    var i = new _no_name_provided__257($onMouseEnter);
     return function (p1) {
       i.invoke_n0ngqi_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_220($onKeyDown) {
-    var i = new _no_name_provided__262($onKeyDown);
+  function _no_name_provided_$factory_217($onClick) {
+    var i = new _no_name_provided__259($onClick);
     return function (p1) {
       i.invoke_n0ngqi_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_221($value) {
-    var i = new _no_name_provided__263($value);
+  function _no_name_provided_$factory_218($onKeyDown) {
+    var i = new _no_name_provided__261($onKeyDown);
     return function (p1) {
       i.invoke_n0ngqi_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_219($value) {
+    var i = new _no_name_provided__262($value);
+    return function (p1) {
+      i.invoke_n0ngqi_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_220($onMouseLeave) {
+    var i = new _no_name_provided__254($onMouseLeave);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_221($onMouseEnter) {
+    var i = new _no_name_provided__256($onMouseEnter);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_222($onClick) {
-    var i = new _no_name_provided__265($onClick);
-    return function (p1) {
-      i.invoke_n0ngqi_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_223($onMouseLeave) {
-    var i = new _no_name_provided__257($onMouseLeave);
+    var i = new _no_name_provided__258($onClick);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_224($onMouseEnter) {
-    var i = new _no_name_provided__259($onMouseEnter);
-    return function (p1) {
-      i.invoke_9dcepc_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_225($onKeyDown) {
-    var i = new _no_name_provided__261($onKeyDown);
+  function _no_name_provided_$factory_223($onKeyDown) {
+    var i = new _no_name_provided__260($onKeyDown);
     return function (p1) {
       i.invoke_ozral7_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_226($onClick) {
-    var i = new _no_name_provided__264($onClick);
-    return function (p1) {
-      i.invoke_9dcepc_k$(p1);
-      return Unit_getInstance();
-    };
-  }
   function display_0(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_227(value));
+    return styleModifier(_this_, _no_name_provided_$factory_224(value));
   }
   function minHeight_0(_this_, size_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_228(size_1));
+    return styleModifier(_this_, _no_name_provided_$factory_225(size_1));
   }
   function minWidth_0(_this_, size_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_229(size_1));
+    return styleModifier(_this_, _no_name_provided_$factory_226(size_1));
   }
   function margin_0(_this_, all) {
-    return styleModifier(_this_, _no_name_provided_$factory_230(all));
+    return styleModifier(_this_, _no_name_provided_$factory_227(all));
   }
   function padding_0(_this_, all) {
-    return styleModifier(_this_, _no_name_provided_$factory_231(all));
+    return styleModifier(_this_, _no_name_provided_$factory_228(all));
   }
   function size_0(_this_, size_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_232(size_1));
+    return styleModifier(_this_, _no_name_provided_$factory_229(size_1));
   }
   function lineHeight_0(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_233(value));
+    return styleModifier(_this_, _no_name_provided_$factory_230(value));
   }
   function padding_1(_this_, topBottom, leftRight) {
-    return styleModifier(_this_, _no_name_provided_$factory_234(topBottom, leftRight));
+    return styleModifier(_this_, _no_name_provided_$factory_231(topBottom, leftRight));
   }
   function margin_1(_this_, top, right, bottom, left) {
-    return styleModifier(_this_, _no_name_provided_$factory_235(top, right, bottom, left));
+    return styleModifier(_this_, _no_name_provided_$factory_232(top, right, bottom, left));
   }
   function margin$default(_this_, top, right, bottom, left, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
@@ -40682,7 +40457,7 @@
     return margin_1(_this_, top, right, bottom, left);
   }
   function fillMaxWidth(_this_, percent) {
-    return styleModifier(_this_, _no_name_provided_$factory_236(percent));
+    return styleModifier(_this_, _no_name_provided_$factory_233(percent));
   }
   function fillMaxWidth$default(_this_, percent, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
@@ -40690,7 +40465,7 @@
     return fillMaxWidth(_this_, percent);
   }
   function padding_2(_this_, top, right, bottom, left) {
-    return styleModifier(_this_, _no_name_provided_$factory_237(top, right, bottom, left));
+    return styleModifier(_this_, _no_name_provided_$factory_234(top, right, bottom, left));
   }
   function padding$default(_this_, top, right, bottom, left, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
@@ -40704,10 +40479,10 @@
     return padding_2(_this_, top, right, bottom, left);
   }
   function maxWidth_0(_this_, size_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_238(size_1));
+    return styleModifier(_this_, _no_name_provided_$factory_235(size_1));
   }
   function fillMaxSize(_this_, percent) {
-    return styleModifier(_this_, _no_name_provided_$factory_239(percent));
+    return styleModifier(_this_, _no_name_provided_$factory_236(percent));
   }
   function fillMaxSize$default(_this_, percent, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
@@ -40715,25 +40490,67 @@
     return fillMaxSize(_this_, percent);
   }
   function overflowY_0(_this_, overflowY_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_240(overflowY_1));
+    return styleModifier(_this_, _no_name_provided_$factory_237(overflowY_1));
   }
   function overflowX_0(_this_, overflowX_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_241(overflowX_1));
+    return styleModifier(_this_, _no_name_provided_$factory_238(overflowX_1));
   }
   function height_0(_this_, size_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_242(size_1));
+    return styleModifier(_this_, _no_name_provided_$factory_239(size_1));
   }
   function margin_2(_this_, topBottom, leftRight) {
-    return styleModifier(_this_, _no_name_provided_$factory_243(topBottom, leftRight));
+    return styleModifier(_this_, _no_name_provided_$factory_240(topBottom, leftRight));
   }
   function width_0(_this_, size_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_244(size_1));
+    return styleModifier(_this_, _no_name_provided_$factory_241(size_1));
   }
-  function _no_name_provided__266($value) {
-    this._$value_13 = $value;
+  function _no_name_provided__263($value) {
+    this._$value_11 = $value;
+  }
+  _no_name_provided__263.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    display($this$styleModifier, this._$value_11);
+  };
+  _no_name_provided__263.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__263.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__264($size) {
+    this._$size = $size;
+  }
+  _no_name_provided__264.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    minHeight($this$styleModifier, this._$size);
+  };
+  _no_name_provided__264.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__264.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__265($size) {
+    this._$size_0 = $size;
+  }
+  _no_name_provided__265.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    minWidth($this$styleModifier, this._$size_0);
+  };
+  _no_name_provided__265.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__265.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__266($all) {
+    this._$all = $all;
   }
   _no_name_provided__266.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    display($this$styleModifier, this._$value_13);
+    margin($this$styleModifier, [this._$all]);
   };
   _no_name_provided__266.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40743,11 +40560,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__267($size) {
-    this._$size = $size;
+  function _no_name_provided__267($all) {
+    this._$all_0 = $all;
   }
   _no_name_provided__267.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    minHeight($this$styleModifier, this._$size);
+    padding($this$styleModifier, [this._$all_0]);
   };
   _no_name_provided__267.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40758,10 +40575,11 @@
     interfaces: []
   };
   function _no_name_provided__268($size) {
-    this._$size_0 = $size;
+    this._$size_1 = $size;
   }
   _no_name_provided__268.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    minWidth($this$styleModifier, this._$size_0);
+    width($this$styleModifier, this._$size_1);
+    height($this$styleModifier, this._$size_1);
   };
   _no_name_provided__268.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40771,11 +40589,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__269($all) {
-    this._$all = $all;
+  function _no_name_provided__269($value) {
+    this._$value_12 = $value;
   }
   _no_name_provided__269.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    margin($this$styleModifier, [this._$all]);
+    lineHeight($this$styleModifier, toString_1(this._$value_12));
   };
   _no_name_provided__269.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40785,11 +40603,12 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__270($all) {
-    this._$all_0 = $all;
+  function _no_name_provided__270($topBottom, $leftRight) {
+    this._$topBottom = $topBottom;
+    this._$leftRight = $leftRight;
   }
   _no_name_provided__270.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    padding($this$styleModifier, [this._$all_0]);
+    padding($this$styleModifier, [this._$topBottom, this._$leftRight]);
   };
   _no_name_provided__270.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40799,12 +40618,14 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__271($size) {
-    this._$size_1 = $size;
+  function _no_name_provided__271($top, $right, $bottom, $left) {
+    this._$top = $top;
+    this._$right = $right;
+    this._$bottom = $bottom;
+    this._$left = $left;
   }
   _no_name_provided__271.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    width($this$styleModifier, this._$size_1);
-    height($this$styleModifier, this._$size_1);
+    margin($this$styleModifier, [this._$top, this._$right, this._$bottom, this._$left]);
   };
   _no_name_provided__271.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40814,11 +40635,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__272($value) {
-    this._$value_14 = $value;
+  function _no_name_provided__272($percent) {
+    this._$percent = $percent;
   }
   _no_name_provided__272.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    lineHeight($this$styleModifier, toString_1(this._$value_14));
+    width($this$styleModifier, this._$percent);
   };
   _no_name_provided__272.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40828,12 +40649,14 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__273($topBottom, $leftRight) {
-    this._$topBottom = $topBottom;
-    this._$leftRight = $leftRight;
+  function _no_name_provided__273($top, $right, $bottom, $left) {
+    this._$top_0 = $top;
+    this._$right_0 = $right;
+    this._$bottom_0 = $bottom;
+    this._$left_0 = $left;
   }
   _no_name_provided__273.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    padding($this$styleModifier, [this._$topBottom, this._$leftRight]);
+    padding($this$styleModifier, [this._$top_0, this._$right_0, this._$bottom_0, this._$left_0]);
   };
   _no_name_provided__273.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40843,14 +40666,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__274($top, $right, $bottom, $left) {
-    this._$top = $top;
-    this._$right = $right;
-    this._$bottom = $bottom;
-    this._$left = $left;
+  function _no_name_provided__274($size) {
+    this._$size_2 = $size;
   }
   _no_name_provided__274.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    margin($this$styleModifier, [this._$top, this._$right, this._$bottom, this._$left]);
+    maxWidth($this$styleModifier, this._$size_2);
   };
   _no_name_provided__274.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40861,10 +40681,11 @@
     interfaces: []
   };
   function _no_name_provided__275($percent) {
-    this._$percent = $percent;
+    this._$percent_0 = $percent;
   }
   _no_name_provided__275.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    width($this$styleModifier, this._$percent);
+    width($this$styleModifier, this._$percent_0);
+    height($this$styleModifier, this._$percent_0);
   };
   _no_name_provided__275.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40874,14 +40695,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__276($top, $right, $bottom, $left) {
-    this._$top_0 = $top;
-    this._$right_0 = $right;
-    this._$bottom_0 = $bottom;
-    this._$left_0 = $left;
+  function _no_name_provided__276($overflowY) {
+    this._$overflowY = $overflowY;
   }
   _no_name_provided__276.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    padding($this$styleModifier, [this._$top_0, this._$right_0, this._$bottom_0, this._$left_0]);
+    overflowY($this$styleModifier, this._$overflowY);
   };
   _no_name_provided__276.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40891,11 +40709,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__277($size) {
-    this._$size_2 = $size;
+  function _no_name_provided__277($overflowX) {
+    this._$overflowX = $overflowX;
   }
   _no_name_provided__277.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    maxWidth($this$styleModifier, this._$size_2);
+    overflowX($this$styleModifier, this._$overflowX);
   };
   _no_name_provided__277.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40905,12 +40723,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__278($percent) {
-    this._$percent_0 = $percent;
+  function _no_name_provided__278($size) {
+    this._$size_3 = $size;
   }
   _no_name_provided__278.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    width($this$styleModifier, this._$percent_0);
-    height($this$styleModifier, this._$percent_0);
+    height($this$styleModifier, this._$size_3);
   };
   _no_name_provided__278.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40920,11 +40737,12 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__279($overflowY) {
-    this._$overflowY = $overflowY;
+  function _no_name_provided__279($topBottom, $leftRight) {
+    this._$topBottom_0 = $topBottom;
+    this._$leftRight_0 = $leftRight;
   }
   _no_name_provided__279.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    overflowY($this$styleModifier, this._$overflowY);
+    margin($this$styleModifier, [this._$topBottom_0, this._$leftRight_0]);
   };
   _no_name_provided__279.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40934,11 +40752,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__280($overflowX) {
-    this._$overflowX = $overflowX;
+  function _no_name_provided__280($size) {
+    this._$size_4 = $size;
   }
   _no_name_provided__280.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    overflowX($this$styleModifier, this._$overflowX);
+    width($this$styleModifier, this._$size_4);
   };
   _no_name_provided__280.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -40948,58 +40766,36 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__281($size) {
-    this._$size_3 = $size;
-  }
-  _no_name_provided__281.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    height($this$styleModifier, this._$size_3);
-  };
-  _no_name_provided__281.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__281.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__282($topBottom, $leftRight) {
-    this._$topBottom_0 = $topBottom;
-    this._$leftRight_0 = $leftRight;
-  }
-  _no_name_provided__282.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    margin($this$styleModifier, [this._$topBottom_0, this._$leftRight_0]);
-  };
-  _no_name_provided__282.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__282.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__283($size) {
-    this._$size_4 = $size;
-  }
-  _no_name_provided__283.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    width($this$styleModifier, this._$size_4);
-  };
-  _no_name_provided__283.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__283.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided_$factory_227($value) {
-    var i = new _no_name_provided__266($value);
+  function _no_name_provided_$factory_224($value) {
+    var i = new _no_name_provided__263($value);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_228($size) {
-    var i = new _no_name_provided__267($size);
+  function _no_name_provided_$factory_225($size) {
+    var i = new _no_name_provided__264($size);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_226($size) {
+    var i = new _no_name_provided__265($size);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_227($all) {
+    var i = new _no_name_provided__266($all);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_228($all) {
+    var i = new _no_name_provided__267($all);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
@@ -41012,43 +40808,43 @@
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_230($all) {
-    var i = new _no_name_provided__269($all);
+  function _no_name_provided_$factory_230($value) {
+    var i = new _no_name_provided__269($value);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_231($all) {
-    var i = new _no_name_provided__270($all);
+  function _no_name_provided_$factory_231($topBottom, $leftRight) {
+    var i = new _no_name_provided__270($topBottom, $leftRight);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_232($size) {
-    var i = new _no_name_provided__271($size);
+  function _no_name_provided_$factory_232($top, $right, $bottom, $left) {
+    var i = new _no_name_provided__271($top, $right, $bottom, $left);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_233($value) {
-    var i = new _no_name_provided__272($value);
+  function _no_name_provided_$factory_233($percent) {
+    var i = new _no_name_provided__272($percent);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_234($topBottom, $leftRight) {
-    var i = new _no_name_provided__273($topBottom, $leftRight);
+  function _no_name_provided_$factory_234($top, $right, $bottom, $left) {
+    var i = new _no_name_provided__273($top, $right, $bottom, $left);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_235($top, $right, $bottom, $left) {
-    var i = new _no_name_provided__274($top, $right, $bottom, $left);
+  function _no_name_provided_$factory_235($size) {
+    var i = new _no_name_provided__274($size);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
@@ -41061,85 +40857,106 @@
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_237($top, $right, $bottom, $left) {
-    var i = new _no_name_provided__276($top, $right, $bottom, $left);
+  function _no_name_provided_$factory_237($overflowY) {
+    var i = new _no_name_provided__276($overflowY);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_238($size) {
-    var i = new _no_name_provided__277($size);
+  function _no_name_provided_$factory_238($overflowX) {
+    var i = new _no_name_provided__277($overflowX);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_239($percent) {
-    var i = new _no_name_provided__278($percent);
+  function _no_name_provided_$factory_239($size) {
+    var i = new _no_name_provided__278($size);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_240($overflowY) {
-    var i = new _no_name_provided__279($overflowY);
+  function _no_name_provided_$factory_240($topBottom, $leftRight) {
+    var i = new _no_name_provided__279($topBottom, $leftRight);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_241($overflowX) {
-    var i = new _no_name_provided__280($overflowX);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_242($size) {
-    var i = new _no_name_provided__281($size);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_243($topBottom, $leftRight) {
-    var i = new _no_name_provided__282($topBottom, $leftRight);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_244($size) {
-    var i = new _no_name_provided__283($size);
+  function _no_name_provided_$factory_241($size) {
+    var i = new _no_name_provided__280($size);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
   function textDecorationLine_0(_this_, textDecorationLine_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_245(textDecorationLine_1));
+    return styleModifier(_this_, _no_name_provided_$factory_242(textDecorationLine_1));
   }
   function fontFamily_0(_this_, values_0) {
-    return styleModifier(_this_, _no_name_provided_$factory_246(values_0));
+    return styleModifier(_this_, _no_name_provided_$factory_243(values_0));
   }
   function fontWeight_0(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_247(value));
+    return styleModifier(_this_, _no_name_provided_$factory_244(value));
   }
   function fontSize_0(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_248(value));
+    return styleModifier(_this_, _no_name_provided_$factory_245(value));
   }
   function textAlign_0(_this_, textAlign_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_249(textAlign_1));
+    return styleModifier(_this_, _no_name_provided_$factory_246(textAlign_1));
   }
   function whiteSpace_0(_this_, whiteSpace_1) {
-    return styleModifier(_this_, _no_name_provided_$factory_250(whiteSpace_1));
+    return styleModifier(_this_, _no_name_provided_$factory_247(whiteSpace_1));
   }
-  function _no_name_provided__284($textDecorationLine) {
+  function _no_name_provided__281($textDecorationLine) {
     this._$textDecorationLine = $textDecorationLine;
   }
-  _no_name_provided__284.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+  _no_name_provided__281.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
     textDecorationLine($this$styleModifier, [this._$textDecorationLine]);
+  };
+  _no_name_provided__281.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__281.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__282($values) {
+    this._$values = $values;
+  }
+  _no_name_provided__282.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    fontFamily($this$styleModifier, this._$values.slice());
+  };
+  _no_name_provided__282.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__282.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__283($value) {
+    this._$value_13 = $value;
+  }
+  _no_name_provided__283.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    fontWeight($this$styleModifier, this._$value_13);
+  };
+  _no_name_provided__283.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__283.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__284($value) {
+    this._$value_14 = $value;
+  }
+  _no_name_provided__284.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    fontSize($this$styleModifier, this._$value_14);
   };
   _no_name_provided__284.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -41149,11 +40966,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__285($values) {
-    this._$values = $values;
+  function _no_name_provided__285($textAlign) {
+    this._$textAlign = $textAlign;
   }
   _no_name_provided__285.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    fontFamily($this$styleModifier, this._$values.slice());
+    textAlign($this$styleModifier, this._$textAlign);
   };
   _no_name_provided__285.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -41163,11 +40980,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__286($value) {
-    this._$value_15 = $value;
+  function _no_name_provided__286($whiteSpace) {
+    this._$whiteSpace = $whiteSpace;
   }
   _no_name_provided__286.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    fontWeight($this$styleModifier, this._$value_15);
+    whiteSpace($this$styleModifier, this._$whiteSpace);
   };
   _no_name_provided__286.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -41177,11 +40994,68 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__287($value) {
-    this._$value_16 = $value;
+  function _no_name_provided_$factory_242($textDecorationLine) {
+    var i = new _no_name_provided__281($textDecorationLine);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_243($values) {
+    var i = new _no_name_provided__282($values);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_244($value) {
+    var i = new _no_name_provided__283($value);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_245($value) {
+    var i = new _no_name_provided__284($value);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_246($textAlign) {
+    var i = new _no_name_provided__285($textAlign);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_247($whiteSpace) {
+    var i = new _no_name_provided__286($whiteSpace);
+    return function (p1) {
+      i.invoke_k9hshx_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function transitionDuration_1(_this_, durations) {
+    return styleModifier(_this_, _no_name_provided_$factory_248(durations));
+  }
+  function transitionProperty_1(_this_, properties) {
+    return styleModifier(_this_, _no_name_provided_$factory_249(properties));
+  }
+  function transitionDuration_2(_this_, duration) {
+    return styleModifier(_this_, _no_name_provided_$factory_250(duration));
+  }
+  function transitionProperty_2(_this_, property) {
+    return styleModifier(_this_, _no_name_provided_$factory_251(property));
+  }
+  function transition(_this_, value) {
+    return styleModifier(_this_, _no_name_provided_$factory_252(value));
+  }
+  function _no_name_provided__287($durations) {
+    this._$durations = $durations;
   }
   _no_name_provided__287.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    fontSize($this$styleModifier, this._$value_16);
+    transitionDuration($this$styleModifier, this._$durations.slice());
   };
   _no_name_provided__287.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -41191,11 +41065,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__288($textAlign) {
-    this._$textAlign = $textAlign;
+  function _no_name_provided__288($properties) {
+    this._$properties = $properties;
   }
   _no_name_provided__288.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    textAlign($this$styleModifier, this._$textAlign);
+    transitionProperty($this$styleModifier, this._$properties.slice());
   };
   _no_name_provided__288.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -41205,11 +41079,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__289($whiteSpace) {
-    this._$whiteSpace = $whiteSpace;
+  function _no_name_provided__289($duration) {
+    this._$duration = $duration;
   }
   _no_name_provided__289.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    whiteSpace($this$styleModifier, this._$whiteSpace);
+    transitionDuration_0($this$styleModifier, this._$duration);
   };
   _no_name_provided__289.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -41219,68 +41093,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_245($textDecorationLine) {
-    var i = new _no_name_provided__284($textDecorationLine);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_246($values) {
-    var i = new _no_name_provided__285($values);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_247($value) {
-    var i = new _no_name_provided__286($value);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_248($value) {
-    var i = new _no_name_provided__287($value);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_249($textAlign) {
-    var i = new _no_name_provided__288($textAlign);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_250($whiteSpace) {
-    var i = new _no_name_provided__289($whiteSpace);
-    return function (p1) {
-      i.invoke_k9hshx_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function transitionDuration_1(_this_, durations) {
-    return styleModifier(_this_, _no_name_provided_$factory_251(durations));
-  }
-  function transitionProperty_1(_this_, properties) {
-    return styleModifier(_this_, _no_name_provided_$factory_252(properties));
-  }
-  function transitionDuration_2(_this_, duration) {
-    return styleModifier(_this_, _no_name_provided_$factory_253(duration));
-  }
-  function transitionProperty_2(_this_, property) {
-    return styleModifier(_this_, _no_name_provided_$factory_254(property));
-  }
-  function transition(_this_, value) {
-    return styleModifier(_this_, _no_name_provided_$factory_255(value));
-  }
-  function _no_name_provided__290($durations) {
-    this._$durations = $durations;
+  function _no_name_provided__290($property) {
+    this._$property = $property;
   }
   _no_name_provided__290.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    transitionDuration($this$styleModifier, this._$durations.slice());
+    transitionProperty_0($this$styleModifier, this._$property);
   };
   _no_name_provided__290.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -41290,11 +41107,11 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__291($properties) {
-    this._$properties = $properties;
+  function _no_name_provided__291($value) {
+    this._$value_15 = $value;
   }
   _no_name_provided__291.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    transitionProperty($this$styleModifier, this._$properties.slice());
+    $this$styleModifier.property_wbz76b_k$('transition', this._$value_15);
   };
   _no_name_provided__291.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
@@ -41304,78 +41121,36 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__292($duration) {
-    this._$duration = $duration;
-  }
-  _no_name_provided__292.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    transitionDuration_0($this$styleModifier, this._$duration);
-  };
-  _no_name_provided__292.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__292.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__293($property) {
-    this._$property = $property;
-  }
-  _no_name_provided__293.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    transitionProperty_0($this$styleModifier, this._$property);
-  };
-  _no_name_provided__293.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__293.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__294($value) {
-    this._$value_17 = $value;
-  }
-  _no_name_provided__294.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    $this$styleModifier.property_wbz76b_k$('transition', this._$value_17);
-  };
-  _no_name_provided__294.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__294.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided_$factory_251($durations) {
-    var i = new _no_name_provided__290($durations);
+  function _no_name_provided_$factory_248($durations) {
+    var i = new _no_name_provided__287($durations);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_252($properties) {
-    var i = new _no_name_provided__291($properties);
+  function _no_name_provided_$factory_249($properties) {
+    var i = new _no_name_provided__288($properties);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_253($duration) {
-    var i = new _no_name_provided__292($duration);
+  function _no_name_provided_$factory_250($duration) {
+    var i = new _no_name_provided__289($duration);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_254($property) {
-    var i = new _no_name_provided__293($property);
+  function _no_name_provided_$factory_251($property) {
+    var i = new _no_name_provided__290($property);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_255($value) {
-    var i = new _no_name_provided__294($value);
+  function _no_name_provided_$factory_252($value) {
+    var i = new _no_name_provided__291($value);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
@@ -41384,7 +41159,7 @@
   function InitSilkContext(config, theme) {
     this._config = config;
     this._theme = theme;
-    this._$stable_82 = 8;
+    this._$stable_81 = 8;
   }
   InitSilkContext.$metadata$ = {
     simpleName: 'InitSilkContext',
@@ -41415,7 +41190,7 @@
   function SilkStyleSheet() {
     SilkStyleSheet_instance = this;
     StyleSheet_init_$Init$(null, false, 3, null, this);
-    this._$stable_83 = 0;
+    this._$stable_82 = 0;
   }
   SilkStyleSheet.prototype.style_ro2ux6_k$ = function (selector, cssRule) {
     return this.style_9sv35b_k$(selector, cssRule);
@@ -41457,13 +41232,13 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content) ? 2048 : 1024);
     if (!(($dirty & 5851 ^ 1170) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 2) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       if (!(($default & 4) === 0))
         variant_0._v = null;
       var tmp = toModifier$composable(ButtonStyle, variant_0._v, $composer_0, 112 & $dirty >> 3, 0).then_7hhy4d_k$(modifier_0._v);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_257(onClick_0);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_254(onClick_0);
         var tmp1_remember$composable_0 = $composer_0;
         var tmp2_remember$composable_0 = 14 & $dirty;
         var $composer_1 = tmp1_remember$composable_0;
@@ -41481,7 +41256,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_0;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_0 = value_2_2_6;
@@ -41506,7 +41281,7 @@
       var tmp_2 = tabIndex(onClick(tmp, tmp$ret$3), 0);
       var tmp$ret$7;
       $l$block_6: {
-        var tmp3_remember$composable_0 = _no_name_provided_$factory_258(onClick_0);
+        var tmp3_remember$composable_0 = _no_name_provided_$factory_255(onClick_0);
         var tmp4_remember$composable_0 = $composer_0;
         var tmp5_remember$composable_0 = 14 & $dirty;
         var $composer_1_0 = tmp4_remember$composable_0;
@@ -41524,7 +41299,7 @@
             var tmp$ret$4;
             $l$block_3: {
               var tmp_3;
-              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6_0 = tmp3_remember$composable_0();
                 tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6_0);
                 tmp_3 = value_2_2_6_0;
@@ -41547,124 +41322,124 @@
         break $l$block_6;
       }
       var tmp_5 = onKeyDown(tmp_2, tmp$ret$7);
-      var tmp_6 = Companion_getInstance_39()._Center_0;
+      var tmp_6 = Companion_getInstance_38()._Center_0;
       var tmp_7 = $composer_0;
-      Box$composable(tmp_5, tmp_6, composableLambda(tmp_7, -819892694, true, _no_name_provided_$factory_259(content, $dirty)), $composer_0, 384, 0);
+      Box$composable(tmp_5, tmp_6, composableLambda(tmp_7, -819892694, true, _no_name_provided_$factory_256(content, $dirty)), $composer_0, 384, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_260(onClick_0, modifier_0, variant_0, content, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_257(onClick_0, modifier_0, variant_0, content, $changed, $default));
     }
   }
   function Button$composable$lambda($onClick) {
-    return _no_name_provided_$factory_261($onClick);
+    return _no_name_provided_$factory_258($onClick);
   }
   function Button$composable$lambda_0($onClick) {
-    return _no_name_provided_$factory_262($onClick);
+    return _no_name_provided_$factory_259($onClick);
   }
   function Button$composable$lambda_1($onClick, $modifier, $variant, $content, $$changed, $$default, $composer, $force) {
     return Button$composable($onClick, $modifier._v, $variant._v, $content, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__295($buttonColors) {
+  function _no_name_provided__292($buttonColors) {
     this._$buttonColors = $buttonColors;
   }
+  _no_name_provided__292.prototype.invoke_0_k$ = function () {
+    return role(userSelect_0(clip(backgroundColor_0(Companion_getInstance_39(), this._$buttonColors._default_0), Rect_init_$Create$(_get_px_(4))), Companion_getInstance_31()._get_None__0_k$()), 'button');
+  };
+  _no_name_provided__292.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__293($buttonColors) {
+    this._$buttonColors_0 = $buttonColors;
+  }
+  _no_name_provided__293.prototype.invoke_0_k$ = function () {
+    return cursor_0(backgroundColor_0(Companion_getInstance_39(), this._$buttonColors_0._hover), Companion_getInstance_28()._get_Pointer__0_k$());
+  };
+  _no_name_provided__293.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__294($buttonColors) {
+    this._$buttonColors_1 = $buttonColors;
+  }
+  _no_name_provided__294.prototype.invoke_0_k$ = function () {
+    return backgroundColor_0(Companion_getInstance_39(), this._$buttonColors_1._hover);
+  };
+  _no_name_provided__294.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__295($buttonColors) {
+    this._$buttonColors_2 = $buttonColors;
+  }
   _no_name_provided__295.prototype.invoke_0_k$ = function () {
-    return role(userSelect_0(clip(backgroundColor_0(Companion_getInstance_40(), this._$buttonColors._default_0), Rect_init_$Create$(_get_px_(4))), Companion_getInstance_32()._get_None__0_k$()), 'button');
+    return backgroundColor_0(Companion_getInstance_39(), this._$buttonColors_2._pressed);
   };
   _no_name_provided__295.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function _no_name_provided__296($buttonColors) {
-    this._$buttonColors_0 = $buttonColors;
+    this._$buttonColors_3 = $buttonColors;
   }
   _no_name_provided__296.prototype.invoke_0_k$ = function () {
-    return cursor_0(backgroundColor_0(Companion_getInstance_40(), this._$buttonColors_0._hover), Companion_getInstance_29()._get_Pointer__0_k$());
+    return backgroundColor_0(Companion_getInstance_39(), this._$buttonColors_3._pressed);
   };
   _no_name_provided__296.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__297($buttonColors) {
-    this._$buttonColors_1 = $buttonColors;
+  function _no_name_provided__297() {
   }
-  _no_name_provided__297.prototype.invoke_0_k$ = function () {
-    return backgroundColor_0(Companion_getInstance_40(), this._$buttonColors_1._hover);
+  _no_name_provided__297.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    var buttonColors = toSilkPalette($this$$receiver._colorMode)._button_0;
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_260(buttonColors));
+    var tmp = _get_hover_($this$$receiver);
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_261(buttonColors));
+    var tmp_0 = _get_focus_($this$$receiver);
+    tmp_0.invoke_if27nh_k$(_no_name_provided_$factory_262(buttonColors));
+    var tmp_1 = _get_active_($this$$receiver);
+    tmp_1.invoke_if27nh_k$(_no_name_provided_$factory_263(buttonColors));
+    var tmp_2 = _get_focus_($this$$receiver).plus_3pf9n3_k$(_get_active_($this$$receiver));
+    tmp_2.invoke_if27nh_k$(_no_name_provided_$factory_264(buttonColors));
+  };
+  _no_name_provided__297.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__297.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__298($buttonColors) {
-    this._$buttonColors_2 = $buttonColors;
+  function _no_name_provided__298($onClick) {
+    this._$onClick_1 = $onClick;
   }
   _no_name_provided__298.prototype.invoke_0_k$ = function () {
-    return backgroundColor_0(Companion_getInstance_40(), this._$buttonColors_2._pressed);
+    return Button$composable$lambda(this._$onClick_1);
   };
   _no_name_provided__298.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__299($buttonColors) {
-    this._$buttonColors_3 = $buttonColors;
+  function _no_name_provided__299($onClick) {
+    this._$onClick_2 = $onClick;
   }
   _no_name_provided__299.prototype.invoke_0_k$ = function () {
-    return backgroundColor_0(Companion_getInstance_40(), this._$buttonColors_3._pressed);
+    return Button$composable$lambda_0(this._$onClick_2);
   };
   _no_name_provided__299.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__300() {
-  }
-  _no_name_provided__300.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    var buttonColors = toSilkPalette($this$$receiver._colorMode)._button_0;
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_263(buttonColors));
-    var tmp = _get_hover_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_264(buttonColors));
-    var tmp_0 = _get_focus_($this$$receiver);
-    tmp_0.invoke_if27nh_k$(_no_name_provided_$factory_265(buttonColors));
-    var tmp_1 = _get_active_($this$$receiver);
-    tmp_1.invoke_if27nh_k$(_no_name_provided_$factory_266(buttonColors));
-    var tmp_2 = _get_focus_($this$$receiver).plus_3pf9n3_k$(_get_active_($this$$receiver));
-    tmp_2.invoke_if27nh_k$(_no_name_provided_$factory_267(buttonColors));
-  };
-  _no_name_provided__300.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__300.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__301($onClick) {
-    this._$onClick_1 = $onClick;
-  }
-  _no_name_provided__301.prototype.invoke_0_k$ = function () {
-    return Button$composable$lambda(this._$onClick_1);
-  };
-  _no_name_provided__301.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__302($onClick) {
-    this._$onClick_2 = $onClick;
-  }
-  _no_name_provided__302.prototype.invoke_0_k$ = function () {
-    return Button$composable$lambda_0(this._$onClick_2);
-  };
-  _no_name_provided__302.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__303($content, $$dirty) {
+  function _no_name_provided__300($content, $$dirty) {
     this._$content_12 = $content;
     this._$$dirty_3 = $$dirty;
   }
-  _no_name_provided__303.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
+  _no_name_provided__300.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._$content_12;
@@ -41676,17 +41451,17 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__303.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__300.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof BoxScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_jpel0v_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__303.$metadata$ = {
+  _no_name_provided__300.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__304($onClick, $modifier, $variant, $content, $$changed, $$default) {
+  function _no_name_provided__301($onClick, $modifier, $variant, $content, $$changed, $$default) {
     this._$onClick_3 = $onClick;
     this._$modifier_2 = $modifier;
     this._$variant = $variant;
@@ -41694,22 +41469,22 @@
     this._$$changed_12 = $$changed;
     this._$$default_8 = $$default;
   }
-  _no_name_provided__304.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__301.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return Button$composable$lambda_1(this._$onClick_3, this._$modifier_2, this._$variant, this._$content_13, this._$$changed_12, this._$$default_8, p0, p1);
   };
-  _no_name_provided__304.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__301.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__304.$metadata$ = {
+  _no_name_provided__301.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__305($onClick) {
+  function _no_name_provided__302($onClick) {
     this._$onClick_4 = $onClick;
   }
-  _no_name_provided__305.prototype.invoke_9dcepc_k$ = function (evt) {
+  _no_name_provided__302.prototype.invoke_9dcepc_k$ = function (evt) {
     var tmp0_safe_receiver = document.activeElement;
     if (tmp0_safe_receiver == null)
       null;
@@ -41721,77 +41496,95 @@
     this._$onClick_4();
     evt.preventDefault_sv8swh_k$();
   };
-  _no_name_provided__305.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__302.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__305.$metadata$ = {
+  _no_name_provided__302.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__306($onClick) {
+  function _no_name_provided__303($onClick) {
     this._$onClick_5 = $onClick;
   }
-  _no_name_provided__306.prototype.invoke_ozral7_k$ = function (evt) {
+  _no_name_provided__303.prototype.invoke_ozral7_k$ = function (evt) {
     if (evt._isComposing_1)
       return Unit_getInstance();
     if (evt._key_5 === 'Enter') {
       this._$onClick_5();
       evt.preventDefault_sv8swh_k$();
     }};
-  _no_name_provided__306.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__303.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_ozral7_k$(p1 instanceof SyntheticKeyboardEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__306.$metadata$ = {
+  _no_name_provided__303.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_256() {
-    var i = new _no_name_provided__300();
+  function _no_name_provided_$factory_253() {
+    var i = new _no_name_provided__297();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_257($onClick) {
-    var i = new _no_name_provided__301($onClick);
+  function _no_name_provided_$factory_254($onClick) {
+    var i = new _no_name_provided__298($onClick);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_258($onClick) {
-    var i = new _no_name_provided__302($onClick);
+  function _no_name_provided_$factory_255($onClick) {
+    var i = new _no_name_provided__299($onClick);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_259($content, $$dirty) {
-    var i = new _no_name_provided__303($content, $$dirty);
+  function _no_name_provided_$factory_256($content, $$dirty) {
+    var i = new _no_name_provided__300($content, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_jpel0v_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_260($onClick, $modifier, $variant, $content, $$changed, $$default) {
-    var i = new _no_name_provided__304($onClick, $modifier, $variant, $content, $$changed, $$default);
+  function _no_name_provided_$factory_257($onClick, $modifier, $variant, $content, $$changed, $$default) {
+    var i = new _no_name_provided__301($onClick, $modifier, $variant, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_261($onClick) {
-    var i = new _no_name_provided__305($onClick);
+  function _no_name_provided_$factory_258($onClick) {
+    var i = new _no_name_provided__302($onClick);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_262($onClick) {
-    var i = new _no_name_provided__306($onClick);
+  function _no_name_provided_$factory_259($onClick) {
+    var i = new _no_name_provided__303($onClick);
     return function (p1) {
       i.invoke_ozral7_k$(p1);
       return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_260($buttonColors) {
+    var i = new _no_name_provided__292($buttonColors);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_261($buttonColors) {
+    var i = new _no_name_provided__293($buttonColors);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_262($buttonColors) {
+    var i = new _no_name_provided__294($buttonColors);
+    return function () {
+      return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_263($buttonColors) {
@@ -41806,40 +41599,22 @@
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_265($buttonColors) {
-    var i = new _no_name_provided__297($buttonColors);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_266($buttonColors) {
-    var i = new _no_name_provided__298($buttonColors);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_267($buttonColors) {
-    var i = new _no_name_provided__299($buttonColors);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
   var CanvasStyle;
-  function _no_name_provided__307() {
+  function _no_name_provided__304() {
   }
-  _no_name_provided__307.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+  _no_name_provided__304.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
     return Unit_getInstance();
   };
-  _no_name_provided__307.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__304.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__307.$metadata$ = {
+  _no_name_provided__304.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_268() {
-    var i = new _no_name_provided__307();
+  function _no_name_provided_$factory_265() {
+    var i = new _no_name_provided__304();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
@@ -41872,13 +41647,13 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content) ? 2048 : 1024);
     if (!(($dirty & 5851 ^ 1170) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 2) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       if (!(($default & 4) === 0))
         variant_0._v = null;
       var tmp = toModifier$composable(SimpleGridStyle, variant_0._v, $composer_0, 112 & $dirty >> 3, 0).then_7hhy4d_k$(modifier_0._v);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_272(numColumns);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_269(numColumns);
         var tmp1_remember$composable_0 = $composer_0;
         var tmp2_remember$composable_0 = 14 & $dirty;
         var $composer_1 = tmp1_remember$composable_0;
@@ -41896,7 +41671,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_0;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_0 = value_2_2_6;
@@ -41920,29 +41695,29 @@
       }
       var tmp_2 = asAttributesBuilder(tmp, tmp$ret$3);
       var tmp_3 = $composer_0;
-      Div$composable(tmp_2, composableLambda(tmp_3, -819893784, true, _no_name_provided_$factory_273(content, $dirty)), $composer_0, 48, 0);
+      Div$composable(tmp_2, composableLambda(tmp_3, -819893784, true, _no_name_provided_$factory_270(content, $dirty)), $composer_0, 48, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_274(numColumns, modifier_0, variant_0, content, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_271(numColumns, modifier_0, variant_0, content, $changed, $default));
     }
   }
   function SimpleGrid$composable$lambda($numColumns) {
-    return _no_name_provided_$factory_275($numColumns);
+    return _no_name_provided_$factory_272($numColumns);
   }
   function SimpleGrid$composable$lambda_0($numColumns, $modifier, $variant, $content, $$changed, $$default, $composer, $force) {
     return SimpleGrid$composable($numColumns, $modifier._v, $variant._v, $content, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__308() {
+  function _no_name_provided__305() {
   }
-  _no_name_provided__308.prototype.invoke_3u3pah_k$ = function ($this$base) {
-    var tmp = Companion_getInstance_40();
+  _no_name_provided__305.prototype.invoke_3u3pah_k$ = function ($this$base) {
+    var tmp = Companion_getInstance_39();
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Grid__0 = Companion_getInstance_20();
+      var tmp0__get_Grid__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -41963,81 +41738,81 @@
     }
     return display_0(tmp, tmp$ret$3);
   };
-  _no_name_provided__308.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__305.prototype.invoke_20e8_k$ = function (p1) {
     return this.invoke_3u3pah_k$(p1 instanceof ComponentStyleState ? p1 : THROW_CCE());
+  };
+  _no_name_provided__305.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__306($numColumns_7_16_17) {
+    this._$numColumns_7_16_17 = $numColumns_7_16_17;
+  }
+  _no_name_provided__306.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+    gridTemplateColumns($this$styleModifier, '' + 'repeat(' + this._$numColumns_7_16_17 + ', 1fr)');
+  };
+  _no_name_provided__306.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__306.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__307($gridModifier_8_17_18) {
+    this._$gridModifier_8_17_18 = $gridModifier_8_17_18;
+  }
+  _no_name_provided__307.prototype.invoke_0_k$ = function () {
+    return this._$gridModifier_8_17_18;
+  };
+  _no_name_provided__307.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__308($gridModifier_8_17_18) {
+    this._$gridModifier_8_17_18_0 = $gridModifier_8_17_18;
+  }
+  _no_name_provided__308.prototype.invoke_0_k$ = function () {
+    return this._$gridModifier_8_17_18_0;
   };
   _no_name_provided__308.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__309($numColumns_7_16_17) {
-    this._$numColumns_7_16_17 = $numColumns_7_16_17;
+  function _no_name_provided__309($element_2_3_5, $gridModifier_8_17_18) {
+    this._$element_2_3_5 = $element_2_3_5;
+    this._$gridModifier_8_17_18_1 = $gridModifier_8_17_18;
   }
-  _no_name_provided__309.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
-    gridTemplateColumns($this$styleModifier, '' + 'repeat(' + this._$numColumns_7_16_17 + ', 1fr)');
+  _no_name_provided__309.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
+    if (this._$element_2_3_5 == null) {
+      $this$addVariant.base_if27nh_k$(_no_name_provided_$factory_273(this._$gridModifier_8_17_18_1));
+    } else {
+      $this$addVariant.invoke_jx6wx7_k$(this._$element_2_3_5, _no_name_provided_$factory_274(this._$gridModifier_8_17_18_1));
+    }
   };
   _no_name_provided__309.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__309.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__310($gridModifier_8_17_18) {
-    this._$gridModifier_8_17_18 = $gridModifier_8_17_18;
+  function _no_name_provided__310($numColumns) {
+    this._$numColumns = $numColumns;
   }
   _no_name_provided__310.prototype.invoke_0_k$ = function () {
-    return this._$gridModifier_8_17_18;
+    return SimpleGrid$composable$lambda(this._$numColumns);
   };
   _no_name_provided__310.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__311($gridModifier_8_17_18) {
-    this._$gridModifier_8_17_18_0 = $gridModifier_8_17_18;
-  }
-  _no_name_provided__311.prototype.invoke_0_k$ = function () {
-    return this._$gridModifier_8_17_18_0;
-  };
-  _no_name_provided__311.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__312($element_2_3_5, $gridModifier_8_17_18) {
-    this._$element_2_3_5 = $element_2_3_5;
-    this._$gridModifier_8_17_18_1 = $gridModifier_8_17_18;
-  }
-  _no_name_provided__312.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
-    if (this._$element_2_3_5 == null) {
-      $this$addVariant.base_if27nh_k$(_no_name_provided_$factory_276(this._$gridModifier_8_17_18_1));
-    } else {
-      $this$addVariant.invoke_jx6wx7_k$(this._$element_2_3_5, _no_name_provided_$factory_277(this._$gridModifier_8_17_18_1));
-    }
-  };
-  _no_name_provided__312.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__312.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__313($numColumns) {
-    this._$numColumns = $numColumns;
-  }
-  _no_name_provided__313.prototype.invoke_0_k$ = function () {
-    return SimpleGrid$composable$lambda(this._$numColumns);
-  };
-  _no_name_provided__313.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__314($content, $$dirty) {
+  function _no_name_provided__311($content, $$dirty) {
     this._$content_14 = $content;
     this._$$dirty_4 = $$dirty;
   }
-  _no_name_provided__314.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
+  _no_name_provided__311.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._$content_14;
@@ -42049,17 +41824,17 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__314.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__311.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_ovmwdp_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__314.$metadata$ = {
+  _no_name_provided__311.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__315($numColumns, $modifier, $variant, $content, $$changed, $$default) {
+  function _no_name_provided__312($numColumns, $modifier, $variant, $content, $$changed, $$default) {
     this._$numColumns_0 = $numColumns;
     this._$modifier_3 = $modifier;
     this._$variant_0 = $variant;
@@ -42067,22 +41842,22 @@
     this._$$changed_13 = $$changed;
     this._$$default_9 = $$default;
   }
-  _no_name_provided__315.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__312.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return SimpleGrid$composable$lambda_0(this._$numColumns_0, this._$modifier_3, this._$variant_0, this._$content_15, this._$$changed_13, this._$$default_9, p0, p1);
   };
-  _no_name_provided__315.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__312.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__315.$metadata$ = {
+  _no_name_provided__312.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__316($numColumns) {
+  function _no_name_provided__313($numColumns) {
     this._$numColumns_1 = $numColumns;
   }
-  _no_name_provided__316.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
+  _no_name_provided__313.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
     $this$asAttributesBuilder.classes_70f81e_k$([getValue(getValue(SimpleGridColumnVariants, null), this._$numColumns_1._base)._style_1._name_4]);
     if (!(this._$numColumns_1._sm_0 === this._$numColumns_1._base)) {
       $this$asAttributesBuilder.classes_70f81e_k$([getValue(getValue(SimpleGridColumnVariants, Breakpoint_SM_getInstance()), this._$numColumns_1._sm_0)._style_1._name_4]);
@@ -42093,76 +41868,76 @@
     }if (!(this._$numColumns_1._xl_0 === this._$numColumns_1._lg_0)) {
       $this$asAttributesBuilder.classes_70f81e_k$([getValue(getValue(SimpleGridColumnVariants, Breakpoint_XL_getInstance()), this._$numColumns_1._xl_0)._style_1._name_4]);
     }};
-  _no_name_provided__316.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__313.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_4sn14n_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__316.$metadata$ = {
+  _no_name_provided__313.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_269() {
-    var i = new _no_name_provided__308();
+  function _no_name_provided_$factory_266() {
+    var i = new _no_name_provided__305();
     return function (p1) {
       return i.invoke_3u3pah_k$(p1);
     };
   }
-  function _no_name_provided_$factory_270($numColumns_7_16_17) {
-    var i = new _no_name_provided__309($numColumns_7_16_17);
+  function _no_name_provided_$factory_267($numColumns_7_16_17) {
+    var i = new _no_name_provided__306($numColumns_7_16_17);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_271($element_2_3_5, $gridModifier_8_17_18) {
-    var i = new _no_name_provided__312($element_2_3_5, $gridModifier_8_17_18);
+  function _no_name_provided_$factory_268($element_2_3_5, $gridModifier_8_17_18) {
+    var i = new _no_name_provided__309($element_2_3_5, $gridModifier_8_17_18);
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_272($numColumns) {
-    var i = new _no_name_provided__313($numColumns);
+  function _no_name_provided_$factory_269($numColumns) {
+    var i = new _no_name_provided__310($numColumns);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_273($content, $$dirty) {
-    var i = new _no_name_provided__314($content, $$dirty);
+  function _no_name_provided_$factory_270($content, $$dirty) {
+    var i = new _no_name_provided__311($content, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_ovmwdp_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_274($numColumns, $modifier, $variant, $content, $$changed, $$default) {
-    var i = new _no_name_provided__315($numColumns, $modifier, $variant, $content, $$changed, $$default);
+  function _no_name_provided_$factory_271($numColumns, $modifier, $variant, $content, $$changed, $$default) {
+    var i = new _no_name_provided__312($numColumns, $modifier, $variant, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_275($numColumns) {
-    var i = new _no_name_provided__316($numColumns);
+  function _no_name_provided_$factory_272($numColumns) {
+    var i = new _no_name_provided__313($numColumns);
     return function (p1) {
       i.invoke_4sn14n_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_276($gridModifier_8_17_18) {
-    var i = new _no_name_provided__310($gridModifier_8_17_18);
+  function _no_name_provided_$factory_273($gridModifier_8_17_18) {
+    var i = new _no_name_provided__307($gridModifier_8_17_18);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_277($gridModifier_8_17_18) {
-    var i = new _no_name_provided__311($gridModifier_8_17_18);
+  function _no_name_provided_$factory_274($gridModifier_8_17_18) {
+    var i = new _no_name_provided__308($gridModifier_8_17_18);
     return function () {
       return i.invoke_0_k$();
     };
   }
   function SimpleGridStyle$init$() {
-    var tmp = Companion_getInstance_42();
-    return base(tmp, 'silk-simple-grid', _no_name_provided_$factory_269());
+    var tmp = Companion_getInstance_41();
+    return base(tmp, 'silk-simple-grid', _no_name_provided_$factory_266());
   }
   function SimpleGridColumnVariants$init$() {
     var tmp$ret$9;
@@ -42219,10 +41994,10 @@
                           var tmp$ret$2;
                           $l$block_1: {
                             var numColumns_7_16_17 = element_2_4_14_15 + 1 | 0;
-                            var tmp_0 = Companion_getInstance_40();
-                            var gridModifier_8_17_18 = styleModifier(tmp_0, _no_name_provided_$factory_270(numColumns_7_16_17));
+                            var tmp_0 = Companion_getInstance_39();
+                            var gridModifier_8_17_18 = styleModifier(tmp_0, _no_name_provided_$factory_267(numColumns_7_16_17));
                             var tmp_1 = '' + name_5_6 + '-' + numColumns_7_16_17;
-                            tmp$ret$2 = to(numColumns_7_16_17, SimpleGridStyle.addVariant_ft6p7_k$(tmp_1, _no_name_provided_$factory_271(element_2_3_5, gridModifier_8_17_18)));
+                            tmp$ret$2 = to(numColumns_7_16_17, SimpleGridStyle.addVariant_ft6p7_k$(tmp_1, _no_name_provided_$factory_268(element_2_3_5, gridModifier_8_17_18)));
                             break $l$block_1;
                           }
                           var tmp0_plusAssign_0_5_15_16 = tmp$ret$2;
@@ -42280,7 +42055,7 @@
       $composer_0.startDefaults_sv8swh_k$();
       if (($changed & 1) === 0 ? true : $composer_0._get_defaultsInvalid__0_k$()) {
         if (!(($default & 1) === 0)) {
-          var tmp = Companion_getInstance_40();
+          var tmp = Companion_getInstance_39();
           modifier_0._v = fillMaxSize$default(tmp, null, 1, null);
           $dirty = $dirty & -15;
         }if (!(($default & 2) === 0))
@@ -42293,58 +42068,58 @@
       $composer_0.endDefaults_sv8swh_k$();
       var tmp_0 = toModifier$composable(SurfaceStyle, variant_0._v, $composer_0, 112 & $dirty, 0).then_7hhy4d_k$(modifier_0._v);
       var tmp_1 = $composer_0;
-      Box$composable(tmp_0, null, composableLambda(tmp_1, -819892463, true, _no_name_provided_$factory_279(content, $dirty)), $composer_0, 384, 2);
+      Box$composable(tmp_0, null, composableLambda(tmp_1, -819892463, true, _no_name_provided_$factory_276(content, $dirty)), $composer_0, 384, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_280(modifier_0, variant_0, content, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_277(modifier_0, variant_0, content, $changed, $default));
     }
   }
   function Surface$composable$lambda($modifier, $variant, $content, $$changed, $$default, $composer, $force) {
     return Surface$composable($modifier._v, $variant._v, $content, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__317($this_$receiver) {
+  function _no_name_provided__314($this_$receiver) {
     this._$this_$receiver = $this_$receiver;
   }
-  _no_name_provided__317.prototype.invoke_0_k$ = function () {
+  _no_name_provided__314.prototype.invoke_0_k$ = function () {
     var palette = toSilkPalette(this._$this_$receiver._colorMode);
-    return transitionDuration_1(transitionProperty_1(color_0(backgroundColor_0(Companion_getInstance_40(), palette._background), palette._color_0), ['background-color']), [_get_ms_(200)]);
+    return transitionDuration_1(transitionProperty_1(color_0(backgroundColor_0(Companion_getInstance_39(), palette._background), palette._color_0), ['background-color']), [_get_ms_(200)]);
   };
-  _no_name_provided__317.$metadata$ = {
+  _no_name_provided__314.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__318() {
+  function _no_name_provided__315() {
   }
-  _no_name_provided__318.prototype.invoke_0_k$ = function () {
-    return transitionDuration_2(transitionProperty_2(Companion_getInstance_40(), Companion_getInstance_37()._get_Inherit__0_k$()), Companion_getInstance_36()._get_Inherit__0_k$());
+  _no_name_provided__315.prototype.invoke_0_k$ = function () {
+    return transitionDuration_2(transitionProperty_2(Companion_getInstance_39(), Companion_getInstance_36()._get_Inherit__0_k$()), Companion_getInstance_35()._get_Inherit__0_k$());
   };
-  _no_name_provided__318.$metadata$ = {
+  _no_name_provided__315.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__319() {
+  function _no_name_provided__316() {
   }
-  _no_name_provided__319.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_281($this$$receiver));
-    $this$$receiver.cssRule_l5nhs2_k$(' *', _no_name_provided_$factory_282());
+  _no_name_provided__316.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_278($this$$receiver));
+    $this$$receiver.cssRule_l5nhs2_k$(' *', _no_name_provided_$factory_279());
   };
-  _no_name_provided__319.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__316.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__319.$metadata$ = {
+  _no_name_provided__316.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__320($content, $$dirty) {
+  function _no_name_provided__317($content, $$dirty) {
     this._$content_16 = $content;
     this._$$dirty_5 = $$dirty;
   }
-  _no_name_provided__320.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
+  _no_name_provided__317.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._$content_16;
@@ -42356,64 +42131,64 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__320.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__317.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof BoxScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_jpel0v_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__320.$metadata$ = {
+  _no_name_provided__317.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__321($modifier, $variant, $content, $$changed, $$default) {
+  function _no_name_provided__318($modifier, $variant, $content, $$changed, $$default) {
     this._$modifier_4 = $modifier;
     this._$variant_1 = $variant;
     this._$content_17 = $content;
     this._$$changed_14 = $$changed;
     this._$$default_10 = $$default;
   }
-  _no_name_provided__321.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__318.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return Surface$composable$lambda(this._$modifier_4, this._$variant_1, this._$content_17, this._$$changed_14, this._$$default_10, p0, p1);
   };
-  _no_name_provided__321.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__318.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__321.$metadata$ = {
+  _no_name_provided__318.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_278() {
-    var i = new _no_name_provided__319();
+  function _no_name_provided_$factory_275() {
+    var i = new _no_name_provided__316();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_279($content, $$dirty) {
-    var i = new _no_name_provided__320($content, $$dirty);
+  function _no_name_provided_$factory_276($content, $$dirty) {
+    var i = new _no_name_provided__317($content, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_jpel0v_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_280($modifier, $variant, $content, $$changed, $$default) {
-    var i = new _no_name_provided__321($modifier, $variant, $content, $$changed, $$default);
+  function _no_name_provided_$factory_277($modifier, $variant, $content, $$changed, $$default) {
+    var i = new _no_name_provided__318($modifier, $variant, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_281($this_$receiver) {
-    var i = new _no_name_provided__317($this_$receiver);
+  function _no_name_provided_$factory_278($this_$receiver) {
+    var i = new _no_name_provided__314($this_$receiver);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_282() {
-    var i = new _no_name_provided__318();
+  function _no_name_provided_$factory_279() {
+    var i = new _no_name_provided__315();
     return function () {
       return i.invoke_0_k$();
     };
@@ -42440,13 +42215,90 @@
     }
     return classNames(_this_, ['' + 'silk-display-if-' + tmp$ret$1]);
   }
+  function _no_name_provided__319() {
+  }
+  _no_name_provided__319.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_None__0 = Companion_getInstance_19();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'none';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    return display_0(tmp, tmp$ret$3);
+  };
+  _no_name_provided__319.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__320() {
+  }
+  _no_name_provided__320.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_Unset__0 = Companion_getInstance_19();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'unset';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    return display_0(tmp, tmp$ret$3);
+  };
+  _no_name_provided__320.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__321() {
+  }
+  _no_name_provided__321.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_288());
+    var tmp = Breakpoint_SM_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_289());
+  };
+  _no_name_provided__321.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__321.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function _no_name_provided__322() {
   }
   _no_name_provided__322.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+    var tmp = Companion_getInstance_39();
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_20();
+      var tmp0__get_None__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -42474,10 +42326,10 @@
   function _no_name_provided__323() {
   }
   _no_name_provided__323.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+    var tmp = Companion_getInstance_39();
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Unset__0 = Companion_getInstance_20();
+      var tmp0__get_Unset__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -42505,9 +42357,9 @@
   function _no_name_provided__324() {
   }
   _no_name_provided__324.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_291());
-    var tmp = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_292());
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_290());
+    var tmp = Breakpoint_MD_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_291());
   };
   _no_name_provided__324.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
@@ -42520,10 +42372,10 @@
   function _no_name_provided__325() {
   }
   _no_name_provided__325.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+    var tmp = Companion_getInstance_39();
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_20();
+      var tmp0__get_None__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -42551,10 +42403,10 @@
   function _no_name_provided__326() {
   }
   _no_name_provided__326.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+    var tmp = Companion_getInstance_39();
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Unset__0 = Companion_getInstance_20();
+      var tmp0__get_Unset__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -42582,9 +42434,9 @@
   function _no_name_provided__327() {
   }
   _no_name_provided__327.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_293());
-    var tmp = Breakpoint_MD_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_294());
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_292());
+    var tmp = Breakpoint_LG_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_293());
   };
   _no_name_provided__327.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
@@ -42597,10 +42449,10 @@
   function _no_name_provided__328() {
   }
   _no_name_provided__328.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+    var tmp = Companion_getInstance_39();
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_20();
+      var tmp0__get_None__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -42628,10 +42480,10 @@
   function _no_name_provided__329() {
   }
   _no_name_provided__329.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+    var tmp = Companion_getInstance_39();
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Unset__0 = Companion_getInstance_20();
+      var tmp0__get_Unset__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -42659,9 +42511,9 @@
   function _no_name_provided__330() {
   }
   _no_name_provided__330.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_295());
-    var tmp = Breakpoint_LG_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_296());
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_294());
+    var tmp = Breakpoint_XL_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_295());
   };
   _no_name_provided__330.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
@@ -42674,10 +42526,10 @@
   function _no_name_provided__331() {
   }
   _no_name_provided__331.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+    var tmp = Companion_getInstance_39();
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_20();
+      var tmp0__get_None__0 = Companion_getInstance_19();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -42704,30 +42556,13 @@
   };
   function _no_name_provided__332() {
   }
-  _no_name_provided__332.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_Unset__0 = Companion_getInstance_20();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'unset';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    return display_0(tmp, tmp$ret$3);
+  _no_name_provided__332.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    var tmp = Breakpoint_SM_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_296());
+  };
+  _no_name_provided__332.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__332.$metadata$ = {
     kind: 'class',
@@ -42735,14 +42570,30 @@
   };
   function _no_name_provided__333() {
   }
-  _no_name_provided__333.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_297());
-    var tmp = Breakpoint_XL_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_298());
-  };
-  _no_name_provided__333.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__333.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_None__0 = Companion_getInstance_19();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'none';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    return display_0(tmp, tmp$ret$3);
   };
   _no_name_provided__333.$metadata$ = {
     kind: 'class',
@@ -42750,30 +42601,13 @@
   };
   function _no_name_provided__334() {
   }
-  _no_name_provided__334.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_20();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'none';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    return display_0(tmp, tmp$ret$3);
+  _no_name_provided__334.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    var tmp = Breakpoint_MD_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_297());
+  };
+  _no_name_provided__334.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__334.$metadata$ = {
     kind: 'class',
@@ -42781,13 +42615,30 @@
   };
   function _no_name_provided__335() {
   }
-  _no_name_provided__335.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    var tmp = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_299());
-  };
-  _no_name_provided__335.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__335.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_None__0 = Companion_getInstance_19();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'none';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    return display_0(tmp, tmp$ret$3);
   };
   _no_name_provided__335.$metadata$ = {
     kind: 'class',
@@ -42795,30 +42646,13 @@
   };
   function _no_name_provided__336() {
   }
-  _no_name_provided__336.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_20();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'none';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    return display_0(tmp, tmp$ret$3);
+  _no_name_provided__336.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    var tmp = Breakpoint_LG_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_298());
+  };
+  _no_name_provided__336.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__336.$metadata$ = {
     kind: 'class',
@@ -42826,13 +42660,30 @@
   };
   function _no_name_provided__337() {
   }
-  _no_name_provided__337.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    var tmp = Breakpoint_MD_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_300());
-  };
-  _no_name_provided__337.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__337.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp0__get_None__0 = Companion_getInstance_19();
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = 'none';
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      }
+      tmp$ret$3 = tmp$ret$2;
+      break $l$block_2;
+    }
+    return display_0(tmp, tmp$ret$3);
   };
   _no_name_provided__337.$metadata$ = {
     kind: 'class',
@@ -42840,218 +42691,142 @@
   };
   function _no_name_provided__338() {
   }
-  _no_name_provided__338.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_20();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'none';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    return display_0(tmp, tmp$ret$3);
+  _no_name_provided__338.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    var tmp = Breakpoint_XL_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_299());
+  };
+  _no_name_provided__338.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__338.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__339() {
+  function _no_name_provided_$factory_280() {
+    var i = new _no_name_provided__321();
+    return function (p1) {
+      i.invoke_sbq6jm_k$(p1);
+      return Unit_getInstance();
+    };
   }
-  _no_name_provided__339.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    var tmp = Breakpoint_LG_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_301());
-  };
-  _no_name_provided__339.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__339.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__340() {
-  }
-  _no_name_provided__340.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
-    var tmp$ret$3;
-    $l$block_2: {
-      var tmp0__get_None__0 = Companion_getInstance_20();
-      var tmp$ret$2;
-      $l$block_1: {
-        var tmp$ret$1;
-        $l$block_0: {
-          var tmp$ret$0;
-          $l$block: {
-            tmp$ret$0 = 'none';
-            break $l$block;
-          }
-          tmp$ret$1 = tmp$ret$0;
-          break $l$block_0;
-        }
-        tmp$ret$2 = tmp$ret$1;
-        break $l$block_1;
-      }
-      tmp$ret$3 = tmp$ret$2;
-      break $l$block_2;
-    }
-    return display_0(tmp, tmp$ret$3);
-  };
-  _no_name_provided__340.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__341() {
-  }
-  _no_name_provided__341.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    var tmp = Breakpoint_XL_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_302());
-  };
-  _no_name_provided__341.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__341.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided_$factory_283() {
+  function _no_name_provided_$factory_281() {
     var i = new _no_name_provided__324();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_284() {
+  function _no_name_provided_$factory_282() {
     var i = new _no_name_provided__327();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_285() {
+  function _no_name_provided_$factory_283() {
     var i = new _no_name_provided__330();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
+  function _no_name_provided_$factory_284() {
+    var i = new _no_name_provided__332();
+    return function (p1) {
+      i.invoke_sbq6jm_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_285() {
+    var i = new _no_name_provided__334();
+    return function (p1) {
+      i.invoke_sbq6jm_k$(p1);
+      return Unit_getInstance();
+    };
+  }
   function _no_name_provided_$factory_286() {
-    var i = new _no_name_provided__333();
+    var i = new _no_name_provided__336();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_287() {
-    var i = new _no_name_provided__335();
+    var i = new _no_name_provided__338();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_288() {
-    var i = new _no_name_provided__337();
-    return function (p1) {
-      i.invoke_sbq6jm_k$(p1);
-      return Unit_getInstance();
+    var i = new _no_name_provided__319();
+    return function () {
+      return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_289() {
-    var i = new _no_name_provided__339();
-    return function (p1) {
-      i.invoke_sbq6jm_k$(p1);
-      return Unit_getInstance();
+    var i = new _no_name_provided__320();
+    return function () {
+      return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_290() {
-    var i = new _no_name_provided__341();
-    return function (p1) {
-      i.invoke_sbq6jm_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_291() {
     var i = new _no_name_provided__322();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_292() {
+  function _no_name_provided_$factory_291() {
     var i = new _no_name_provided__323();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_293() {
+  function _no_name_provided_$factory_292() {
     var i = new _no_name_provided__325();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_294() {
+  function _no_name_provided_$factory_293() {
     var i = new _no_name_provided__326();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_295() {
+  function _no_name_provided_$factory_294() {
     var i = new _no_name_provided__328();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_296() {
+  function _no_name_provided_$factory_295() {
     var i = new _no_name_provided__329();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_297() {
+  function _no_name_provided_$factory_296() {
     var i = new _no_name_provided__331();
     return function () {
       return i.invoke_0_k$();
     };
   }
+  function _no_name_provided_$factory_297() {
+    var i = new _no_name_provided__333();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
   function _no_name_provided_$factory_298() {
-    var i = new _no_name_provided__332();
+    var i = new _no_name_provided__335();
     return function () {
       return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_299() {
-    var i = new _no_name_provided__334();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_300() {
-    var i = new _no_name_provided__336();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_301() {
-    var i = new _no_name_provided__338();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_302() {
-    var i = new _no_name_provided__340();
+    var i = new _no_name_provided__337();
     return function () {
       return i.invoke_0_k$();
     };
@@ -43059,30 +42834,68 @@
   var LinkStyle_0;
   var UndecoratedLinkVariant;
   var UncoloredLinkVariant;
+  function _no_name_provided__339() {
+  }
+  _no_name_provided__339.prototype.invoke_0_k$ = function () {
+    return textDecorationLine_0(Companion_getInstance_39(), Companion_getInstance_32()._get_None__0_k$());
+  };
+  _no_name_provided__339.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__340($linkColors) {
+    this._$linkColors = $linkColors;
+  }
+  _no_name_provided__340.prototype.invoke_0_k$ = function () {
+    return color_0(Companion_getInstance_39(), this._$linkColors._default);
+  };
+  _no_name_provided__340.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__341($linkColors) {
+    this._$linkColors_0 = $linkColors;
+  }
+  _no_name_provided__341.prototype.invoke_0_k$ = function () {
+    return color_0(Companion_getInstance_39(), this._$linkColors_0._visited);
+  };
+  _no_name_provided__341.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function _no_name_provided__342() {
   }
   _no_name_provided__342.prototype.invoke_0_k$ = function () {
-    return textDecorationLine_0(Companion_getInstance_40(), Companion_getInstance_33()._get_None__0_k$());
+    return textDecorationLine_0(Companion_getInstance_39(), Companion_getInstance_32()._get_Underline__0_k$());
   };
   _no_name_provided__342.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__343($linkColors) {
-    this._$linkColors = $linkColors;
+  function _no_name_provided__343() {
   }
-  _no_name_provided__343.prototype.invoke_0_k$ = function () {
-    return color_0(Companion_getInstance_40(), this._$linkColors._default);
+  _no_name_provided__343.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_303());
+    var linkColors = toSilkPalette($this$$receiver._colorMode)._link;
+    var tmp = _get_link_($this$$receiver);
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_304(linkColors));
+    var tmp_0 = _get_visited_($this$$receiver);
+    tmp_0.invoke_if27nh_k$(_no_name_provided_$factory_305(linkColors));
+    var tmp_1 = _get_hover_($this$$receiver);
+    tmp_1.invoke_if27nh_k$(_no_name_provided_$factory_306());
+  };
+  _no_name_provided__343.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__343.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__344($linkColors) {
-    this._$linkColors_0 = $linkColors;
+  function _no_name_provided__344() {
   }
   _no_name_provided__344.prototype.invoke_0_k$ = function () {
-    return color_0(Companion_getInstance_40(), this._$linkColors_0._visited);
+    return textDecorationLine_0(Companion_getInstance_39(), Companion_getInstance_32()._get_None__0_k$());
   };
   _no_name_provided__344.$metadata$ = {
     kind: 'class',
@@ -43090,37 +42903,33 @@
   };
   function _no_name_provided__345() {
   }
-  _no_name_provided__345.prototype.invoke_0_k$ = function () {
-    return textDecorationLine_0(Companion_getInstance_40(), Companion_getInstance_33()._get_Underline__0_k$());
+  _no_name_provided__345.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
+    var tmp = _get_hover_($this$addVariant);
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_307());
+  };
+  _no_name_provided__345.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__345.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__346() {
+  function _no_name_provided__346($textColor) {
+    this._$textColor = $textColor;
   }
-  _no_name_provided__346.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_306());
-    var linkColors = toSilkPalette($this$$receiver._colorMode)._link;
-    var tmp = _get_link_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_307(linkColors));
-    var tmp_0 = _get_visited_($this$$receiver);
-    tmp_0.invoke_if27nh_k$(_no_name_provided_$factory_308(linkColors));
-    var tmp_1 = _get_hover_($this$$receiver);
-    tmp_1.invoke_if27nh_k$(_no_name_provided_$factory_309());
-  };
-  _no_name_provided__346.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__346.prototype.invoke_0_k$ = function () {
+    return color_0(Companion_getInstance_39(), this._$textColor);
   };
   _no_name_provided__346.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__347() {
+  function _no_name_provided__347($textColor) {
+    this._$textColor_0 = $textColor;
   }
   _no_name_provided__347.prototype.invoke_0_k$ = function () {
-    return textDecorationLine_0(Companion_getInstance_40(), Companion_getInstance_33()._get_None__0_k$());
+    return color_0(Companion_getInstance_39(), this._$textColor_0);
   };
   _no_name_provided__347.$metadata$ = {
     kind: 'class',
@@ -43129,8 +42938,11 @@
   function _no_name_provided__348() {
   }
   _no_name_provided__348.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
-    var tmp = _get_hover_($this$addVariant);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_310());
+    var textColor = toSilkPalette($this$addVariant._colorMode)._color_0;
+    var tmp = _get_link_($this$addVariant);
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_308(textColor));
+    var tmp_0 = _get_visited_($this$addVariant);
+    tmp_0.invoke_if27nh_k$(_no_name_provided_$factory_309(textColor));
   };
   _no_name_provided__348.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
@@ -43140,62 +42952,43 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__349($textColor) {
-    this._$textColor = $textColor;
-  }
-  _no_name_provided__349.prototype.invoke_0_k$ = function () {
-    return color_0(Companion_getInstance_40(), this._$textColor);
-  };
-  _no_name_provided__349.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__350($textColor) {
-    this._$textColor_0 = $textColor;
-  }
-  _no_name_provided__350.prototype.invoke_0_k$ = function () {
-    return color_0(Companion_getInstance_40(), this._$textColor_0);
-  };
-  _no_name_provided__350.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__351() {
-  }
-  _no_name_provided__351.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
-    var textColor = toSilkPalette($this$addVariant._colorMode)._color_0;
-    var tmp = _get_link_($this$addVariant);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_311(textColor));
-    var tmp_0 = _get_visited_($this$addVariant);
-    tmp_0.invoke_if27nh_k$(_no_name_provided_$factory_312(textColor));
-  };
-  _no_name_provided__351.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__351.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided_$factory_303() {
-    var i = new _no_name_provided__346();
+  function _no_name_provided_$factory_300() {
+    var i = new _no_name_provided__343();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_304() {
+  function _no_name_provided_$factory_301() {
+    var i = new _no_name_provided__345();
+    return function (p1) {
+      i.invoke_sbq6jm_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_302() {
     var i = new _no_name_provided__348();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_305() {
-    var i = new _no_name_provided__351();
-    return function (p1) {
-      i.invoke_sbq6jm_k$(p1);
-      return Unit_getInstance();
+  function _no_name_provided_$factory_303() {
+    var i = new _no_name_provided__339();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_304($linkColors) {
+    var i = new _no_name_provided__340($linkColors);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_305($linkColors) {
+    var i = new _no_name_provided__341($linkColors);
+    return function () {
+      return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_306() {
@@ -43204,38 +42997,20 @@
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_307($linkColors) {
-    var i = new _no_name_provided__343($linkColors);
+  function _no_name_provided_$factory_307() {
+    var i = new _no_name_provided__344();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_308($linkColors) {
-    var i = new _no_name_provided__344($linkColors);
+  function _no_name_provided_$factory_308($textColor) {
+    var i = new _no_name_provided__346($textColor);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_309() {
-    var i = new _no_name_provided__345();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_310() {
-    var i = new _no_name_provided__347();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_311($textColor) {
-    var i = new _no_name_provided__349($textColor);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_312($textColor) {
-    var i = new _no_name_provided__350($textColor);
+  function _no_name_provided_$factory_309($textColor) {
+    var i = new _no_name_provided__347($textColor);
     return function () {
       return i.invoke_0_k$();
     };
@@ -43279,30 +43054,30 @@
       while (tmp0_iterator_1.hasNext_0_k$()) {
         var element_2 = tmp0_iterator_1.next_0_k$();
         {
-          Companion_getInstance_42()._registeredClasses.add_2bq_k$(element_2);
+          Companion_getInstance_41()._registeredClasses.add_2bq_k$(element_2);
           Unit_getInstance();
         }
       }
     }
   }
-  function _no_name_provided__352(this$0, $cssRule_3, $styles) {
+  function _no_name_provided__349(this$0, $cssRule_3, $styles) {
     this._this$0_33 = this$0;
     this._$cssRule_3 = $cssRule_3;
     this._$styles = $styles;
   }
-  _no_name_provided__352.prototype.invoke_k0yjjx_k$ = function ($this$media) {
+  _no_name_provided__349.prototype.invoke_k0yjjx_k$ = function ($this$media) {
     addStyles($this$media, this._this$0_33, this._$cssRule_3, this._$styles);
   };
-  _no_name_provided__352.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__349.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k0yjjx_k$((!(p1 == null) ? isInterface(p1, GenericStyleSheetBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__352.$metadata$ = {
+  _no_name_provided__349.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function Companion_43() {
-    Companion_instance_42 = this;
+  function Companion_42() {
+    Companion_instance_41 = this;
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -43311,19 +43086,19 @@
     }
     tmp._registeredClasses = tmp$ret$0;
   }
-  Companion_43.$metadata$ = {
+  Companion_42.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_42;
-  function Companion_getInstance_42() {
-    if (Companion_instance_42 == null)
-      new Companion_43();
-    return Companion_instance_42;
+  var Companion_instance_41;
+  function Companion_getInstance_41() {
+    if (Companion_instance_41 == null)
+      new Companion_42();
+    return Companion_instance_41;
   }
   function addStyles(_this_, $this, cssRule, styles) {
-    _this_.style_4x08vx_k$(cssRule, _no_name_provided_$factory_313(styles));
+    _this_.style_4x08vx_k$(cssRule, _no_name_provided_$factory_310(styles));
   }
   function withFinalSelectorName($this, selectorBaseName, group, handler) {
     var tmp0_subject = group;
@@ -43345,10 +43120,10 @@
       }
     }
   }
-  function _no_name_provided__353($styles) {
+  function _no_name_provided__350($styles) {
     this._$styles_0 = $styles;
   }
-  _no_name_provided__353.prototype.invoke_iav7o_k$ = function ($this$null) {
+  _no_name_provided__350.prototype.invoke_iav7o_k$ = function ($this$null) {
     {
       var tmp0_forEach_0 = this._$styles_0._properties_0;
       var tmp$ret$0;
@@ -43380,40 +43155,40 @@
       }
     }
   };
-  _no_name_provided__353.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__350.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_iav7o_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__353.$metadata$ = {
+  _no_name_provided__350.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__354(this$0, $styleSheet) {
+  function _no_name_provided__351(this$0, $styleSheet) {
     this._this$0_34 = this$0;
     this._$styleSheet = $styleSheet;
   }
-  _no_name_provided__354.prototype.invoke_uwdduw_k$ = function (name_0, styles) {
+  _no_name_provided__351.prototype.invoke_uwdduw_k$ = function (name, styles) {
     if (isNotEmpty(styles)) {
-      notifySelectorName(Companion_getInstance_42(), name_0);
-      addStyles(this._$styleSheet, this._this$0_34, name_0, styles);
+      notifySelectorName(Companion_getInstance_41(), name);
+      addStyles(this._$styleSheet, this._this$0_34, name, styles);
     }};
-  _no_name_provided__354.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__351.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE();
     this.invoke_uwdduw_k$(tmp, p2 instanceof ComparableStyleBuilder ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__354.$metadata$ = {
+  _no_name_provided__351.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__355($cssRuleKey, $styleSheet, this$0) {
+  function _no_name_provided__352($cssRuleKey, $styleSheet, this$0) {
     this._$cssRuleKey = $cssRuleKey;
     this._$styleSheet_0 = $styleSheet;
     this._this$0_35 = this$0;
   }
-  _no_name_provided__355.prototype.invoke_uwdduw_k$ = function (name_0, styles) {
+  _no_name_provided__352.prototype.invoke_uwdduw_k$ = function (name, styles) {
     if (isNotEmpty(styles)) {
-      notifySelectorName(Companion_getInstance_42(), name_0);
+      notifySelectorName(Companion_getInstance_41(), name);
       var tmp$ret$0;
       $l$block: {
         var tmp0_orEmpty_0_4 = this._$cssRuleKey._suffix;
@@ -43421,14 +43196,14 @@
         tmp$ret$0 = tmp0_elvis_lhs_1_5 == null ? '' : tmp0_elvis_lhs_1_5;
         break $l$block;
       }
-      var cssRule_3 = '' + name_0 + tmp$ret$0;
+      var cssRule_3 = '' + name + tmp$ret$0;
       if (!(this._$cssRuleKey._mediaQuery_0 == null)) {
         var tmp$ret$1;
         $l$block_0: {
           {
           }
           {
-            media(this._$styleSheet_0, this._$cssRuleKey._mediaQuery_0, _no_name_provided_$factory_316(this._this$0_35, cssRule_3, styles));
+            media(this._$styleSheet_0, this._$cssRuleKey._mediaQuery_0, _no_name_provided_$factory_313(this._this$0_35, cssRule_3, styles));
           }
           tmp$ret$1 = this._$styleSheet_0;
           break $l$block_0;
@@ -43438,18 +43213,18 @@
         addStyles(this._$styleSheet_0, this._this$0_35, cssRule_3, styles);
       }
     }};
-  _no_name_provided__355.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__352.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE();
     this.invoke_uwdduw_k$(tmp, p2 instanceof ComparableStyleBuilder ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__355.$metadata$ = {
+  _no_name_provided__352.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function ComponentStyle(name_0, init) {
-    Companion_getInstance_42();
-    this._name_4 = name_0;
+  function ComponentStyle(name, init) {
+    Companion_getInstance_41();
+    this._name_4 = name;
     this._init = init;
     var tmp = this;
     var tmp$ret$0;
@@ -43458,12 +43233,12 @@
       break $l$block;
     }
     tmp._variants = tmp$ret$0;
-    this._$stable_84 = 8;
+    this._$stable_83 = 8;
   }
-  ComponentStyle.prototype.addVariant_ft6p7_k$ = function (name_0, init) {
+  ComponentStyle.prototype.addVariant_ft6p7_k$ = function (name, init) {
     var tmp$ret$0;
     $l$block: {
-      var tmp0_also_0 = new ComponentVariant(new ComponentStyle('' + this._name_4 + '-' + name_0, init), this);
+      var tmp0_also_0 = new ComponentVariant(new ComponentStyle('' + this._name_4 + '-' + name, init), this);
       {
       }
       {
@@ -43546,10 +43321,10 @@
       break $l$block_6;
     }
     var darkModifiers = tmp$ret$7;
-    var tmp = Companion_getInstance_43();
-    var tmp0_safe_receiver = lightModifiers.get_2bw_k$(Companion_getInstance_44()._BaseKey);
+    var tmp = Companion_getInstance_42();
+    var tmp0_safe_receiver = lightModifiers.get_2bw_k$(Companion_getInstance_43()._BaseKey);
     var tmp_0 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver._modifier;
-    var tmp1_safe_receiver = darkModifiers.get_2bw_k$(Companion_getInstance_44()._BaseKey);
+    var tmp1_safe_receiver = darkModifiers.get_2bw_k$(Companion_getInstance_43()._BaseKey);
     var tmp2_safe_receiver = tmp.from_xoyegw_k$(tmp_0, tmp1_safe_receiver == null ? null : tmp1_safe_receiver._modifier);
     if (tmp2_safe_receiver == null)
       null;
@@ -43558,7 +43333,7 @@
       $l$block_7: {
         {
         }
-        tmp$ret$8 = withFinalSelectorName(this, selectorName, tmp2_safe_receiver, _no_name_provided_$factory_314(this, styleSheet));
+        tmp$ret$8 = withFinalSelectorName(this, selectorName, tmp2_safe_receiver, _no_name_provided_$factory_311(this, styleSheet));
         break $l$block_7;
       }
       Unit_getInstance();
@@ -43575,7 +43350,7 @@
           var element_2_3 = tmp0_iterator_1_2.next_0_k$();
           var tmp$ret$9;
           $l$block_8: {
-            tmp$ret$9 = !element_2_3.equals(Companion_getInstance_44()._BaseKey);
+            tmp$ret$9 = !element_2_3.equals(Companion_getInstance_43()._BaseKey);
             break $l$block_8;
           }
           if (tmp$ret$9) {
@@ -43594,7 +43369,7 @@
     var tmp3_iterator = allCssRuleKeys.iterator_0_k$();
     while (tmp3_iterator.hasNext_0_k$()) {
       var cssRuleKey = tmp3_iterator.next_0_k$();
-      var tmp_1 = Companion_getInstance_43();
+      var tmp_1 = Companion_getInstance_42();
       var tmp4_safe_receiver = lightModifiers.get_2bw_k$(cssRuleKey);
       var tmp_2 = tmp4_safe_receiver == null ? null : tmp4_safe_receiver._modifier;
       var tmp5_safe_receiver = darkModifiers.get_2bw_k$(cssRuleKey);
@@ -43606,7 +43381,7 @@
         $l$block_11: {
           {
           }
-          tmp$ret$12 = withFinalSelectorName(this, selectorName, tmp6_safe_receiver, _no_name_provided_$factory_315(cssRuleKey, styleSheet, this));
+          tmp$ret$12 = withFinalSelectorName(this, selectorName, tmp6_safe_receiver, _no_name_provided_$factory_312(cssRuleKey, styleSheet, this));
           break $l$block_11;
         }
         Unit_getInstance();
@@ -43625,7 +43400,7 @@
   function ComponentModifiers(colorMode) {
     StyleModifiers.call(this);
     this._colorMode = colorMode;
-    this._$stable_85 = 0;
+    this._$stable_84 = 0;
   }
   ComponentModifiers.$metadata$ = {
     simpleName: 'ComponentModifiers',
@@ -43635,7 +43410,7 @@
   function OfPseudoClass(target, pseudoClass) {
     CssRule.call(this, target);
     this._pseudoClass = pseudoClass;
-    this._$stable_86 = 0;
+    this._$stable_85 = 0;
   }
   OfPseudoClass.prototype.invoke_if27nh_k$ = function (createModifier) {
     this.addCssRule_8820je_k$(null, listOf_0(this._pseudoClass), null, createModifier);
@@ -43652,7 +43427,7 @@
     CssRule.call(this, target);
     this._mediaQuery = mediaQuery;
     this._pseudoClasses = pseudoClasses;
-    this._$stable_87 = 0;
+    this._$stable_86 = 0;
   }
   CompositeOpen.prototype.invoke_if27nh_k$ = function (createModifier) {
     this.addCssRule_8820je_k$(this._mediaQuery, this._pseudoClasses, null, createModifier);
@@ -43664,7 +43439,7 @@
   };
   function CssRule(target) {
     this._target_0 = target;
-    this._$stable_88 = 0;
+    this._$stable_87 = 0;
   }
   CssRule.prototype._get_target__0_k$ = function () {
     return this._target_0;
@@ -43735,11 +43510,11 @@
     interfaces: []
   };
   function base(_this_, className, init) {
-    return new ComponentStyle(className, _no_name_provided_$factory_317(init));
+    return new ComponentStyle(className, _no_name_provided_$factory_314(init));
   }
   function ComponentStyleState(colorMode) {
     this._colorMode_0 = colorMode;
-    this._$stable_89 = 0;
+    this._$stable_88 = 0;
   }
   ComponentStyleState.$metadata$ = {
     simpleName: 'ComponentStyleState',
@@ -43749,7 +43524,7 @@
   function ComponentVariant(style, baseStyle) {
     this._style_1 = style;
     this._baseStyle = baseStyle;
-    this._$stable_90 = 0;
+    this._$stable_89 = 0;
   }
   ComponentVariant.prototype.addStyles_jbt85d_k$ = function (styleSheet) {
     this._style_1.addStyles_wvqqm6_k$(styleSheet, '' + '.' + this._baseStyle._name_4 + '.' + this._style_1._name_4);
@@ -43808,7 +43583,7 @@
   };
   function Light(styles) {
     this._styles_0 = styles;
-    this._$stable_91 = 8;
+    this._$stable_90 = 8;
   }
   Light.$metadata$ = {
     simpleName: 'Light',
@@ -43817,7 +43592,7 @@
   };
   function Dark(styles) {
     this._styles_1 = styles;
-    this._$stable_92 = 8;
+    this._$stable_91 = 8;
   }
   Dark.$metadata$ = {
     simpleName: 'Dark',
@@ -43826,7 +43601,7 @@
   };
   function ColorAgnostic(styles) {
     this._styles_2 = styles;
-    this._$stable_93 = 8;
+    this._$stable_92 = 8;
   }
   ColorAgnostic.$metadata$ = {
     simpleName: 'ColorAgnostic',
@@ -43836,17 +43611,17 @@
   function ColorAware(lightStyles, darkStyles) {
     this._lightStyles = lightStyles;
     this._darkStyles = darkStyles;
-    this._$stable_94 = 8;
+    this._$stable_93 = 8;
   }
   ColorAware.$metadata$ = {
     simpleName: 'ColorAware',
     kind: 'class',
     interfaces: [StyleGroup]
   };
-  function Companion_44() {
-    Companion_instance_43 = this;
+  function Companion_43() {
+    Companion_instance_42 = this;
   }
-  Companion_44.prototype.from_xoyegw_k$ = function (lightModifiers, darkModifiers) {
+  Companion_43.prototype.from_xoyegw_k$ = function (lightModifiers, darkModifiers) {
     var tmp0_safe_receiver = lightModifiers;
     var tmp;
     if (tmp0_safe_receiver == null) {
@@ -43940,16 +43715,16 @@
     }
     return tmp_1;
   };
-  Companion_44.$metadata$ = {
+  Companion_43.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_43;
-  function Companion_getInstance_43() {
-    if (Companion_instance_43 == null)
-      new Companion_44();
-    return Companion_instance_43;
+  var Companion_instance_42;
+  function Companion_getInstance_42() {
+    if (Companion_instance_42 == null)
+      new Companion_43();
+    return Companion_instance_42;
   }
   function StyleGroup() {
   }
@@ -43969,25 +43744,25 @@
   function CssModifier_init_$Create$(modifier, mediaQuery, suffix, $mask0, $marker) {
     return CssModifier_init_$Init$(modifier, mediaQuery, suffix, $mask0, $marker, Object.create(CssModifier.prototype));
   }
-  function Companion_45() {
-    Companion_instance_44 = this;
+  function Companion_44() {
+    Companion_instance_43 = this;
     this._BaseKey = new Key_6(null, null);
   }
-  Companion_45.$metadata$ = {
+  Companion_44.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_44;
-  function Companion_getInstance_44() {
-    if (Companion_instance_44 == null)
-      new Companion_45();
-    return Companion_instance_44;
+  var Companion_instance_43;
+  function Companion_getInstance_43() {
+    if (Companion_instance_43 == null)
+      new Companion_44();
+    return Companion_instance_43;
   }
   function Key_6(mediaQuery, suffix) {
     this._mediaQuery_0 = mediaQuery;
     this._suffix = suffix;
-    this._$stable_95 = 0;
+    this._$stable_94 = 0;
   }
   Key_6.prototype.toString = function () {
     return '' + 'Key(mediaQuery=' + this._mediaQuery_0 + ', suffix=' + this._suffix + ')';
@@ -44017,7 +43792,7 @@
     interfaces: []
   };
   function CssModifier(modifier, mediaQuery, suffix) {
-    Companion_getInstance_44();
+    Companion_getInstance_43();
     this._modifier = modifier;
     this._mediaQuery_1 = mediaQuery;
     this._suffix_0 = suffix;
@@ -44063,7 +43838,7 @@
     }
     tmp.__cssModifiers = tmp$ret$0;
     this._cssModifiers = this.__cssModifiers;
-    this._$stable_96 = 0;
+    this._$stable_95 = 0;
   }
   StyleModifiers.prototype._get_cssModifiers__0_k$ = function () {
     return this._cssModifiers;
@@ -44097,9 +43872,9 @@
   function toMinWidthQuery(_this_) {
     return new MediaFeature('min-width', toWidth(_this_));
   }
-  function ImmutableComponentStyle(name_0) {
-    this._name_5 = name_0;
-    this._$stable_97 = 0;
+  function ImmutableComponentStyle(name) {
+    this._name_5 = name;
+    this._$stable_96 = 0;
   }
   ImmutableComponentStyle.prototype.toModifier$composable_zi0m9m_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
@@ -44127,7 +43902,7 @@
           var element_2_3 = tmp0_iterator_1_2.next_0_k$();
           var tmp$ret$2;
           $l$block_1: {
-            var tmp0_return_5 = Companion_getInstance_42()._registeredClasses.contains_2bq_k$(element_2_3);
+            var tmp0_return_5 = Companion_getInstance_41()._registeredClasses.contains_2bq_k$(element_2_3);
             tmp$ret$2 = tmp0_return_5;
             break $l$block_1;
           }
@@ -44151,7 +43926,7 @@
       break $l$block_4;
     }
     if (tmp$ret$5) {
-      var tmp_0 = Companion_getInstance_40();
+      var tmp_0 = Companion_getInstance_39();
       var tmp$ret$6;
       $l$block_5: {
         tmp$ret$6 = copyToArray_0(classNames_0);
@@ -44160,7 +43935,7 @@
       tmp = classNames(tmp_0, tmp$ret$6.slice());
     } else {
       {
-        tmp = Companion_getInstance_40();
+        tmp = Companion_getInstance_39();
       }
     }
     var tmp0 = tmp;
@@ -44190,7 +43965,7 @@
     }
     var tmp1_group = tmp_0;
     var tmp2_elvis_lhs = tmp1_group;
-    var tmp0 = tmp.then_7hhy4d_k$(tmp2_elvis_lhs == null ? Companion_getInstance_40() : tmp2_elvis_lhs);
+    var tmp0 = tmp.then_7hhy4d_k$(tmp2_elvis_lhs == null ? Companion_getInstance_39() : tmp2_elvis_lhs);
     $composer_0.endReplaceableGroup_sv8swh_k$();
     return tmp0;
   }
@@ -44198,7 +43973,7 @@
     var $composer_0 = $composer;
     $composer_0.startReplaceableGroup_majfzk_k$(-126095854);
     sourceInformation($composer_0, 'C(toModifier$composable)');
-    var finalModifier = Companion_getInstance_40();
+    var finalModifier = Companion_getInstance_39();
     var tmp0_iterator = _this_.iterator_0_k$();
     while (tmp0_iterator.hasNext_0_k$()) {
       var style = tmp0_iterator.next_0_k$();
@@ -44209,11 +43984,11 @@
     $composer_0.endReplaceableGroup_sv8swh_k$();
     return tmp0;
   }
-  function _no_name_provided__356($this_$receiver, $init) {
+  function _no_name_provided__353($this_$receiver, $init) {
     this._$this_$receiver_0 = $this_$receiver;
     this._$init = $init;
   }
-  _no_name_provided__356.prototype.invoke_0_k$ = function () {
+  _no_name_provided__353.prototype.invoke_0_k$ = function () {
     var tmp$ret$0;
     $l$block: {
       var tmp0_let_0 = new ComponentStyleState(this._$this_$receiver_0._colorMode);
@@ -44224,61 +43999,61 @@
     }
     return tmp$ret$0;
   };
-  _no_name_provided__356.$metadata$ = {
+  _no_name_provided__353.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__357($init) {
+  function _no_name_provided__354($init) {
     this._$init_0 = $init;
   }
-  _no_name_provided__357.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_318($this$$receiver, this._$init_0));
+  _no_name_provided__354.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_315($this$$receiver, this._$init_0));
   };
-  _no_name_provided__357.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__354.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__357.$metadata$ = {
+  _no_name_provided__354.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_313($styles) {
-    var i = new _no_name_provided__353($styles);
+  function _no_name_provided_$factory_310($styles) {
+    var i = new _no_name_provided__350($styles);
     return function (p1) {
       i.invoke_iav7o_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_314(this$0, $styleSheet) {
-    var i = new _no_name_provided__354(this$0, $styleSheet);
+  function _no_name_provided_$factory_311(this$0, $styleSheet) {
+    var i = new _no_name_provided__351(this$0, $styleSheet);
     return function (p1, p2) {
       i.invoke_uwdduw_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_315($cssRuleKey, $styleSheet, this$0) {
-    var i = new _no_name_provided__355($cssRuleKey, $styleSheet, this$0);
+  function _no_name_provided_$factory_312($cssRuleKey, $styleSheet, this$0) {
+    var i = new _no_name_provided__352($cssRuleKey, $styleSheet, this$0);
     return function (p1, p2) {
       i.invoke_uwdduw_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_316(this$0, $cssRule_3, $styles) {
-    var i = new _no_name_provided__352(this$0, $cssRule_3, $styles);
+  function _no_name_provided_$factory_313(this$0, $cssRule_3, $styles) {
+    var i = new _no_name_provided__349(this$0, $cssRule_3, $styles);
     return function (p1) {
       i.invoke_k0yjjx_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_317($init) {
-    var i = new _no_name_provided__357($init);
+  function _no_name_provided_$factory_314($init) {
+    var i = new _no_name_provided__354($init);
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_318($this_$receiver, $init) {
-    var i = new _no_name_provided__356($this_$receiver, $init);
+  function _no_name_provided_$factory_315($this_$receiver, $init) {
+    var i = new _no_name_provided__353($this_$receiver, $init);
     return function () {
       return i.invoke_0_k$();
     };
@@ -44317,8 +44092,8 @@
     Breakpoint_LG_instance = new Breakpoint('LG', 3);
     Breakpoint_XL_instance = new Breakpoint('XL', 4);
   }
-  function Breakpoint(name_0, ordinal) {
-    Enum.call(this, name_0, ordinal);
+  function Breakpoint(name, ordinal) {
+    Enum.call(this, name, ordinal);
   }
   Breakpoint.$metadata$ = {
     simpleName: 'Breakpoint',
@@ -44347,7 +44122,7 @@
   }
   function Px(value) {
     BreakpointUnitValue.call(this, value);
-    this._$stable_98 = 0;
+    this._$stable_97 = 0;
   }
   Px.$metadata$ = {
     simpleName: 'Px',
@@ -44356,7 +44131,7 @@
   };
   function Rem(value) {
     BreakpointUnitValue.call(this, value);
-    this._$stable_99 = 0;
+    this._$stable_98 = 0;
   }
   Rem.$metadata$ = {
     simpleName: 'Rem',
@@ -44365,7 +44140,7 @@
   };
   function BreakpointUnitValue(width_1) {
     this._width_0 = width_1;
-    this._$stable_100 = 0;
+    this._$stable_99 = 0;
   }
   BreakpointUnitValue.$metadata$ = {
     simpleName: 'BreakpointUnitValue',
@@ -44377,7 +44152,7 @@
     this._md = md;
     this._lg = lg;
     this._xl = xl;
-    this._$stable_101 = 0;
+    this._$stable_100 = 0;
   }
   BreakpointValues.prototype.toString = function () {
     return '' + 'BreakpointValues(sm=' + this._sm + ', md=' + this._md + ', lg=' + this._lg + ', xl=' + this._xl + ')';
@@ -44435,7 +44210,7 @@
     this._md_0 = md;
     this._lg_0 = lg;
     this._xl_0 = xl;
-    this._$stable_102 = 0;
+    this._$stable_101 = 0;
   }
   ResponsiveValues.$metadata$ = {
     simpleName: 'ResponsiveValues',
@@ -44464,12 +44239,12 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(variant_0._v) ? 256 : 128);
     if (!(($dirty & 731 ^ 146) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 2) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       if (!(($default & 4) === 0))
         variant_0._v = null;
       var tmp$ret$1;
       $l$block_0: {
-        var tmp0_takeIf_0 = whiteSpace_0(Companion_getInstance_40(), Companion_getInstance_35()._get_PreWrap__0_k$());
+        var tmp0_takeIf_0 = whiteSpace_0(Companion_getInstance_39(), Companion_getInstance_34()._get_PreWrap__0_k$());
         {
         }
         var tmp;
@@ -44500,13 +44275,13 @@
         break $l$block_0;
       }
       var tmp0_elvis_lhs = tmp$ret$1;
-      var spaceModifier = tmp0_elvis_lhs == null ? Companion_getInstance_40() : tmp0_elvis_lhs;
+      var spaceModifier = tmp0_elvis_lhs == null ? Companion_getInstance_39() : tmp0_elvis_lhs;
       var finalModifier = toModifier$composable(TextStyle, variant_0._v, $composer_0, 112 & $dirty >> 3, 0).then_7hhy4d_k$(modifier_0._v).then_7hhy4d_k$(spaceModifier);
-      if (!(finalModifier === Companion_getInstance_40())) {
+      if (!(finalModifier === Companion_getInstance_39())) {
         $composer_0.startReplaceableGroup_majfzk_k$(1946757667);
         var tmp_3 = asAttributesBuilder$default(finalModifier, null, 1, null);
         var tmp_4 = $composer_0;
-        Span$composable(tmp_3, composableLambda(tmp_4, -819895532, true, _no_name_provided_$factory_320(text, $dirty)), $composer_0, 48, 0);
+        Span$composable(tmp_3, composableLambda(tmp_4, -819895532, true, _no_name_provided_$factory_317(text, $dirty)), $composer_0, 48, 0);
         $composer_0.endReplaceableGroup_sv8swh_k$();
       } else {
         $composer_0.startReplaceableGroup_majfzk_k$(1946757773);
@@ -44519,81 +44294,81 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_321(text, modifier_0, variant_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_318(text, modifier_0, variant_0, $changed, $default));
     }
   }
   function Text$composable$lambda_0($text, $modifier, $variant, $$changed, $$default, $composer, $force) {
     return Text$composable_0($text, $modifier._v, $variant._v, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__358() {
+  function _no_name_provided__355() {
   }
-  _no_name_provided__358.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+  _no_name_provided__355.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
     return Unit_getInstance();
   };
-  _no_name_provided__358.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__355.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__358.$metadata$ = {
+  _no_name_provided__355.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__359($text, $$dirty) {
+  function _no_name_provided__356($text, $$dirty) {
     this._$text = $text;
     this._$$dirty_6 = $$dirty;
   }
-  _no_name_provided__359.prototype.invoke_ok3jb2_k$ = function ($this$Span, $composer, $changed) {
+  _no_name_provided__356.prototype.invoke_ok3jb2_k$ = function ($this$Span, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       Text$composable(this._$text, $composer_0, 14 & this._$$dirty_6);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__359.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__356.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_ok3jb2_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__359.$metadata$ = {
+  _no_name_provided__356.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__360($text, $modifier, $variant, $$changed, $$default) {
+  function _no_name_provided__357($text, $modifier, $variant, $$changed, $$default) {
     this._$text_0 = $text;
     this._$modifier_5 = $modifier;
     this._$variant_2 = $variant;
     this._$$changed_15 = $$changed;
     this._$$default_11 = $$default;
   }
-  _no_name_provided__360.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__357.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return Text$composable$lambda_0(this._$text_0, this._$modifier_5, this._$variant_2, this._$$changed_15, this._$$default_11, p0, p1);
   };
-  _no_name_provided__360.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__357.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__360.$metadata$ = {
+  _no_name_provided__357.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_319() {
-    var i = new _no_name_provided__358();
+  function _no_name_provided_$factory_316() {
+    var i = new _no_name_provided__355();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_320($text, $$dirty) {
-    var i = new _no_name_provided__359($text, $$dirty);
+  function _no_name_provided_$factory_317($text, $$dirty) {
+    var i = new _no_name_provided__356($text, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_ok3jb2_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_321($text, $modifier, $variant, $$changed, $$default) {
-    var i = new _no_name_provided__360($text, $modifier, $variant, $$changed, $$default);
+  function _no_name_provided_$factory_318($text, $modifier, $variant, $$changed, $$default) {
+    var i = new _no_name_provided__357($text, $modifier, $variant, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -44620,7 +44395,7 @@
     }
     tmp.__componentStyles = tmp$ret$0;
     this._componentStyles = this.__componentStyles;
-    this._$stable_103 = 8;
+    this._$stable_102 = 8;
   }
   ImmutableSilkTheme.prototype.registerStyles_jbt85d_k$ = function (componentStyleSheet) {
     {
@@ -44714,7 +44489,7 @@
     this._componentVariants = LinkedHashMap_init_$Create$();
     this._palettes_0 = new SilkPalettes(LightSilkPalette, DarkSilkPalette);
     this._breakpoints_0 = BreakpointSizes(_get_cssRem_(30), _get_cssRem_(48), _get_cssRem_(62), _get_cssRem_(80));
-    this._$stable_104 = 8;
+    this._$stable_103 = 8;
   }
   MutableSilkTheme.prototype.registerComponentStyle_bghh7b_k$ = function (style) {
     {
@@ -44829,41 +44604,41 @@
     interfaces: []
   };
   function registerBaseStyle(_this_, className, init) {
-    _this_.registerStyle_bv2ta0_k$(className, _no_name_provided_$factory_322(init));
+    _this_.registerStyle_bv2ta0_k$(className, _no_name_provided_$factory_319(init));
   }
-  function _no_name_provided__361($init) {
+  function _no_name_provided__358($init) {
     this._$init_1 = $init;
   }
-  _no_name_provided__361.prototype.invoke_0_k$ = function () {
+  _no_name_provided__358.prototype.invoke_0_k$ = function () {
     return this._$init_1();
   };
-  _no_name_provided__361.$metadata$ = {
+  _no_name_provided__358.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__362($init) {
+  function _no_name_provided__359($init) {
     this._$init_2 = $init;
   }
-  _no_name_provided__362.prototype.invoke_rn8tim_k$ = function ($this$registerStyle) {
-    $this$registerStyle.base_if27nh_k$(_no_name_provided_$factory_323(this._$init_2));
+  _no_name_provided__359.prototype.invoke_rn8tim_k$ = function ($this$registerStyle) {
+    $this$registerStyle.base_if27nh_k$(_no_name_provided_$factory_320(this._$init_2));
   };
-  _no_name_provided__362.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__359.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_rn8tim_k$(p1 instanceof StyleModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__362.$metadata$ = {
+  _no_name_provided__359.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_322($init) {
-    var i = new _no_name_provided__362($init);
+  function _no_name_provided_$factory_319($init) {
+    var i = new _no_name_provided__359($init);
     return function (p1) {
       i.invoke_rn8tim_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_323($init) {
-    var i = new _no_name_provided__361($init);
+  function _no_name_provided_$factory_320($init) {
+    var i = new _no_name_provided__358($init);
     return function () {
       return i.invoke_0_k$();
     };
@@ -44899,8 +44674,8 @@
     ColorMode_LIGHT_instance = new ColorMode('LIGHT', 0);
     ColorMode_DARK_instance = new ColorMode('DARK', 1);
   }
-  function ColorMode(name_0, ordinal) {
-    Enum.call(this, name_0, ordinal);
+  function ColorMode(name, ordinal) {
+    Enum.call(this, name, ordinal);
   }
   ColorMode.$metadata$ = {
     simpleName: 'ColorMode',
@@ -44912,13 +44687,13 @@
     var tmp0 = _get_colorModeState_()._get_value__0_k$();
     return tmp0;
   }
-  function _no_name_provided__363() {
+  function _no_name_provided__360() {
   }
-  _no_name_provided__363.prototype.invoke_0_k$ = function () {
+  _no_name_provided__360.prototype.invoke_0_k$ = function () {
     var tmp = SilkConfigInstance_getInstance()._initialColorMode;
     return mutableStateOf$default(tmp, null, 2, null);
   };
-  _no_name_provided__363.$metadata$ = {
+  _no_name_provided__360.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -44935,8 +44710,8 @@
       return _get_colorModeState_();
     }, null);
   }
-  function _no_name_provided_$factory_324() {
-    var i = new _no_name_provided__363();
+  function _no_name_provided_$factory_321() {
+    var i = new _no_name_provided__360();
     return function () {
       return i.invoke_0_k$();
     };
@@ -44955,7 +44730,7 @@
   function Link(default_0, visited) {
     this._default = default_0;
     this._visited = visited;
-    this._$stable_105 = 0;
+    this._$stable_104 = 0;
   }
   Link.prototype.toString = function () {
     return '' + 'Link(default=' + this._default + ', visited=' + this._visited + ')';
@@ -44988,7 +44763,7 @@
     this._default_0 = default_0;
     this._hover = hover;
     this._pressed = pressed;
-    this._$stable_106 = 0;
+    this._$stable_105 = 0;
   }
   Button_1.prototype.toString = function () {
     return '' + 'Button(default=' + this._default_0 + ', hover=' + this._hover + ', pressed=' + this._pressed + ')';
@@ -45026,7 +44801,7 @@
     this._link = link;
     this._button_0 = button;
     this._border = border_1;
-    this._$stable_107 = 0;
+    this._$stable_106 = 0;
   }
   SilkPalette.prototype.toString = function () {
     return '' + 'SilkPalette(background=' + this._background + ', color=' + this._color_0 + ', link=' + this._link + ', button=' + this._button_0 + ', border=' + this._border + ')';
@@ -45067,7 +44842,7 @@
   function SilkPalettes(light, dark) {
     this._light = light;
     this._dark = dark;
-    this._$stable_108 = 0;
+    this._$stable_107 = 0;
   }
   SilkPalettes.prototype.get_ckt8mq_k$ = function (colorMode) {
     var tmp0_subject = colorMode;
@@ -45118,35 +44893,35 @@
         var tmp$ret$0;
         $l$block: {
           var tmp0__get_White__0_3 = Colors_getInstance();
-          tmp$ret$0 = Companion_getInstance_41().rgb_fcwjfj_k$(255, 255, 255);
+          tmp$ret$0 = Companion_getInstance_40().rgb_fcwjfj_k$(255, 255, 255);
           break $l$block;
         }
         var buttonBase_2 = tmp$ret$0.darkened_dbmacu_k$(0.2);
         var tmp$ret$1;
         $l$block_0: {
           var tmp1__get_White__0_4 = Colors_getInstance();
-          tmp$ret$1 = Companion_getInstance_41().rgb_fcwjfj_k$(255, 255, 255);
+          tmp$ret$1 = Companion_getInstance_40().rgb_fcwjfj_k$(255, 255, 255);
           break $l$block_0;
         }
         var tmp = tmp$ret$1;
         var tmp$ret$2;
         $l$block_1: {
           var tmp2__get_Black__0_5 = Colors_getInstance();
-          tmp$ret$2 = Companion_getInstance_41().rgb_fcwjfj_k$(0, 0, 0);
+          tmp$ret$2 = Companion_getInstance_40().rgb_fcwjfj_k$(0, 0, 0);
           break $l$block_1;
         }
         var tmp_0 = tmp$ret$2;
         var tmp$ret$3;
         $l$block_2: {
           var tmp3__get_Blue__0_6 = Colors_getInstance();
-          tmp$ret$3 = Companion_getInstance_41().rgb_fcwjfj_k$(0, 0, 255);
+          tmp$ret$3 = Companion_getInstance_40().rgb_fcwjfj_k$(0, 0, 255);
           break $l$block_2;
         }
         var tmp_1 = tmp$ret$3;
         var tmp$ret$4;
         $l$block_3: {
           var tmp4__get_Purple__0_7 = Colors_getInstance();
-          tmp$ret$4 = Companion_getInstance_41().rgb_fcwjfj_k$(128, 0, 128);
+          tmp$ret$4 = Companion_getInstance_40().rgb_fcwjfj_k$(128, 0, 128);
           break $l$block_3;
         }
         var tmp_2 = new Link(tmp_1, tmp$ret$4);
@@ -45169,35 +44944,35 @@
         var tmp$ret$0;
         $l$block: {
           var tmp0__get_Black__0_3 = Colors_getInstance();
-          tmp$ret$0 = Companion_getInstance_41().rgb_fcwjfj_k$(0, 0, 0);
+          tmp$ret$0 = Companion_getInstance_40().rgb_fcwjfj_k$(0, 0, 0);
           break $l$block;
         }
         var buttonBase_2 = lightened(tmp$ret$0, 0.2);
         var tmp$ret$1;
         $l$block_0: {
           var tmp1__get_Black__0_4 = Colors_getInstance();
-          tmp$ret$1 = Companion_getInstance_41().rgb_fcwjfj_k$(0, 0, 0);
+          tmp$ret$1 = Companion_getInstance_40().rgb_fcwjfj_k$(0, 0, 0);
           break $l$block_0;
         }
         var tmp = tmp$ret$1;
         var tmp$ret$2;
         $l$block_1: {
           var tmp2__get_White__0_5 = Colors_getInstance();
-          tmp$ret$2 = Companion_getInstance_41().rgb_fcwjfj_k$(255, 255, 255);
+          tmp$ret$2 = Companion_getInstance_40().rgb_fcwjfj_k$(255, 255, 255);
           break $l$block_1;
         }
         var tmp_0 = tmp$ret$2;
         var tmp$ret$3;
         $l$block_2: {
           var tmp3__get_Cyan__0_6 = Colors_getInstance();
-          tmp$ret$3 = Companion_getInstance_41().rgb_fcwjfj_k$(0, 255, 255);
+          tmp$ret$3 = Companion_getInstance_40().rgb_fcwjfj_k$(0, 255, 255);
           break $l$block_2;
         }
         var tmp_1 = tmp$ret$3;
         var tmp$ret$4;
         $l$block_3: {
           var tmp4__get_Violet__0_7 = Colors_getInstance();
-          tmp$ret$4 = Companion_getInstance_41().rgb_fcwjfj_k$(238, 130, 238);
+          tmp$ret$4 = Companion_getInstance_40().rgb_fcwjfj_k$(238, 130, 238);
           break $l$block_3;
         }
         var tmp_2 = new Link(tmp_1, tmp$ret$4);
@@ -45222,7 +44997,7 @@
         }
         var tmp$ret$0;
         $l$block: {
-          tmp$ret$0 = styleModifier(_this_, _no_name_provided_$factory_325(tmp0_safe_receiver));
+          tmp$ret$0 = styleModifier(_this_, _no_name_provided_$factory_322(tmp0_safe_receiver));
           break $l$block;
         }
         tmp$ret$1 = tmp$ret$0;
@@ -45245,7 +45020,7 @@
     this._botRight = botRight;
     this._cornerRadius = cornerRadius;
     this._$$delegate_0 = new RectF(toFloatPair$accessor$1i35fko(topLeft), toFloatPair$accessor$1i35fko(botRight), cornerRadius);
-    this._$stable_109 = 0;
+    this._$stable_108 = 0;
   }
   Rect.prototype._get_path__0_k$ = function () {
     return this._$$delegate_0._get_path__0_k$();
@@ -45263,7 +45038,7 @@
     interfaces: []
   };
   function Path() {
-    this._$stable_110 = 0;
+    this._$stable_109 = 0;
   }
   Path.prototype.toPercentStr_qua7xs_k$ = function (_this__0) {
     return '' + _this__0 + '%';
@@ -45280,7 +45055,7 @@
     this._topLeft_0 = topLeft;
     this._botRight_0 = botRight;
     this._cornerRadius_0 = cornerRadius;
-    this._$stable_111 = 8;
+    this._$stable_110 = 8;
   }
   RectF.prototype._get_path__0_k$ = function () {
     var tmp;
@@ -45307,7 +45082,7 @@
     this._topLeft_1 = topLeft;
     this._roundness = roundness;
     this._botRight_1 = from100(botRight);
-    this._$stable_112 = 8;
+    this._$stable_111 = 8;
   }
   InsetPath.prototype.toPathStr_0_k$ = function () {
     var tmp$ret$1;
@@ -45367,22 +45142,22 @@
   function toFloatPair$accessor$1i35fko(_this_) {
     return toFloatPair(_this_);
   }
-  function _no_name_provided__364($tmp0_safe_receiver) {
+  function _no_name_provided__361($tmp0_safe_receiver) {
     this._$tmp0_safe_receiver_3 = $tmp0_safe_receiver;
   }
-  _no_name_provided__364.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
+  _no_name_provided__361.prototype.invoke_k9hshx_k$ = function ($this$styleModifier) {
     $this$styleModifier.property_wbz76b_k$('clip-path', this._$tmp0_safe_receiver_3.toPathStr_0_k$());
   };
-  _no_name_provided__364.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__361.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_k9hshx_k$((!(p1 == null) ? isInterface(p1, StyleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__364.$metadata$ = {
+  _no_name_provided__361.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_325($tmp0_safe_receiver) {
-    var i = new _no_name_provided__364($tmp0_safe_receiver);
+  function _no_name_provided_$factory_322($tmp0_safe_receiver) {
+    var i = new _no_name_provided__361($tmp0_safe_receiver);
     return function (p1) {
       i.invoke_k9hshx_k$(p1);
       return Unit_getInstance();
@@ -45390,7 +45165,7 @@
   }
   var apiFetcherInstance;
   function ApiFetcher() {
-    this._$stable_113 = 0;
+    this._$stable_112 = 0;
   }
   ApiFetcher.$metadata$ = {
     simpleName: 'ApiFetcher',
@@ -45426,42 +45201,42 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_326(content, $changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_323(content, $changed));
     }
   }
-  function _no_name_provided__365() {
+  function _no_name_provided__362() {
   }
-  _no_name_provided__365.prototype.invoke_dzfmrm_k$ = function ($this$null) {
+  _no_name_provided__362.prototype.invoke_dzfmrm_k$ = function ($this$null) {
     padding($this$null, [_get_px_(0)]);
     margin($this$null, [_get_px_(0)]);
   };
-  _no_name_provided__365.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__362.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__365.$metadata$ = {
+  _no_name_provided__362.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__366() {
+  function _no_name_provided__363() {
   }
-  _no_name_provided__366.prototype.invoke_dzfmrm_k$ = function ($this$null) {
+  _no_name_provided__363.prototype.invoke_dzfmrm_k$ = function ($this$null) {
     boxSizing($this$null, 'border-box');
   };
-  _no_name_provided__366.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__363.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dzfmrm_k$((!(p1 == null) ? isInterface(p1, CSSStyleRuleBuilder) : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__366.$metadata$ = {
+  _no_name_provided__363.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function DefaultStyleSheet() {
     DefaultStyleSheet_instance = this;
     StyleSheet_init_$Init$(null, false, 3, null, this);
-    this.style_4x08vx_k$('html, body', _no_name_provided_$factory_327());
-    this.style_4x08vx_k$('*', _no_name_provided_$factory_328());
-    this._$stable_114 = 0;
+    this.style_4x08vx_k$('html, body', _no_name_provided_$factory_324());
+    this.style_4x08vx_k$('*', _no_name_provided_$factory_325());
+    this._$stable_113 = 0;
   }
   DefaultStyleSheet.prototype.style_ro2ux6_k$ = function (selector, cssRule) {
     return this.style_9sv35b_k$(selector, cssRule);
@@ -45480,58 +45255,58 @@
   function KobwebApp$composable$lambda($content, $$changed, $composer, $force) {
     return KobwebApp$composable($content, $composer, $$changed | 1);
   }
-  function _no_name_provided__367($content, $$changed) {
+  function _no_name_provided__364($content, $$changed) {
     this._$content_18 = $content;
     this._$$changed_16 = $$changed;
   }
-  _no_name_provided__367.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__364.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return KobwebApp$composable$lambda(this._$content_18, this._$$changed_16, p0, p1);
   };
-  _no_name_provided__367.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__364.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__367.$metadata$ = {
+  _no_name_provided__364.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_326($content, $$changed) {
-    var i = new _no_name_provided__367($content, $$changed);
+  function _no_name_provided_$factory_323($content, $$changed) {
+    var i = new _no_name_provided__364($content, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_327() {
-    var i = new _no_name_provided__365();
+  function _no_name_provided_$factory_324() {
+    var i = new _no_name_provided__362();
     return function (p1) {
       i.invoke_dzfmrm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_328() {
-    var i = new _no_name_provided__366();
+  function _no_name_provided_$factory_325() {
+    var i = new _no_name_provided__363();
     return function (p1) {
       i.invoke_dzfmrm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided__368() {
+  function _no_name_provided__365() {
   }
-  _no_name_provided__368.prototype.invoke_0_k$ = function () {
+  _no_name_provided__365.prototype.invoke_0_k$ = function () {
     return mutableStateOf$default(null, null, 2, null);
   };
-  _no_name_provided__368.$metadata$ = {
+  _no_name_provided__365.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function Companion_46() {
-    Companion_instance_45 = this;
+  function Companion_45() {
+    Companion_instance_44 = this;
     var tmp = this;
-    tmp._active$delegate = lazy(_no_name_provided_$factory_329());
+    tmp._active$delegate = lazy(_no_name_provided_$factory_326());
   }
-  Companion_46.prototype._get_active__0_k$ = function () {
+  Companion_45.prototype._get_active__0_k$ = function () {
     var tmp$ret$0;
     $l$block: {
       var tmp0_getValue_0 = active$factory();
@@ -45540,19 +45315,19 @@
     }
     return tmp$ret$0;
   };
-  Companion_46.$metadata$ = {
+  Companion_45.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_45;
-  function Companion_getInstance_45() {
-    if (Companion_instance_45 == null)
-      new Companion_46();
-    return Companion_instance_45;
+  var Companion_instance_44;
+  function Companion_getInstance_44() {
+    if (Companion_instance_44 == null)
+      new Companion_45();
+    return Companion_instance_44;
   }
   function PageContext(router) {
-    Companion_getInstance_45();
+    Companion_getInstance_44();
     this._router = router;
     var tmp = this;
     var tmp$ret$0;
@@ -45563,7 +45338,7 @@
     tmp._mutableParams = tmp$ret$0;
     this._params = this._mutableParams;
     this._fragment = null;
-    this._$stable_115 = 8;
+    this._$stable_114 = 8;
   }
   PageContext.$metadata$ = {
     simpleName: 'PageContext',
@@ -45591,10 +45366,10 @@
           var tmp$ret$1;
           $l$block_0: {
             var tmp;
-            if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
+            if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
               var tmp$ret$0;
               $l$block: {
-                var tmp0_return_7 = ensureNotNull(Companion_getInstance_45()._get_active__0_k$()._get_value__0_k$());
+                var tmp0_return_7 = ensureNotNull(Companion_getInstance_44()._get_active__0_k$()._get_value__0_k$());
                 tmp$ret$0 = tmp0_return_7;
                 break $l$block;
               }
@@ -45628,8 +45403,8 @@
       return receiver._get_active__0_k$();
     }, null);
   }
-  function _no_name_provided_$factory_329() {
-    var i = new _no_name_provided__368();
+  function _no_name_provided_$factory_326() {
+    var i = new _no_name_provided__365();
     return function () {
       return i.invoke_0_k$();
     };
@@ -45659,97 +45434,97 @@
       if (!(($default & 4) === 0))
         content_0._v = null;
       var ctx = rememberPageContext$composable($composer_0, 0);
-      A$composable(href_0, _no_name_provided_$factory_330(attrs_0, ctx, href_0), content_0._v, $composer_0, 14 & $dirty | 896 & $dirty, 0);
+      A$composable(href_0, _no_name_provided_$factory_327(attrs_0, ctx, href_0), content_0._v, $composer_0, 14 & $dirty | 896 & $dirty, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_331(href_0, attrs_0, content_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_328(href_0, attrs_0, content_0, $changed, $default));
     }
   }
   function Link$composable$lambda($href, $attrs, $content, $$changed, $$default, $composer, $force) {
     return Link$composable($href, $attrs._v, $content._v, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__369($ctx, $href) {
+  function _no_name_provided__366($ctx, $href) {
     this._$ctx = $ctx;
     this._$href_2 = $href;
   }
-  _no_name_provided__369.prototype.invoke_9dcepc_k$ = function (evt) {
+  _no_name_provided__366.prototype.invoke_9dcepc_k$ = function (evt) {
     evt.preventDefault_sv8swh_k$();
     this._$ctx._router.navigateTo$default_api6eb_k$(this._$href_2, false, null, 6, null);
   };
-  _no_name_provided__369.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__366.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__369.$metadata$ = {
+  _no_name_provided__366.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__370($attrs, $ctx, $href) {
-    this._$attrs_13 = $attrs;
+  function _no_name_provided__367($attrs, $ctx, $href) {
+    this._$attrs_11 = $attrs;
     this._$ctx_0 = $ctx;
     this._$href_3 = $href;
   }
-  _no_name_provided__370.prototype.invoke_m2exwv_k$ = function ($this$A) {
-    if (!(this._$attrs_13._v == null)) {
-      this._$attrs_13._v($this$A);
-    }$this$A.onClick_hxe0av_k$(_no_name_provided_$factory_332(this._$ctx_0, this._$href_3));
+  _no_name_provided__367.prototype.invoke_m2exwv_k$ = function ($this$A) {
+    if (!(this._$attrs_11._v == null)) {
+      this._$attrs_11._v($this$A);
+    }$this$A.onClick_hxe0av_k$(_no_name_provided_$factory_329(this._$ctx_0, this._$href_3));
   };
-  _no_name_provided__370.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__367.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_m2exwv_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__370.$metadata$ = {
+  _no_name_provided__367.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__371($href, $attrs, $content, $$changed, $$default) {
+  function _no_name_provided__368($href, $attrs, $content, $$changed, $$default) {
     this._$href_4 = $href;
-    this._$attrs_14 = $attrs;
+    this._$attrs_12 = $attrs;
     this._$content_19 = $content;
     this._$$changed_17 = $$changed;
     this._$$default_12 = $$default;
   }
-  _no_name_provided__371.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Link$composable$lambda(this._$href_4, this._$attrs_14, this._$content_19, this._$$changed_17, this._$$default_12, p0, p1);
+  _no_name_provided__368.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return Link$composable$lambda(this._$href_4, this._$attrs_12, this._$content_19, this._$$changed_17, this._$$default_12, p0, p1);
   };
-  _no_name_provided__371.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__368.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__371.$metadata$ = {
+  _no_name_provided__368.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_330($attrs, $ctx, $href) {
-    var i = new _no_name_provided__370($attrs, $ctx, $href);
+  function _no_name_provided_$factory_327($attrs, $ctx, $href) {
+    var i = new _no_name_provided__367($attrs, $ctx, $href);
     return function (p1) {
       i.invoke_m2exwv_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_331($href, $attrs, $content, $$changed, $$default) {
-    var i = new _no_name_provided__371($href, $attrs, $content, $$changed, $$default);
+  function _no_name_provided_$factory_328($href, $attrs, $content, $$changed, $$default) {
+    var i = new _no_name_provided__368($href, $attrs, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_332($ctx, $href) {
-    var i = new _no_name_provided__369($ctx, $href);
+  function _no_name_provided_$factory_329($ctx, $href) {
+    var i = new _no_name_provided__366($ctx, $href);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
-  function Companion_47() {
-    Companion_instance_46 = this;
+  function Companion_46() {
+    Companion_instance_45 = this;
   }
-  Companion_47.prototype.isLocal_6wfw3l_k$ = function (path) {
+  Companion_46.prototype.isLocal_6wfw3l_k$ = function (path) {
     var tmp;
     if (!contains$default_0(path, '://', false, 2, null)) {
       tmp = !(this.tryCreate_6wfw3l_k$(path) == null);
@@ -45760,7 +45535,7 @@
     }
     return tmp;
   };
-  Companion_47.prototype.tryCreate_6wfw3l_k$ = function (path) {
+  Companion_46.prototype.tryCreate_6wfw3l_k$ = function (path) {
     var tmp;
     try {
       tmp = new Route(path);
@@ -45777,21 +45552,21 @@
     }
     return tmp;
   };
-  Companion_47.$metadata$ = {
+  Companion_46.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_46;
-  function Companion_getInstance_46() {
-    if (Companion_instance_46 == null)
-      new Companion_47();
-    return Companion_instance_46;
+  var Companion_instance_45;
+  function Companion_getInstance_45() {
+    if (Companion_instance_45 == null)
+      new Companion_46();
+    return Companion_instance_45;
   }
   function Route(value) {
-    Companion_getInstance_46();
-    this._value_25 = (new URL(value, 'http://unused.com')).pathname;
-    this._$stable_116 = 0;
+    Companion_getInstance_45();
+    this._value_24 = (new URL(value, 'http://unused.com')).pathname;
+    this._$stable_115 = 0;
   }
   Route.$metadata$ = {
     simpleName: 'Route',
@@ -45810,8 +45585,8 @@
   Node_0.prototype._get_name__0_k$ = function () {
     return this._name_6;
   };
-  Node_0.prototype.matches_6wfw3l_k$ = function (name_0) {
-    return this._name_6 === name_0;
+  Node_0.prototype.matches_6wfw3l_k$ = function (name) {
+    return this._name_6 === name;
   };
   Node_0.prototype.findChild_6wfw3l_k$ = function (routePart) {
     var tmp$ret$1;
@@ -45836,8 +45611,8 @@
     }
     return tmp$ret$1;
   };
-  function Node_0(name_0, method) {
-    this._name_6 = name_0;
+  function Node_0(name, method) {
+    this._name_6 = name;
     this._method = method;
     var tmp = this;
     var tmp$ret$0;
@@ -45846,7 +45621,7 @@
       break $l$block;
     }
     tmp._children = tmp$ret$0;
-    this._$stable_117 = 8;
+    this._$stable_116 = 8;
   }
   Node_0.prototype.createChild$composable_v2gb7c_k$ = function (routePart, method) {
     var tmp;
@@ -45890,28 +45665,28 @@
   };
   function RootNode() {
     Node_0.call(this, '', null);
-    this._$stable_118 = 0;
+    this._$stable_117 = 0;
   }
   RootNode.$metadata$ = {
     simpleName: 'RootNode',
     kind: 'class',
     interfaces: []
   };
-  function StaticNode(name_0, method) {
-    Node_0.call(this, name_0, method);
-    this._$stable_119 = 0;
+  function StaticNode(name, method) {
+    Node_0.call(this, name, method);
+    this._$stable_118 = 0;
   }
   StaticNode.$metadata$ = {
     simpleName: 'StaticNode',
     kind: 'class',
     interfaces: []
   };
-  DynamicNode.prototype.matches_6wfw3l_k$ = function (name_0) {
+  DynamicNode.prototype.matches_6wfw3l_k$ = function (name) {
     return true;
   };
-  function DynamicNode(name_0, method) {
-    Node_0.call(this, name_0, method);
-    this._$stable_120 = 0;
+  function DynamicNode(name, method) {
+    Node_0.call(this, name, method);
+    this._$stable_119 = 0;
   }
   DynamicNode.$metadata$ = {
     simpleName: 'DynamicNode',
@@ -45975,10 +45750,10 @@
        while (inductionVariable < last_0);
     return resolved;
   }
-  function _no_name_provided__372(this$0) {
+  function _no_name_provided__369(this$0) {
     this._this$0_36 = this$0;
   }
-  _no_name_provided__372.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__369.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._this$0_36._errorHandler;
@@ -45990,12 +45765,12 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__372.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__369.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__372.$metadata$ = {
+  _no_name_provided__369.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -46011,7 +45786,7 @@
     var tmp3_elvis_lhs = tmp2_safe_receiver == null ? null : tmp2_safe_receiver._method;
     var tmp;
     if (tmp3_elvis_lhs == null) {
-      tmp = composableLambdaInstance(-985530877, true, _no_name_provided_$factory_333(this));
+      tmp = composableLambdaInstance(-985530877, true, _no_name_provided_$factory_330(this));
     } else {
       tmp = tmp3_elvis_lhs;
     }
@@ -46165,9 +45940,9 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__373() {
+  function _no_name_provided__370() {
   }
-  _no_name_provided__373.prototype.invoke_u2ul2_k$ = function (errorCode, $composer, $changed) {
+  _no_name_provided__370.prototype.invoke_u2ul2_k$ = function (errorCode, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
@@ -46177,20 +45952,20 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__373.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__370.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_u2ul2_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__373.$metadata$ = {
+  _no_name_provided__370.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$RouteTreeKt() {
     ComposableSingletons$RouteTreeKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_1 = composableLambdaInstance(-985532074, false, _no_name_provided_$factory_334());
+    tmp._lambda_1_1 = composableLambdaInstance(-985532074, false, _no_name_provided_$factory_331());
   }
   ComposableSingletons$RouteTreeKt.$metadata$ = {
     simpleName: 'ComposableSingletons$RouteTreeKt',
@@ -46211,78 +45986,78 @@
       $dirty = $dirty | ($composer_0.changed_ha5a7z_k$(errorCode) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp = $composer_0;
-      Div$composable(null, composableLambda(tmp, -819895293, true, _no_name_provided_$factory_335(errorCode)), $composer_0, 48, 1);
+      Div$composable(null, composableLambda(tmp, -819895293, true, _no_name_provided_$factory_332(errorCode)), $composer_0, 48, 1);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_336(errorCode, $changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_333(errorCode, $changed));
     }
   }
   function ErrorPage$composable$lambda($errorCode, $$changed, $composer, $force) {
     return ErrorPage$composable($errorCode, $composer, $$changed | 1);
   }
-  function _no_name_provided__374($errorCode) {
+  function _no_name_provided__371($errorCode) {
     this._$errorCode = $errorCode;
   }
-  _no_name_provided__374.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
+  _no_name_provided__371.prototype.invoke_ovmwdp_k$ = function ($this$Div, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       Text$composable('' + 'Error code: ' + this._$errorCode, $composer_0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__374.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__371.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_ovmwdp_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__374.$metadata$ = {
+  _no_name_provided__371.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__375($errorCode, $$changed) {
+  function _no_name_provided__372($errorCode, $$changed) {
     this._$errorCode_0 = $errorCode;
     this._$$changed_18 = $$changed;
   }
-  _no_name_provided__375.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__372.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return ErrorPage$composable$lambda(this._$errorCode_0, this._$$changed_18, p0, p1);
   };
-  _no_name_provided__375.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__372.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__375.$metadata$ = {
+  _no_name_provided__372.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_333(this$0) {
-    var i = new _no_name_provided__372(this$0);
+  function _no_name_provided_$factory_330(this$0) {
+    var i = new _no_name_provided__369(this$0);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_334() {
-    var i = new _no_name_provided__373();
+  function _no_name_provided_$factory_331() {
+    var i = new _no_name_provided__370();
     return function (p1, p2, p3) {
       i.invoke_u2ul2_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_335($errorCode) {
-    var i = new _no_name_provided__374($errorCode);
+  function _no_name_provided_$factory_332($errorCode) {
+    var i = new _no_name_provided__371($errorCode);
     return function (p1, p2, p3) {
       i.invoke_ovmwdp_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_336($errorCode, $$changed) {
-    var i = new _no_name_provided__375($errorCode, $$changed);
+  function _no_name_provided_$factory_333($errorCode, $$changed) {
+    var i = new _no_name_provided__372($errorCode, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -46354,7 +46129,7 @@
     var tmp1_container = tmp$ret$5;
     var path = tmp1_container.component1_0_k$();
     var query = tmp1_container.component2_0_k$();
-    if (!Companion_getInstance_46().isLocal_6wfw3l_k$(path)) {
+    if (!Companion_getInstance_45().isLocal_6wfw3l_k$(path)) {
       {
         {
         }
@@ -46376,32 +46151,32 @@
   function renderActivePage$composable$lambda($tmp0_rcvr, $$changed, $composer, $force) {
     return $tmp0_rcvr.renderActivePage$composable_5vwf3d_k$($composer, $$changed | 1);
   }
-  function _no_name_provided__376(this$0) {
+  function _no_name_provided__373(this$0) {
     this._this$0_37 = this$0;
   }
-  _no_name_provided__376.prototype.invoke_mmly4i_k$ = function (it) {
+  _no_name_provided__373.prototype.invoke_mmly4i_k$ = function (it) {
     return updateActivePage(this._this$0_37, ensureNotNull(document.location).pathname, false);
   };
-  _no_name_provided__376.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__373.prototype.invoke_20e8_k$ = function (p1) {
     return this.invoke_mmly4i_k$(p1 instanceof PopStateEvent ? p1 : THROW_CCE());
   };
-  _no_name_provided__376.$metadata$ = {
+  _no_name_provided__373.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__377($tmp0_rcvr, $$changed) {
+  function _no_name_provided__374($tmp0_rcvr, $$changed) {
     this._$tmp0_rcvr = $tmp0_rcvr;
     this._$$changed_19 = $$changed;
   }
-  _no_name_provided__377.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__374.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return renderActivePage$composable$lambda(this._$tmp0_rcvr, this._$$changed_19, p0, p1);
   };
-  _no_name_provided__377.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__374.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__377.$metadata$ = {
+  _no_name_provided__374.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -46410,8 +46185,8 @@
     tmp._activePageData = mutableStateOf$default(null, null, 2, null);
     this._routeTree = new RouteTree();
     var tmp_0 = window;
-    tmp_0.onpopstate = _no_name_provided_$factory_337(this);
-    this._$stable_121 = 8;
+    tmp_0.onpopstate = _no_name_provided_$factory_334(this);
+    this._$stable_120 = 8;
   }
   Router.prototype.navigateTo_di848w_k$ = function (pathQueryAndFragment, allowExternalPaths, updateHistoryMode) {
     var tmp$ret$1;
@@ -46495,7 +46270,7 @@
       tmp = tmp0_elvis_lhs;
     }
     var data = tmp;
-    Companion_getInstance_45()._get_active__0_k$()._set_value__iav7o_k$(data._pageContext);
+    Companion_getInstance_44()._get_active__0_k$()._set_value__iav7o_k$(data._pageContext);
     var $invokeComposable_dispatchReceiver = data._pageMethod;
     if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
       $invokeComposable_dispatchReceiver.invoke_uhotyh_k$($composer_0, 0);
@@ -46507,13 +46282,13 @@
     if (tmp1_safe_receiver === null)
       null;
     else {
-      tmp1_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_338(tmp0_rcvr, $changed));
+      tmp1_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_335(tmp0_rcvr, $changed));
     }
   };
   Router.prototype.register$composable_809tk2_k$ = function (route, pageMethod) {
     {
       var tmp;
-      if (Companion_getInstance_46().isLocal_6wfw3l_k$(route)) {
+      if (Companion_getInstance_45().isLocal_6wfw3l_k$(route)) {
         var tmp_0 = new Char(47);
         tmp = startsWith$default(route, tmp_0, false, 2, null);
       } else {
@@ -46560,8 +46335,8 @@
     UpdateHistoryMode_PUSH_instance = new UpdateHistoryMode('PUSH', 0);
     UpdateHistoryMode_REPLACE_instance = new UpdateHistoryMode('REPLACE', 1);
   }
-  function UpdateHistoryMode(name_0, ordinal) {
-    Enum.call(this, name_0, ordinal);
+  function UpdateHistoryMode(name, ordinal) {
+    Enum.call(this, name, ordinal);
   }
   UpdateHistoryMode.$metadata$ = {
     simpleName: 'UpdateHistoryMode',
@@ -46576,42 +46351,42 @@
     UpdateHistoryMode_initEntries();
     return UpdateHistoryMode_REPLACE_instance;
   }
-  function _no_name_provided_$factory_337(this$0) {
-    var i = new _no_name_provided__376(this$0);
+  function _no_name_provided_$factory_334(this$0) {
+    var i = new _no_name_provided__373(this$0);
     return function (p1) {
       return i.invoke_mmly4i_k$(p1);
     };
   }
-  function _no_name_provided_$factory_338($tmp0_rcvr, $$changed) {
-    var i = new _no_name_provided__377($tmp0_rcvr, $$changed);
+  function _no_name_provided_$factory_335($tmp0_rcvr, $$changed) {
+    var i = new _no_name_provided__374($tmp0_rcvr, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
   var initSilkHook;
-  function _no_name_provided__378() {
+  function _no_name_provided__375() {
   }
-  _no_name_provided__378.prototype.invoke_jt2t48_k$ = function (it) {
+  _no_name_provided__375.prototype.invoke_jt2t48_k$ = function (it) {
     return Unit_getInstance();
   };
-  _no_name_provided__378.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__375.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_jt2t48_k$(p1 instanceof InitSilkContext ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__378.$metadata$ = {
+  _no_name_provided__375.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_339() {
-    var i = new _no_name_provided__378();
+  function _no_name_provided_$factory_336() {
+    var i = new _no_name_provided__375();
     return function (p1) {
       i.invoke_jt2t48_k$(p1);
       return Unit_getInstance();
     };
   }
   function initSilkHook$init$() {
-    return _no_name_provided_$factory_339();
+    return _no_name_provided_$factory_336();
   }
   function SilkApp$composable(content, $composer, $changed) {
     var $composer_0 = $composer;
@@ -46638,8 +46413,8 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
-                var value_2_2_5 = initSilk(_no_name_provided_$factory_340());
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
+                var value_2_2_5 = initSilk(_no_name_provided_$factory_337());
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(Unit_getInstance());
                 tmp = Unit_getInstance();
               } else {
@@ -46661,37 +46436,37 @@
         break $l$block_2;
       }
       var tmp_1 = $composer_0;
-      KobwebApp$composable(composableLambda(tmp_1, -819894474, true, _no_name_provided_$factory_341(content, $dirty)), $composer_0, 6);
+      KobwebApp$composable(composableLambda(tmp_1, -819894474, true, _no_name_provided_$factory_338(content, $dirty)), $composer_0, 6);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_342(content, $changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_339(content, $changed));
     }
   }
   function SilkApp$composable$lambda($content, $$changed, $composer, $force) {
     return SilkApp$composable($content, $composer, $$changed | 1);
   }
-  function _no_name_provided__379() {
+  function _no_name_provided__376() {
   }
-  _no_name_provided__379.prototype.invoke_jt2t48_k$ = function (ctx) {
+  _no_name_provided__376.prototype.invoke_jt2t48_k$ = function (ctx) {
     initSilkHook(ctx);
   };
-  _no_name_provided__379.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__376.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_jt2t48_k$(p1 instanceof InitSilkContext ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__379.$metadata$ = {
+  _no_name_provided__376.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__380($content, $$dirty) {
+  function _no_name_provided__377($content, $$dirty) {
     this._$content_20 = $content;
     this._$$dirty_7 = $$dirty;
   }
-  _no_name_provided__380.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__377.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       {
@@ -46721,47 +46496,47 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__380.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__377.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__380.$metadata$ = {
+  _no_name_provided__377.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__381($content, $$changed) {
+  function _no_name_provided__378($content, $$changed) {
     this._$content_21 = $content;
     this._$$changed_20 = $$changed;
   }
-  _no_name_provided__381.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__378.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return SilkApp$composable$lambda(this._$content_21, this._$$changed_20, p0, p1);
   };
-  _no_name_provided__381.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__378.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__381.$metadata$ = {
+  _no_name_provided__378.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_340() {
-    var i = new _no_name_provided__379();
+  function _no_name_provided_$factory_337() {
+    var i = new _no_name_provided__376();
     return function (p1) {
       i.invoke_jt2t48_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_341($content, $$dirty) {
-    var i = new _no_name_provided__380($content, $$dirty);
+  function _no_name_provided_$factory_338($content, $$dirty) {
+    var i = new _no_name_provided__377($content, $$dirty);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_342($content, $$changed) {
-    var i = new _no_name_provided__381($content, $$changed);
+  function _no_name_provided_$factory_339($content, $$changed) {
+    var i = new _no_name_provided__378($content, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -46779,7 +46554,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       FaIcon$composable('dev', modifier_0._v, IconCategory_BRAND_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -46787,7 +46562,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_343(modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_340(modifier_0, $changed, $default));
     }
   }
   function FaTelegramPlane$composable(modifier, $composer, $changed, $default) {
@@ -46802,7 +46577,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       FaIcon$composable('telegram-plane', modifier_0._v, IconCategory_BRAND_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -46810,7 +46585,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_344(modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_341(modifier_0, $changed, $default));
     }
   }
   function FaTwitter$composable(modifier, $composer, $changed, $default) {
@@ -46825,7 +46600,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       FaIcon$composable('twitter', modifier_0._v, IconCategory_BRAND_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -46833,7 +46608,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_345(modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_342(modifier_0, $changed, $default));
     }
   }
   function FaLinkedinIn$composable(modifier, $composer, $changed, $default) {
@@ -46848,7 +46623,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       FaIcon$composable('linkedin-in', modifier_0._v, IconCategory_BRAND_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -46856,7 +46631,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_346(modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_343(modifier_0, $changed, $default));
     }
   }
   function FaGithubAlt$composable(modifier, $composer, $changed, $default) {
@@ -46871,7 +46646,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       FaIcon$composable('github-alt', modifier_0._v, IconCategory_BRAND_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -46879,7 +46654,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_347(modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_344(modifier_0, $changed, $default));
     }
   }
   function FaMailBulk$composable(modifier, $composer, $changed, $default) {
@@ -46894,7 +46669,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       FaIcon$composable('mail-bulk', modifier_0._v, IconCategory_SOLID_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -46902,7 +46677,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_348(modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_345(modifier_0, $changed, $default));
     }
   }
   function FaCopyright$composable(modifier, style, $composer, $changed, $default) {
@@ -46922,7 +46697,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(style_0._v) ? 32 : 16);
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       if (!(($default & 2) === 0))
         style_0._v = IconStyle_OUTLINE_getInstance();
       FaIcon$composable('copyright', modifier_0._v, style_0._v._category, $composer_0, 6 | 112 & $dirty << 3, 0);
@@ -46932,32 +46707,28 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_349(modifier_0, style_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_346(modifier_0, style_0, $changed, $default));
     }
   }
-  function FaRedo$composable(modifier, $composer, $changed, $default) {
-    var modifier_0 = {_v: modifier};
-    var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(475798659);
-    sourceInformation($composer_0, 'C(FaRedo$composable)');
-    var $dirty = $changed;
-    if (!(($default & 1) === 0))
-      $dirty = $dirty | 6;
-    else if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
-    if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
-      FaIcon$composable('redo', modifier_0._v, IconCategory_SOLID_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
-    if (tmp0_safe_receiver === null)
-      null;
-    else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_350(modifier_0, $changed, $default));
-    }
+  var IconStyle_FILLED_instance;
+  var IconStyle_OUTLINE_instance;
+  var IconStyle_entriesInitialized;
+  function IconStyle_initEntries() {
+    if (IconStyle_entriesInitialized)
+      return Unit_getInstance();
+    IconStyle_entriesInitialized = true;
+    IconStyle_FILLED_instance = new IconStyle('FILLED', 0, IconCategory_SOLID_getInstance());
+    IconStyle_OUTLINE_instance = new IconStyle('OUTLINE', 1, IconCategory_REGULAR_getInstance());
   }
+  function IconStyle(name, ordinal, category) {
+    Enum.call(this, name, ordinal);
+    this._category = category;
+  }
+  IconStyle.$metadata$ = {
+    simpleName: 'IconStyle',
+    kind: 'class',
+    interfaces: []
+  };
   function FaWindowClose$composable(modifier, style, $composer, $changed, $default) {
     var modifier_0 = {_v: modifier};
     var style_0 = {_v: style};
@@ -46975,7 +46746,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(style_0._v) ? 32 : 16);
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       if (!(($default & 2) === 0))
         style_0._v = IconStyle_OUTLINE_getInstance();
       FaIcon$composable('window-close', modifier_0._v, style_0._v._category, $composer_0, 6 | 112 & $dirty << 3, 0);
@@ -46985,28 +46756,32 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_351(modifier_0, style_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_347(modifier_0, style_0, $changed, $default));
     }
   }
-  var IconStyle_FILLED_instance;
-  var IconStyle_OUTLINE_instance;
-  var IconStyle_entriesInitialized;
-  function IconStyle_initEntries() {
-    if (IconStyle_entriesInitialized)
-      return Unit_getInstance();
-    IconStyle_entriesInitialized = true;
-    IconStyle_FILLED_instance = new IconStyle('FILLED', 0, IconCategory_SOLID_getInstance());
-    IconStyle_OUTLINE_instance = new IconStyle('OUTLINE', 1, IconCategory_REGULAR_getInstance());
+  function FaRedo$composable(modifier, $composer, $changed, $default) {
+    var modifier_0 = {_v: modifier};
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(475798659);
+    sourceInformation($composer_0, 'C(FaRedo$composable)');
+    var $dirty = $changed;
+    if (!(($default & 1) === 0))
+      $dirty = $dirty | 6;
+    else if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
+    if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      if (!(($default & 1) === 0))
+        modifier_0._v = Companion_getInstance_39();
+      FaIcon$composable('redo', modifier_0._v, IconCategory_SOLID_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_348(modifier_0, $changed, $default));
+    }
   }
-  function IconStyle(name_0, ordinal, category) {
-    Enum.call(this, name_0, ordinal);
-    this._category = category;
-  }
-  IconStyle.$metadata$ = {
-    simpleName: 'IconStyle',
-    kind: 'class',
-    interfaces: []
-  };
   function FaMobile$composable(modifier, $composer, $changed, $default) {
     var modifier_0 = {_v: modifier};
     var $composer_0 = $composer;
@@ -47019,7 +46794,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       FaIcon$composable('mobile', modifier_0._v, IconCategory_SOLID_getInstance(), $composer_0, 390 | 112 & $dirty << 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
@@ -47027,10 +46802,10 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_352(modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_349(modifier_0, $changed, $default));
     }
   }
-  function FaIcon$composable(name_0, modifier, style, $composer, $changed, $default) {
+  function FaIcon$composable(name, modifier, style, $composer, $changed, $default) {
     var style_0 = {_v: style};
     var $composer_0 = $composer;
     $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1082645553);
@@ -47039,7 +46814,7 @@
     if (!(($default & 1) === 0))
       $dirty = $dirty | 6;
     else if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(name_0) ? 4 : 2);
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(name) ? 4 : 2);
     if (!(($default & 2) === 0))
       $dirty = $dirty | 48;
     else if (($changed & 112) === 0)
@@ -47054,7 +46829,7 @@
       var tmp$ret$3;
       $l$block_2: {
         var tmp0_remember$composable_0 = style_0._v;
-        var tmp1_remember$composable_0 = _no_name_provided_$factory_353(style_0, name_0);
+        var tmp1_remember$composable_0 = _no_name_provided_$factory_350(style_0, name);
         var tmp2_remember$composable_0 = $composer_0;
         var tmp3_remember$composable_0 = 14 & $dirty >> 6 | 112 & $dirty << 3;
         var $composer_1 = tmp2_remember$composable_0;
@@ -47063,7 +46838,7 @@
         var tmp$ret$2;
         $l$block_1: {
           var tmp1_cache_0_3 = $composer_1;
-          var tmp2_cache_0_4 = !!($composer_1.changed_wi7j7l_k$(tmp0_remember$composable_0) | $composer_1.changed_wi7j7l_k$(name_0));
+          var tmp2_cache_0_4 = !!($composer_1.changed_wi7j7l_k$(tmp0_remember$composable_0) | $composer_1.changed_wi7j7l_k$(name));
           var tmp$ret$1;
           $l$block_0: {
             var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
@@ -47072,7 +46847,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -47102,7 +46877,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_354(name_0, modifier, style_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_351(name, modifier, style_0, $changed, $default));
     }
   }
   var IconCategory_REGULAR_instance;
@@ -47117,8 +46892,8 @@
     IconCategory_SOLID_instance = new IconCategory('SOLID', 1, 'fas');
     IconCategory_BRAND_instance = new IconCategory('BRAND', 2, 'fab');
   }
-  function IconCategory(name_0, ordinal, className) {
-    Enum.call(this, name_0, ordinal);
+  function IconCategory(name, ordinal, className) {
+    Enum.call(this, name, ordinal);
     this._className = className;
   }
   IconCategory.$metadata$ = {
@@ -47147,28 +46922,79 @@
   function FaCopyright$composable$lambda($modifier, $style, $$changed, $$default, $composer, $force) {
     return FaCopyright$composable($modifier._v, $style._v, $composer, $$changed | 1, $$default);
   }
-  function FaRedo$composable$lambda($modifier, $$changed, $$default, $composer, $force) {
-    return FaRedo$composable($modifier._v, $composer, $$changed | 1, $$default);
-  }
   function FaWindowClose$composable$lambda($modifier, $style, $$changed, $$default, $composer, $force) {
     return FaWindowClose$composable($modifier._v, $style._v, $composer, $$changed | 1, $$default);
+  }
+  function FaRedo$composable$lambda($modifier, $$changed, $$default, $composer, $force) {
+    return FaRedo$composable($modifier._v, $composer, $$changed | 1, $$default);
   }
   function FaMobile$composable$lambda($modifier, $$changed, $$default, $composer, $force) {
     return FaMobile$composable($modifier._v, $composer, $$changed | 1, $$default);
   }
   function FaIcon$composable$lambda($style, $name) {
-    return _no_name_provided_$factory_355($style, $name);
+    return _no_name_provided_$factory_352($style, $name);
   }
   function FaIcon$composable$lambda_0($name, $modifier, $style, $$changed, $$default, $composer, $force) {
     return FaIcon$composable($name, $modifier, $style._v, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__382($modifier, $$changed, $$default) {
+  function _no_name_provided__379($modifier, $$changed, $$default) {
     this._$modifier_6 = $modifier;
     this._$$changed_21 = $$changed;
     this._$$default_13 = $$default;
   }
-  _no_name_provided__382.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__379.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return FaDev$composable$lambda(this._$modifier_6, this._$$changed_21, this._$$default_13, p0, p1);
+  };
+  _no_name_provided__379.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__379.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__380($modifier, $$changed, $$default) {
+    this._$modifier_7 = $modifier;
+    this._$$changed_22 = $$changed;
+    this._$$default_14 = $$default;
+  }
+  _no_name_provided__380.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return FaTelegramPlane$composable$lambda(this._$modifier_7, this._$$changed_22, this._$$default_14, p0, p1);
+  };
+  _no_name_provided__380.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__380.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__381($modifier, $$changed, $$default) {
+    this._$modifier_8 = $modifier;
+    this._$$changed_23 = $$changed;
+    this._$$default_15 = $$default;
+  }
+  _no_name_provided__381.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return FaTwitter$composable$lambda(this._$modifier_8, this._$$changed_23, this._$$default_15, p0, p1);
+  };
+  _no_name_provided__381.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__381.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__382($modifier, $$changed, $$default) {
+    this._$modifier_9 = $modifier;
+    this._$$changed_24 = $$changed;
+    this._$$default_16 = $$default;
+  }
+  _no_name_provided__382.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return FaLinkedinIn$composable$lambda(this._$modifier_9, this._$$changed_24, this._$$default_16, p0, p1);
   };
   _no_name_provided__382.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -47180,12 +47006,12 @@
     interfaces: []
   };
   function _no_name_provided__383($modifier, $$changed, $$default) {
-    this._$modifier_7 = $modifier;
-    this._$$changed_22 = $$changed;
-    this._$$default_14 = $$default;
+    this._$modifier_10 = $modifier;
+    this._$$changed_25 = $$changed;
+    this._$$default_17 = $$default;
   }
   _no_name_provided__383.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaTelegramPlane$composable$lambda(this._$modifier_7, this._$$changed_22, this._$$default_14, p0, p1);
+    return FaGithubAlt$composable$lambda(this._$modifier_10, this._$$changed_25, this._$$default_17, p0, p1);
   };
   _no_name_provided__383.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -47197,12 +47023,12 @@
     interfaces: []
   };
   function _no_name_provided__384($modifier, $$changed, $$default) {
-    this._$modifier_8 = $modifier;
-    this._$$changed_23 = $$changed;
-    this._$$default_15 = $$default;
+    this._$modifier_11 = $modifier;
+    this._$$changed_26 = $$changed;
+    this._$$default_18 = $$default;
   }
   _no_name_provided__384.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaTwitter$composable$lambda(this._$modifier_8, this._$$changed_23, this._$$default_15, p0, p1);
+    return FaMailBulk$composable$lambda(this._$modifier_11, this._$$changed_26, this._$$default_18, p0, p1);
   };
   _no_name_provided__384.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -47213,13 +47039,14 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__385($modifier, $$changed, $$default) {
-    this._$modifier_9 = $modifier;
-    this._$$changed_24 = $$changed;
-    this._$$default_16 = $$default;
+  function _no_name_provided__385($modifier, $style, $$changed, $$default) {
+    this._$modifier_12 = $modifier;
+    this._$style_0 = $style;
+    this._$$changed_27 = $$changed;
+    this._$$default_19 = $$default;
   }
   _no_name_provided__385.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaLinkedinIn$composable$lambda(this._$modifier_9, this._$$changed_24, this._$$default_16, p0, p1);
+    return FaCopyright$composable$lambda(this._$modifier_12, this._$style_0, this._$$changed_27, this._$$default_19, p0, p1);
   };
   _no_name_provided__385.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -47230,13 +47057,14 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__386($modifier, $$changed, $$default) {
-    this._$modifier_10 = $modifier;
-    this._$$changed_25 = $$changed;
-    this._$$default_17 = $$default;
+  function _no_name_provided__386($modifier, $style, $$changed, $$default) {
+    this._$modifier_13 = $modifier;
+    this._$style_1 = $style;
+    this._$$changed_28 = $$changed;
+    this._$$default_20 = $$default;
   }
   _no_name_provided__386.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaGithubAlt$composable$lambda(this._$modifier_10, this._$$changed_25, this._$$default_17, p0, p1);
+    return FaWindowClose$composable$lambda(this._$modifier_13, this._$style_1, this._$$changed_28, this._$$default_20, p0, p1);
   };
   _no_name_provided__386.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -47248,12 +47076,12 @@
     interfaces: []
   };
   function _no_name_provided__387($modifier, $$changed, $$default) {
-    this._$modifier_11 = $modifier;
-    this._$$changed_26 = $$changed;
-    this._$$default_18 = $$default;
+    this._$modifier_14 = $modifier;
+    this._$$changed_29 = $$changed;
+    this._$$default_21 = $$default;
   }
   _no_name_provided__387.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaMailBulk$composable$lambda(this._$modifier_11, this._$$changed_26, this._$$default_18, p0, p1);
+    return FaRedo$composable$lambda(this._$modifier_14, this._$$changed_29, this._$$default_21, p0, p1);
   };
   _no_name_provided__387.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -47264,14 +47092,13 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__388($modifier, $style, $$changed, $$default) {
-    this._$modifier_12 = $modifier;
-    this._$style_0 = $style;
-    this._$$changed_27 = $$changed;
-    this._$$default_19 = $$default;
+  function _no_name_provided__388($modifier, $$changed, $$default) {
+    this._$modifier_15 = $modifier;
+    this._$$changed_30 = $$changed;
+    this._$$default_22 = $$default;
   }
   _no_name_provided__388.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaCopyright$composable$lambda(this._$modifier_12, this._$style_0, this._$$changed_27, this._$$default_19, p0, p1);
+    return FaMobile$composable$lambda(this._$modifier_15, this._$$changed_30, this._$$default_22, p0, p1);
   };
   _no_name_provided__388.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -47282,31 +47109,26 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__389($modifier, $$changed, $$default) {
-    this._$modifier_13 = $modifier;
-    this._$$changed_28 = $$changed;
-    this._$$default_20 = $$default;
+  function _no_name_provided__389($style, $name) {
+    this._$style_2 = $style;
+    this._$name = $name;
   }
-  _no_name_provided__389.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaRedo$composable$lambda(this._$modifier_13, this._$$changed_28, this._$$default_20, p0, p1);
-  };
-  _no_name_provided__389.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__389.prototype.invoke_0_k$ = function () {
+    return FaIcon$composable$lambda(this._$style_2, this._$name);
   };
   _no_name_provided__389.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__390($modifier, $style, $$changed, $$default) {
-    this._$modifier_14 = $modifier;
-    this._$style_1 = $style;
-    this._$$changed_29 = $$changed;
-    this._$$default_21 = $$default;
+  function _no_name_provided__390($name, $modifier, $style, $$changed, $$default) {
+    this._$name_0 = $name;
+    this._$modifier_16 = $modifier;
+    this._$style_3 = $style;
+    this._$$changed_31 = $$changed;
+    this._$$default_23 = $$default;
   }
   _no_name_provided__390.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaWindowClose$composable$lambda(this._$modifier_14, this._$style_1, this._$$changed_29, this._$$default_21, p0, p1);
+    return FaIcon$composable$lambda_0(this._$name_0, this._$modifier_16, this._$style_3, this._$$changed_31, this._$$default_23, p0, p1);
   };
   _no_name_provided__390.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
@@ -47317,65 +47139,18 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__391($modifier, $$changed, $$default) {
-    this._$modifier_15 = $modifier;
-    this._$$changed_30 = $$changed;
-    this._$$default_22 = $$default;
-  }
-  _no_name_provided__391.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaMobile$composable$lambda(this._$modifier_15, this._$$changed_30, this._$$default_22, p0, p1);
-  };
-  _no_name_provided__391.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__391.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__392($style, $name) {
-    this._$style_2 = $style;
-    this._$name = $name;
-  }
-  _no_name_provided__392.prototype.invoke_0_k$ = function () {
-    return FaIcon$composable$lambda(this._$style_2, this._$name);
-  };
-  _no_name_provided__392.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__393($name, $modifier, $style, $$changed, $$default) {
-    this._$name_0 = $name;
-    this._$modifier_16 = $modifier;
-    this._$style_3 = $style;
-    this._$$changed_31 = $$changed;
-    this._$$default_23 = $$default;
-  }
-  _no_name_provided__393.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FaIcon$composable$lambda_0(this._$name_0, this._$modifier_16, this._$style_3, this._$$changed_31, this._$$default_23, p0, p1);
-  };
-  _no_name_provided__393.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__393.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__394($style, $name) {
+  function _no_name_provided__391($style, $name) {
     this._$style_4 = $style;
     this._$name_1 = $name;
   }
-  _no_name_provided__394.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
+  _no_name_provided__391.prototype.invoke_4sn14n_k$ = function ($this$asAttributesBuilder) {
     $this$asAttributesBuilder.classes_70f81e_k$([this._$style_4._v._className, '' + 'fa-' + this._$name_1]);
   };
-  _no_name_provided__394.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__391.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_4sn14n_k$(p1 instanceof AttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__394.$metadata$ = {
+  _no_name_provided__391.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -47394,6 +47169,27 @@
   function IconCategory_BRAND_getInstance() {
     IconCategory_initEntries();
     return IconCategory_BRAND_instance;
+  }
+  function _no_name_provided_$factory_340($modifier, $$changed, $$default) {
+    var i = new _no_name_provided__379($modifier, $$changed, $$default);
+    return function (p1, p2) {
+      i.invoke_xtxync_k$(p1, p2);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_341($modifier, $$changed, $$default) {
+    var i = new _no_name_provided__380($modifier, $$changed, $$default);
+    return function (p1, p2) {
+      i.invoke_xtxync_k$(p1, p2);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_342($modifier, $$changed, $$default) {
+    var i = new _no_name_provided__381($modifier, $$changed, $$default);
+    return function (p1, p2) {
+      i.invoke_xtxync_k$(p1, p2);
+      return Unit_getInstance();
+    };
   }
   function _no_name_provided_$factory_343($modifier, $$changed, $$default) {
     var i = new _no_name_provided__382($modifier, $$changed, $$default);
@@ -47416,15 +47212,15 @@
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_346($modifier, $$changed, $$default) {
-    var i = new _no_name_provided__385($modifier, $$changed, $$default);
+  function _no_name_provided_$factory_346($modifier, $style, $$changed, $$default) {
+    var i = new _no_name_provided__385($modifier, $style, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_347($modifier, $$changed, $$default) {
-    var i = new _no_name_provided__386($modifier, $$changed, $$default);
+  function _no_name_provided_$factory_347($modifier, $style, $$changed, $$default) {
+    var i = new _no_name_provided__386($modifier, $style, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -47437,49 +47233,28 @@
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_349($modifier, $style, $$changed, $$default) {
-    var i = new _no_name_provided__388($modifier, $style, $$changed, $$default);
+  function _no_name_provided_$factory_349($modifier, $$changed, $$default) {
+    var i = new _no_name_provided__388($modifier, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_350($modifier, $$changed, $$default) {
-    var i = new _no_name_provided__389($modifier, $$changed, $$default);
-    return function (p1, p2) {
-      i.invoke_xtxync_k$(p1, p2);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_351($modifier, $style, $$changed, $$default) {
-    var i = new _no_name_provided__390($modifier, $style, $$changed, $$default);
-    return function (p1, p2) {
-      i.invoke_xtxync_k$(p1, p2);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_352($modifier, $$changed, $$default) {
-    var i = new _no_name_provided__391($modifier, $$changed, $$default);
-    return function (p1, p2) {
-      i.invoke_xtxync_k$(p1, p2);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_353($style, $name) {
-    var i = new _no_name_provided__392($style, $name);
+  function _no_name_provided_$factory_350($style, $name) {
+    var i = new _no_name_provided__389($style, $name);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_354($name, $modifier, $style, $$changed, $$default) {
-    var i = new _no_name_provided__393($name, $modifier, $style, $$changed, $$default);
+  function _no_name_provided_$factory_351($name, $modifier, $style, $$changed, $$default) {
+    var i = new _no_name_provided__390($name, $modifier, $style, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_355($style, $name) {
-    var i = new _no_name_provided__394($style, $name);
+  function _no_name_provided_$factory_352($style, $name) {
+    var i = new _no_name_provided__391($style, $name);
     return function (p1) {
       i.invoke_4sn14n_k$(p1);
       return Unit_getInstance();
@@ -47489,7 +47264,7 @@
     var router = new Router();
     router.register$composable_809tk2_k$('/', ComposableSingletons$MainKt_getInstance()._lambda_1_2);
     router.register$composable_809tk2_k$('/contact', ComposableSingletons$MainKt_getInstance()._lambda_2_0);
-    initSilkHook = _no_name_provided_$factory_356();
+    initSilkHook = _no_name_provided_$factory_353();
     var tmp = removePrefix(window.location.href, window.location.origin);
     router.navigateTo$default_api6eb_k$(tmp, false, null, 6, null);
     var root = ensureNotNull(document.getElementById('root'));
@@ -47497,51 +47272,51 @@
       root.removeChild(ensureNotNull(root.firstChild));
       Unit_getInstance();
     }
-    renderComposable$composable('root', composableLambdaInstance(-985531811, true, _no_name_provided_$factory_357(router)));
+    renderComposable$composable('root', composableLambdaInstance(-985531811, true, _no_name_provided_$factory_354(router)));
     Unit_getInstance();
   }
-  function _no_name_provided__395() {
+  function _no_name_provided__392() {
   }
-  _no_name_provided__395.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__392.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       HomePage$composable($composer_0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__395.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__392.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__395.$metadata$ = {
+  _no_name_provided__392.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__396() {
+  function _no_name_provided__393() {
   }
-  _no_name_provided__396.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__393.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       ContactPage$composable($composer_0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__396.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__393.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__396.$metadata$ = {
+  _no_name_provided__393.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$MainKt() {
     ComposableSingletons$MainKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_2 = composableLambdaInstance(-985534019, false, _no_name_provided_$factory_358());
+    tmp._lambda_1_2 = composableLambdaInstance(-985534019, false, _no_name_provided_$factory_355());
     var tmp_0 = this;
-    tmp_0._lambda_2_0 = composableLambdaInstance(-985534462, false, _no_name_provided_$factory_359());
+    tmp_0._lambda_2_0 = composableLambdaInstance(-985534462, false, _no_name_provided_$factory_356());
   }
   ComposableSingletons$MainKt.$metadata$ = {
     simpleName: 'ComposableSingletons$MainKt',
@@ -47554,9 +47329,9 @@
       new ComposableSingletons$MainKt();
     return ComposableSingletons$MainKt_instance;
   }
-  function _no_name_provided__397() {
+  function _no_name_provided__394() {
   }
-  _no_name_provided__397.prototype.invoke_jt2t48_k$ = function (ctx) {
+  _no_name_provided__394.prototype.invoke_jt2t48_k$ = function (ctx) {
     ctx._theme.registerComponentStyle_bghh7b_k$(ContactFormStyle);
     ctx._theme.registerComponentStyle_bghh7b_k$(InputTextStyle);
     ctx._theme.registerComponentStyle_bghh7b_k$(ResizableStyle);
@@ -47579,84 +47354,84 @@
     ctx._theme.registerComponentVariants_cot03x_k$([NormalTextStyle]);
     updateTheme(ctx);
   };
-  _no_name_provided__397.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__394.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_jt2t48_k$(p1 instanceof InitSilkContext ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__397.$metadata$ = {
+  _no_name_provided__394.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__398($router) {
+  function _no_name_provided__395($router) {
     this._$router = $router;
   }
-  _no_name_provided__398.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__395.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       this._$router.renderActivePage$composable_5vwf3d_k$($composer_0, 8);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__398.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__395.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__398.$metadata$ = {
+  _no_name_provided__395.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__399($router) {
+  function _no_name_provided__396($router) {
     this._$router_0 = $router;
   }
-  _no_name_provided__399.prototype.invoke_9m2agf_k$ = function ($this$renderComposable, $composer, $changed) {
+  _no_name_provided__396.prototype.invoke_9m2agf_k$ = function ($this$renderComposable, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp = $composer_0;
-      MyApp$composable(composableLambda(tmp, -819892814, true, _no_name_provided_$factory_360(this._$router_0)), $composer_0, 6);
+      MyApp$composable(composableLambda(tmp, -819892814, true, _no_name_provided_$factory_357(this._$router_0)), $composer_0, 6);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__399.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__396.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, DOMScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9m2agf_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__399.$metadata$ = {
+  _no_name_provided__396.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_356() {
-    var i = new _no_name_provided__397();
+  function _no_name_provided_$factory_353() {
+    var i = new _no_name_provided__394();
     return function (p1) {
       i.invoke_jt2t48_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_357($router) {
-    var i = new _no_name_provided__399($router);
+  function _no_name_provided_$factory_354($router) {
+    var i = new _no_name_provided__396($router);
     return function (p1, p2, p3) {
       i.invoke_9m2agf_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_358() {
-    var i = new _no_name_provided__395();
+  function _no_name_provided_$factory_355() {
+    var i = new _no_name_provided__392();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_359() {
-    var i = new _no_name_provided__396();
+  function _no_name_provided_$factory_356() {
+    var i = new _no_name_provided__393();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_360($router) {
-    var i = new _no_name_provided__398($router);
+  function _no_name_provided_$factory_357($router) {
+    var i = new _no_name_provided__395($router);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
@@ -47684,7 +47459,7 @@
     }
     var tmp1_elvis_lhs = tmp;
     ctx._config._set_initialColorMode__cyiny5_k$(tmp1_elvis_lhs == null ? ColorMode_LIGHT_getInstance() : tmp1_elvis_lhs);
-    registerBaseStyle(ctx._config, 'body', _no_name_provided_$factory_361());
+    registerBaseStyle(ctx._config, 'body', _no_name_provided_$factory_358());
     var tmp_0 = ctx._theme;
     var tmp_1 = _get_px_(769);
     var tmp_2 = _get_px_(1025);
@@ -47700,46 +47475,46 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp = $composer_0;
-      SilkApp$composable(composableLambda(tmp, -819896094, true, _no_name_provided_$factory_362(content, $dirty)), $composer_0, 6);
+      SilkApp$composable(composableLambda(tmp, -819896094, true, _no_name_provided_$factory_359(content, $dirty)), $composer_0, 6);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_363(content, $changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_360(content, $changed));
     }
   }
   function MyApp$composable$lambda($content, $$changed, $composer, $force) {
     return MyApp$composable($content, $composer, $$changed | 1);
   }
-  function _no_name_provided__400() {
+  function _no_name_provided__397() {
   }
-  _no_name_provided__400.prototype.invoke_0_k$ = function () {
-    return fontFamily_0(Companion_getInstance_40(), ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif']);
+  _no_name_provided__397.prototype.invoke_0_k$ = function () {
+    return fontFamily_0(Companion_getInstance_39(), ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif']);
   };
-  _no_name_provided__400.$metadata$ = {
+  _no_name_provided__397.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function invoke$lambda($colorMode) {
-    return _no_name_provided_$factory_366($colorMode, null);
+    return _no_name_provided_$factory_363($colorMode, null);
   }
-  function _no_name_provided__401($colorMode) {
+  function _no_name_provided__398($colorMode) {
     this._$colorMode = $colorMode;
   }
-  _no_name_provided__401.prototype.invoke_0_k$ = function () {
+  _no_name_provided__398.prototype.invoke_0_k$ = function () {
     return invoke$lambda(this._$colorMode);
   };
-  _no_name_provided__401.$metadata$ = {
+  _no_name_provided__398.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__402($content, $$dirty) {
+  function _no_name_provided__399($content, $$dirty) {
     this._$content_22 = $content;
     this._$$dirty_8 = $$dirty;
   }
-  _no_name_provided__402.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__399.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._$content_22;
@@ -47751,30 +47526,30 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__402.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__399.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__402.$metadata$ = {
+  _no_name_provided__399.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__403($colorMode, resultContinuation) {
+  function _no_name_provided__400($colorMode, resultContinuation) {
     this._$colorMode_0 = $colorMode;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__403.prototype.invoke_2i3g7c_k$ = function ($this$LaunchedEffect, $cont) {
+  _no_name_provided__400.prototype.invoke_2i3g7c_k$ = function ($this$LaunchedEffect, $cont) {
     var tmp = this.create_y6imfn_k$($this$LaunchedEffect, $cont);
     tmp._result_0 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__403.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__400.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_2i3g7c_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__403.prototype.doResume_0_k$ = function () {
+  _no_name_provided__400.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_0;
     $sm: do
       try {
@@ -47790,27 +47565,27 @@
       }
      while (true);
   };
-  _no_name_provided__403.prototype.create_y6imfn_k$ = function ($this$LaunchedEffect, completion) {
-    var i = new _no_name_provided__403(this._$colorMode_0, completion);
+  _no_name_provided__400.prototype.create_y6imfn_k$ = function ($this$LaunchedEffect, completion) {
+    var i = new _no_name_provided__400(this._$colorMode_0, completion);
     i._$this$LaunchedEffect = $this$LaunchedEffect;
     return i;
   };
-  _no_name_provided__403.$metadata$ = {
+  _no_name_provided__400.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
-  function _no_name_provided__404($content, $$dirty) {
+  function _no_name_provided__401($content, $$dirty) {
     this._$content_23 = $content;
     this._$$dirty_9 = $$dirty;
   }
-  _no_name_provided__404.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__401.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var colorMode = getColorMode$composable($composer_0, 0);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_364(colorMode);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_361(colorMode);
         var tmp1_remember$composable_0 = $composer_0;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884179877);
@@ -47827,7 +47602,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp = value_2_2_6;
@@ -47850,72 +47625,72 @@
         break $l$block_2;
       }
       LaunchedEffect$composable(colorMode, tmp$ret$3, $composer_0, 0);
-      var tmp_1 = minHeight_0(minWidth_0(Companion_getInstance_40(), _get_vw_(100)), _get_vh_(100));
+      var tmp_1 = minHeight_0(minWidth_0(Companion_getInstance_39(), _get_vw_(100)), _get_vh_(100));
       var tmp_2 = $composer_0;
-      Surface$composable(tmp_1, null, composableLambda(tmp_2, -819895860, true, _no_name_provided_$factory_365(this._$content_23, this._$$dirty_9)), $composer_0, 384, 2);
+      Surface$composable(tmp_1, null, composableLambda(tmp_2, -819895860, true, _no_name_provided_$factory_362(this._$content_23, this._$$dirty_9)), $composer_0, 384, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__404.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__401.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__404.$metadata$ = {
+  _no_name_provided__401.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__405($content, $$changed) {
+  function _no_name_provided__402($content, $$changed) {
     this._$content_24 = $content;
     this._$$changed_32 = $$changed;
   }
-  _no_name_provided__405.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__402.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return MyApp$composable$lambda(this._$content_24, this._$$changed_32, p0, p1);
   };
-  _no_name_provided__405.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__402.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__405.$metadata$ = {
+  _no_name_provided__402.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_361() {
-    var i = new _no_name_provided__400();
+  function _no_name_provided_$factory_358() {
+    var i = new _no_name_provided__397();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_362($content, $$dirty) {
-    var i = new _no_name_provided__404($content, $$dirty);
+  function _no_name_provided_$factory_359($content, $$dirty) {
+    var i = new _no_name_provided__401($content, $$dirty);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_363($content, $$changed) {
-    var i = new _no_name_provided__405($content, $$changed);
+  function _no_name_provided_$factory_360($content, $$changed) {
+    var i = new _no_name_provided__402($content, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_364($colorMode) {
-    var i = new _no_name_provided__401($colorMode);
+  function _no_name_provided_$factory_361($colorMode) {
+    var i = new _no_name_provided__398($colorMode);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_365($content, $$dirty) {
-    var i = new _no_name_provided__402($content, $$dirty);
+  function _no_name_provided_$factory_362($content, $$dirty) {
+    var i = new _no_name_provided__399($content, $$dirty);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_366($colorMode, resultContinuation) {
-    var i = new _no_name_provided__403($colorMode, resultContinuation);
+  function _no_name_provided_$factory_363($colorMode, resultContinuation) {
+    var i = new _no_name_provided__400($colorMode, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_2i3g7c_k$(p1, $cont);
     };
@@ -47928,7 +47703,7 @@
   function TextLink$composable(text, href_0, color_2, $composer, $changed, $default) {
     var color_3 = {_v: color_2};
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1073996707);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1073996572);
     sourceInformation($composer_0, 'C(TextLink$composable)P(2,1)');
     var $dirty = $changed;
     if (!(($default & 1) === 0))
@@ -47964,7 +47739,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = mutableStateOf$default(false, null, 2, null);
@@ -47993,23 +47768,104 @@
         break $l$block_3;
       }
       var isHovered$delegate = tmp$ret$4;
-      var tmp_1 = textDecorationLine_0(Companion_getInstance_40(), TextLink$composable$lambda(isHovered$delegate) ? Companion_getInstance_33()._get_Underline__0_k$() : Companion_getInstance_33()._get_None__0_k$());
+      var tmp_1 = textDecorationLine_0(Companion_getInstance_39(), TextLink$composable$lambda(isHovered$delegate) ? Companion_getInstance_32()._get_Underline__0_k$() : Companion_getInstance_32()._get_None__0_k$());
       var tmp_2 = asAttributesBuilder$default(tmp_1, null, 1, null);
       var tmp_3 = $composer_0;
-      Link$composable(href_0, tmp_2, composableLambda(tmp_3, -819892388, true, _no_name_provided_$factory_370(text, color_3, isHovered$delegate, $dirty)), $composer_0, 384 | 14 & $dirty >> 3, 0);
+      Link$composable(href_0, tmp_2, composableLambda(tmp_3, -819893033, true, _no_name_provided_$factory_367(text, color_3, isHovered$delegate, $dirty)), $composer_0, 384 | 14 & $dirty >> 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_371(text, href_0, color_3, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_368(text, href_0, color_3, $changed, $default));
+    }
+  }
+  function TextMailto$composable(text, href_0, color_2, $composer, $changed, $default) {
+    var color_3 = {_v: color_2};
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1083017515);
+    sourceInformation($composer_0, 'C(TextMailto$composable)P(2,1)');
+    var $dirty = $changed;
+    if (!(($default & 1) === 0))
+      $dirty = $dirty | 6;
+    else if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(text) ? 4 : 2);
+    if (!(($default & 2) === 0))
+      $dirty = $dirty | 48;
+    else if (($changed & 112) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(href_0) ? 32 : 16);
+    if (!(($default & 4) === 0))
+      $dirty = $dirty | 384;
+    else if (($changed & 896) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(color_3._v) ? 256 : 128);
+    if (!(($dirty & 731 ^ 146) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      if (!(($default & 4) === 0)) {
+        Colors_getInstance_0();
+        color_3._v = '#7510F7';
+      }var tmp$ret$4;
+      $l$block_3: {
+        var tmp0_remember$composable_0 = $composer_0;
+        var $composer_1 = tmp0_remember$composable_0;
+        $composer_1.startReplaceableGroup_majfzk_k$(884179566);
+        sourceInformation($composer_1, 'C(remember$composable):Composables.kt#9igjgp');
+        var tmp$ret$3;
+        $l$block_2: {
+          var tmp1_cache_0_3 = $composer_1;
+          var tmp$ret$2;
+          $l$block_1: {
+            var tmp0_let_0_4 = tmp1_cache_0_3.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$1;
+            $l$block_0: {
+              var tmp;
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
+                var tmp$ret$0;
+                $l$block: {
+                  var tmp0_return_7 = mutableStateOf$default(false, null, 2, null);
+                  tmp$ret$0 = tmp0_return_7;
+                  break $l$block;
+                }
+                var value_2_2_5 = tmp$ret$0;
+                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_5);
+                tmp = value_2_2_5;
+              } else {
+                tmp = tmp0_let_0_4;
+              }
+              tmp$ret$1 = tmp;
+              break $l$block_0;
+            }
+            tmp$ret$2 = tmp$ret$1;
+            break $l$block_1;
+          }
+          var tmp_0 = tmp$ret$2;
+          tmp$ret$3 = (tmp_0 == null ? true : isObject(tmp_0)) ? tmp_0 : THROW_CCE();
+          break $l$block_2;
+        }
+        var tmp0_2 = tmp$ret$3;
+        $composer_1.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$4 = tmp0_2;
+        break $l$block_3;
+      }
+      var isHovered$delegate = tmp$ret$4;
+      var tmp_1 = textDecorationLine_0(Companion_getInstance_39(), TextMailto$composable$lambda(isHovered$delegate) ? Companion_getInstance_32()._get_Underline__0_k$() : Companion_getInstance_32()._get_None__0_k$());
+      var tmp_2 = asAttributesBuilder$default(tmp_1, null, 1, null);
+      var tmp_3 = $composer_0;
+      A$composable(href_0, tmp_2, composableLambda(tmp_3, -819893719, true, _no_name_provided_$factory_369(text, color_3, isHovered$delegate, $dirty)), $composer_0, 384 | 14 & $dirty >> 3, 0);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_370(text, href_0, color_3, $changed, $default));
     }
   }
   function ButtonLink$composable(href_0, text, icon, $composer, $changed, $default) {
     var text_0 = {_v: text};
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1982365327);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1982364602);
     sourceInformation($composer_0, 'C(ButtonLink$composable)P(!1,2)');
     var $dirty = $changed;
     if (!(($default & 1) === 0))
@@ -48045,7 +47901,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = mutableStateOf$default(false, null, 2, null);
@@ -48074,23 +47930,104 @@
         break $l$block_3;
       }
       var isHovered$delegate = tmp$ret$4;
-      var tmp_1 = textDecorationLine_0(Companion_getInstance_40(), Companion_getInstance_33()._get_None__0_k$());
+      var tmp_1 = textDecorationLine_0(Companion_getInstance_39(), Companion_getInstance_32()._get_None__0_k$());
       var tmp_2 = asAttributesBuilder$default(tmp_1, null, 1, null);
       var tmp_3 = $composer_0;
-      Link$composable(href_0, tmp_2, composableLambda(tmp_3, -819893600, true, _no_name_provided_$factory_372(isHovered$delegate, icon, $dirty, text_0)), $composer_0, 384 | 14 & $dirty, 0);
+      Link$composable(href_0, tmp_2, composableLambda(tmp_3, -819893875, true, _no_name_provided_$factory_371(isHovered$delegate, icon, $dirty, text_0)), $composer_0, 384 | 14 & $dirty, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_373(href_0, text_0, icon, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_372(href_0, text_0, icon, $changed, $default));
+    }
+  }
+  function ButtonMailto$composable(href_0, text, icon, $composer, $changed, $default) {
+    var text_0 = {_v: text};
+    var $composer_0 = $composer;
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(18568555);
+    sourceInformation($composer_0, 'C(ButtonMailto$composable)P(!1,2)');
+    var $dirty = $changed;
+    if (!(($default & 1) === 0))
+      $dirty = $dirty | 6;
+    else if (($changed & 14) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(href_0) ? 4 : 2);
+    if (!(($default & 2) === 0))
+      $dirty = $dirty | 48;
+    else if (($changed & 112) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(text_0._v) ? 32 : 16);
+    if (!(($default & 4) === 0))
+      $dirty = $dirty | 384;
+    else if (($changed & 896) === 0)
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(icon) ? 256 : 128);
+    if (!(($dirty & 731 ^ 146) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      if (!(($default & 2) === 0)) {
+        Navigation_getInstance();
+        text_0._v = 'Say hello';
+      }var tmp$ret$4;
+      $l$block_3: {
+        var tmp0_remember$composable_0 = $composer_0;
+        var $composer_1 = tmp0_remember$composable_0;
+        $composer_1.startReplaceableGroup_majfzk_k$(884179566);
+        sourceInformation($composer_1, 'C(remember$composable):Composables.kt#9igjgp');
+        var tmp$ret$3;
+        $l$block_2: {
+          var tmp1_cache_0_3 = $composer_1;
+          var tmp$ret$2;
+          $l$block_1: {
+            var tmp0_let_0_4 = tmp1_cache_0_3.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$1;
+            $l$block_0: {
+              var tmp;
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
+                var tmp$ret$0;
+                $l$block: {
+                  var tmp0_return_7 = mutableStateOf$default(false, null, 2, null);
+                  tmp$ret$0 = tmp0_return_7;
+                  break $l$block;
+                }
+                var value_2_2_5 = tmp$ret$0;
+                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_5);
+                tmp = value_2_2_5;
+              } else {
+                tmp = tmp0_let_0_4;
+              }
+              tmp$ret$1 = tmp;
+              break $l$block_0;
+            }
+            tmp$ret$2 = tmp$ret$1;
+            break $l$block_1;
+          }
+          var tmp_0 = tmp$ret$2;
+          tmp$ret$3 = (tmp_0 == null ? true : isObject(tmp_0)) ? tmp_0 : THROW_CCE();
+          break $l$block_2;
+        }
+        var tmp0_2 = tmp$ret$3;
+        $composer_1.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$4 = tmp0_2;
+        break $l$block_3;
+      }
+      var isHovered$delegate = tmp$ret$4;
+      var tmp_1 = textDecorationLine_0(Companion_getInstance_39(), Companion_getInstance_32()._get_None__0_k$());
+      var tmp_2 = asAttributesBuilder$default(tmp_1, null, 1, null);
+      var tmp_3 = $composer_0;
+      A$composable(href_0, tmp_2, composableLambda(tmp_3, -819890719, true, _no_name_provided_$factory_373(isHovered$delegate, icon, $dirty, text_0)), $composer_0, 384 | 14 & $dirty, 0);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+    var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
+    if (tmp0_safe_receiver === null)
+      null;
+    else {
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_374(href_0, text_0, icon, $changed, $default));
     }
   }
   function IconLink$composable(modifier, href_0, icon, $composer, $changed, $default) {
     var modifier_0 = {_v: modifier};
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1670840933);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1670842790);
     sourceInformation($composer_0, 'C(IconLink$composable)P(2)');
     var $dirty = $changed;
     if (!(($default & 1) === 0))
@@ -48107,70 +48044,32 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(icon) ? 256 : 128);
     if (!(($dirty & 731 ^ 146) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
-      var tmp$ret$4;
-      $l$block_3: {
-        var tmp0_remember$composable_0 = $composer_0;
-        var $composer_1 = tmp0_remember$composable_0;
-        $composer_1.startReplaceableGroup_majfzk_k$(884179566);
-        sourceInformation($composer_1, 'C(remember$composable):Composables.kt#9igjgp');
-        var tmp$ret$3;
-        $l$block_2: {
-          var tmp1_cache_0_3 = $composer_1;
-          var tmp$ret$2;
-          $l$block_1: {
-            var tmp0_let_0_4 = tmp1_cache_0_3.rememberedValue_0_k$();
-            {
-            }
-            var tmp$ret$1;
-            $l$block_0: {
-              var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
-                var tmp$ret$0;
-                $l$block: {
-                  var tmp0_return_7 = mutableStateOf$default(false, null, 2, null);
-                  tmp$ret$0 = tmp0_return_7;
-                  break $l$block;
-                }
-                var value_2_2_5 = tmp$ret$0;
-                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_5);
-                tmp = value_2_2_5;
-              } else {
-                tmp = tmp0_let_0_4;
-              }
-              tmp$ret$1 = tmp;
-              break $l$block_0;
-            }
-            tmp$ret$2 = tmp$ret$1;
-            break $l$block_1;
-          }
-          var tmp_0 = tmp$ret$2;
-          tmp$ret$3 = (tmp_0 == null ? true : isObject(tmp_0)) ? tmp_0 : THROW_CCE();
-          break $l$block_2;
-        }
-        var tmp0_2 = tmp$ret$3;
-        $composer_1.endReplaceableGroup_sv8swh_k$();
-        tmp$ret$4 = tmp0_2;
-        break $l$block_3;
+        modifier_0._v = Companion_getInstance_39();
+      var ctx = rememberPageContext$composable($composer_0, 0);
+      var tmp = _no_name_provided_$factory_375(ctx, href_0);
+      var tmp_0 = modifier_0._v;
+      var tmp$ret$0;
+      $l$block: {
+        var tmp0__get_white__0 = Color_getInstance_0();
+        tmp$ret$0 = Color_1('white');
+        break $l$block;
       }
-      var isHovered$delegate = tmp$ret$4;
-      var tmp_1 = textDecorationLine_0(modifier_0._v, IconLink$composable$lambda(isHovered$delegate) ? Companion_getInstance_33()._get_Underline__0_k$() : Companion_getInstance_33()._get_None__0_k$());
-      var tmp_2 = asAttributesBuilder$default(tmp_1, null, 1, null);
-      var tmp_3 = $composer_0;
-      Link$composable(href_0, tmp_2, composableLambda(tmp_3, -819890672, true, _no_name_provided_$factory_374(icon, $dirty)), $composer_0, 384 | 14 & $dirty >> 3, 0);
+      var tmp_1 = backgroundColor_2(tmp_0, tmp$ret$0);
+      var tmp_2 = $composer_0;
+      Button$composable(tmp, tmp_1, null, composableLambda(tmp_2, -819891964, true, _no_name_provided_$factory_376(icon, $dirty)), $composer_0, 3072, 4);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_375(modifier_0, href_0, icon, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_377(modifier_0, href_0, icon, $changed, $default));
     }
   }
   function SocialLinkItem$composable(modifier, href_0, icon, $composer, $changed, $default) {
     var modifier_0 = {_v: modifier};
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-74643886);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-74642114);
     sourceInformation($composer_0, 'C(SocialLinkItem$composable)P(2)');
     var $dirty = $changed;
     if (!(($default & 1) === 0))
@@ -48187,7 +48086,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(icon) ? 256 : 128);
     if (!(($dirty & 731 ^ 146) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       var tmp$ret$4;
       $l$block_3: {
         var tmp0_remember$composable_0 = $composer_0;
@@ -48205,7 +48104,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = mutableStateOf$default(false, null, 2, null);
@@ -48234,17 +48133,17 @@
         break $l$block_3;
       }
       var isHovered$delegate = tmp$ret$4;
-      var tmp_1 = textDecorationLine_0(modifier_0._v, Companion_getInstance_33()._get_None__0_k$());
+      var tmp_1 = textDecorationLine_0(modifier_0._v, Companion_getInstance_32()._get_None__0_k$());
       var tmp_2 = asAttributesBuilder$default(tmp_1, null, 1, null);
       var tmp_3 = $composer_0;
-      Link$composable(href_0, tmp_2, composableLambda(tmp_3, -819890308, true, _no_name_provided_$factory_376(isHovered$delegate, icon, $dirty)), $composer_0, 384 | 14 & $dirty >> 3, 0);
+      Link$composable(href_0, tmp_2, composableLambda(tmp_3, -819888560, true, _no_name_provided_$factory_378(isHovered$delegate, icon, $dirty)), $composer_0, 384 | 14 & $dirty >> 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_377(modifier_0, href_0, icon, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_379(modifier_0, href_0, icon, $changed, $default));
     }
   }
   function TextLink$composable$lambda($isHovered$delegate) {
@@ -48267,6 +48166,26 @@
   function TextLink$composable$lambda_1($text, $href, $color, $$changed, $$default, $composer, $force) {
     return TextLink$composable($text, $href, $color._v, $composer, $$changed | 1, $$default);
   }
+  function TextMailto$composable$lambda($isHovered$delegate) {
+    var tmp$ret$0;
+    $l$block: {
+      var tmp0_getValue_0 = getLocalDelegateReference('isHovered', KMutableProperty0, true, function () {
+        return THROW_ISE();
+      });
+      tmp$ret$0 = $isHovered$delegate._get_value__0_k$();
+      break $l$block;
+    }
+    return tmp$ret$0;
+  }
+  function TextMailto$composable$lambda_0($isHovered$delegate, value) {
+    var tmp0_setValue_0 = getLocalDelegateReference('isHovered', KMutableProperty0, true, function () {
+      return THROW_ISE();
+    });
+    return $isHovered$delegate._set_value__iav7o_k$(value);
+  }
+  function TextMailto$composable$lambda_1($text, $href, $color, $$changed, $$default, $composer, $force) {
+    return TextMailto$composable($text, $href, $color._v, $composer, $$changed | 1, $$default);
+  }
   function ButtonLink$composable$lambda($isHovered$delegate) {
     var tmp$ret$0;
     $l$block: {
@@ -48287,7 +48206,7 @@
   function ButtonLink$composable$lambda_1($href, $text, $icon, $$changed, $$default, $composer, $force) {
     return ButtonLink$composable($href, $text._v, $icon, $composer, $$changed | 1, $$default);
   }
-  function IconLink$composable$lambda($isHovered$delegate) {
+  function ButtonMailto$composable$lambda($isHovered$delegate) {
     var tmp$ret$0;
     $l$block: {
       var tmp0_getValue_0 = getLocalDelegateReference('isHovered', KMutableProperty0, true, function () {
@@ -48298,7 +48217,16 @@
     }
     return tmp$ret$0;
   }
-  function IconLink$composable$lambda_0($modifier, $href, $icon, $$changed, $$default, $composer, $force) {
+  function ButtonMailto$composable$lambda_0($isHovered$delegate, value) {
+    var tmp0_setValue_0 = getLocalDelegateReference('isHovered', KMutableProperty0, true, function () {
+      return THROW_ISE();
+    });
+    return $isHovered$delegate._set_value__iav7o_k$(value);
+  }
+  function ButtonMailto$composable$lambda_1($href, $text, $icon, $$changed, $$default, $composer, $force) {
+    return ButtonMailto$composable($href, $text._v, $icon, $composer, $$changed | 1, $$default);
+  }
+  function IconLink$composable$lambda($modifier, $href, $icon, $$changed, $$default, $composer, $force) {
     return IconLink$composable($modifier._v, $href, $icon, $composer, $$changed | 1, $$default);
   }
   function SocialLinkItem$composable$lambda($isHovered$delegate) {
@@ -48321,10 +48249,10 @@
   function SocialLinkItem$composable$lambda_1($modifier, $href, $icon, $$changed, $$default, $composer, $force) {
     return SocialLinkItem$composable($modifier._v, $href, $icon, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__406() {
+  function _no_name_provided__403() {
   }
-  _no_name_provided__406.prototype.invoke_0_k$ = function () {
-    var tmp0_$receiver = borderRadius_0(size_0(Companion_getInstance_40(), _get_px_(47)), _get_percent_(100));
+  _no_name_provided__403.prototype.invoke_0_k$ = function () {
+    var tmp0_$receiver = borderRadius_0(size_0(Companion_getInstance_39(), _get_px_(47)), _get_percent_(100));
     var tmp1_width = _get_px_(1);
     var tmp$ret$0;
     $l$block: {
@@ -48335,7 +48263,7 @@
     var tmp2_color = tmp$ret$0;
     var tmp$ret$4;
     $l$block_3: {
-      var tmp1__get_Solid__0 = Companion_getInstance_21();
+      var tmp1__get_Solid__0 = Companion_getInstance_20();
       var tmp$ret$3;
       $l$block_2: {
         var tmp$ret$2;
@@ -48357,6 +48285,41 @@
     var tmp3_style = tmp$ret$4;
     return margin_0(padding_0(border_0(tmp0_$receiver, tmp1_width, tmp3_style, tmp2_color), _get_px_(4)), _get_em_(0.5));
   };
+  _no_name_provided__403.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__404() {
+  }
+  _no_name_provided__404.prototype.invoke_0_k$ = function () {
+    return margin_0(Companion_getInstance_39(), _get_em_(1));
+  };
+  _no_name_provided__404.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__405() {
+  }
+  _no_name_provided__405.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_380());
+    var tmp = Breakpoint_SM_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_381());
+  };
+  _no_name_provided__405.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__405.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__406() {
+  }
+  _no_name_provided__406.prototype.invoke_0_k$ = function () {
+    var tmp = lineHeight_0(padding_1(Companion_getInstance_39(), _get_em_(0.5), _get_em_(0.75)), 1.5);
+    Colors_getInstance_0();
+    return transition(fontWeight_0(fontFamily_0(color_1(tmp, '#7510F7'), ['europa', 'sans-serif']), Companion_getInstance_29()._get_Normal__0_k$()), 'all .2s ease-in-out');
+  };
   _no_name_provided__406.$metadata$ = {
     kind: 'class',
     interfaces: []
@@ -48364,7 +48327,7 @@
   function _no_name_provided__407() {
   }
   _no_name_provided__407.prototype.invoke_0_k$ = function () {
-    return margin_0(Companion_getInstance_40(), _get_em_(1));
+    return color_1(Companion_getInstance_39(), Colors_getInstance_0()._gray);
   };
   _no_name_provided__407.$metadata$ = {
     kind: 'class',
@@ -48373,9 +48336,9 @@
   function _no_name_provided__408() {
   }
   _no_name_provided__408.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_378());
-    var tmp = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_379());
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_382());
+    var tmp = _get_hover_($this$$receiver);
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_383());
   };
   _no_name_provided__408.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
@@ -48388,47 +48351,12 @@
   function _no_name_provided__409() {
   }
   _no_name_provided__409.prototype.invoke_0_k$ = function () {
-    var tmp = lineHeight_0(padding_1(Companion_getInstance_40(), _get_em_(0.5), _get_em_(0.75)), 1.5);
-    Colors_getInstance_0();
-    return transition(fontWeight_0(fontFamily_0(color_1(tmp, '#7510F7'), ['europa', 'sans-serif']), Companion_getInstance_30()._get_Normal__0_k$()), 'all .2s ease-in-out');
-  };
-  _no_name_provided__409.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__410() {
-  }
-  _no_name_provided__410.prototype.invoke_0_k$ = function () {
-    return color_1(Companion_getInstance_40(), Colors_getInstance_0()._gray);
-  };
-  _no_name_provided__410.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__411() {
-  }
-  _no_name_provided__411.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_380());
-    var tmp = _get_hover_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_381());
-  };
-  _no_name_provided__411.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__411.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__412() {
-  }
-  _no_name_provided__412.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+    var tmp = Companion_getInstance_39();
     var tmp_0 = borderRadius_0(padding_1(transition(backgroundColor_1(margin$default(tmp, null, null, null, _get_em_(1), 7, null), Colors_getInstance_0()._white), 'all .2s ease-in-out'), _get_em_(0.75), _get_em_(1.5)), _get_px_(32));
     var tmp_1 = _get_px_(2);
     var tmp$ret$3;
     $l$block_2: {
-      var tmp0__get_Solid__0 = Companion_getInstance_21();
+      var tmp0__get_Solid__0 = Companion_getInstance_20();
       var tmp$ret$2;
       $l$block_1: {
         var tmp$ret$1;
@@ -48451,103 +48379,103 @@
     Colors_getInstance_0();
     return border_0(tmp_0, tmp_1, tmp_2, Color_1('#7510F7'));
   };
+  _no_name_provided__409.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__410() {
+  }
+  _no_name_provided__410.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
+    Colors_getInstance_0();
+    return backgroundColor_1(tmp, '#7510F7');
+  };
+  _no_name_provided__410.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__411() {
+  }
+  _no_name_provided__411.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_384());
+    var tmp = _get_hover_($this$$receiver);
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_385());
+  };
+  _no_name_provided__411.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__411.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function invoke$lambda_0($isHovered$delegate) {
+    return _no_name_provided_$factory_388($isHovered$delegate);
+  }
+  function invoke$lambda_1($isHovered$delegate) {
+    return _no_name_provided_$factory_389($isHovered$delegate);
+  }
+  function _no_name_provided__412($isHovered$delegate) {
+    this._$isHovered$delegate = $isHovered$delegate;
+  }
+  _no_name_provided__412.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_0(this._$isHovered$delegate);
+  };
   _no_name_provided__412.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__413() {
+  function _no_name_provided__413($isHovered$delegate) {
+    this._$isHovered$delegate_0 = $isHovered$delegate;
   }
   _no_name_provided__413.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
-    Colors_getInstance_0();
-    return backgroundColor_1(tmp, '#7510F7');
+    return invoke$lambda_1(this._$isHovered$delegate_0);
   };
   _no_name_provided__413.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__414() {
+  function _no_name_provided__414($isHovered$delegate) {
+    this._$isHovered$delegate_1 = $isHovered$delegate;
   }
-  _no_name_provided__414.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_382());
-    var tmp = _get_hover_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_383());
+  _no_name_provided__414.prototype.invoke_9dcepc_k$ = function (it) {
+    TextLink$composable$lambda_0(this._$isHovered$delegate_1, true);
   };
   _no_name_provided__414.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__414.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function invoke$lambda_0($isHovered$delegate) {
-    return _no_name_provided_$factory_386($isHovered$delegate);
-  }
-  function invoke$lambda_1($isHovered$delegate) {
-    return _no_name_provided_$factory_387($isHovered$delegate);
-  }
   function _no_name_provided__415($isHovered$delegate) {
-    this._$isHovered$delegate = $isHovered$delegate;
+    this._$isHovered$delegate_2 = $isHovered$delegate;
   }
-  _no_name_provided__415.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_0(this._$isHovered$delegate);
+  _no_name_provided__415.prototype.invoke_9dcepc_k$ = function (it) {
+    TextLink$composable$lambda_0(this._$isHovered$delegate_2, false);
+  };
+  _no_name_provided__415.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__415.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__416($isHovered$delegate) {
-    this._$isHovered$delegate_0 = $isHovered$delegate;
-  }
-  _no_name_provided__416.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_1(this._$isHovered$delegate_0);
-  };
-  _no_name_provided__416.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__417($isHovered$delegate) {
-    this._$isHovered$delegate_1 = $isHovered$delegate;
-  }
-  _no_name_provided__417.prototype.invoke_9dcepc_k$ = function (it) {
-    TextLink$composable$lambda_0(this._$isHovered$delegate_1, true);
-  };
-  _no_name_provided__417.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__417.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__418($isHovered$delegate) {
-    this._$isHovered$delegate_2 = $isHovered$delegate;
-  }
-  _no_name_provided__418.prototype.invoke_9dcepc_k$ = function (it) {
-    TextLink$composable$lambda_0(this._$isHovered$delegate_2, false);
-  };
-  _no_name_provided__418.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__418.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__419($text, $color, $isHovered$delegate, $$dirty) {
+  function _no_name_provided__416($text, $color, $isHovered$delegate, $$dirty) {
     this._$text_1 = $text;
     this._$color_4 = $color;
     this._$isHovered$delegate_3 = $isHovered$delegate;
     this._$$dirty_10 = $$dirty;
   }
-  _no_name_provided__419.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
+  _no_name_provided__416.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp = color_1(toModifier$composable(LinkTextStyle, null, $composer_0, 0, 1), this._$color_4._v);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_384(this._$isHovered$delegate_3);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_386(this._$isHovered$delegate_3);
         var tmp1_remember$composable_0 = $composer_0;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884179877);
@@ -48564,7 +48492,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_0;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_0 = value_2_2_6;
@@ -48589,7 +48517,7 @@
       var tmp_2 = onMouseEnter(tmp, tmp$ret$3);
       var tmp$ret$7;
       $l$block_6: {
-        var tmp2_remember$composable_0 = _no_name_provided_$factory_385(this._$isHovered$delegate_3);
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_387(this._$isHovered$delegate_3);
         var tmp3_remember$composable_0 = $composer_0;
         var $composer_1_0 = tmp3_remember$composable_0;
         $composer_1_0.startReplaceableGroup_majfzk_k$(884179877);
@@ -48606,7 +48534,7 @@
             var tmp$ret$4;
             $l$block_3: {
               var tmp_3;
-              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6_0 = tmp2_remember$composable_0();
                 tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6_0);
                 tmp_3 = value_2_2_6_0;
@@ -48633,71 +48561,32 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__419.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__416.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_sv8dqv_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__419.$metadata$ = {
+  _no_name_provided__416.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__420($text, $href, $color, $$changed, $$default) {
+  function _no_name_provided__417($text, $href, $color, $$changed, $$default) {
     this._$text_2 = $text;
     this._$href_5 = $href;
     this._$color_5 = $color;
     this._$$changed_33 = $$changed;
     this._$$default_24 = $$default;
   }
-  _no_name_provided__420.prototype.invoke_xtxync_k$ = function (p0, p1) {
+  _no_name_provided__417.prototype.invoke_xtxync_k$ = function (p0, p1) {
     return TextLink$composable$lambda_1(this._$text_2, this._$href_5, this._$color_5, this._$$changed_33, this._$$default_24, p0, p1);
   };
-  _no_name_provided__420.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__417.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__420.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__421($icon, $$dirty, $text, $isHovered$delegate) {
-    this._$icon = $icon;
-    this._$$dirty_11 = $$dirty;
-    this._$text_3 = $text;
-    this._$isHovered$delegate_4 = $isHovered$delegate;
-  }
-  _no_name_provided__421.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
-    var $composer_0 = $composer;
-    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var $invokeComposable_dispatchReceiver = this._$icon;
-      if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
-        $invokeComposable_dispatchReceiver.invoke_oku154_k$(ButtonLink$composable$lambda(this._$isHovered$delegate_4), $composer_0, 112 & this._$$dirty_11 >> 3);
-      else {
-        $invokeComposable_dispatchReceiver(ButtonLink$composable$lambda(this._$isHovered$delegate_4), $composer_0, 112 & this._$$dirty_11 >> 3);
-      }
-      var tmp0_variant = LightTextStyleVariant;
-      var tmp = toModifier$composable(TextStyle_0, null, $composer_0, 0, 1);
-      var tmp_0;
-      if (ButtonLink$composable$lambda(this._$isHovered$delegate_4)) {
-        tmp_0 = Colors_getInstance_0()._white;
-      } else {
-        Colors_getInstance_0();
-        tmp_0 = '#7510F7';
-      }
-      var tmp1_modifier = color_1(tmp, tmp_0);
-      Text$composable_0(this._$text_3._v, tmp1_modifier, tmp0_variant, $composer_0, 14 & this._$$dirty_11 >> 3, 0);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-  };
-  _no_name_provided__421.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
-    var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
-    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
-    this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__421.$metadata$ = {
+  _no_name_provided__417.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -48707,106 +48596,67 @@
   function invoke$lambda_3($isHovered$delegate) {
     return _no_name_provided_$factory_393($isHovered$delegate);
   }
-  function _no_name_provided__422() {
+  function _no_name_provided__418($isHovered$delegate) {
+    this._$isHovered$delegate_4 = $isHovered$delegate;
   }
-  _no_name_provided__422.prototype.invoke_sv8swh_k$ = function () {
-    return Unit_getInstance();
+  _no_name_provided__418.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_2(this._$isHovered$delegate_4);
   };
-  _no_name_provided__422.prototype.invoke_0_k$ = function () {
-    this.invoke_sv8swh_k$();
-    return Unit_getInstance();
-  };
-  _no_name_provided__422.$metadata$ = {
+  _no_name_provided__418.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__423($isHovered$delegate) {
+  function _no_name_provided__419($isHovered$delegate) {
     this._$isHovered$delegate_5 = $isHovered$delegate;
   }
-  _no_name_provided__423.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_2(this._$isHovered$delegate_5);
+  _no_name_provided__419.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_3(this._$isHovered$delegate_5);
   };
-  _no_name_provided__423.$metadata$ = {
+  _no_name_provided__419.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__424($isHovered$delegate) {
+  function _no_name_provided__420($isHovered$delegate) {
     this._$isHovered$delegate_6 = $isHovered$delegate;
   }
-  _no_name_provided__424.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_3(this._$isHovered$delegate_6);
+  _no_name_provided__420.prototype.invoke_9dcepc_k$ = function (it) {
+    TextMailto$composable$lambda_0(this._$isHovered$delegate_6, true);
   };
-  _no_name_provided__424.$metadata$ = {
+  _no_name_provided__420.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__420.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__425($icon, $$dirty, $text, $isHovered$delegate) {
-    this._$icon_0 = $icon;
-    this._$$dirty_12 = $$dirty;
-    this._$text_4 = $text;
+  function _no_name_provided__421($isHovered$delegate) {
     this._$isHovered$delegate_7 = $isHovered$delegate;
   }
-  _no_name_provided__425.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
-    var $composer_0 = $composer;
-    if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_verticalAlignment = Companion_getInstance_39()._CenterVertically;
-      var tmp1_modifier = Companion_getInstance_40();
-      var tmp = $composer_0;
-      Row$composable(tmp1_modifier, null, tmp0_verticalAlignment, composableLambda(tmp, -819893403, true, _no_name_provided_$factory_394(this._$icon_0, this._$$dirty_12, this._$text_4, this._$isHovered$delegate_7)), $composer_0, 3078, 2);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
+  _no_name_provided__421.prototype.invoke_9dcepc_k$ = function (it) {
+    TextMailto$composable$lambda_0(this._$isHovered$delegate_7, false);
   };
-  _no_name_provided__425.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
-    this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+  _no_name_provided__421.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__425.$metadata$ = {
+  _no_name_provided__421.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__426($isHovered$delegate) {
+  function _no_name_provided__422($text, $color, $isHovered$delegate, $$dirty) {
+    this._$text_3 = $text;
+    this._$color_6 = $color;
     this._$isHovered$delegate_8 = $isHovered$delegate;
+    this._$$dirty_11 = $$dirty;
   }
-  _no_name_provided__426.prototype.invoke_9dcepc_k$ = function (it) {
-    ButtonLink$composable$lambda_0(this._$isHovered$delegate_8, true);
-  };
-  _no_name_provided__426.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__426.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__427($isHovered$delegate) {
-    this._$isHovered$delegate_9 = $isHovered$delegate;
-  }
-  _no_name_provided__427.prototype.invoke_9dcepc_k$ = function (it) {
-    ButtonLink$composable$lambda_0(this._$isHovered$delegate_9, false);
-  };
-  _no_name_provided__427.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__427.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__428($isHovered$delegate, $icon, $$dirty, $text) {
-    this._$isHovered$delegate_10 = $isHovered$delegate;
-    this._$icon_1 = $icon;
-    this._$$dirty_13 = $$dirty;
-    this._$text_5 = $text;
-  }
-  _no_name_provided__428.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
+  _no_name_provided__422.prototype.invoke_sv8dqv_k$ = function ($this$A, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = _no_name_provided_$factory_388();
-      var tmp_0 = toModifier$composable(OutlinedButtonStyle, null, $composer_0, 0, 1);
+      var tmp = color_1(toModifier$composable(LinkTextStyle, null, $composer_0, 0, 1), this._$color_6._v);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_389(this._$isHovered$delegate_10);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_390(this._$isHovered$delegate_8);
         var tmp1_remember$composable_0 = $composer_0;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884179877);
@@ -48814,7 +48664,266 @@
         var tmp$ret$2;
         $l$block_1: {
           var tmp1_cache_0_3 = $composer_1;
-          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$isHovered$delegate_10);
+          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$isHovered$delegate_8);
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$0;
+            $l$block: {
+              var tmp_0;
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
+                var value_2_2_6 = tmp0_remember$composable_0();
+                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
+                tmp_0 = value_2_2_6;
+              } else {
+                tmp_0 = tmp0_let_0_5;
+              }
+              tmp$ret$0 = tmp_0;
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0;
+            break $l$block_0;
+          }
+          var tmp_1 = tmp$ret$1;
+          tmp$ret$2 = (tmp_1 == null ? true : isObject(tmp_1)) ? tmp_1 : THROW_CCE();
+          break $l$block_1;
+        }
+        var tmp0_2 = tmp$ret$2;
+        $composer_1.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$3 = tmp0_2;
+        break $l$block_2;
+      }
+      var tmp_2 = onMouseEnter(tmp, tmp$ret$3);
+      var tmp$ret$7;
+      $l$block_6: {
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_391(this._$isHovered$delegate_8);
+        var tmp3_remember$composable_0 = $composer_0;
+        var $composer_1_0 = tmp3_remember$composable_0;
+        $composer_1_0.startReplaceableGroup_majfzk_k$(884179877);
+        sourceInformation($composer_1_0, 'C(remember$composable)P(1):Composables.kt#9igjgp');
+        var tmp$ret$6;
+        $l$block_5: {
+          var tmp1_cache_0_3_0 = $composer_1_0;
+          var tmp2_cache_0_4_0 = $composer_1_0.changed_wi7j7l_k$(this._$isHovered$delegate_8);
+          var tmp$ret$5;
+          $l$block_4: {
+            var tmp0_let_0_5_0 = tmp1_cache_0_3_0.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$4;
+            $l$block_3: {
+              var tmp_3;
+              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_8()._Empty) {
+                var value_2_2_6_0 = tmp2_remember$composable_0();
+                tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6_0);
+                tmp_3 = value_2_2_6_0;
+              } else {
+                tmp_3 = tmp0_let_0_5_0;
+              }
+              tmp$ret$4 = tmp_3;
+              break $l$block_3;
+            }
+            tmp$ret$5 = tmp$ret$4;
+            break $l$block_4;
+          }
+          var tmp_4 = tmp$ret$5;
+          tmp$ret$6 = (tmp_4 == null ? true : isObject(tmp_4)) ? tmp_4 : THROW_CCE();
+          break $l$block_5;
+        }
+        var tmp0_2_0 = tmp$ret$6;
+        $composer_1_0.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$7 = tmp0_2_0;
+        break $l$block_6;
+      }
+      var tmp_5 = onMouseLeave(tmp_2, tmp$ret$7);
+      Text$composable_0(this._$text_3, tmp_5, null, $composer_0, 14 & this._$$dirty_11, 4);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__422.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+    var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
+    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
+    this.invoke_sv8dqv_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__422.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__423($text, $href, $color, $$changed, $$default) {
+    this._$text_4 = $text;
+    this._$href_6 = $href;
+    this._$color_7 = $color;
+    this._$$changed_34 = $$changed;
+    this._$$default_25 = $$default;
+  }
+  _no_name_provided__423.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return TextMailto$composable$lambda_1(this._$text_4, this._$href_6, this._$color_7, this._$$changed_34, this._$$default_25, p0, p1);
+  };
+  _no_name_provided__423.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__423.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__424($icon, $$dirty, $text, $isHovered$delegate) {
+    this._$icon = $icon;
+    this._$$dirty_12 = $$dirty;
+    this._$text_5 = $text;
+    this._$isHovered$delegate_9 = $isHovered$delegate;
+  }
+  _no_name_provided__424.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var $invokeComposable_dispatchReceiver = this._$icon;
+      if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
+        $invokeComposable_dispatchReceiver.invoke_oku154_k$(ButtonLink$composable$lambda(this._$isHovered$delegate_9), $composer_0, 112 & this._$$dirty_12 >> 3);
+      else {
+        $invokeComposable_dispatchReceiver(ButtonLink$composable$lambda(this._$isHovered$delegate_9), $composer_0, 112 & this._$$dirty_12 >> 3);
+      }
+      var tmp0_variant = LightTextStyleVariant;
+      var tmp = toModifier$composable(TextStyle_0, null, $composer_0, 0, 1);
+      var tmp_0;
+      if (ButtonLink$composable$lambda(this._$isHovered$delegate_9)) {
+        tmp_0 = Colors_getInstance_0()._white;
+      } else {
+        Colors_getInstance_0();
+        tmp_0 = '#7510F7';
+      }
+      var tmp1_modifier = color_1(tmp, tmp_0);
+      Text$composable_0(this._$text_5._v, tmp1_modifier, tmp0_variant, $composer_0, 14 & this._$$dirty_12 >> 3, 0);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__424.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+    var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
+    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
+    this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__424.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function invoke$lambda_4($isHovered$delegate) {
+    return _no_name_provided_$factory_398($isHovered$delegate);
+  }
+  function invoke$lambda_5($isHovered$delegate) {
+    return _no_name_provided_$factory_399($isHovered$delegate);
+  }
+  function _no_name_provided__425() {
+  }
+  _no_name_provided__425.prototype.invoke_sv8swh_k$ = function () {
+    return Unit_getInstance();
+  };
+  _no_name_provided__425.prototype.invoke_0_k$ = function () {
+    this.invoke_sv8swh_k$();
+    return Unit_getInstance();
+  };
+  _no_name_provided__425.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__426($isHovered$delegate) {
+    this._$isHovered$delegate_10 = $isHovered$delegate;
+  }
+  _no_name_provided__426.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_4(this._$isHovered$delegate_10);
+  };
+  _no_name_provided__426.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__427($isHovered$delegate) {
+    this._$isHovered$delegate_11 = $isHovered$delegate;
+  }
+  _no_name_provided__427.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_5(this._$isHovered$delegate_11);
+  };
+  _no_name_provided__427.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__428($icon, $$dirty, $text, $isHovered$delegate) {
+    this._$icon_0 = $icon;
+    this._$$dirty_13 = $$dirty;
+    this._$text_6 = $text;
+    this._$isHovered$delegate_12 = $isHovered$delegate;
+  }
+  _no_name_provided__428.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var tmp0_verticalAlignment = Companion_getInstance_38()._CenterVertically;
+      var tmp1_modifier = Companion_getInstance_39();
+      var tmp = $composer_0;
+      Row$composable(tmp1_modifier, null, tmp0_verticalAlignment, composableLambda(tmp, -819890610, true, _no_name_provided_$factory_400(this._$icon_0, this._$$dirty_13, this._$text_6, this._$isHovered$delegate_12)), $composer_0, 3078, 2);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__428.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
+    this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__428.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__429($isHovered$delegate) {
+    this._$isHovered$delegate_13 = $isHovered$delegate;
+  }
+  _no_name_provided__429.prototype.invoke_9dcepc_k$ = function (it) {
+    ButtonLink$composable$lambda_0(this._$isHovered$delegate_13, true);
+  };
+  _no_name_provided__429.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__429.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__430($isHovered$delegate) {
+    this._$isHovered$delegate_14 = $isHovered$delegate;
+  }
+  _no_name_provided__430.prototype.invoke_9dcepc_k$ = function (it) {
+    ButtonLink$composable$lambda_0(this._$isHovered$delegate_14, false);
+  };
+  _no_name_provided__430.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__430.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__431($isHovered$delegate, $icon, $$dirty, $text) {
+    this._$isHovered$delegate_15 = $isHovered$delegate;
+    this._$icon_1 = $icon;
+    this._$$dirty_14 = $$dirty;
+    this._$text_7 = $text;
+  }
+  _no_name_provided__431.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var tmp = _no_name_provided_$factory_394();
+      var tmp_0 = toModifier$composable(OutlinedButtonStyle, null, $composer_0, 0, 1);
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_395(this._$isHovered$delegate_15);
+        var tmp1_remember$composable_0 = $composer_0;
+        var $composer_1 = tmp1_remember$composable_0;
+        $composer_1.startReplaceableGroup_majfzk_k$(884179877);
+        sourceInformation($composer_1, 'C(remember$composable)P(1):Composables.kt#9igjgp');
+        var tmp$ret$2;
+        $l$block_1: {
+          var tmp1_cache_0_3 = $composer_1;
+          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$isHovered$delegate_15);
           var tmp$ret$1;
           $l$block_0: {
             var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
@@ -48823,7 +48932,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_1;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_1 = value_2_2_6;
@@ -48848,7 +48957,7 @@
       var tmp_3 = onMouseEnter(tmp_0, tmp$ret$3);
       var tmp$ret$7;
       $l$block_6: {
-        var tmp2_remember$composable_0 = _no_name_provided_$factory_390(this._$isHovered$delegate_10);
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_396(this._$isHovered$delegate_15);
         var tmp3_remember$composable_0 = $composer_0;
         var $composer_1_0 = tmp3_remember$composable_0;
         $composer_1_0.startReplaceableGroup_majfzk_k$(884179877);
@@ -48856,7 +48965,7 @@
         var tmp$ret$6;
         $l$block_5: {
           var tmp1_cache_0_3_0 = $composer_1_0;
-          var tmp2_cache_0_4_0 = $composer_1_0.changed_wi7j7l_k$(this._$isHovered$delegate_10);
+          var tmp2_cache_0_4_0 = $composer_1_0.changed_wi7j7l_k$(this._$isHovered$delegate_15);
           var tmp$ret$5;
           $l$block_4: {
             var tmp0_let_0_5_0 = tmp1_cache_0_3_0.rememberedValue_0_k$();
@@ -48865,7 +48974,7 @@
             var tmp$ret$4;
             $l$block_3: {
               var tmp_4;
-              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6_0 = tmp2_remember$composable_0();
                 tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6_0);
                 tmp_4 = value_2_2_6_0;
@@ -48889,7 +48998,7 @@
       }
       var tmp_6 = onMouseLeave(tmp_3, tmp$ret$7);
       var tmp_7;
-      if (ButtonLink$composable$lambda(this._$isHovered$delegate_10)) {
+      if (ButtonLink$composable$lambda(this._$isHovered$delegate_15)) {
         Colors_getInstance_0();
         tmp_7 = '#7510F7';
       } else {
@@ -48897,131 +49006,91 @@
       }
       var tmp_8 = backgroundColor_1(tmp_6, tmp_7);
       var tmp_9 = $composer_0;
-      Button$composable(tmp, tmp_8, null, composableLambda(tmp_9, -819893272, true, _no_name_provided_$factory_391(this._$icon_1, this._$$dirty_13, this._$text_5, this._$isHovered$delegate_10)), $composer_0, 3078, 4);
+      Button$composable(tmp, tmp_8, null, composableLambda(tmp_9, -819890507, true, _no_name_provided_$factory_397(this._$icon_1, this._$$dirty_14, this._$text_7, this._$isHovered$delegate_15)), $composer_0, 3078, 4);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__428.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__431.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_sv8dqv_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__428.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__429($href, $text, $icon, $$changed, $$default) {
-    this._$href_6 = $href;
-    this._$text_6 = $text;
-    this._$icon_2 = $icon;
-    this._$$changed_34 = $$changed;
-    this._$$default_25 = $$default;
-  }
-  _no_name_provided__429.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return ButtonLink$composable$lambda_1(this._$href_6, this._$text_6, this._$icon_2, this._$$changed_34, this._$$default_25, p0, p1);
-  };
-  _no_name_provided__429.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__429.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__430($icon, $$dirty) {
-    this._$icon_3 = $icon;
-    this._$$dirty_14 = $$dirty;
-  }
-  _no_name_provided__430.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
-    var $composer_0 = $composer;
-    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var $invokeComposable_dispatchReceiver = this._$icon_3;
-      if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
-        $invokeComposable_dispatchReceiver.invoke_uhotyh_k$($composer_0, 14 & this._$$dirty_14 >> 6);
-      else {
-        $invokeComposable_dispatchReceiver($composer_0, 14 & this._$$dirty_14 >> 6);
-      }
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-  };
-  _no_name_provided__430.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
-    var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
-    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
-    this.invoke_sv8dqv_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__430.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__431($modifier, $href, $icon, $$changed, $$default) {
-    this._$modifier_17 = $modifier;
-    this._$href_7 = $href;
-    this._$icon_4 = $icon;
-    this._$$changed_35 = $$changed;
-    this._$$default_26 = $$default;
-  }
-  _no_name_provided__431.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return IconLink$composable$lambda_0(this._$modifier_17, this._$href_7, this._$icon_4, this._$$changed_35, this._$$default_26, p0, p1);
-  };
-  _no_name_provided__431.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
   _no_name_provided__431.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function invoke$lambda_4($isHovered$delegate) {
-    return _no_name_provided_$factory_398($isHovered$delegate);
+  function _no_name_provided__432($href, $text, $icon, $$changed, $$default) {
+    this._$href_7 = $href;
+    this._$text_8 = $text;
+    this._$icon_2 = $icon;
+    this._$$changed_35 = $$changed;
+    this._$$default_26 = $$default;
   }
-  function invoke$lambda_5($isHovered$delegate) {
-    return _no_name_provided_$factory_399($isHovered$delegate);
-  }
-  function _no_name_provided__432($isHovered$delegate) {
-    this._$isHovered$delegate_11 = $isHovered$delegate;
-  }
-  _no_name_provided__432.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_4(this._$isHovered$delegate_11);
+  _no_name_provided__432.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return ButtonLink$composable$lambda_1(this._$href_7, this._$text_8, this._$icon_2, this._$$changed_35, this._$$default_26, p0, p1);
+  };
+  _no_name_provided__432.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__432.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__433($isHovered$delegate) {
-    this._$isHovered$delegate_12 = $isHovered$delegate;
+  function _no_name_provided__433($icon, $$dirty, $text, $isHovered$delegate) {
+    this._$icon_3 = $icon;
+    this._$$dirty_15 = $$dirty;
+    this._$text_9 = $text;
+    this._$isHovered$delegate_16 = $isHovered$delegate;
   }
-  _no_name_provided__433.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_5(this._$isHovered$delegate_12);
+  _no_name_provided__433.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var $invokeComposable_dispatchReceiver = this._$icon_3;
+      if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
+        $invokeComposable_dispatchReceiver.invoke_oku154_k$(ButtonMailto$composable$lambda(this._$isHovered$delegate_16), $composer_0, 112 & this._$$dirty_15 >> 3);
+      else {
+        $invokeComposable_dispatchReceiver(ButtonMailto$composable$lambda(this._$isHovered$delegate_16), $composer_0, 112 & this._$$dirty_15 >> 3);
+      }
+      var tmp0_variant = LightTextStyleVariant;
+      var tmp = toModifier$composable(TextStyle_0, null, $composer_0, 0, 1);
+      var tmp_0;
+      if (ButtonMailto$composable$lambda(this._$isHovered$delegate_16)) {
+        tmp_0 = Colors_getInstance_0()._white;
+      } else {
+        Colors_getInstance_0();
+        tmp_0 = '#7510F7';
+      }
+      var tmp1_modifier = color_1(tmp, tmp_0);
+      Text$composable_0(this._$text_9._v, tmp1_modifier, tmp0_variant, $composer_0, 14 & this._$$dirty_15 >> 3, 0);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__433.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+    var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
+    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
+    this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
+    return Unit_getInstance();
   };
   _no_name_provided__433.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__434($icon, $$dirty, $isHovered$delegate) {
-    this._$icon_5 = $icon;
-    this._$$dirty_15 = $$dirty;
-    this._$isHovered$delegate_13 = $isHovered$delegate;
+  function invoke$lambda_6($isHovered$delegate) {
+    return _no_name_provided_$factory_405($isHovered$delegate);
   }
-  _no_name_provided__434.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
-    var $composer_0 = $composer;
-    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var $invokeComposable_dispatchReceiver = this._$icon_5;
-      if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
-        $invokeComposable_dispatchReceiver.invoke_oku154_k$(SocialLinkItem$composable$lambda(this._$isHovered$delegate_13), $composer_0, 112 & this._$$dirty_15 >> 3);
-      else {
-        $invokeComposable_dispatchReceiver(SocialLinkItem$composable$lambda(this._$isHovered$delegate_13), $composer_0, 112 & this._$$dirty_15 >> 3);
-      }
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
+  function invoke$lambda_7($isHovered$delegate) {
+    return _no_name_provided_$factory_406($isHovered$delegate);
+  }
+  function _no_name_provided__434() {
+  }
+  _no_name_provided__434.prototype.invoke_sv8swh_k$ = function () {
+    return Unit_getInstance();
   };
-  _no_name_provided__434.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
-    var tmp = p1 instanceof BoxScope ? p1 : THROW_CCE();
-    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
-    this.invoke_jpel0v_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
+  _no_name_provided__434.prototype.invoke_0_k$ = function () {
+    this.invoke_sv8swh_k$();
     return Unit_getInstance();
   };
   _no_name_provided__434.$metadata$ = {
@@ -49029,45 +49098,367 @@
     interfaces: []
   };
   function _no_name_provided__435($isHovered$delegate) {
-    this._$isHovered$delegate_14 = $isHovered$delegate;
+    this._$isHovered$delegate_17 = $isHovered$delegate;
   }
-  _no_name_provided__435.prototype.invoke_9dcepc_k$ = function (it) {
-    SocialLinkItem$composable$lambda_0(this._$isHovered$delegate_14, true);
-  };
-  _no_name_provided__435.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__435.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_6(this._$isHovered$delegate_17);
   };
   _no_name_provided__435.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function _no_name_provided__436($isHovered$delegate) {
-    this._$isHovered$delegate_15 = $isHovered$delegate;
+    this._$isHovered$delegate_18 = $isHovered$delegate;
   }
-  _no_name_provided__436.prototype.invoke_9dcepc_k$ = function (it) {
-    SocialLinkItem$composable$lambda_0(this._$isHovered$delegate_15, false);
-  };
-  _no_name_provided__436.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__436.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_7(this._$isHovered$delegate_18);
   };
   _no_name_provided__436.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__437($isHovered$delegate, $icon, $$dirty) {
-    this._$isHovered$delegate_16 = $isHovered$delegate;
-    this._$icon_6 = $icon;
+  function _no_name_provided__437($icon, $$dirty, $text, $isHovered$delegate) {
+    this._$icon_4 = $icon;
     this._$$dirty_16 = $$dirty;
+    this._$text_10 = $text;
+    this._$isHovered$delegate_19 = $isHovered$delegate;
   }
-  _no_name_provided__437.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
+  _no_name_provided__437.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var tmp0_verticalAlignment = Companion_getInstance_38()._CenterVertically;
+      var tmp1_modifier = Companion_getInstance_39();
+      var tmp = $composer_0;
+      Row$composable(tmp1_modifier, null, tmp0_verticalAlignment, composableLambda(tmp, -819891294, true, _no_name_provided_$factory_407(this._$icon_4, this._$$dirty_16, this._$text_10, this._$isHovered$delegate_19)), $composer_0, 3078, 2);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__437.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
+    this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__437.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__438($isHovered$delegate) {
+    this._$isHovered$delegate_20 = $isHovered$delegate;
+  }
+  _no_name_provided__438.prototype.invoke_9dcepc_k$ = function (it) {
+    ButtonMailto$composable$lambda_0(this._$isHovered$delegate_20, true);
+  };
+  _no_name_provided__438.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__438.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__439($isHovered$delegate) {
+    this._$isHovered$delegate_21 = $isHovered$delegate;
+  }
+  _no_name_provided__439.prototype.invoke_9dcepc_k$ = function (it) {
+    ButtonMailto$composable$lambda_0(this._$isHovered$delegate_21, false);
+  };
+  _no_name_provided__439.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__439.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__440($isHovered$delegate, $icon, $$dirty, $text) {
+    this._$isHovered$delegate_22 = $isHovered$delegate;
+    this._$icon_5 = $icon;
+    this._$$dirty_17 = $$dirty;
+    this._$text_11 = $text;
+  }
+  _no_name_provided__440.prototype.invoke_sv8dqv_k$ = function ($this$A, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_contentAlignment = Companion_getInstance_39()._Center_0;
+      var tmp = _no_name_provided_$factory_401();
+      var tmp_0 = toModifier$composable(OutlinedButtonStyle, null, $composer_0, 0, 1);
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_402(this._$isHovered$delegate_22);
+        var tmp1_remember$composable_0 = $composer_0;
+        var $composer_1 = tmp1_remember$composable_0;
+        $composer_1.startReplaceableGroup_majfzk_k$(884179877);
+        sourceInformation($composer_1, 'C(remember$composable)P(1):Composables.kt#9igjgp');
+        var tmp$ret$2;
+        $l$block_1: {
+          var tmp1_cache_0_3 = $composer_1;
+          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$isHovered$delegate_22);
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$0;
+            $l$block: {
+              var tmp_1;
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
+                var value_2_2_6 = tmp0_remember$composable_0();
+                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
+                tmp_1 = value_2_2_6;
+              } else {
+                tmp_1 = tmp0_let_0_5;
+              }
+              tmp$ret$0 = tmp_1;
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0;
+            break $l$block_0;
+          }
+          var tmp_2 = tmp$ret$1;
+          tmp$ret$2 = (tmp_2 == null ? true : isObject(tmp_2)) ? tmp_2 : THROW_CCE();
+          break $l$block_1;
+        }
+        var tmp0_2 = tmp$ret$2;
+        $composer_1.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$3 = tmp0_2;
+        break $l$block_2;
+      }
+      var tmp_3 = onMouseEnter(tmp_0, tmp$ret$3);
+      var tmp$ret$7;
+      $l$block_6: {
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_403(this._$isHovered$delegate_22);
+        var tmp3_remember$composable_0 = $composer_0;
+        var $composer_1_0 = tmp3_remember$composable_0;
+        $composer_1_0.startReplaceableGroup_majfzk_k$(884179877);
+        sourceInformation($composer_1_0, 'C(remember$composable)P(1):Composables.kt#9igjgp');
+        var tmp$ret$6;
+        $l$block_5: {
+          var tmp1_cache_0_3_0 = $composer_1_0;
+          var tmp2_cache_0_4_0 = $composer_1_0.changed_wi7j7l_k$(this._$isHovered$delegate_22);
+          var tmp$ret$5;
+          $l$block_4: {
+            var tmp0_let_0_5_0 = tmp1_cache_0_3_0.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$4;
+            $l$block_3: {
+              var tmp_4;
+              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_8()._Empty) {
+                var value_2_2_6_0 = tmp2_remember$composable_0();
+                tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6_0);
+                tmp_4 = value_2_2_6_0;
+              } else {
+                tmp_4 = tmp0_let_0_5_0;
+              }
+              tmp$ret$4 = tmp_4;
+              break $l$block_3;
+            }
+            tmp$ret$5 = tmp$ret$4;
+            break $l$block_4;
+          }
+          var tmp_5 = tmp$ret$5;
+          tmp$ret$6 = (tmp_5 == null ? true : isObject(tmp_5)) ? tmp_5 : THROW_CCE();
+          break $l$block_5;
+        }
+        var tmp0_2_0 = tmp$ret$6;
+        $composer_1_0.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$7 = tmp0_2_0;
+        break $l$block_6;
+      }
+      var tmp_6 = onMouseLeave(tmp_3, tmp$ret$7);
+      var tmp_7;
+      if (ButtonMailto$composable$lambda(this._$isHovered$delegate_22)) {
+        Colors_getInstance_0();
+        tmp_7 = '#7510F7';
+      } else {
+        tmp_7 = Colors_getInstance_0()._white;
+      }
+      var tmp_8 = backgroundColor_1(tmp_6, tmp_7);
+      var tmp_9 = $composer_0;
+      Button$composable(tmp, tmp_8, null, composableLambda(tmp_9, -819891671, true, _no_name_provided_$factory_404(this._$icon_5, this._$$dirty_17, this._$text_11, this._$isHovered$delegate_22)), $composer_0, 3078, 4);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__440.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+    var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
+    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
+    this.invoke_sv8dqv_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__440.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__441($href, $text, $icon, $$changed, $$default) {
+    this._$href_8 = $href;
+    this._$text_12 = $text;
+    this._$icon_6 = $icon;
+    this._$$changed_36 = $$changed;
+    this._$$default_27 = $$default;
+  }
+  _no_name_provided__441.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return ButtonMailto$composable$lambda_1(this._$href_8, this._$text_12, this._$icon_6, this._$$changed_36, this._$$default_27, p0, p1);
+  };
+  _no_name_provided__441.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__441.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__442($ctx, $href) {
+    this._$ctx_1 = $ctx;
+    this._$href_9 = $href;
+  }
+  _no_name_provided__442.prototype.invoke_sv8swh_k$ = function () {
+    this._$ctx_1._router.navigateTo$default_api6eb_k$(this._$href_9, false, null, 6, null);
+  };
+  _no_name_provided__442.prototype.invoke_0_k$ = function () {
+    this.invoke_sv8swh_k$();
+    return Unit_getInstance();
+  };
+  _no_name_provided__442.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__443($icon, $$dirty) {
+    this._$icon_7 = $icon;
+    this._$$dirty_18 = $$dirty;
+  }
+  _no_name_provided__443.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var $invokeComposable_dispatchReceiver = this._$icon_7;
+      if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
+        $invokeComposable_dispatchReceiver.invoke_uhotyh_k$($composer_0, 14 & this._$$dirty_18 >> 6);
+      else {
+        $invokeComposable_dispatchReceiver($composer_0, 14 & this._$$dirty_18 >> 6);
+      }
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__443.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
+    this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__443.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__444($modifier, $href, $icon, $$changed, $$default) {
+    this._$modifier_17 = $modifier;
+    this._$href_10 = $href;
+    this._$icon_8 = $icon;
+    this._$$changed_37 = $$changed;
+    this._$$default_28 = $$default;
+  }
+  _no_name_provided__444.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return IconLink$composable$lambda(this._$modifier_17, this._$href_10, this._$icon_8, this._$$changed_37, this._$$default_28, p0, p1);
+  };
+  _no_name_provided__444.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__444.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function invoke$lambda_8($isHovered$delegate) {
+    return _no_name_provided_$factory_411($isHovered$delegate);
+  }
+  function invoke$lambda_9($isHovered$delegate) {
+    return _no_name_provided_$factory_412($isHovered$delegate);
+  }
+  function _no_name_provided__445($isHovered$delegate) {
+    this._$isHovered$delegate_23 = $isHovered$delegate;
+  }
+  _no_name_provided__445.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_8(this._$isHovered$delegate_23);
+  };
+  _no_name_provided__445.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__446($isHovered$delegate) {
+    this._$isHovered$delegate_24 = $isHovered$delegate;
+  }
+  _no_name_provided__446.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_9(this._$isHovered$delegate_24);
+  };
+  _no_name_provided__446.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__447($icon, $$dirty, $isHovered$delegate) {
+    this._$icon_9 = $icon;
+    this._$$dirty_19 = $$dirty;
+    this._$isHovered$delegate_25 = $isHovered$delegate;
+  }
+  _no_name_provided__447.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var $invokeComposable_dispatchReceiver = this._$icon_9;
+      if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
+        $invokeComposable_dispatchReceiver.invoke_oku154_k$(SocialLinkItem$composable$lambda(this._$isHovered$delegate_25), $composer_0, 112 & this._$$dirty_19 >> 3);
+      else {
+        $invokeComposable_dispatchReceiver(SocialLinkItem$composable$lambda(this._$isHovered$delegate_25), $composer_0, 112 & this._$$dirty_19 >> 3);
+      }
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__447.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+    var tmp = p1 instanceof BoxScope ? p1 : THROW_CCE();
+    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
+    this.invoke_jpel0v_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__447.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__448($isHovered$delegate) {
+    this._$isHovered$delegate_26 = $isHovered$delegate;
+  }
+  _no_name_provided__448.prototype.invoke_9dcepc_k$ = function (it) {
+    SocialLinkItem$composable$lambda_0(this._$isHovered$delegate_26, true);
+  };
+  _no_name_provided__448.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__448.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__449($isHovered$delegate) {
+    this._$isHovered$delegate_27 = $isHovered$delegate;
+  }
+  _no_name_provided__449.prototype.invoke_9dcepc_k$ = function (it) {
+    SocialLinkItem$composable$lambda_0(this._$isHovered$delegate_27, false);
+  };
+  _no_name_provided__449.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__449.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__450($isHovered$delegate, $icon, $$dirty) {
+    this._$isHovered$delegate_28 = $isHovered$delegate;
+    this._$icon_10 = $icon;
+    this._$$dirty_20 = $$dirty;
+  }
+  _no_name_provided__450.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var tmp0_contentAlignment = Companion_getInstance_38()._Center_0;
       var tmp = toModifier$composable(ButtonStyle_0, null, $composer_0, 0, 1);
       var tmp_0;
-      if (SocialLinkItem$composable$lambda(this._$isHovered$delegate_16)) {
+      if (SocialLinkItem$composable$lambda(this._$isHovered$delegate_28)) {
         tmp_0 = Colors_getInstance_0()._white;
       } else {
         Colors_getInstance_0();
@@ -49076,7 +49467,7 @@
       var tmp_1 = backgroundColor_1(tmp, tmp_0);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_395(this._$isHovered$delegate_16);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_408(this._$isHovered$delegate_28);
         var tmp1_remember$composable_0 = $composer_0;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884179877);
@@ -49084,7 +49475,7 @@
         var tmp$ret$2;
         $l$block_1: {
           var tmp1_cache_0_3 = $composer_1;
-          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$isHovered$delegate_16);
+          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$isHovered$delegate_28);
           var tmp$ret$1;
           $l$block_0: {
             var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
@@ -49093,7 +49484,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_2;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_2 = value_2_2_6;
@@ -49118,7 +49509,7 @@
       var tmp_4 = onMouseEnter(tmp_1, tmp$ret$3);
       var tmp$ret$7;
       $l$block_6: {
-        var tmp2_remember$composable_0 = _no_name_provided_$factory_396(this._$isHovered$delegate_16);
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_409(this._$isHovered$delegate_28);
         var tmp3_remember$composable_0 = $composer_0;
         var $composer_1_0 = tmp3_remember$composable_0;
         $composer_1_0.startReplaceableGroup_majfzk_k$(884179877);
@@ -49126,7 +49517,7 @@
         var tmp$ret$6;
         $l$block_5: {
           var tmp1_cache_0_3_0 = $composer_1_0;
-          var tmp2_cache_0_4_0 = $composer_1_0.changed_wi7j7l_k$(this._$isHovered$delegate_16);
+          var tmp2_cache_0_4_0 = $composer_1_0.changed_wi7j7l_k$(this._$isHovered$delegate_28);
           var tmp$ret$5;
           $l$block_4: {
             var tmp0_let_0_5_0 = tmp1_cache_0_3_0.rememberedValue_0_k$();
@@ -49135,7 +49526,7 @@
             var tmp$ret$4;
             $l$block_3: {
               var tmp_5;
-              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6_0 = tmp2_remember$composable_0();
                 tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6_0);
                 tmp_5 = value_2_2_6_0;
@@ -49159,253 +49550,361 @@
       }
       var tmp1_modifier = onMouseLeave(tmp_4, tmp$ret$7);
       var tmp_7 = $composer_0;
-      Box$composable(tmp1_modifier, tmp0_contentAlignment, composableLambda(tmp_7, -819890773, true, _no_name_provided_$factory_397(this._$icon_6, this._$$dirty_16, this._$isHovered$delegate_16)), $composer_0, 384, 0);
+      Box$composable(tmp1_modifier, tmp0_contentAlignment, composableLambda(tmp_7, -819888993, true, _no_name_provided_$factory_410(this._$icon_10, this._$$dirty_20, this._$isHovered$delegate_28)), $composer_0, 384, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__437.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__450.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_sv8dqv_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__437.$metadata$ = {
+  _no_name_provided__450.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__438($modifier, $href, $icon, $$changed, $$default) {
+  function _no_name_provided__451($modifier, $href, $icon, $$changed, $$default) {
     this._$modifier_18 = $modifier;
-    this._$href_8 = $href;
-    this._$icon_7 = $icon;
-    this._$$changed_36 = $$changed;
-    this._$$default_27 = $$default;
+    this._$href_11 = $href;
+    this._$icon_11 = $icon;
+    this._$$changed_38 = $$changed;
+    this._$$default_29 = $$default;
   }
-  _no_name_provided__438.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return SocialLinkItem$composable$lambda_1(this._$modifier_18, this._$href_8, this._$icon_7, this._$$changed_36, this._$$default_27, p0, p1);
+  _no_name_provided__451.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return SocialLinkItem$composable$lambda_1(this._$modifier_18, this._$href_11, this._$icon_11, this._$$changed_38, this._$$default_29, p0, p1);
   };
-  _no_name_provided__438.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__451.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__438.$metadata$ = {
+  _no_name_provided__451.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_367() {
+  function _no_name_provided_$factory_364() {
+    var i = new _no_name_provided__405();
+    return function (p1) {
+      i.invoke_sbq6jm_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_365() {
     var i = new _no_name_provided__408();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_368() {
+  function _no_name_provided_$factory_366() {
     var i = new _no_name_provided__411();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_369() {
-    var i = new _no_name_provided__414();
-    return function (p1) {
-      i.invoke_sbq6jm_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_370($text, $color, $isHovered$delegate, $$dirty) {
-    var i = new _no_name_provided__419($text, $color, $isHovered$delegate, $$dirty);
+  function _no_name_provided_$factory_367($text, $color, $isHovered$delegate, $$dirty) {
+    var i = new _no_name_provided__416($text, $color, $isHovered$delegate, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_sv8dqv_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_371($text, $href, $color, $$changed, $$default) {
-    var i = new _no_name_provided__420($text, $href, $color, $$changed, $$default);
+  function _no_name_provided_$factory_368($text, $href, $color, $$changed, $$default) {
+    var i = new _no_name_provided__417($text, $href, $color, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_372($isHovered$delegate, $icon, $$dirty, $text) {
-    var i = new _no_name_provided__428($isHovered$delegate, $icon, $$dirty, $text);
+  function _no_name_provided_$factory_369($text, $color, $isHovered$delegate, $$dirty) {
+    var i = new _no_name_provided__422($text, $color, $isHovered$delegate, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_sv8dqv_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_373($href, $text, $icon, $$changed, $$default) {
-    var i = new _no_name_provided__429($href, $text, $icon, $$changed, $$default);
+  function _no_name_provided_$factory_370($text, $href, $color, $$changed, $$default) {
+    var i = new _no_name_provided__423($text, $href, $color, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_374($icon, $$dirty) {
-    var i = new _no_name_provided__430($icon, $$dirty);
+  function _no_name_provided_$factory_371($isHovered$delegate, $icon, $$dirty, $text) {
+    var i = new _no_name_provided__431($isHovered$delegate, $icon, $$dirty, $text);
     return function (p1, p2, p3) {
       i.invoke_sv8dqv_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_375($modifier, $href, $icon, $$changed, $$default) {
-    var i = new _no_name_provided__431($modifier, $href, $icon, $$changed, $$default);
+  function _no_name_provided_$factory_372($href, $text, $icon, $$changed, $$default) {
+    var i = new _no_name_provided__432($href, $text, $icon, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_376($isHovered$delegate, $icon, $$dirty) {
-    var i = new _no_name_provided__437($isHovered$delegate, $icon, $$dirty);
+  function _no_name_provided_$factory_373($isHovered$delegate, $icon, $$dirty, $text) {
+    var i = new _no_name_provided__440($isHovered$delegate, $icon, $$dirty, $text);
     return function (p1, p2, p3) {
       i.invoke_sv8dqv_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_377($modifier, $href, $icon, $$changed, $$default) {
-    var i = new _no_name_provided__438($modifier, $href, $icon, $$changed, $$default);
+  function _no_name_provided_$factory_374($href, $text, $icon, $$changed, $$default) {
+    var i = new _no_name_provided__441($href, $text, $icon, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_378() {
-    var i = new _no_name_provided__406();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_379() {
-    var i = new _no_name_provided__407();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_380() {
-    var i = new _no_name_provided__409();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_381() {
-    var i = new _no_name_provided__410();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_382() {
-    var i = new _no_name_provided__412();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_383() {
-    var i = new _no_name_provided__413();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_384($isHovered$delegate) {
-    var i = new _no_name_provided__415($isHovered$delegate);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_385($isHovered$delegate) {
-    var i = new _no_name_provided__416($isHovered$delegate);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_386($isHovered$delegate) {
-    var i = new _no_name_provided__417($isHovered$delegate);
-    return function (p1) {
-      i.invoke_9dcepc_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_387($isHovered$delegate) {
-    var i = new _no_name_provided__418($isHovered$delegate);
-    return function (p1) {
-      i.invoke_9dcepc_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_388() {
-    var i = new _no_name_provided__422();
+  function _no_name_provided_$factory_375($ctx, $href) {
+    var i = new _no_name_provided__442($ctx, $href);
     return function () {
       i.invoke_sv8swh_k$();
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_389($isHovered$delegate) {
-    var i = new _no_name_provided__423($isHovered$delegate);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_390($isHovered$delegate) {
-    var i = new _no_name_provided__424($isHovered$delegate);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_391($icon, $$dirty, $text, $isHovered$delegate) {
-    var i = new _no_name_provided__425($icon, $$dirty, $text, $isHovered$delegate);
+  function _no_name_provided_$factory_376($icon, $$dirty) {
+    var i = new _no_name_provided__443($icon, $$dirty);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
+  function _no_name_provided_$factory_377($modifier, $href, $icon, $$changed, $$default) {
+    var i = new _no_name_provided__444($modifier, $href, $icon, $$changed, $$default);
+    return function (p1, p2) {
+      i.invoke_xtxync_k$(p1, p2);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_378($isHovered$delegate, $icon, $$dirty) {
+    var i = new _no_name_provided__450($isHovered$delegate, $icon, $$dirty);
+    return function (p1, p2, p3) {
+      i.invoke_sv8dqv_k$(p1, p2, p3);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_379($modifier, $href, $icon, $$changed, $$default) {
+    var i = new _no_name_provided__451($modifier, $href, $icon, $$changed, $$default);
+    return function (p1, p2) {
+      i.invoke_xtxync_k$(p1, p2);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_380() {
+    var i = new _no_name_provided__403();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_381() {
+    var i = new _no_name_provided__404();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_382() {
+    var i = new _no_name_provided__406();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_383() {
+    var i = new _no_name_provided__407();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_384() {
+    var i = new _no_name_provided__409();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_385() {
+    var i = new _no_name_provided__410();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_386($isHovered$delegate) {
+    var i = new _no_name_provided__412($isHovered$delegate);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_387($isHovered$delegate) {
+    var i = new _no_name_provided__413($isHovered$delegate);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_388($isHovered$delegate) {
+    var i = new _no_name_provided__414($isHovered$delegate);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_389($isHovered$delegate) {
+    var i = new _no_name_provided__415($isHovered$delegate);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_390($isHovered$delegate) {
+    var i = new _no_name_provided__418($isHovered$delegate);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_391($isHovered$delegate) {
+    var i = new _no_name_provided__419($isHovered$delegate);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
   function _no_name_provided_$factory_392($isHovered$delegate) {
-    var i = new _no_name_provided__426($isHovered$delegate);
+    var i = new _no_name_provided__420($isHovered$delegate);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_393($isHovered$delegate) {
-    var i = new _no_name_provided__427($isHovered$delegate);
+    var i = new _no_name_provided__421($isHovered$delegate);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_394($icon, $$dirty, $text, $isHovered$delegate) {
-    var i = new _no_name_provided__421($icon, $$dirty, $text, $isHovered$delegate);
-    return function (p1, p2, p3) {
-      i.invoke_fpi9a8_k$(p1, p2, p3);
+  function _no_name_provided_$factory_394() {
+    var i = new _no_name_provided__425();
+    return function () {
+      i.invoke_sv8swh_k$();
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_395($isHovered$delegate) {
-    var i = new _no_name_provided__432($isHovered$delegate);
+    var i = new _no_name_provided__426($isHovered$delegate);
     return function () {
       return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_396($isHovered$delegate) {
-    var i = new _no_name_provided__433($isHovered$delegate);
+    var i = new _no_name_provided__427($isHovered$delegate);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_397($icon, $$dirty, $isHovered$delegate) {
-    var i = new _no_name_provided__434($icon, $$dirty, $isHovered$delegate);
-    return function (p1, p2, p3) {
-      i.invoke_jpel0v_k$(p1, p2, p3);
+  function _no_name_provided_$factory_397($icon, $$dirty, $text, $isHovered$delegate) {
+    var i = new _no_name_provided__428($icon, $$dirty, $text, $isHovered$delegate);
+    return function (p1, p2) {
+      i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_398($isHovered$delegate) {
-    var i = new _no_name_provided__435($isHovered$delegate);
+    var i = new _no_name_provided__429($isHovered$delegate);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_399($isHovered$delegate) {
+    var i = new _no_name_provided__430($isHovered$delegate);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_400($icon, $$dirty, $text, $isHovered$delegate) {
+    var i = new _no_name_provided__424($icon, $$dirty, $text, $isHovered$delegate);
+    return function (p1, p2, p3) {
+      i.invoke_fpi9a8_k$(p1, p2, p3);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_401() {
+    var i = new _no_name_provided__434();
+    return function () {
+      i.invoke_sv8swh_k$();
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_402($isHovered$delegate) {
+    var i = new _no_name_provided__435($isHovered$delegate);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_403($isHovered$delegate) {
     var i = new _no_name_provided__436($isHovered$delegate);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_404($icon, $$dirty, $text, $isHovered$delegate) {
+    var i = new _no_name_provided__437($icon, $$dirty, $text, $isHovered$delegate);
+    return function (p1, p2) {
+      i.invoke_5vwf3d_k$(p1, p2);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_405($isHovered$delegate) {
+    var i = new _no_name_provided__438($isHovered$delegate);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_406($isHovered$delegate) {
+    var i = new _no_name_provided__439($isHovered$delegate);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_407($icon, $$dirty, $text, $isHovered$delegate) {
+    var i = new _no_name_provided__433($icon, $$dirty, $text, $isHovered$delegate);
+    return function (p1, p2, p3) {
+      i.invoke_fpi9a8_k$(p1, p2, p3);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_408($isHovered$delegate) {
+    var i = new _no_name_provided__445($isHovered$delegate);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_409($isHovered$delegate) {
+    var i = new _no_name_provided__446($isHovered$delegate);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_410($icon, $$dirty, $isHovered$delegate) {
+    var i = new _no_name_provided__447($icon, $$dirty, $isHovered$delegate);
+    return function (p1, p2, p3) {
+      i.invoke_jpel0v_k$(p1, p2, p3);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_411($isHovered$delegate) {
+    var i = new _no_name_provided__448($isHovered$delegate);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_412($isHovered$delegate) {
+    var i = new _no_name_provided__449($isHovered$delegate);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
@@ -49431,21 +49930,21 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(link_0._v) ? 32 : 16);
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       if (!(($default & 2) === 0))
         link_0._v = NavSections_HOME_getInstance()._route;
       var tmp = link_0._v;
       var tmp_0 = toModifier$composable(LinkStyle_1, null, $composer_0, 0, 1);
       var tmp_1 = asAttributesBuilder$default(tmp_0, null, 1, null);
       var tmp_2 = $composer_0;
-      Link$composable(tmp, tmp_1, composableLambda(tmp_2, -819895468, true, _no_name_provided_$factory_403(modifier_0)), $composer_0, 384 | 14 & $dirty >> 3, 0);
+      Link$composable(tmp, tmp_1, composableLambda(tmp_2, -819895468, true, _no_name_provided_$factory_416(modifier_0)), $composer_0, 384 | 14 & $dirty >> 3, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_404(modifier_0, link_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_417(modifier_0, link_0, $changed, $default));
     }
   }
   function AWAvatar$composable(modifier, image, size_1, margin_3, $composer, $changed, $default) {
@@ -49473,7 +49972,7 @@
       $composer_0.startDefaults_sv8swh_k$();
       if (($changed & 1) === 0 ? true : $composer_0._get_defaultsInvalid__0_k$()) {
         if (!(($default & 1) === 0))
-          modifier_0._v = Companion_getInstance_40();
+          modifier_0._v = Companion_getInstance_39();
         if (!(($default & 2) === 0))
           image_0._v = 'images/avatar.png';
         if (!(($default & 4) === 0)) {
@@ -49500,7 +49999,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_405(modifier_0, image_0, size_2, margin_4, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_418(modifier_0, image_0, size_2, margin_4, $changed, $default));
     }
   }
   function AWHeroImage$composable(image, $composer, $changed, $default) {
@@ -49525,7 +50024,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_406(image_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_419(image_0, $changed, $default));
     }
   }
   function AWLogo$composable$lambda($modifier, $link, $$changed, $$default, $composer, $force) {
@@ -49537,105 +50036,105 @@
   function AWHeroImage$composable$lambda($image, $$changed, $$default, $composer, $force) {
     return AWHeroImage$composable($image._v, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__439() {
+  function _no_name_provided__452() {
   }
-  _no_name_provided__439.prototype.invoke_0_k$ = function () {
-    var tmp0_$receiver = fillMaxWidth(Companion_getInstance_40(), _get_percent_(90));
+  _no_name_provided__452.prototype.invoke_0_k$ = function () {
+    var tmp0_$receiver = fillMaxWidth(Companion_getInstance_39(), _get_percent_(90));
     var tmp1_bottom = _get_em_(-3.0);
     var tmp2_top = _get_em_(2);
     return margin$default(tmp0_$receiver, tmp2_top, null, tmp1_bottom, null, 10, null);
   };
-  _no_name_provided__439.$metadata$ = {
+  _no_name_provided__452.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__440() {
+  function _no_name_provided__453() {
   }
-  _no_name_provided__440.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_407());
+  _no_name_provided__453.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_420());
   };
-  _no_name_provided__440.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__453.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__440.$metadata$ = {
+  _no_name_provided__453.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__441() {
+  function _no_name_provided__454() {
   }
-  _no_name_provided__441.prototype.invoke_0_k$ = function () {
-    var tmp = fontSize_0(Companion_getInstance_40(), _get_px_(18));
+  _no_name_provided__454.prototype.invoke_0_k$ = function () {
+    var tmp = fontSize_0(Companion_getInstance_39(), _get_px_(18));
     Colors_getInstance_0();
     var tmp_0 = color_1(tmp, '#7510F7');
     var tmp_1 = _get_em_(1);
     return padding$default(tmp_0, null, tmp_1, null, null, 13, null);
   };
-  _no_name_provided__441.$metadata$ = {
+  _no_name_provided__454.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__442() {
+  function _no_name_provided__455() {
   }
-  _no_name_provided__442.prototype.invoke_0_k$ = function () {
-    return color_1(Companion_getInstance_40(), Colors_getInstance_0()._white);
+  _no_name_provided__455.prototype.invoke_0_k$ = function () {
+    return color_1(Companion_getInstance_39(), Colors_getInstance_0()._white);
   };
-  _no_name_provided__442.$metadata$ = {
+  _no_name_provided__455.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__443() {
+  function _no_name_provided__456() {
   }
-  _no_name_provided__443.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_408());
+  _no_name_provided__456.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_421());
     var tmp = _get_hover_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_409());
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_422());
   };
-  _no_name_provided__443.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__456.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__443.$metadata$ = {
+  _no_name_provided__456.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__444() {
+  function _no_name_provided__457() {
   }
-  _no_name_provided__444.prototype.invoke_0_k$ = function () {
-    return textDecorationLine_0(Companion_getInstance_40(), Companion_getInstance_33()._get_None__0_k$());
+  _no_name_provided__457.prototype.invoke_0_k$ = function () {
+    return textDecorationLine_0(Companion_getInstance_39(), Companion_getInstance_32()._get_None__0_k$());
   };
-  _no_name_provided__444.$metadata$ = {
+  _no_name_provided__457.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__445() {
+  function _no_name_provided__458() {
   }
-  _no_name_provided__445.prototype.invoke_0_k$ = function () {
-    return textDecorationLine_0(Companion_getInstance_40(), Companion_getInstance_33()._get_Underline__0_k$());
+  _no_name_provided__458.prototype.invoke_0_k$ = function () {
+    return textDecorationLine_0(Companion_getInstance_39(), Companion_getInstance_32()._get_Underline__0_k$());
   };
-  _no_name_provided__445.$metadata$ = {
+  _no_name_provided__458.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__446() {
+  function _no_name_provided__459() {
   }
-  _no_name_provided__446.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_410());
+  _no_name_provided__459.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_423());
     var tmp = _get_hover_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_411());
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_424());
   };
-  _no_name_provided__446.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__459.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__446.$metadata$ = {
+  _no_name_provided__459.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__447($modifier) {
+  function _no_name_provided__460($modifier) {
     this._$modifier_19 = $modifier;
   }
-  _no_name_provided__447.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
+  _no_name_provided__460.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp = fontSize_0(this._$modifier_19._v, _get_px_(48));
@@ -49644,146 +50143,146 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__447.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__460.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_sv8dqv_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__447.$metadata$ = {
+  _no_name_provided__460.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__448($modifier, $link, $$changed, $$default) {
+  function _no_name_provided__461($modifier, $link, $$changed, $$default) {
     this._$modifier_20 = $modifier;
     this._$link = $link;
-    this._$$changed_37 = $$changed;
-    this._$$default_28 = $$default;
+    this._$$changed_39 = $$changed;
+    this._$$default_30 = $$default;
   }
-  _no_name_provided__448.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return AWLogo$composable$lambda(this._$modifier_20, this._$link, this._$$changed_37, this._$$default_28, p0, p1);
+  _no_name_provided__461.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return AWLogo$composable$lambda(this._$modifier_20, this._$link, this._$$changed_39, this._$$default_30, p0, p1);
   };
-  _no_name_provided__448.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__461.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__448.$metadata$ = {
+  _no_name_provided__461.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__449($modifier, $image, $size, $margin, $$changed, $$default) {
+  function _no_name_provided__462($modifier, $image, $size, $margin, $$changed, $$default) {
     this._$modifier_21 = $modifier;
     this._$image = $image;
     this._$size_5 = $size;
     this._$margin = $margin;
-    this._$$changed_38 = $$changed;
-    this._$$default_29 = $$default;
+    this._$$changed_40 = $$changed;
+    this._$$default_31 = $$default;
   }
-  _no_name_provided__449.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return AWAvatar$composable$lambda(this._$modifier_21, this._$image, this._$size_5, this._$margin, this._$$changed_38, this._$$default_29, p0, p1);
+  _no_name_provided__462.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return AWAvatar$composable$lambda(this._$modifier_21, this._$image, this._$size_5, this._$margin, this._$$changed_40, this._$$default_31, p0, p1);
   };
-  _no_name_provided__449.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__462.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__449.$metadata$ = {
+  _no_name_provided__462.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__450($image, $$changed, $$default) {
+  function _no_name_provided__463($image, $$changed, $$default) {
     this._$image_0 = $image;
-    this._$$changed_39 = $$changed;
-    this._$$default_30 = $$default;
+    this._$$changed_41 = $$changed;
+    this._$$default_32 = $$default;
   }
-  _no_name_provided__450.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return AWHeroImage$composable$lambda(this._$image_0, this._$$changed_39, this._$$default_30, p0, p1);
+  _no_name_provided__463.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return AWHeroImage$composable$lambda(this._$image_0, this._$$changed_41, this._$$default_32, p0, p1);
   };
-  _no_name_provided__450.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__463.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__450.$metadata$ = {
+  _no_name_provided__463.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_400() {
-    var i = new _no_name_provided__440();
+  function _no_name_provided_$factory_413() {
+    var i = new _no_name_provided__453();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_401() {
-    var i = new _no_name_provided__443();
+  function _no_name_provided_$factory_414() {
+    var i = new _no_name_provided__456();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_402() {
-    var i = new _no_name_provided__446();
+  function _no_name_provided_$factory_415() {
+    var i = new _no_name_provided__459();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_403($modifier) {
-    var i = new _no_name_provided__447($modifier);
+  function _no_name_provided_$factory_416($modifier) {
+    var i = new _no_name_provided__460($modifier);
     return function (p1, p2, p3) {
       i.invoke_sv8dqv_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_404($modifier, $link, $$changed, $$default) {
-    var i = new _no_name_provided__448($modifier, $link, $$changed, $$default);
+  function _no_name_provided_$factory_417($modifier, $link, $$changed, $$default) {
+    var i = new _no_name_provided__461($modifier, $link, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_405($modifier, $image, $size, $margin, $$changed, $$default) {
-    var i = new _no_name_provided__449($modifier, $image, $size, $margin, $$changed, $$default);
+  function _no_name_provided_$factory_418($modifier, $image, $size, $margin, $$changed, $$default) {
+    var i = new _no_name_provided__462($modifier, $image, $size, $margin, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_406($image, $$changed, $$default) {
-    var i = new _no_name_provided__450($image, $$changed, $$default);
+  function _no_name_provided_$factory_419($image, $$changed, $$default) {
+    var i = new _no_name_provided__463($image, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_407() {
-    var i = new _no_name_provided__439();
+  function _no_name_provided_$factory_420() {
+    var i = new _no_name_provided__452();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_408() {
-    var i = new _no_name_provided__441();
+  function _no_name_provided_$factory_421() {
+    var i = new _no_name_provided__454();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_409() {
-    var i = new _no_name_provided__442();
+  function _no_name_provided_$factory_422() {
+    var i = new _no_name_provided__455();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_410() {
-    var i = new _no_name_provided__444();
+  function _no_name_provided_$factory_423() {
+    var i = new _no_name_provided__457();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_411() {
-    var i = new _no_name_provided__445();
+  function _no_name_provided_$factory_424() {
+    var i = new _no_name_provided__458();
     return function () {
       return i.invoke_0_k$();
     };
@@ -49807,7 +50306,7 @@
       if (!(($default & 1) === 0))
         size_2._v = 1.0;
       if (!(($default & 2) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       var tmp = size_0(modifier_0._v, _get_em_(size_2._v));
       Box$composable(tmp, null, null, $composer_0, 0, 6);
     } else
@@ -49816,32 +50315,32 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_412(size_2, modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_425(size_2, modifier_0, $changed, $default));
     }
   }
   function EmSpacer$composable$lambda($size, $modifier, $$changed, $$default, $composer, $force) {
     return EmSpacer$composable($size._v, $modifier._v, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__451($size, $modifier, $$changed, $$default) {
+  function _no_name_provided__464($size, $modifier, $$changed, $$default) {
     this._$size_6 = $size;
     this._$modifier_22 = $modifier;
-    this._$$changed_40 = $$changed;
-    this._$$default_31 = $$default;
+    this._$$changed_42 = $$changed;
+    this._$$default_33 = $$default;
   }
-  _no_name_provided__451.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return EmSpacer$composable$lambda(this._$size_6, this._$modifier_22, this._$$changed_40, this._$$default_31, p0, p1);
+  _no_name_provided__464.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return EmSpacer$composable$lambda(this._$size_6, this._$modifier_22, this._$$changed_42, this._$$default_33, p0, p1);
   };
-  _no_name_provided__451.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__464.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__451.$metadata$ = {
+  _no_name_provided__464.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_412($size, $modifier, $$changed, $$default) {
-    var i = new _no_name_provided__451($size, $modifier, $$changed, $$default);
+  function _no_name_provided_$factory_425($size, $modifier, $$changed, $$default) {
+    var i = new _no_name_provided__464($size, $modifier, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -49870,14 +50369,14 @@
         Colors_getInstance_0();
         color_3._v = '#141c3a';
       }var tmp = $composer_0;
-      H1$composable(null, composableLambda(tmp, -819895724, true, _no_name_provided_$factory_417(text, color_3, $dirty)), $composer_0, 48, 1);
+      H1$composable(null, composableLambda(tmp, -819895724, true, _no_name_provided_$factory_430(text, color_3, $dirty)), $composer_0, 48, 1);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_418(text, color_3, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_431(text, color_3, $changed, $default));
     }
   }
   function H2Subtitle$composable(text, color_2, fontSize_1, opacity_3, $composer, $changed, $default) {
@@ -49927,7 +50426,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_419(text, color_3, fontSize_2, opacity_4, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_432(text, color_3, fontSize_2, opacity_4, $changed, $default));
     }
   }
   function ColoredText$composable(text, color_2, $composer, $changed, $default) {
@@ -49959,7 +50458,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_420(text, color_3, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_433(text, color_3, $changed, $default));
     }
   }
   function SectionBody$composable(text, color_2, $composer, $changed, $default) {
@@ -49992,7 +50491,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_421(text, color_3, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_434(text, color_3, $changed, $default));
     }
   }
   function H1Text$composable$lambda($text, $color, $$changed, $$default, $composer, $force) {
@@ -50007,325 +50506,325 @@
   function SectionBody$composable$lambda($text, $color, $$changed, $$default, $composer, $force) {
     return SectionBody$composable($text, $color._v, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__452() {
+  function _no_name_provided__465() {
   }
-  _no_name_provided__452.prototype.invoke_0_k$ = function () {
-    return maxWidth_0(textAlign_0(fontSize_0(fontFamily_0(Companion_getInstance_40(), ['europa', 'sans-serif']), _get_em_(1)), Companion_getInstance_34()._get_Center__0_k$()), _get_px_(1000));
-  };
-  _no_name_provided__452.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__453() {
-  }
-  _no_name_provided__453.prototype.invoke_0_k$ = function () {
-    return fontSize_0(Companion_getInstance_40(), _get_em_(1.2));
-  };
-  _no_name_provided__453.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__454() {
-  }
-  _no_name_provided__454.prototype.invoke_0_k$ = function () {
-    return fontSize_0(Companion_getInstance_40(), _get_em_(1.5));
-  };
-  _no_name_provided__454.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__455() {
-  }
-  _no_name_provided__455.prototype.invoke_0_k$ = function () {
-    return fontSize_0(Companion_getInstance_40(), _get_em_(1.75));
-  };
-  _no_name_provided__455.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__456() {
-  }
-  _no_name_provided__456.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_422());
-    var tmp = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_423());
-    var tmp_0 = Breakpoint_MD_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_424());
-    var tmp_1 = Breakpoint_LG_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp_1, _no_name_provided_$factory_425());
-  };
-  _no_name_provided__456.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__456.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__457() {
-  }
-  _no_name_provided__457.prototype.invoke_0_k$ = function () {
-    return fontSize_0(fontWeight_0(Companion_getInstance_40(), Companion_getInstance_30()._get_Lighter__0_k$()), _get_em_(1));
-  };
-  _no_name_provided__457.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__458() {
-  }
-  _no_name_provided__458.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
-    $this$addVariant.base_if27nh_k$(_no_name_provided_$factory_426());
-  };
-  _no_name_provided__458.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__458.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__459() {
-  }
-  _no_name_provided__459.prototype.invoke_0_k$ = function () {
-    return textAlign_0(fontSize_0(fontWeight_0(Companion_getInstance_40(), Companion_getInstance_30()._get_Bold__0_k$()), _get_em_(0.85)), Companion_getInstance_34()._get_Justify__0_k$());
-  };
-  _no_name_provided__459.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__460() {
-  }
-  _no_name_provided__460.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
-    $this$addVariant.base_if27nh_k$(_no_name_provided_$factory_427());
-  };
-  _no_name_provided__460.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__460.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__461() {
-  }
-  _no_name_provided__461.prototype.invoke_0_k$ = function () {
-    return fontWeight_0(Companion_getInstance_40(), Companion_getInstance_30()._get_Normal__0_k$());
-  };
-  _no_name_provided__461.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__462() {
-  }
-  _no_name_provided__462.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
-    $this$addVariant.base_if27nh_k$(_no_name_provided_$factory_428());
-  };
-  _no_name_provided__462.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__462.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__463($text, $color, $$dirty) {
-    this._$text_7 = $text;
-    this._$color_6 = $color;
-    this._$$dirty_17 = $$dirty;
-  }
-  _no_name_provided__463.prototype.invoke_j69ozo_k$ = function ($this$H1, $composer, $changed) {
-    var $composer_0 = $composer;
-    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = color_1(toModifier$composable(TextStyle_0, BoldTextStyle, $composer_0, 0, 0), this._$color_6._v);
-      Text$composable_0(this._$text_7, tmp, null, $composer_0, 14 & this._$$dirty_17, 4);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-  };
-  _no_name_provided__463.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
-    var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
-    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
-    this.invoke_j69ozo_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__463.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__464($text, $color, $$changed, $$default) {
-    this._$text_8 = $text;
-    this._$color_7 = $color;
-    this._$$changed_41 = $$changed;
-    this._$$default_32 = $$default;
-  }
-  _no_name_provided__464.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return H1Text$composable$lambda(this._$text_8, this._$color_7, this._$$changed_41, this._$$default_32, p0, p1);
-  };
-  _no_name_provided__464.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__464.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__465($text, $color, $fontSize, $opacity, $$changed, $$default) {
-    this._$text_9 = $text;
-    this._$color_8 = $color;
-    this._$fontSize = $fontSize;
-    this._$opacity = $opacity;
-    this._$$changed_42 = $$changed;
-    this._$$default_33 = $$default;
-  }
-  _no_name_provided__465.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return H2Subtitle$composable$lambda(this._$text_9, this._$color_8, this._$fontSize, this._$opacity, this._$$changed_42, this._$$default_33, p0, p1);
-  };
-  _no_name_provided__465.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__465.prototype.invoke_0_k$ = function () {
+    return maxWidth_0(textAlign_0(fontSize_0(fontFamily_0(Companion_getInstance_39(), ['europa', 'sans-serif']), _get_em_(1)), Companion_getInstance_33()._get_Center__0_k$()), _get_px_(1000));
   };
   _no_name_provided__465.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__466($text, $color, $$changed, $$default) {
-    this._$text_10 = $text;
-    this._$color_9 = $color;
-    this._$$changed_43 = $$changed;
-    this._$$default_34 = $$default;
+  function _no_name_provided__466() {
   }
-  _no_name_provided__466.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return ColoredText$composable$lambda(this._$text_10, this._$color_9, this._$$changed_43, this._$$default_34, p0, p1);
-  };
-  _no_name_provided__466.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__466.prototype.invoke_0_k$ = function () {
+    return fontSize_0(Companion_getInstance_39(), _get_em_(1.2));
   };
   _no_name_provided__466.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__467($text, $color, $$changed, $$default) {
-    this._$text_11 = $text;
-    this._$color_10 = $color;
-    this._$$changed_44 = $$changed;
-    this._$$default_35 = $$default;
+  function _no_name_provided__467() {
   }
-  _no_name_provided__467.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return SectionBody$composable$lambda(this._$text_11, this._$color_10, this._$$changed_44, this._$$default_35, p0, p1);
-  };
-  _no_name_provided__467.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
-    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__467.prototype.invoke_0_k$ = function () {
+    return fontSize_0(Companion_getInstance_39(), _get_em_(1.5));
   };
   _no_name_provided__467.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_413() {
-    var i = new _no_name_provided__456();
+  function _no_name_provided__468() {
+  }
+  _no_name_provided__468.prototype.invoke_0_k$ = function () {
+    return fontSize_0(Companion_getInstance_39(), _get_em_(1.75));
+  };
+  _no_name_provided__468.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__469() {
+  }
+  _no_name_provided__469.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_435());
+    var tmp = Breakpoint_SM_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_436());
+    var tmp_0 = Breakpoint_MD_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_437());
+    var tmp_1 = Breakpoint_LG_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp_1, _no_name_provided_$factory_438());
+  };
+  _no_name_provided__469.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__469.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__470() {
+  }
+  _no_name_provided__470.prototype.invoke_0_k$ = function () {
+    return fontSize_0(fontWeight_0(Companion_getInstance_39(), Companion_getInstance_29()._get_Lighter__0_k$()), _get_em_(1));
+  };
+  _no_name_provided__470.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__471() {
+  }
+  _no_name_provided__471.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
+    $this$addVariant.base_if27nh_k$(_no_name_provided_$factory_439());
+  };
+  _no_name_provided__471.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__471.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__472() {
+  }
+  _no_name_provided__472.prototype.invoke_0_k$ = function () {
+    return textAlign_0(fontSize_0(fontWeight_0(Companion_getInstance_39(), Companion_getInstance_29()._get_Bold__0_k$()), _get_em_(0.85)), Companion_getInstance_33()._get_Justify__0_k$());
+  };
+  _no_name_provided__472.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__473() {
+  }
+  _no_name_provided__473.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
+    $this$addVariant.base_if27nh_k$(_no_name_provided_$factory_440());
+  };
+  _no_name_provided__473.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__473.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__474() {
+  }
+  _no_name_provided__474.prototype.invoke_0_k$ = function () {
+    return fontWeight_0(Companion_getInstance_39(), Companion_getInstance_29()._get_Normal__0_k$());
+  };
+  _no_name_provided__474.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__475() {
+  }
+  _no_name_provided__475.prototype.invoke_sbq6jm_k$ = function ($this$addVariant) {
+    $this$addVariant.base_if27nh_k$(_no_name_provided_$factory_441());
+  };
+  _no_name_provided__475.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__475.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__476($text, $color, $$dirty) {
+    this._$text_13 = $text;
+    this._$color_8 = $color;
+    this._$$dirty_21 = $$dirty;
+  }
+  _no_name_provided__476.prototype.invoke_j69ozo_k$ = function ($this$H1, $composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var tmp = color_1(toModifier$composable(TextStyle_0, BoldTextStyle, $composer_0, 0, 0), this._$color_8._v);
+      Text$composable_0(this._$text_13, tmp, null, $composer_0, 14 & this._$$dirty_21, 4);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__476.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+    var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
+    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
+    this.invoke_j69ozo_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__476.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__477($text, $color, $$changed, $$default) {
+    this._$text_14 = $text;
+    this._$color_9 = $color;
+    this._$$changed_43 = $$changed;
+    this._$$default_34 = $$default;
+  }
+  _no_name_provided__477.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return H1Text$composable$lambda(this._$text_14, this._$color_9, this._$$changed_43, this._$$default_34, p0, p1);
+  };
+  _no_name_provided__477.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__477.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__478($text, $color, $fontSize, $opacity, $$changed, $$default) {
+    this._$text_15 = $text;
+    this._$color_10 = $color;
+    this._$fontSize = $fontSize;
+    this._$opacity = $opacity;
+    this._$$changed_44 = $$changed;
+    this._$$default_35 = $$default;
+  }
+  _no_name_provided__478.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return H2Subtitle$composable$lambda(this._$text_15, this._$color_10, this._$fontSize, this._$opacity, this._$$changed_44, this._$$default_35, p0, p1);
+  };
+  _no_name_provided__478.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__478.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__479($text, $color, $$changed, $$default) {
+    this._$text_16 = $text;
+    this._$color_11 = $color;
+    this._$$changed_45 = $$changed;
+    this._$$default_36 = $$default;
+  }
+  _no_name_provided__479.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return ColoredText$composable$lambda(this._$text_16, this._$color_11, this._$$changed_45, this._$$default_36, p0, p1);
+  };
+  _no_name_provided__479.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__479.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__480($text, $color, $$changed, $$default) {
+    this._$text_17 = $text;
+    this._$color_12 = $color;
+    this._$$changed_46 = $$changed;
+    this._$$default_37 = $$default;
+  }
+  _no_name_provided__480.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return SectionBody$composable$lambda(this._$text_17, this._$color_12, this._$$changed_46, this._$$default_37, p0, p1);
+  };
+  _no_name_provided__480.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
+    this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__480.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided_$factory_426() {
+    var i = new _no_name_provided__469();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_414() {
-    var i = new _no_name_provided__458();
+  function _no_name_provided_$factory_427() {
+    var i = new _no_name_provided__471();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_415() {
-    var i = new _no_name_provided__460();
+  function _no_name_provided_$factory_428() {
+    var i = new _no_name_provided__473();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_416() {
-    var i = new _no_name_provided__462();
+  function _no_name_provided_$factory_429() {
+    var i = new _no_name_provided__475();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_417($text, $color, $$dirty) {
-    var i = new _no_name_provided__463($text, $color, $$dirty);
+  function _no_name_provided_$factory_430($text, $color, $$dirty) {
+    var i = new _no_name_provided__476($text, $color, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_j69ozo_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_418($text, $color, $$changed, $$default) {
-    var i = new _no_name_provided__464($text, $color, $$changed, $$default);
+  function _no_name_provided_$factory_431($text, $color, $$changed, $$default) {
+    var i = new _no_name_provided__477($text, $color, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_419($text, $color, $fontSize, $opacity, $$changed, $$default) {
-    var i = new _no_name_provided__465($text, $color, $fontSize, $opacity, $$changed, $$default);
+  function _no_name_provided_$factory_432($text, $color, $fontSize, $opacity, $$changed, $$default) {
+    var i = new _no_name_provided__478($text, $color, $fontSize, $opacity, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_420($text, $color, $$changed, $$default) {
-    var i = new _no_name_provided__466($text, $color, $$changed, $$default);
+  function _no_name_provided_$factory_433($text, $color, $$changed, $$default) {
+    var i = new _no_name_provided__479($text, $color, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_421($text, $color, $$changed, $$default) {
-    var i = new _no_name_provided__467($text, $color, $$changed, $$default);
+  function _no_name_provided_$factory_434($text, $color, $$changed, $$default) {
+    var i = new _no_name_provided__480($text, $color, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_422() {
-    var i = new _no_name_provided__452();
+  function _no_name_provided_$factory_435() {
+    var i = new _no_name_provided__465();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_423() {
-    var i = new _no_name_provided__453();
+  function _no_name_provided_$factory_436() {
+    var i = new _no_name_provided__466();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_424() {
-    var i = new _no_name_provided__454();
+  function _no_name_provided_$factory_437() {
+    var i = new _no_name_provided__467();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_425() {
-    var i = new _no_name_provided__455();
+  function _no_name_provided_$factory_438() {
+    var i = new _no_name_provided__468();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_426() {
-    var i = new _no_name_provided__457();
+  function _no_name_provided_$factory_439() {
+    var i = new _no_name_provided__470();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_427() {
-    var i = new _no_name_provided__459();
+  function _no_name_provided_$factory_440() {
+    var i = new _no_name_provided__472();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_428() {
-    var i = new _no_name_provided__461();
+  function _no_name_provided_$factory_441() {
+    var i = new _no_name_provided__474();
     return function () {
       return i.invoke_0_k$();
     };
@@ -50356,83 +50855,83 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(content) ? 2048 : 1024);
     if (!(($dirty & 5851 ^ 1170) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       if (!(($default & 2) === 0))
         backgroundColor_4._v = Colors_getInstance_0()._white;
       if (!(($default & 4) === 0))
         isCentered_0._v = true;
-      var tmp0_contentAlignment = isCentered_0._v ? Companion_getInstance_39()._Center_0 : Companion_getInstance_39()._TopStart;
+      var tmp0_contentAlignment = isCentered_0._v ? Companion_getInstance_38()._Center_0 : Companion_getInstance_38()._TopStart;
       var tmp = modifier_0._v;
       var tmp1_modifier = backgroundColor_1(fillMaxWidth$default(tmp, null, 1, null), backgroundColor_4._v);
       var tmp_0 = $composer_0;
-      Box$composable(tmp1_modifier, tmp0_contentAlignment, composableLambda(tmp_0, -819894892, true, _no_name_provided_$factory_429(content, $dirty)), $composer_0, 384, 0);
+      Box$composable(tmp1_modifier, tmp0_contentAlignment, composableLambda(tmp_0, -819894892, true, _no_name_provided_$factory_442(content, $dirty)), $composer_0, 384, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_430(modifier_0, backgroundColor_4, isCentered_0, content, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_443(modifier_0, backgroundColor_4, isCentered_0, content, $changed, $default));
     }
   }
   function FullWidthLayout$composable$lambda($modifier, $backgroundColor, $isCentered, $content, $$changed, $$default, $composer, $force) {
     return FullWidthLayout$composable($modifier._v, $backgroundColor._v, $isCentered._v, $content, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__468($content, $$dirty) {
+  function _no_name_provided__481($content, $$dirty) {
     this._$content_25 = $content;
-    this._$$dirty_18 = $$dirty;
+    this._$$dirty_22 = $$dirty;
   }
-  _no_name_provided__468.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
+  _no_name_provided__481.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var $invokeComposable_dispatchReceiver = this._$content_25;
       if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
-        $invokeComposable_dispatchReceiver.invoke_uhotyh_k$($composer_0, 14 & this._$$dirty_18 >> 9);
+        $invokeComposable_dispatchReceiver.invoke_uhotyh_k$($composer_0, 14 & this._$$dirty_22 >> 9);
       else {
-        $invokeComposable_dispatchReceiver($composer_0, 14 & this._$$dirty_18 >> 9);
+        $invokeComposable_dispatchReceiver($composer_0, 14 & this._$$dirty_22 >> 9);
       }
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__468.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__481.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof BoxScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_jpel0v_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__468.$metadata$ = {
+  _no_name_provided__481.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__469($modifier, $backgroundColor, $isCentered, $content, $$changed, $$default) {
+  function _no_name_provided__482($modifier, $backgroundColor, $isCentered, $content, $$changed, $$default) {
     this._$modifier_23 = $modifier;
     this._$backgroundColor = $backgroundColor;
     this._$isCentered = $isCentered;
     this._$content_26 = $content;
-    this._$$changed_45 = $$changed;
-    this._$$default_36 = $$default;
+    this._$$changed_47 = $$changed;
+    this._$$default_38 = $$default;
   }
-  _no_name_provided__469.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return FullWidthLayout$composable$lambda(this._$modifier_23, this._$backgroundColor, this._$isCentered, this._$content_26, this._$$changed_45, this._$$default_36, p0, p1);
+  _no_name_provided__482.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return FullWidthLayout$composable$lambda(this._$modifier_23, this._$backgroundColor, this._$isCentered, this._$content_26, this._$$changed_47, this._$$default_38, p0, p1);
   };
-  _no_name_provided__469.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__482.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__469.$metadata$ = {
+  _no_name_provided__482.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_429($content, $$dirty) {
-    var i = new _no_name_provided__468($content, $$dirty);
+  function _no_name_provided_$factory_442($content, $$dirty) {
+    var i = new _no_name_provided__481($content, $$dirty);
     return function (p1, p2, p3) {
       i.invoke_jpel0v_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_430($modifier, $backgroundColor, $isCentered, $content, $$changed, $$default) {
-    var i = new _no_name_provided__469($modifier, $backgroundColor, $isCentered, $content, $$changed, $$default);
+  function _no_name_provided_$factory_443($modifier, $backgroundColor, $isCentered, $content, $$changed, $$default) {
+    var i = new _no_name_provided__482($modifier, $backgroundColor, $isCentered, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -50461,12 +50960,12 @@
       if (!(($default & 1) === 0))
         currentPage_0._v = NavSections_HOME_getInstance();
       if (!(($default & 2) === 0)) {
-        onClearClick_0._v = _no_name_provided_$factory_431();
+        onClearClick_0._v = _no_name_provided_$factory_444();
       }var tmp = currentPage_0._v;
       var tmp$ret$3;
       $l$block_2: {
         var tmp0_remember$composable_0 = currentPage_0._v;
-        var tmp1_remember$composable_0 = _no_name_provided_$factory_432(currentPage_0);
+        var tmp1_remember$composable_0 = _no_name_provided_$factory_445(currentPage_0);
         var tmp2_remember$composable_0 = $composer_0;
         var tmp3_remember$composable_0 = 14 & $dirty;
         var $composer_1 = tmp2_remember$composable_0;
@@ -50484,7 +50983,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_0;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp1_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_0 = value_2_2_6;
@@ -50507,113 +51006,113 @@
         break $l$block_2;
       }
       LaunchedEffect$composable(tmp, tmp$ret$3, $composer_0, 14 & $dirty);
-      var tmp_2 = Companion_getInstance_40();
-      var tmp_3 = textAlign_0(fillMaxSize$default(tmp_2, null, 1, null), Companion_getInstance_34()._get_Center__0_k$());
-      var tmp_4 = Companion_getInstance_39()._CenterHorizontally;
+      var tmp_2 = Companion_getInstance_39();
+      var tmp_3 = textAlign_0(fillMaxSize$default(tmp_2, null, 1, null), Companion_getInstance_33()._get_Center__0_k$());
+      var tmp_4 = Companion_getInstance_38()._CenterHorizontally;
       var tmp_5 = $composer_0;
-      Column$composable(tmp_3, null, tmp_4, composableLambda(tmp_5, -819895676, true, _no_name_provided_$factory_433(currentPage_0, onClearClick_0, $dirty, content)), $composer_0, 3072, 2);
+      Column$composable(tmp_3, null, tmp_4, composableLambda(tmp_5, -819895676, true, _no_name_provided_$factory_446(currentPage_0, onClearClick_0, $dirty, content)), $composer_0, 3072, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_434(currentPage_0, onClearClick_0, content, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_447(currentPage_0, onClearClick_0, content, $changed, $default));
     }
   }
   function PageLayout$composable$lambda($currentPage) {
-    return _no_name_provided_$factory_435($currentPage, null);
+    return _no_name_provided_$factory_448($currentPage, null);
   }
   function PageLayout$composable$lambda_0($currentPage, $onClearClick, $content, $$changed, $$default, $composer, $force) {
     return PageLayout$composable($currentPage._v, $onClearClick._v, $content, $composer, $$changed | 1, $$default);
   }
-  function _no_name_provided__470() {
+  function _no_name_provided__483() {
   }
-  _no_name_provided__470.prototype.invoke_sv8swh_k$ = function () {
+  _no_name_provided__483.prototype.invoke_sv8swh_k$ = function () {
     return Unit_getInstance();
   };
-  _no_name_provided__470.prototype.invoke_0_k$ = function () {
+  _no_name_provided__483.prototype.invoke_0_k$ = function () {
     this.invoke_sv8swh_k$();
     return Unit_getInstance();
   };
-  _no_name_provided__470.$metadata$ = {
+  _no_name_provided__483.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__471($currentPage) {
+  function _no_name_provided__484($currentPage) {
     this._$currentPage = $currentPage;
   }
-  _no_name_provided__471.prototype.invoke_0_k$ = function () {
+  _no_name_provided__484.prototype.invoke_0_k$ = function () {
     return PageLayout$composable$lambda(this._$currentPage);
   };
-  _no_name_provided__471.$metadata$ = {
+  _no_name_provided__484.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__472($currentPage, $onClearClick, $$dirty, $content) {
+  function _no_name_provided__485($currentPage, $onClearClick, $$dirty, $content) {
     this._$currentPage_0 = $currentPage;
     this._$onClearClick = $onClearClick;
-    this._$$dirty_19 = $$dirty;
+    this._$$dirty_23 = $$dirty;
     this._$content_27 = $content;
   }
-  _no_name_provided__472.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__485.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      NavHeader$composable(this._$currentPage_0._v, this._$onClearClick._v, $composer_0, 14 & this._$$dirty_19 | 112 & this._$$dirty_19);
+      NavHeader$composable(this._$currentPage_0._v, this._$onClearClick._v, $composer_0, 14 & this._$$dirty_23 | 112 & this._$$dirty_23);
       var $invokeComposable_dispatchReceiver = this._$content_27;
       if ($invokeComposable_dispatchReceiver instanceof ComposableLambdaImpl)
-        $invokeComposable_dispatchReceiver.invoke_uhotyh_k$($composer_0, 14 & this._$$dirty_19 >> 6);
+        $invokeComposable_dispatchReceiver.invoke_uhotyh_k$($composer_0, 14 & this._$$dirty_23 >> 6);
       else {
-        $invokeComposable_dispatchReceiver($composer_0, 14 & this._$$dirty_19 >> 6);
+        $invokeComposable_dispatchReceiver($composer_0, 14 & this._$$dirty_23 >> 6);
       }
       Footer$composable($composer_0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__472.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__485.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__472.$metadata$ = {
+  _no_name_provided__485.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__473($currentPage, $onClearClick, $content, $$changed, $$default) {
+  function _no_name_provided__486($currentPage, $onClearClick, $content, $$changed, $$default) {
     this._$currentPage_1 = $currentPage;
     this._$onClearClick_0 = $onClearClick;
     this._$content_28 = $content;
-    this._$$changed_46 = $$changed;
-    this._$$default_37 = $$default;
+    this._$$changed_48 = $$changed;
+    this._$$default_39 = $$default;
   }
-  _no_name_provided__473.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return PageLayout$composable$lambda_0(this._$currentPage_1, this._$onClearClick_0, this._$content_28, this._$$changed_46, this._$$default_37, p0, p1);
+  _no_name_provided__486.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return PageLayout$composable$lambda_0(this._$currentPage_1, this._$onClearClick_0, this._$content_28, this._$$changed_48, this._$$default_39, p0, p1);
   };
-  _no_name_provided__473.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__486.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__473.$metadata$ = {
+  _no_name_provided__486.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__474($currentPage, resultContinuation) {
+  function _no_name_provided__487($currentPage, resultContinuation) {
     this._$currentPage_2 = $currentPage;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__474.prototype.invoke_2i3g7c_k$ = function ($this$LaunchedEffect, $cont) {
+  _no_name_provided__487.prototype.invoke_2i3g7c_k$ = function ($this$LaunchedEffect, $cont) {
     var tmp = this.create_y6imfn_k$($this$LaunchedEffect, $cont);
     tmp._result_0 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__474.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__487.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_2i3g7c_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__474.prototype.doResume_0_k$ = function () {
+  _no_name_provided__487.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_0;
     $sm: do
       try {
@@ -50629,45 +51128,45 @@
       }
      while (true);
   };
-  _no_name_provided__474.prototype.create_y6imfn_k$ = function ($this$LaunchedEffect, completion) {
-    var i = new _no_name_provided__474(this._$currentPage_2, completion);
+  _no_name_provided__487.prototype.create_y6imfn_k$ = function ($this$LaunchedEffect, completion) {
+    var i = new _no_name_provided__487(this._$currentPage_2, completion);
     i._$this$LaunchedEffect_0 = $this$LaunchedEffect;
     return i;
   };
-  _no_name_provided__474.$metadata$ = {
+  _no_name_provided__487.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
-  function _no_name_provided_$factory_431() {
-    var i = new _no_name_provided__470();
+  function _no_name_provided_$factory_444() {
+    var i = new _no_name_provided__483();
     return function () {
       i.invoke_sv8swh_k$();
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_432($currentPage) {
-    var i = new _no_name_provided__471($currentPage);
+  function _no_name_provided_$factory_445($currentPage) {
+    var i = new _no_name_provided__484($currentPage);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_433($currentPage, $onClearClick, $$dirty, $content) {
-    var i = new _no_name_provided__472($currentPage, $onClearClick, $$dirty, $content);
+  function _no_name_provided_$factory_446($currentPage, $onClearClick, $$dirty, $content) {
+    var i = new _no_name_provided__485($currentPage, $onClearClick, $$dirty, $content);
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_434($currentPage, $onClearClick, $content, $$changed, $$default) {
-    var i = new _no_name_provided__473($currentPage, $onClearClick, $content, $$changed, $$default);
+  function _no_name_provided_$factory_447($currentPage, $onClearClick, $content, $$changed, $$default) {
+    var i = new _no_name_provided__486($currentPage, $onClearClick, $content, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_435($currentPage, resultContinuation) {
-    var i = new _no_name_provided__474($currentPage, resultContinuation);
+  function _no_name_provided_$factory_448($currentPage, resultContinuation) {
+    var i = new _no_name_provided__487($currentPage, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_2i3g7c_k$(p1, $cont);
     };
@@ -50675,9 +51174,9 @@
     return l;
   }
   var AboutMeColumnStyle;
-  function _no_name_provided__475() {
+  function _no_name_provided__488() {
   }
-  _no_name_provided__475.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__488.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       Home_getInstance();
@@ -50688,42 +51187,42 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__475.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__488.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__475.$metadata$ = {
+  _no_name_provided__488.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__476() {
+  function _no_name_provided__489() {
   }
-  _no_name_provided__476.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__489.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_horizontalAlignment = Companion_getInstance_39()._CenterHorizontally;
+      var tmp0_horizontalAlignment = Companion_getInstance_38()._CenterHorizontally;
       var tmp1_modifier = toModifier$composable(AboutMeColumnStyle, null, $composer_0, 0, 1);
       Column$composable(tmp1_modifier, null, tmp0_horizontalAlignment, ComposableSingletons$AboutMeKt_getInstance()._lambda_1_3, $composer_0, 3072, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__476.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__489.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__476.$metadata$ = {
+  _no_name_provided__489.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$AboutMeKt() {
     ComposableSingletons$AboutMeKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_3 = composableLambdaInstance(-985533074, false, _no_name_provided_$factory_437());
+    tmp._lambda_1_3 = composableLambdaInstance(-985533074, false, _no_name_provided_$factory_450());
     var tmp_0 = this;
-    tmp_0._lambda_2_1 = composableLambdaInstance(-985533735, false, _no_name_provided_$factory_438());
+    tmp_0._lambda_2_1 = composableLambdaInstance(-985533735, false, _no_name_provided_$factory_451());
   }
   ComposableSingletons$AboutMeKt.$metadata$ = {
     simpleName: 'ComposableSingletons$AboutMeKt',
@@ -50749,133 +51248,133 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_439($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_452($changed));
     }
   }
   function AboutMe$composable$lambda($$changed, $composer, $force) {
     return AboutMe$composable($composer, $$changed | 1);
   }
-  function _no_name_provided__477() {
+  function _no_name_provided__490() {
   }
-  _no_name_provided__477.prototype.invoke_0_k$ = function () {
-    var tmp0_$receiver = maxWidth_0(Companion_getInstance_40(), _get_px_(300));
+  _no_name_provided__490.prototype.invoke_0_k$ = function () {
+    var tmp0_$receiver = maxWidth_0(Companion_getInstance_39(), _get_px_(300));
     var tmp1_bottom = _get_em_(13);
     var tmp2_top = _get_em_(6);
     return padding$default(tmp0_$receiver, tmp2_top, null, tmp1_bottom, null, 10, null);
   };
-  _no_name_provided__477.$metadata$ = {
+  _no_name_provided__490.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__478() {
+  function _no_name_provided__491() {
   }
-  _no_name_provided__478.prototype.invoke_0_k$ = function () {
-    return maxWidth_0(Companion_getInstance_40(), _get_px_(660));
+  _no_name_provided__491.prototype.invoke_0_k$ = function () {
+    return maxWidth_0(Companion_getInstance_39(), _get_px_(660));
   };
-  _no_name_provided__478.$metadata$ = {
+  _no_name_provided__491.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__479() {
+  function _no_name_provided__492() {
   }
-  _no_name_provided__479.prototype.invoke_0_k$ = function () {
-    return maxWidth_0(Companion_getInstance_40(), _get_px_(860));
+  _no_name_provided__492.prototype.invoke_0_k$ = function () {
+    return maxWidth_0(Companion_getInstance_39(), _get_px_(860));
   };
-  _no_name_provided__479.$metadata$ = {
+  _no_name_provided__492.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__480() {
+  function _no_name_provided__493() {
   }
-  _no_name_provided__480.prototype.invoke_0_k$ = function () {
-    return maxWidth_0(Companion_getInstance_40(), _get_px_(1060));
+  _no_name_provided__493.prototype.invoke_0_k$ = function () {
+    return maxWidth_0(Companion_getInstance_39(), _get_px_(1060));
   };
-  _no_name_provided__480.$metadata$ = {
+  _no_name_provided__493.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__481() {
+  function _no_name_provided__494() {
   }
-  _no_name_provided__481.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_440());
+  _no_name_provided__494.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_453());
     var tmp = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_441());
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_454());
     var tmp_0 = Breakpoint_MD_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_442());
+    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_455());
     var tmp_1 = Breakpoint_LG_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp_1, _no_name_provided_$factory_443());
+    $this$$receiver.invoke_jx6wx7_k$(tmp_1, _no_name_provided_$factory_456());
   };
-  _no_name_provided__481.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__494.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__481.$metadata$ = {
+  _no_name_provided__494.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__482($$changed) {
-    this._$$changed_47 = $$changed;
+  function _no_name_provided__495($$changed) {
+    this._$$changed_49 = $$changed;
   }
-  _no_name_provided__482.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return AboutMe$composable$lambda(this._$$changed_47, p0, p1);
+  _no_name_provided__495.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return AboutMe$composable$lambda(this._$$changed_49, p0, p1);
   };
-  _no_name_provided__482.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__495.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__482.$metadata$ = {
+  _no_name_provided__495.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_436() {
-    var i = new _no_name_provided__481();
+  function _no_name_provided_$factory_449() {
+    var i = new _no_name_provided__494();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_437() {
-    var i = new _no_name_provided__475();
+  function _no_name_provided_$factory_450() {
+    var i = new _no_name_provided__488();
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_438() {
-    var i = new _no_name_provided__476();
+  function _no_name_provided_$factory_451() {
+    var i = new _no_name_provided__489();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_439($$changed) {
-    var i = new _no_name_provided__482($$changed);
+  function _no_name_provided_$factory_452($$changed) {
+    var i = new _no_name_provided__495($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_440() {
-    var i = new _no_name_provided__477();
+  function _no_name_provided_$factory_453() {
+    var i = new _no_name_provided__490();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_441() {
-    var i = new _no_name_provided__478();
+  function _no_name_provided_$factory_454() {
+    var i = new _no_name_provided__491();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_442() {
-    var i = new _no_name_provided__479();
+  function _no_name_provided_$factory_455() {
+    var i = new _no_name_provided__492();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_443() {
-    var i = new _no_name_provided__480();
+  function _no_name_provided_$factory_456() {
+    var i = new _no_name_provided__493();
     return function () {
       return i.invoke_0_k$();
     };
@@ -50884,12 +51383,9 @@
   var InputTextStyle;
   var ResizableStyle;
   var InputStyle;
-  function toMailto(_this_) {
-    return replace$default(_this_, ' ', '%', false, 4, null);
+  function _no_name_provided__496() {
   }
-  function _no_name_provided__483() {
-  }
-  _no_name_provided__483.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
+  _no_name_provided__496.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
@@ -50900,20 +51396,20 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__483.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__496.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? typeof p1 === 'boolean' : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_1hof6l_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__483.$metadata$ = {
+  _no_name_provided__496.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$ContactFormKt() {
     ComposableSingletons$ContactFormKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_4 = composableLambdaInstance(-985537953, false, _no_name_provided_$factory_448());
+    tmp._lambda_1_4 = composableLambdaInstance(-985537960, false, _no_name_provided_$factory_461());
   }
   ComposableSingletons$ContactFormKt.$metadata$ = {
     simpleName: 'ComposableSingletons$ContactFormKt',
@@ -50926,13 +51422,13 @@
       new ComposableSingletons$ContactFormKt();
     return ComposableSingletons$ContactFormKt_instance;
   }
-  function ContactForm$composable(name_0, email, message, onNameChanged, onEmailChanged, onMessageChanged, $composer, $changed) {
+  function ContactForm$composable(name, email, message, onNameChanged, onEmailChanged, onMessageChanged, $composer, $changed) {
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1652344105);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1652344125);
     sourceInformation($composer_0, 'C(ContactForm$composable)P(2!2,5)');
     var $dirty = $changed;
     if (($changed & 14) === 0)
-      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(name_0) ? 4 : 2);
+      $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(name) ? 4 : 2);
     if (($changed & 112) === 0)
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(email) ? 32 : 16);
     if (($changed & 896) === 0)
@@ -50944,92 +51440,92 @@
     if (($changed & 458752) === 0)
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(onMessageChanged) ? 131072 : 65536);
     if (!(($dirty & 374491 ^ 74898) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_horizontalAlignment = Companion_getInstance_39()._CenterHorizontally;
+      var tmp0_horizontalAlignment = Companion_getInstance_38()._CenterHorizontally;
       var tmp1_modifier = toModifier$composable(ContactFormStyle, null, $composer_0, 0, 1);
       var tmp = $composer_0;
-      Column$composable(tmp1_modifier, null, tmp0_horizontalAlignment, composableLambda(tmp, -819892940, true, _no_name_provided_$factory_449(name_0, email, message, $dirty, onNameChanged, onEmailChanged, onMessageChanged)), $composer_0, 3072, 2);
+      Column$composable(tmp1_modifier, null, tmp0_horizontalAlignment, composableLambda(tmp, -819892928, true, _no_name_provided_$factory_462(name, email, message, $dirty, onNameChanged, onEmailChanged, onMessageChanged)), $composer_0, 3072, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_450(name_0, email, message, onNameChanged, onEmailChanged, onMessageChanged, $changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_463(name, email, message, onNameChanged, onEmailChanged, onMessageChanged, $changed));
     }
   }
   function ContactForm$composable$lambda($name, $email, $message, $onNameChanged, $onEmailChanged, $onMessageChanged, $$changed, $composer, $force) {
     return ContactForm$composable($name, $email, $message, $onNameChanged, $onEmailChanged, $onMessageChanged, $composer, $$changed | 1);
   }
-  function _no_name_provided__484() {
+  function _no_name_provided__497() {
   }
-  _no_name_provided__484.prototype.invoke_3u3pah_k$ = function ($this$base) {
-    var tmp0_$receiver = Companion_getInstance_40();
+  _no_name_provided__497.prototype.invoke_3u3pah_k$ = function ($this$base) {
+    var tmp0_$receiver = Companion_getInstance_39();
     var tmp1_left = _get_em_(1);
     var tmp2_right = _get_em_(1);
     var tmp3_top = _get_em_(0);
-    var tmp4_bottom = _get_em_(3);
+    var tmp4_bottom = _get_em_(4);
     var tmp = padding_2(tmp0_$receiver, tmp3_top, tmp2_right, tmp4_bottom, tmp1_left);
     return maxWidth_0(fillMaxWidth$default(tmp, null, 1, null), _get_px_(800));
   };
-  _no_name_provided__484.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__497.prototype.invoke_20e8_k$ = function (p1) {
     return this.invoke_3u3pah_k$(p1 instanceof ComponentStyleState ? p1 : THROW_CCE());
   };
-  _no_name_provided__484.$metadata$ = {
+  _no_name_provided__497.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__485() {
+  function _no_name_provided__498() {
   }
-  _no_name_provided__485.prototype.invoke_3u3pah_k$ = function ($this$base) {
-    var tmp = overflowY_0(overflowX_0(fontWeight_0(fontSize_0(Companion_getInstance_40(), _get_px_(18)), Companion_getInstance_30()._get_Lighter__0_k$()), Companion_getInstance_31()._get_Hidden__0_k$()), Companion_getInstance_31()._get_Scroll__0_k$());
+  _no_name_provided__498.prototype.invoke_3u3pah_k$ = function ($this$base) {
+    var tmp = overflowY_0(overflowX_0(fontWeight_0(fontSize_0(Companion_getInstance_39(), _get_px_(18)), Companion_getInstance_29()._get_Lighter__0_k$()), Companion_getInstance_30()._get_Hidden__0_k$()), Companion_getInstance_30()._get_Scroll__0_k$());
     var tmp_0 = _get_em_(1);
     var tmp_1 = _get_em_(1.5);
-    return margin$default(tmp, tmp_0, null, tmp_1, null, 10, null);
+    return textAlign_0(margin$default(tmp, tmp_0, null, tmp_1, null, 10, null), Companion_getInstance_33()._get_Start__0_k$());
   };
-  _no_name_provided__485.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__498.prototype.invoke_20e8_k$ = function (p1) {
     return this.invoke_3u3pah_k$(p1 instanceof ComponentStyleState ? p1 : THROW_CCE());
   };
-  _no_name_provided__485.$metadata$ = {
+  _no_name_provided__498.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__486() {
+  function _no_name_provided__499() {
   }
-  _no_name_provided__486.prototype.invoke_0_k$ = function () {
-    return minHeight_0(Companion_getInstance_40(), _get_px_(200));
+  _no_name_provided__499.prototype.invoke_0_k$ = function () {
+    return minHeight_0(Companion_getInstance_39(), _get_px_(200));
   };
-  _no_name_provided__486.$metadata$ = {
+  _no_name_provided__499.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__487() {
+  function _no_name_provided__500() {
   }
-  _no_name_provided__487.prototype.invoke_0_k$ = function () {
-    return minHeight_0(Companion_getInstance_40(), _get_px_(400));
+  _no_name_provided__500.prototype.invoke_0_k$ = function () {
+    return minHeight_0(Companion_getInstance_39(), _get_px_(400));
   };
-  _no_name_provided__487.$metadata$ = {
+  _no_name_provided__500.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__488() {
+  function _no_name_provided__501() {
   }
-  _no_name_provided__488.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_451());
+  _no_name_provided__501.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_464());
     var tmp = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_452());
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_465());
   };
-  _no_name_provided__488.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__501.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__488.$metadata$ = {
+  _no_name_provided__501.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__489() {
+  function _no_name_provided__502() {
   }
-  _no_name_provided__489.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+  _no_name_provided__502.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
     var tmp_0 = padding_0(fillMaxWidth$default(tmp, null, 1, null), _get_px_(15));
     var tmp$ret$0;
     $l$block: {
@@ -51041,7 +51537,7 @@
     var tmp_2 = _get_px_(1);
     var tmp$ret$4;
     $l$block_3: {
-      var tmp1__get_Solid__0 = Companion_getInstance_21();
+      var tmp1__get_Solid__0 = Companion_getInstance_20();
       var tmp$ret$3;
       $l$block_2: {
         var tmp$ret$2;
@@ -51069,132 +51565,132 @@
     }
     return transition(border_0(tmp_1, tmp_2, tmp_3, tmp$ret$5), 'color 0.15s ease, border-color 0.15s ease');
   };
-  _no_name_provided__489.$metadata$ = {
+  _no_name_provided__502.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__490() {
+  function _no_name_provided__503() {
   }
-  _no_name_provided__490.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+  _no_name_provided__503.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
     Colors_getInstance_0();
     return borderColor(tmp, Color_1('#7510F7'));
   };
-  _no_name_provided__490.$metadata$ = {
+  _no_name_provided__503.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__491() {
+  function _no_name_provided__504() {
   }
-  _no_name_provided__491.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_453());
+  _no_name_provided__504.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_466());
     var tmp = _get_active_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_454());
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_467());
   };
-  _no_name_provided__491.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__504.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__491.$metadata$ = {
+  _no_name_provided__504.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__492($onNameChanged) {
+  function _no_name_provided__505($onNameChanged) {
     this._$onNameChanged = $onNameChanged;
   }
-  _no_name_provided__492.prototype.invoke_dgojys_k$ = function (it) {
+  _no_name_provided__505.prototype.invoke_1y17uo_k$ = function (it) {
     this._$onNameChanged(it._value_12);
   };
-  _no_name_provided__492.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dgojys_k$(p1 instanceof SyntheticChangeEvent ? p1 : THROW_CCE());
+  _no_name_provided__505.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_1y17uo_k$(p1 instanceof SyntheticInputEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__492.$metadata$ = {
+  _no_name_provided__505.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function invoke$lambda_6($name, $onNameChanged) {
-    return _no_name_provided_$factory_460($name, $onNameChanged);
+  function invoke$lambda_10($name, $onNameChanged) {
+    return _no_name_provided_$factory_473($name, $onNameChanged);
   }
-  function _no_name_provided__493($name, $onNameChanged) {
+  function _no_name_provided__506($name, $onNameChanged) {
     this._$name_2 = $name;
     this._$onNameChanged_0 = $onNameChanged;
   }
-  _no_name_provided__493.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_6(this._$name_2, this._$onNameChanged_0);
+  _no_name_provided__506.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_10(this._$name_2, this._$onNameChanged_0);
   };
-  _no_name_provided__493.$metadata$ = {
+  _no_name_provided__506.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__494($name, $onNameChanged) {
+  function _no_name_provided__507($name, $onNameChanged) {
     this._$name_3 = $name;
     this._$onNameChanged_1 = $onNameChanged;
   }
-  _no_name_provided__494.prototype.invoke_uku1vi_k$ = function ($this$asAttributesBuilder) {
-    name($this$asAttributesBuilder, this._$name_3);
+  _no_name_provided__507.prototype.invoke_uku1vi_k$ = function ($this$asAttributesBuilder) {
+    $this$asAttributesBuilder.value_6wfw3l_k$(this._$name_3);
     Unit_getInstance();
-    $this$asAttributesBuilder.onChange_sl84ts_k$(_no_name_provided_$factory_461(this._$onNameChanged_1));
+    $this$asAttributesBuilder.onInput_2uzpqg_k$(_no_name_provided_$factory_474(this._$onNameChanged_1));
   };
-  _no_name_provided__494.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__507.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_uku1vi_k$(p1 instanceof InputAttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__494.$metadata$ = {
+  _no_name_provided__507.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__495($onEmailChanged) {
+  function _no_name_provided__508($onEmailChanged) {
     this._$onEmailChanged = $onEmailChanged;
   }
-  _no_name_provided__495.prototype.invoke_dgojys_k$ = function (it) {
+  _no_name_provided__508.prototype.invoke_1y17uo_k$ = function (it) {
     this._$onEmailChanged(it._value_12);
   };
-  _no_name_provided__495.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dgojys_k$(p1 instanceof SyntheticChangeEvent ? p1 : THROW_CCE());
+  _no_name_provided__508.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_1y17uo_k$(p1 instanceof SyntheticInputEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__495.$metadata$ = {
+  _no_name_provided__508.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function invoke$lambda_7($email, $onEmailChanged) {
-    return _no_name_provided_$factory_463($email, $onEmailChanged);
+  function invoke$lambda_11($email, $onEmailChanged) {
+    return _no_name_provided_$factory_476($email, $onEmailChanged);
   }
-  function _no_name_provided__496($email, $onEmailChanged) {
+  function _no_name_provided__509($email, $onEmailChanged) {
     this._$email = $email;
     this._$onEmailChanged_0 = $onEmailChanged;
   }
-  _no_name_provided__496.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_7(this._$email, this._$onEmailChanged_0);
+  _no_name_provided__509.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_11(this._$email, this._$onEmailChanged_0);
   };
-  _no_name_provided__496.$metadata$ = {
+  _no_name_provided__509.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__497($email, $onEmailChanged) {
+  function _no_name_provided__510($email, $onEmailChanged) {
     this._$email_0 = $email;
     this._$onEmailChanged_1 = $onEmailChanged;
   }
-  _no_name_provided__497.prototype.invoke_uku1vi_k$ = function ($this$asAttributesBuilder) {
-    name($this$asAttributesBuilder, this._$email_0);
+  _no_name_provided__510.prototype.invoke_uku1vi_k$ = function ($this$asAttributesBuilder) {
+    $this$asAttributesBuilder.value_6wfw3l_k$(this._$email_0);
     Unit_getInstance();
-    $this$asAttributesBuilder.onChange_sl84ts_k$(_no_name_provided_$factory_464(this._$onEmailChanged_1));
+    $this$asAttributesBuilder.onInput_2uzpqg_k$(_no_name_provided_$factory_477(this._$onEmailChanged_1));
   };
-  _no_name_provided__497.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__510.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_uku1vi_k$(p1 instanceof InputAttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__497.$metadata$ = {
+  _no_name_provided__510.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__498($$dirty, $name, $onNameChanged) {
-    this._$$dirty_20 = $$dirty;
+  function _no_name_provided__511($$dirty, $name, $onNameChanged) {
+    this._$$dirty_24 = $$dirty;
     this._$name_4 = $name;
     this._$onNameChanged_2 = $onNameChanged;
   }
-  _no_name_provided__498.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__511.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       H2Subtitle$composable('Name', null, _get_em_(1.2), 0.8, $composer_0, 3078, 2);
@@ -51202,9 +51698,9 @@
       var tmp_0 = toModifier$composable_0(listOf([InputTextStyle, InputStyle]), $composer_0, 0);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_459(this._$name_4, this._$onNameChanged_2);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_472(this._$name_4, this._$onNameChanged_2);
         var tmp1_remember$composable_0 = $composer_0;
-        var tmp2_remember$composable_0 = 14 & this._$$dirty_20 | 112 & this._$$dirty_20 >> 6;
+        var tmp2_remember$composable_0 = 14 & this._$$dirty_24 | 112 & this._$$dirty_24 >> 6;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884180255);
         sourceInformation($composer_1, 'C(remember$composable)P(1,2):Composables.kt#9igjgp');
@@ -51220,7 +51716,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_1;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_1 = value_2_2_6;
@@ -51246,22 +51742,22 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__498.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__511.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__498.$metadata$ = {
+  _no_name_provided__511.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__499($$dirty, $email, $onEmailChanged) {
-    this._$$dirty_21 = $$dirty;
+  function _no_name_provided__512($$dirty, $email, $onEmailChanged) {
+    this._$$dirty_25 = $$dirty;
     this._$email_1 = $email;
     this._$onEmailChanged_2 = $onEmailChanged;
   }
-  _no_name_provided__499.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__512.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       H2Subtitle$composable('Email', null, _get_em_(1.2), 0.8, $composer_0, 3078, 2);
@@ -51269,9 +51765,9 @@
       var tmp_0 = toModifier$composable_0(listOf([InputTextStyle, InputStyle]), $composer_0, 0);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_462(this._$email_1, this._$onEmailChanged_2);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_475(this._$email_1, this._$onEmailChanged_2);
         var tmp1_remember$composable_0 = $composer_0;
-        var tmp2_remember$composable_0 = 14 & this._$$dirty_21 >> 3 | 112 & this._$$dirty_21 >> 9;
+        var tmp2_remember$composable_0 = 14 & this._$$dirty_25 >> 3 | 112 & this._$$dirty_25 >> 9;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884180255);
         sourceInformation($composer_1, 'C(remember$composable)P(1,2):Composables.kt#9igjgp');
@@ -51287,7 +51783,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_1;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_1 = value_2_2_6;
@@ -51313,106 +51809,107 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__499.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__512.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__499.$metadata$ = {
+  _no_name_provided__512.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__500($onMessageChanged) {
+  function _no_name_provided__513($onMessageChanged) {
     this._$onMessageChanged = $onMessageChanged;
   }
-  _no_name_provided__500.prototype.invoke_dgojys_k$ = function (it) {
+  _no_name_provided__513.prototype.invoke_1y17uo_k$ = function (it) {
     this._$onMessageChanged(it._value_12);
   };
-  _no_name_provided__500.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dgojys_k$(p1 instanceof SyntheticChangeEvent ? p1 : THROW_CCE());
+  _no_name_provided__513.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_1y17uo_k$(p1 instanceof SyntheticInputEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__500.$metadata$ = {
+  _no_name_provided__513.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function invoke$lambda_8($message, $onMessageChanged) {
-    return _no_name_provided_$factory_466($message, $onMessageChanged);
+  function invoke$lambda_12($message, $onMessageChanged) {
+    return _no_name_provided_$factory_479($message, $onMessageChanged);
   }
-  function _no_name_provided__501($message, $onMessageChanged) {
+  function _no_name_provided__514($message, $onMessageChanged) {
     this._$message = $message;
     this._$onMessageChanged_0 = $onMessageChanged;
   }
-  _no_name_provided__501.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_8(this._$message, this._$onMessageChanged_0);
+  _no_name_provided__514.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_12(this._$message, this._$onMessageChanged_0);
   };
-  _no_name_provided__501.$metadata$ = {
+  _no_name_provided__514.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__502($message, $onMessageChanged) {
+  function _no_name_provided__515($message, $onMessageChanged) {
     this._$message_0 = $message;
     this._$onMessageChanged_1 = $onMessageChanged;
   }
-  _no_name_provided__502.prototype.invoke_uku1vi_k$ = function ($this$asAttributesBuilder) {
-    name($this$asAttributesBuilder, this._$message_0);
+  _no_name_provided__515.prototype.invoke_uku1vi_k$ = function ($this$asAttributesBuilder) {
+    $this$asAttributesBuilder.value_6wfw3l_k$(this._$message_0);
     Unit_getInstance();
-    $this$asAttributesBuilder.onChange_sl84ts_k$(_no_name_provided_$factory_467(this._$onMessageChanged_1));
+    $this$asAttributesBuilder.onInput_2uzpqg_k$(_no_name_provided_$factory_480(this._$onMessageChanged_1));
   };
-  _no_name_provided__502.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__515.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_uku1vi_k$(p1 instanceof InputAttrsBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__502.$metadata$ = {
+  _no_name_provided__515.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__503($$dirty, $name, $onNameChanged, $email, $onEmailChanged) {
-    this._$$dirty_22 = $$dirty;
+  function _no_name_provided__516($$dirty, $name, $onNameChanged, $email, $onEmailChanged) {
+    this._$$dirty_26 = $$dirty;
     this._$name_5 = $name;
     this._$onNameChanged_3 = $onNameChanged;
     this._$email_2 = $email;
     this._$onEmailChanged_3 = $onEmailChanged;
   }
-  _no_name_provided__503.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
+  _no_name_provided__516.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = flexGrow_0(Companion_getInstance_40(), 1);
+      var tmp = flexGrow_0(Companion_getInstance_39(), 1);
       var tmp_0 = $composer_0;
-      Column$composable(tmp, null, null, composableLambda(tmp_0, -819893588, true, _no_name_provided_$factory_457(this._$$dirty_22, this._$name_5, this._$onNameChanged_3)), $composer_0, 3072, 6);
-      EmSpacer$composable(0.0, displayIf(Companion_getInstance_40(), Breakpoint_SM_getInstance()), $composer_0, 0, 1);
-      var tmp_1 = flexGrow_0(Companion_getInstance_40(), 1);
+      Column$composable(tmp, null, null, composableLambda(tmp_0, -819893576, true, _no_name_provided_$factory_470(this._$$dirty_26, this._$name_5, this._$onNameChanged_3)), $composer_0, 3072, 6);
+      EmSpacer$composable(0.0, displayIf(Companion_getInstance_39(), Breakpoint_SM_getInstance()), $composer_0, 0, 1);
+      var tmp_1 = flexGrow_0(Companion_getInstance_39(), 1);
       var tmp_2 = $composer_0;
-      Column$composable(tmp_1, null, null, composableLambda(tmp_2, -819894018, true, _no_name_provided_$factory_458(this._$$dirty_22, this._$email_2, this._$onEmailChanged_3)), $composer_0, 3072, 6);
+      Column$composable(tmp_1, null, null, composableLambda(tmp_2, -819894262, true, _no_name_provided_$factory_471(this._$$dirty_26, this._$email_2, this._$onEmailChanged_3)), $composer_0, 3072, 6);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__503.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__516.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__503.$metadata$ = {
+  _no_name_provided__516.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__504($$dirty, $message, $onMessageChanged) {
-    this._$$dirty_23 = $$dirty;
+  function _no_name_provided__517($$dirty, $message, $onMessageChanged) {
+    this._$$dirty_27 = $$dirty;
     this._$message_1 = $message;
     this._$onMessageChanged_2 = $onMessageChanged;
   }
-  _no_name_provided__504.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__517.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       H2Subtitle$composable('Message', null, _get_em_(1.2), 0.8, $composer_0, 3078, 2);
-      var tmp = toModifier$composable_0(listOf([InputTextStyle, InputStyle, ResizableStyle]), $composer_0, 0);
+      var tmp = Text_getInstance();
+      var tmp_0 = toModifier$composable_0(listOf([InputTextStyle, InputStyle, ResizableStyle]), $composer_0, 0);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_465(this._$message_1, this._$onMessageChanged_2);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_478(this._$message_1, this._$onMessageChanged_2);
         var tmp1_remember$composable_0 = $composer_0;
-        var tmp2_remember$composable_0 = 14 & this._$$dirty_23 >> 6 | 112 & this._$$dirty_23 >> 12;
+        var tmp2_remember$composable_0 = 14 & this._$$dirty_27 >> 6 | 112 & this._$$dirty_27 >> 12;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884180255);
         sourceInformation($composer_1, 'C(remember$composable)P(1,2):Composables.kt#9igjgp');
@@ -51427,22 +51924,22 @@
             }
             var tmp$ret$0;
             $l$block: {
-              var tmp_0;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              var tmp_1;
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
-                tmp_0 = value_2_2_6;
+                tmp_1 = value_2_2_6;
               } else {
-                tmp_0 = tmp0_let_0_5;
+                tmp_1 = tmp0_let_0_5;
               }
-              tmp$ret$0 = tmp_0;
+              tmp$ret$0 = tmp_1;
               break $l$block;
             }
             tmp$ret$1 = tmp$ret$0;
             break $l$block_0;
           }
-          var tmp_1 = tmp$ret$1;
-          tmp$ret$2 = (tmp_1 == null ? true : isObject(tmp_1)) ? tmp_1 : THROW_CCE();
+          var tmp_2 = tmp$ret$1;
+          tmp$ret$2 = (tmp_2 == null ? true : isObject(tmp_2)) ? tmp_2 : THROW_CCE();
           break $l$block_1;
         }
         var tmp0_2 = tmp$ret$2;
@@ -51450,251 +51947,251 @@
         tmp$ret$3 = tmp0_2;
         break $l$block_2;
       }
-      TextInput$composable(null, asAttributesBuilder(tmp, tmp$ret$3), $composer_0, 0, 1);
+      Input$composable(tmp, asAttributesBuilder(tmp_0, tmp$ret$3), $composer_0, 6);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__504.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__517.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__504.$metadata$ = {
+  _no_name_provided__517.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__505($name, $email, $message, $$dirty, $onNameChanged, $onEmailChanged, $onMessageChanged) {
+  function _no_name_provided__518($name, $email, $message, $$dirty, $onNameChanged, $onEmailChanged, $onMessageChanged) {
     this._$name_6 = $name;
     this._$email_3 = $email;
     this._$message_2 = $message;
-    this._$$dirty_24 = $$dirty;
+    this._$$dirty_28 = $$dirty;
     this._$onNameChanged_4 = $onNameChanged;
     this._$onEmailChanged_4 = $onEmailChanged;
     this._$onMessageChanged_3 = $onMessageChanged;
   }
-  _no_name_provided__505.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__518.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = Companion_getInstance_40();
+      var tmp = Companion_getInstance_39();
       var tmp_0 = fillMaxWidth$default(tmp, null, 1, null);
       var tmp_1 = $composer_0;
-      Row$composable(tmp_0, null, null, composableLambda(tmp_1, -819892894, true, _no_name_provided_$factory_455(this._$$dirty_24, this._$name_6, this._$onNameChanged_4, this._$email_3, this._$onEmailChanged_4)), $composer_0, 3072, 6);
-      var tmp_2 = Companion_getInstance_40();
+      Row$composable(tmp_0, null, null, composableLambda(tmp_1, -819893618, true, _no_name_provided_$factory_468(this._$$dirty_28, this._$name_6, this._$onNameChanged_4, this._$email_3, this._$onEmailChanged_4)), $composer_0, 3072, 6);
+      var tmp_2 = Companion_getInstance_39();
       var tmp_3 = fillMaxWidth$default(tmp_2, null, 1, null);
       var tmp_4 = $composer_0;
-      Column$composable(tmp_3, null, null, composableLambda(tmp_4, -819890682, true, _no_name_provided_$factory_456(this._$$dirty_24, this._$message_2, this._$onMessageChanged_3)), $composer_0, 3072, 6);
+      Column$composable(tmp_3, null, null, composableLambda(tmp_4, -819890670, true, _no_name_provided_$factory_469(this._$$dirty_28, this._$message_2, this._$onMessageChanged_3)), $composer_0, 3072, 6);
       EmSpacer$composable(2.0, null, $composer_0, 6, 2);
-      var tmp_5 = '' + 'mailto:adrianwitaszak@gmail.com?subject=Aw-Portfolio-Message-Name-' + toMailto(this._$name_6) + '-Email-' + this._$email_3 + '&body=' + toMailto(this._$message_2);
+      var tmp_5 = '' + 'mailto:adrianwitaszak@gmail.com?subject=' + this._$name_6 + '-' + this._$email_3 + '&body=' + this._$message_2;
       Contact_getInstance();
-      ButtonLink$composable(tmp_5, 'Submit', ComposableSingletons$ContactFormKt_getInstance()._lambda_1_4, $composer_0, 432, 0);
+      ButtonMailto$composable(tmp_5, 'Submit', ComposableSingletons$ContactFormKt_getInstance()._lambda_1_4, $composer_0, 432, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__505.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__518.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__505.$metadata$ = {
+  _no_name_provided__518.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__506($name, $email, $message, $onNameChanged, $onEmailChanged, $onMessageChanged, $$changed) {
+  function _no_name_provided__519($name, $email, $message, $onNameChanged, $onEmailChanged, $onMessageChanged, $$changed) {
     this._$name_7 = $name;
     this._$email_4 = $email;
     this._$message_3 = $message;
     this._$onNameChanged_5 = $onNameChanged;
     this._$onEmailChanged_5 = $onEmailChanged;
     this._$onMessageChanged_4 = $onMessageChanged;
-    this._$$changed_48 = $$changed;
+    this._$$changed_50 = $$changed;
   }
-  _no_name_provided__506.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return ContactForm$composable$lambda(this._$name_7, this._$email_4, this._$message_3, this._$onNameChanged_5, this._$onEmailChanged_5, this._$onMessageChanged_4, this._$$changed_48, p0, p1);
+  _no_name_provided__519.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return ContactForm$composable$lambda(this._$name_7, this._$email_4, this._$message_3, this._$onNameChanged_5, this._$onEmailChanged_5, this._$onMessageChanged_4, this._$$changed_50, p0, p1);
   };
-  _no_name_provided__506.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__519.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__506.$metadata$ = {
+  _no_name_provided__519.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_444() {
-    var i = new _no_name_provided__484();
+  function _no_name_provided_$factory_457() {
+    var i = new _no_name_provided__497();
     return function (p1) {
       return i.invoke_3u3pah_k$(p1);
     };
   }
-  function _no_name_provided_$factory_445() {
-    var i = new _no_name_provided__485();
+  function _no_name_provided_$factory_458() {
+    var i = new _no_name_provided__498();
     return function (p1) {
       return i.invoke_3u3pah_k$(p1);
     };
   }
-  function _no_name_provided_$factory_446() {
-    var i = new _no_name_provided__488();
+  function _no_name_provided_$factory_459() {
+    var i = new _no_name_provided__501();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_447() {
-    var i = new _no_name_provided__491();
+  function _no_name_provided_$factory_460() {
+    var i = new _no_name_provided__504();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_448() {
-    var i = new _no_name_provided__483();
+  function _no_name_provided_$factory_461() {
+    var i = new _no_name_provided__496();
     return function (p1, p2, p3) {
       i.invoke_1hof6l_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_449($name, $email, $message, $$dirty, $onNameChanged, $onEmailChanged, $onMessageChanged) {
-    var i = new _no_name_provided__505($name, $email, $message, $$dirty, $onNameChanged, $onEmailChanged, $onMessageChanged);
+  function _no_name_provided_$factory_462($name, $email, $message, $$dirty, $onNameChanged, $onEmailChanged, $onMessageChanged) {
+    var i = new _no_name_provided__518($name, $email, $message, $$dirty, $onNameChanged, $onEmailChanged, $onMessageChanged);
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_450($name, $email, $message, $onNameChanged, $onEmailChanged, $onMessageChanged, $$changed) {
-    var i = new _no_name_provided__506($name, $email, $message, $onNameChanged, $onEmailChanged, $onMessageChanged, $$changed);
+  function _no_name_provided_$factory_463($name, $email, $message, $onNameChanged, $onEmailChanged, $onMessageChanged, $$changed) {
+    var i = new _no_name_provided__519($name, $email, $message, $onNameChanged, $onEmailChanged, $onMessageChanged, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_451() {
-    var i = new _no_name_provided__486();
+  function _no_name_provided_$factory_464() {
+    var i = new _no_name_provided__499();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_452() {
-    var i = new _no_name_provided__487();
+  function _no_name_provided_$factory_465() {
+    var i = new _no_name_provided__500();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_453() {
-    var i = new _no_name_provided__489();
+  function _no_name_provided_$factory_466() {
+    var i = new _no_name_provided__502();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_454() {
-    var i = new _no_name_provided__490();
+  function _no_name_provided_$factory_467() {
+    var i = new _no_name_provided__503();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_455($$dirty, $name, $onNameChanged, $email, $onEmailChanged) {
-    var i = new _no_name_provided__503($$dirty, $name, $onNameChanged, $email, $onEmailChanged);
+  function _no_name_provided_$factory_468($$dirty, $name, $onNameChanged, $email, $onEmailChanged) {
+    var i = new _no_name_provided__516($$dirty, $name, $onNameChanged, $email, $onEmailChanged);
     return function (p1, p2, p3) {
       i.invoke_fpi9a8_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_456($$dirty, $message, $onMessageChanged) {
-    var i = new _no_name_provided__504($$dirty, $message, $onMessageChanged);
+  function _no_name_provided_$factory_469($$dirty, $message, $onMessageChanged) {
+    var i = new _no_name_provided__517($$dirty, $message, $onMessageChanged);
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_457($$dirty, $name, $onNameChanged) {
-    var i = new _no_name_provided__498($$dirty, $name, $onNameChanged);
+  function _no_name_provided_$factory_470($$dirty, $name, $onNameChanged) {
+    var i = new _no_name_provided__511($$dirty, $name, $onNameChanged);
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_458($$dirty, $email, $onEmailChanged) {
-    var i = new _no_name_provided__499($$dirty, $email, $onEmailChanged);
+  function _no_name_provided_$factory_471($$dirty, $email, $onEmailChanged) {
+    var i = new _no_name_provided__512($$dirty, $email, $onEmailChanged);
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_459($name, $onNameChanged) {
-    var i = new _no_name_provided__493($name, $onNameChanged);
+  function _no_name_provided_$factory_472($name, $onNameChanged) {
+    var i = new _no_name_provided__506($name, $onNameChanged);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_460($name, $onNameChanged) {
-    var i = new _no_name_provided__494($name, $onNameChanged);
+  function _no_name_provided_$factory_473($name, $onNameChanged) {
+    var i = new _no_name_provided__507($name, $onNameChanged);
     return function (p1) {
       i.invoke_uku1vi_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_461($onNameChanged) {
-    var i = new _no_name_provided__492($onNameChanged);
+  function _no_name_provided_$factory_474($onNameChanged) {
+    var i = new _no_name_provided__505($onNameChanged);
     return function (p1) {
-      i.invoke_dgojys_k$(p1);
+      i.invoke_1y17uo_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_462($email, $onEmailChanged) {
-    var i = new _no_name_provided__496($email, $onEmailChanged);
+  function _no_name_provided_$factory_475($email, $onEmailChanged) {
+    var i = new _no_name_provided__509($email, $onEmailChanged);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_463($email, $onEmailChanged) {
-    var i = new _no_name_provided__497($email, $onEmailChanged);
+  function _no_name_provided_$factory_476($email, $onEmailChanged) {
+    var i = new _no_name_provided__510($email, $onEmailChanged);
     return function (p1) {
       i.invoke_uku1vi_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_464($onEmailChanged) {
-    var i = new _no_name_provided__495($onEmailChanged);
+  function _no_name_provided_$factory_477($onEmailChanged) {
+    var i = new _no_name_provided__508($onEmailChanged);
     return function (p1) {
-      i.invoke_dgojys_k$(p1);
+      i.invoke_1y17uo_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_465($message, $onMessageChanged) {
-    var i = new _no_name_provided__501($message, $onMessageChanged);
+  function _no_name_provided_$factory_478($message, $onMessageChanged) {
+    var i = new _no_name_provided__514($message, $onMessageChanged);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_466($message, $onMessageChanged) {
-    var i = new _no_name_provided__502($message, $onMessageChanged);
+  function _no_name_provided_$factory_479($message, $onMessageChanged) {
+    var i = new _no_name_provided__515($message, $onMessageChanged);
     return function (p1) {
       i.invoke_uku1vi_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_467($onMessageChanged) {
-    var i = new _no_name_provided__500($onMessageChanged);
+  function _no_name_provided_$factory_480($onMessageChanged) {
+    var i = new _no_name_provided__513($onMessageChanged);
     return function (p1) {
-      i.invoke_dgojys_k$(p1);
+      i.invoke_1y17uo_k$(p1);
       return Unit_getInstance();
     };
   }
   function ContactFormStyle$init$() {
-    var tmp = Companion_getInstance_42();
-    return base(tmp, 'contact-form', _no_name_provided_$factory_444());
+    var tmp = Companion_getInstance_41();
+    return base(tmp, 'contact-form', _no_name_provided_$factory_457());
   }
   function InputTextStyle$init$() {
-    var tmp = Companion_getInstance_42();
-    return base(tmp, 'input-text', _no_name_provided_$factory_445());
+    var tmp = Companion_getInstance_41();
+    return base(tmp, 'input-text', _no_name_provided_$factory_458());
   }
-  function _no_name_provided__507() {
+  function _no_name_provided__520() {
   }
-  _no_name_provided__507.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
+  _no_name_provided__520.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = flexGrow_0(height_0(Companion_getInstance_40(), _get_px_(1)), 1);
+      var tmp = flexGrow_0(height_0(Companion_getInstance_39(), _get_px_(1)), 1);
       var tmp$ret$0;
       $l$block: {
         var tmp0__get_lightgray__0 = Color_getInstance_0();
@@ -51705,7 +52202,7 @@
       Box$composable(tmp_0, null, null, $composer_0, 0, 6);
       var tmp_1 = _get_px_(100);
       AWAvatar$composable(null, null, tmp_1, null, $composer_0, 0, 11);
-      var tmp_2 = flexGrow_0(height_0(Companion_getInstance_40(), _get_px_(1)), 1);
+      var tmp_2 = flexGrow_0(height_0(Companion_getInstance_39(), _get_px_(1)), 1);
       var tmp$ret$1;
       $l$block_0: {
         var tmp1__get_lightgray__0 = Color_getInstance_0();
@@ -51717,20 +52214,20 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__507.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__520.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__507.$metadata$ = {
+  _no_name_provided__520.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$ContactHeaderKt() {
     ComposableSingletons$ContactHeaderKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_5 = composableLambdaInstance(-985533172, false, _no_name_provided_$factory_468());
+    tmp._lambda_1_5 = composableLambdaInstance(-985533172, false, _no_name_provided_$factory_481());
   }
   ComposableSingletons$ContactHeaderKt.$metadata$ = {
     simpleName: 'ComposableSingletons$ContactHeaderKt',
@@ -51748,8 +52245,8 @@
     $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-2147113961);
     sourceInformation($composer_0, 'C(LogoHeader$composable)');
     if (!($changed === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_verticalAlignment = Companion_getInstance_39()._CenterVertically;
-      var tmp = Companion_getInstance_40();
+      var tmp0_verticalAlignment = Companion_getInstance_38()._CenterVertically;
+      var tmp = Companion_getInstance_39();
       var tmp_0 = height_0(fillMaxWidth$default(tmp, null, 1, null), _get_px_(120));
       var tmp_1 = _get_em_(-5);
       var tmp_2 = _get_em_(2);
@@ -51761,181 +52258,181 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_469($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_482($changed));
     }
   }
   function LogoHeader$composable$lambda($$changed, $composer, $force) {
     return LogoHeader$composable($composer, $$changed | 1);
   }
-  function _no_name_provided__508($$changed) {
-    this._$$changed_49 = $$changed;
+  function _no_name_provided__521($$changed) {
+    this._$$changed_51 = $$changed;
   }
-  _no_name_provided__508.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return LogoHeader$composable$lambda(this._$$changed_49, p0, p1);
+  _no_name_provided__521.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return LogoHeader$composable$lambda(this._$$changed_51, p0, p1);
   };
-  _no_name_provided__508.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__521.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__508.$metadata$ = {
+  _no_name_provided__521.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_468() {
-    var i = new _no_name_provided__507();
+  function _no_name_provided_$factory_481() {
+    var i = new _no_name_provided__520();
     return function (p1, p2, p3) {
       i.invoke_fpi9a8_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_469($$changed) {
-    var i = new _no_name_provided__508($$changed);
+  function _no_name_provided_$factory_482($$changed) {
+    var i = new _no_name_provided__521($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided__509($iconSize) {
+  function _no_name_provided__522($iconSize) {
     this._$iconSize = $iconSize;
   }
-  _no_name_provided__509.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
+  _no_name_provided__522.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
       $dirty = $dirty | ($composer_0.changed_vcj5fe_k$(isHovered) ? 4 : 2);
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = fontSize_0(Companion_getInstance_40(), this._$iconSize);
+      var tmp = fontSize_0(Companion_getInstance_39(), this._$iconSize);
       var tmp_0 = !isHovered;
       FaTwitter$composable(color_1(tmp, contentColor$default(tmp_0, null, null, 6, null)), $composer_0, 0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__509.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__522.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? typeof p1 === 'boolean' : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_1hof6l_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__509.$metadata$ = {
+  _no_name_provided__522.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__510($iconSize) {
+  function _no_name_provided__523($iconSize) {
     this._$iconSize_0 = $iconSize;
   }
-  _no_name_provided__510.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
+  _no_name_provided__523.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
       $dirty = $dirty | ($composer_0.changed_vcj5fe_k$(isHovered) ? 4 : 2);
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = fontSize_0(Companion_getInstance_40(), this._$iconSize_0);
+      var tmp = fontSize_0(Companion_getInstance_39(), this._$iconSize_0);
       var tmp_0 = !isHovered;
       FaLinkedinIn$composable(color_1(tmp, contentColor$default(tmp_0, null, null, 6, null)), $composer_0, 0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__510.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__523.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? typeof p1 === 'boolean' : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_1hof6l_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__510.$metadata$ = {
+  _no_name_provided__523.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__511($iconSize) {
+  function _no_name_provided__524($iconSize) {
     this._$iconSize_1 = $iconSize;
   }
-  _no_name_provided__511.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
+  _no_name_provided__524.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
       $dirty = $dirty | ($composer_0.changed_vcj5fe_k$(isHovered) ? 4 : 2);
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = fontSize_0(Companion_getInstance_40(), this._$iconSize_1);
+      var tmp = fontSize_0(Companion_getInstance_39(), this._$iconSize_1);
       var tmp_0 = !isHovered;
       FaGithubAlt$composable(color_1(tmp, contentColor$default(tmp_0, null, null, 6, null)), $composer_0, 0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__511.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__524.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? typeof p1 === 'boolean' : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_1hof6l_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__511.$metadata$ = {
+  _no_name_provided__524.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__512($iconSize) {
+  function _no_name_provided__525($iconSize) {
     this._$iconSize_2 = $iconSize;
   }
-  _no_name_provided__512.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
+  _no_name_provided__525.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
       $dirty = $dirty | ($composer_0.changed_vcj5fe_k$(isHovered) ? 4 : 2);
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = fontSize_0(Companion_getInstance_40(), this._$iconSize_2);
+      var tmp = fontSize_0(Companion_getInstance_39(), this._$iconSize_2);
       var tmp_0 = !isHovered;
       FaMailBulk$composable(color_1(tmp, contentColor$default(tmp_0, null, null, 6, null)), $composer_0, 0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__512.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__525.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? typeof p1 === 'boolean' : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_1hof6l_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__512.$metadata$ = {
+  _no_name_provided__525.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__513() {
+  function _no_name_provided__526() {
   }
-  _no_name_provided__513.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
+  _no_name_provided__526.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var iconSize = _get_px_(18);
       Footer_getInstance();
       var tmp = $composer_0;
-      SocialLinkItem$composable(null, 'https://twitter.com/adrianwita', composableLambda(tmp, -819892443, true, _no_name_provided_$factory_475(iconSize)), $composer_0, 432, 1);
+      SocialLinkItem$composable(null, 'https://twitter.com/adrianwita', composableLambda(tmp, -819892443, true, _no_name_provided_$factory_488(iconSize)), $composer_0, 432, 1);
       Footer_getInstance();
       var tmp_0 = $composer_0;
-      SocialLinkItem$composable(null, 'https://www.linkedin.com/in/adrian-witaszak-860801176/', composableLambda(tmp_0, -819892836, true, _no_name_provided_$factory_476(iconSize)), $composer_0, 432, 1);
+      SocialLinkItem$composable(null, 'https://www.linkedin.com/in/adrian-witaszak-860801176/', composableLambda(tmp_0, -819892836, true, _no_name_provided_$factory_489(iconSize)), $composer_0, 432, 1);
       Footer_getInstance();
       var tmp_1 = $composer_0;
-      SocialLinkItem$composable(null, 'https://github.com/adrianwitaszak?tab=repositories', composableLambda(tmp_1, -819893713, true, _no_name_provided_$factory_477(iconSize)), $composer_0, 432, 1);
+      SocialLinkItem$composable(null, 'https://github.com/adrianwitaszak?tab=repositories', composableLambda(tmp_1, -819893713, true, _no_name_provided_$factory_490(iconSize)), $composer_0, 432, 1);
       Footer_getInstance();
       var tmp_2 = $composer_0;
-      SocialLinkItem$composable(null, 'mailto:adrianwitaszak@gmail.com', composableLambda(tmp_2, -819894107, true, _no_name_provided_$factory_478(iconSize)), $composer_0, 432, 1);
+      SocialLinkItem$composable(null, 'mailto:adrianwitaszak@gmail.com', composableLambda(tmp_2, -819894107, true, _no_name_provided_$factory_491(iconSize)), $composer_0, 432, 1);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__513.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__526.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__513.$metadata$ = {
+  _no_name_provided__526.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__514() {
+  function _no_name_provided__527() {
   }
-  _no_name_provided__514.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
+  _no_name_provided__527.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       Footer_getInstance();
       var tmp = Colors_getInstance_0()._white;
       H2Subtitle$composable('Handcrafted by me', tmp, null, 0.7, $composer_0, 3126, 4);
-      var tmp_0 = opacity_1(margin_0(color_1(Companion_getInstance_40(), Colors_getInstance_0()._white), _get_px_(4)), 0.7);
+      var tmp_0 = opacity_1(margin_0(color_1(Companion_getInstance_39(), Colors_getInstance_0()._white), _get_px_(4)), 0.7);
       FaCopyright$composable(tmp_0, null, $composer_0, 0, 2);
       Footer_getInstance();
       var tmp_1 = Colors_getInstance_0()._white;
@@ -51943,19 +52440,19 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__514.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__527.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__514.$metadata$ = {
+  _no_name_provided__527.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__515() {
+  function _no_name_provided__528() {
   }
-  _no_name_provided__515.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
+  _no_name_provided__528.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       Footer_getInstance();
@@ -51976,88 +52473,88 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__515.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__528.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__515.$metadata$ = {
+  _no_name_provided__528.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__516() {
+  function _no_name_provided__529() {
   }
-  _no_name_provided__516.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__529.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = color_1(Companion_getInstance_40(), Colors_getInstance_0()._white);
+      var tmp = color_1(Companion_getInstance_39(), Colors_getInstance_0()._white);
       AWLogo$composable(tmp, null, $composer_0, 0, 2);
       EmSpacer$composable(2.0, null, $composer_0, 6, 2);
       Footer_getInstance();
       H2Subtitle$composable('Living, learning, & leveling up', Colors_getInstance_0()._white, _get_em_(1.2), 0.7, $composer_0, 3126, 0);
       Footer_getInstance();
       H2Subtitle$composable('one day at a time.', Colors_getInstance_0()._white, _get_em_(1.2), 0.7, $composer_0, 3126, 0);
-      var tmp0_verticalAlignment = Companion_getInstance_39()._CenterVertically;
-      var tmp1_modifier = margin_2(Companion_getInstance_40(), _get_em_(3), _get_em_(0));
+      var tmp0_verticalAlignment = Companion_getInstance_38()._CenterVertically;
+      var tmp1_modifier = margin_2(Companion_getInstance_39(), _get_em_(3), _get_em_(0));
       Row$composable(tmp1_modifier, null, tmp0_verticalAlignment, ComposableSingletons$FooterKt_getInstance()._lambda_1_6, $composer_0, 3072, 2);
-      var tmp2_verticalAlignment = Companion_getInstance_39()._CenterVertically;
-      var tmp3_modifier = Companion_getInstance_40();
+      var tmp2_verticalAlignment = Companion_getInstance_38()._CenterVertically;
+      var tmp3_modifier = Companion_getInstance_39();
       Row$composable(tmp3_modifier, null, tmp2_verticalAlignment, ComposableSingletons$FooterKt_getInstance()._lambda_2_2, $composer_0, 3078, 2);
       EmSpacer$composable(0.0, null, $composer_0, 0, 3);
       Footer_getInstance();
       var tmp_0 = Colors_getInstance_0()._white;
       H2Subtitle$composable('Made with', tmp_0, null, 0.7, $composer_0, 3126, 4);
-      var tmp4_verticalAlignment = Companion_getInstance_39()._CenterVertically;
-      var tmp_1 = Companion_getInstance_40();
+      var tmp4_verticalAlignment = Companion_getInstance_38()._CenterVertically;
+      var tmp_1 = Companion_getInstance_39();
       var tmp_2 = _get_em_(0.25);
       var tmp5_modifier = margin$default(tmp_1, tmp_2, null, null, null, 14, null);
       Row$composable(tmp5_modifier, null, tmp4_verticalAlignment, ComposableSingletons$FooterKt_getInstance()._lambda_3, $composer_0, 3072, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__516.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__529.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__516.$metadata$ = {
+  _no_name_provided__529.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__517() {
+  function _no_name_provided__530() {
   }
-  _no_name_provided__517.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__530.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_horizontalAlignment = Companion_getInstance_39()._CenterHorizontally;
-      var tmp1_modifier = margin_2(Companion_getInstance_40(), _get_em_(7), _get_em_(2));
+      var tmp0_horizontalAlignment = Companion_getInstance_38()._CenterHorizontally;
+      var tmp1_modifier = margin_2(Companion_getInstance_39(), _get_em_(7), _get_em_(2));
       Column$composable(tmp1_modifier, null, tmp0_horizontalAlignment, ComposableSingletons$FooterKt_getInstance()._lambda_4, $composer_0, 3072, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__517.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__530.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__517.$metadata$ = {
+  _no_name_provided__530.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$FooterKt() {
     ComposableSingletons$FooterKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_6 = composableLambdaInstance(-985532335, false, _no_name_provided_$factory_470());
+    tmp._lambda_1_6 = composableLambdaInstance(-985532335, false, _no_name_provided_$factory_483());
     var tmp_0 = this;
-    tmp_0._lambda_2_2 = composableLambdaInstance(-985530731, false, _no_name_provided_$factory_471());
+    tmp_0._lambda_2_2 = composableLambdaInstance(-985530731, false, _no_name_provided_$factory_484());
     var tmp_1 = this;
-    tmp_1._lambda_3 = composableLambdaInstance(-985538031, false, _no_name_provided_$factory_472());
+    tmp_1._lambda_3 = composableLambdaInstance(-985538031, false, _no_name_provided_$factory_485());
     var tmp_2 = this;
-    tmp_2._lambda_4 = composableLambdaInstance(-985532480, false, _no_name_provided_$factory_473());
+    tmp_2._lambda_4 = composableLambdaInstance(-985532480, false, _no_name_provided_$factory_486());
     var tmp_3 = this;
-    tmp_3._lambda_5 = composableLambdaInstance(-985533304, false, _no_name_provided_$factory_474());
+    tmp_3._lambda_5 = composableLambdaInstance(-985533304, false, _no_name_provided_$factory_487());
   }
   ComposableSingletons$FooterKt.$metadata$ = {
     simpleName: 'ComposableSingletons$FooterKt',
@@ -52083,92 +52580,92 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_479($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_492($changed));
     }
   }
   function Footer$composable$lambda($$changed, $composer, $force) {
     return Footer$composable($composer, $$changed | 1);
   }
-  function _no_name_provided__518($$changed) {
-    this._$$changed_50 = $$changed;
+  function _no_name_provided__531($$changed) {
+    this._$$changed_52 = $$changed;
   }
-  _no_name_provided__518.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Footer$composable$lambda(this._$$changed_50, p0, p1);
+  _no_name_provided__531.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return Footer$composable$lambda(this._$$changed_52, p0, p1);
   };
-  _no_name_provided__518.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__531.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__518.$metadata$ = {
+  _no_name_provided__531.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_470() {
-    var i = new _no_name_provided__513();
+  function _no_name_provided_$factory_483() {
+    var i = new _no_name_provided__526();
     return function (p1, p2, p3) {
       i.invoke_fpi9a8_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_471() {
-    var i = new _no_name_provided__514();
+  function _no_name_provided_$factory_484() {
+    var i = new _no_name_provided__527();
     return function (p1, p2, p3) {
       i.invoke_fpi9a8_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_472() {
-    var i = new _no_name_provided__515();
+  function _no_name_provided_$factory_485() {
+    var i = new _no_name_provided__528();
     return function (p1, p2, p3) {
       i.invoke_fpi9a8_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_473() {
-    var i = new _no_name_provided__516();
+  function _no_name_provided_$factory_486() {
+    var i = new _no_name_provided__529();
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_474() {
-    var i = new _no_name_provided__517();
+  function _no_name_provided_$factory_487() {
+    var i = new _no_name_provided__530();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_475($iconSize) {
-    var i = new _no_name_provided__509($iconSize);
+  function _no_name_provided_$factory_488($iconSize) {
+    var i = new _no_name_provided__522($iconSize);
     return function (p1, p2, p3) {
       i.invoke_1hof6l_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_476($iconSize) {
-    var i = new _no_name_provided__510($iconSize);
+  function _no_name_provided_$factory_489($iconSize) {
+    var i = new _no_name_provided__523($iconSize);
     return function (p1, p2, p3) {
       i.invoke_1hof6l_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_477($iconSize) {
-    var i = new _no_name_provided__511($iconSize);
+  function _no_name_provided_$factory_490($iconSize) {
+    var i = new _no_name_provided__524($iconSize);
     return function (p1, p2, p3) {
       i.invoke_1hof6l_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_478($iconSize) {
-    var i = new _no_name_provided__512($iconSize);
+  function _no_name_provided_$factory_491($iconSize) {
+    var i = new _no_name_provided__525($iconSize);
     return function (p1, p2, p3) {
       i.invoke_1hof6l_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_479($$changed) {
-    var i = new _no_name_provided__518($$changed);
+  function _no_name_provided_$factory_492($$changed) {
+    var i = new _no_name_provided__531($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -52189,8 +52686,8 @@
     NavSections_RESUME_instance = new NavSections('RESUME', 1, 'Resume', '/resume');
     NavSections_CONTACT_instance = new NavSections('CONTACT', 2, 'Contact', '/contact');
   }
-  function NavSections(name_0, ordinal, title, route) {
-    Enum.call(this, name_0, ordinal);
+  function NavSections(name, ordinal, title, route) {
+    Enum.call(this, name, ordinal);
     this._title = title;
     this._route = route;
   }
@@ -52199,9 +52696,9 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__519() {
+  function _no_name_provided__532() {
   }
-  _no_name_provided__519.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
+  _no_name_provided__532.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
@@ -52219,60 +52716,42 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__519.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__532.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? typeof p1 === 'boolean' : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_1hof6l_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__519.$metadata$ = {
+  _no_name_provided__532.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__520() {
+  function _no_name_provided__533() {
   }
-  _no_name_provided__520.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__533.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      FaRedo$composable(fontSize_0(toModifier$composable(IconLinkStyle, null, $composer_0, 0, 1), _get_px_(20)), $composer_0, 0, 0);
+      var tmp0_style = IconStyle_OUTLINE_getInstance();
+      var tmp1_modifier = toModifier$composable(IconLinkStyle, null, $composer_0, 0, 1);
+      FaWindowClose$composable(tmp1_modifier, tmp0_style, $composer_0, 48, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__520.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__533.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__520.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__521() {
-  }
-  _no_name_provided__521.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
-    var $composer_0 = $composer;
-    if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      FaWindowClose$composable(toModifier$composable(IconLinkStyle, null, $composer_0, 0, 1), IconStyle_OUTLINE_getInstance(), $composer_0, 48, 0);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-  };
-  _no_name_provided__521.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
-    this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__521.$metadata$ = {
+  _no_name_provided__533.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$NavHeaderKt() {
     ComposableSingletons$NavHeaderKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_7 = composableLambdaInstance(-985531706, false, _no_name_provided_$factory_483());
+    tmp._lambda_1_7 = composableLambdaInstance(-985531080, false, _no_name_provided_$factory_496());
     var tmp_0 = this;
-    tmp_0._lambda_2_3 = composableLambdaInstance(-985531373, false, _no_name_provided_$factory_484());
-    var tmp_1 = this;
-    tmp_1._lambda_3_0 = composableLambdaInstance(-985530577, false, _no_name_provided_$factory_485());
+    tmp_0._lambda_2_3 = composableLambdaInstance(-985530729, false, _no_name_provided_$factory_497());
   }
   ComposableSingletons$NavHeaderKt.$metadata$ = {
     simpleName: 'ComposableSingletons$NavHeaderKt',
@@ -52287,7 +52766,7 @@
   }
   function NavHeader$composable(currentPage, onClearClick, $composer, $changed) {
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1952786144);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-1952785935);
     sourceInformation($composer_0, 'C(NavHeader$composable)');
     var $dirty = $changed;
     if (($changed & 14) === 0)
@@ -52295,255 +52774,405 @@
     if (($changed & 112) === 0)
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(onClearClick) ? 32 : 16);
     if (!(($dirty & 91 ^ 18) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var ctx = rememberPageContext$composable($composer_0, 0);
       var tmp = $composer_0;
-      FullWidthLayout$composable(null, null, false, composableLambda(tmp, -819892343, true, _no_name_provided_$factory_486(currentPage, onClearClick, $dirty)), $composer_0, 3072, 7);
+      FullWidthLayout$composable(null, null, false, composableLambda(tmp, -819892365, true, _no_name_provided_$factory_498(currentPage, $dirty, onClearClick)), $composer_0, 3072, 7);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_487(currentPage, onClearClick, $changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_499(currentPage, onClearClick, $changed));
     }
   }
   function NavHeader$composable$lambda($currentPage, $onClearClick, $$changed, $composer, $force) {
     return NavHeader$composable($currentPage, $onClearClick, $composer, $$changed | 1);
   }
-  function _no_name_provided__522() {
+  function _no_name_provided__534() {
   }
-  _no_name_provided__522.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+  _no_name_provided__534.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
     var tmp0_$receiver = margin_2(fillMaxWidth$default(tmp, null, 1, null), _get_em_(2), _get_em_(0));
     var tmp1_left = _get_em_(2);
     var tmp2_right = _get_em_(2);
     return padding$default(tmp0_$receiver, null, tmp2_right, null, tmp1_left, 5, null);
   };
-  _no_name_provided__522.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__523() {
-  }
-  _no_name_provided__523.prototype.invoke_0_k$ = function () {
-    var tmp0_$receiver = Companion_getInstance_40();
-    var tmp1_left = _get_em_(6);
-    var tmp2_right = _get_em_(6);
-    return padding$default(tmp0_$receiver, null, tmp2_right, null, tmp1_left, 5, null);
-  };
-  _no_name_provided__523.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__524() {
-  }
-  _no_name_provided__524.prototype.invoke_0_k$ = function () {
-    var tmp0_$receiver = Companion_getInstance_40();
-    var tmp1_left = _get_em_(6);
-    var tmp2_right = _get_em_(6);
-    return padding$default(tmp0_$receiver, null, tmp2_right, null, tmp1_left, 5, null);
-  };
-  _no_name_provided__524.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__525() {
-  }
-  _no_name_provided__525.prototype.invoke_0_k$ = function () {
-    var tmp0_$receiver = Companion_getInstance_40();
-    var tmp1_left = _get_em_(24);
-    var tmp2_right = _get_em_(24);
-    return padding$default(tmp0_$receiver, null, tmp2_right, null, tmp1_left, 5, null);
-  };
-  _no_name_provided__525.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__526() {
-  }
-  _no_name_provided__526.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_488());
-    var tmp = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_489());
-    var tmp_0 = Breakpoint_MD_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_490());
-    var tmp_1 = Breakpoint_LG_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp_1, _no_name_provided_$factory_491());
-  };
-  _no_name_provided__526.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__526.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__527() {
-  }
-  _no_name_provided__527.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
-    Colors_getInstance_0();
-    return fontSize_0(color_1(tmp, '#7510F7'), _get_px_(32));
-  };
-  _no_name_provided__527.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__528() {
-  }
-  _no_name_provided__528.prototype.invoke_0_k$ = function () {
-    return fontSize_0(Companion_getInstance_40(), _get_px_(24));
-  };
-  _no_name_provided__528.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__529() {
-  }
-  _no_name_provided__529.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_492());
-    var tmp = _get_hover_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_493());
-  };
-  _no_name_provided__529.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__529.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__530() {
-  }
-  _no_name_provided__530.prototype.invoke_0_k$ = function () {
-    return transition(fontWeight_0(fontFamily_0(color_1(padding_1(Companion_getInstance_40(), _get_em_(0.5), _get_em_(0.25)), Colors_getInstance_0()._gray), ['europa', 'sans-serif']), Companion_getInstance_30()._get_Lighter__0_k$()), 'all .2s ease-in-out');
-  };
-  _no_name_provided__530.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__531() {
-  }
-  _no_name_provided__531.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
-    Colors_getInstance_0();
-    return fontWeight_0(color_1(tmp, '#7510F7'), Companion_getInstance_30()._get_Normal__0_k$());
-  };
-  _no_name_provided__531.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__532() {
-  }
-  _no_name_provided__532.prototype.invoke_0_k$ = function () {
-    return padding_1(Companion_getInstance_40(), _get_em_(0.5), _get_em_(0.75));
-  };
-  _no_name_provided__532.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__533() {
-  }
-  _no_name_provided__533.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_494());
-    var tmp = _get_hover_($this$$receiver);
-    tmp.invoke_if27nh_k$(_no_name_provided_$factory_495());
-    var tmp_0 = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_496());
-  };
-  _no_name_provided__533.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__533.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__534($currentPage, $onClearClick, $$dirty) {
-    this._$currentPage_3 = $currentPage;
-    this._$onClearClick_1 = $onClearClick;
-    this._$$dirty_25 = $$dirty;
-  }
-  _no_name_provided__534.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
-    var $composer_0 = $composer;
-    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      AWLogo$composable(null, null, $composer_0, 0, 3);
-      Spacer$composable($composer_0, 0);
-      $composer_0.startReplaceableGroup_majfzk_k$(-1611726587);
-      if (!this._$currentPage_3.equals(NavSections_RESUME_getInstance()) ? !this._$currentPage_3.equals(NavSections_CONTACT_getInstance()) : false) {
-        TextLink$composable(NavSections_RESUME_getInstance()._title, NavSections_RESUME_getInstance()._route, Colors_getInstance_0()._gray, $composer_0, 438, 0);
-      }$composer_0.endReplaceableGroup_sv8swh_k$();
-      if (!this._$currentPage_3.equals(NavSections_CONTACT_getInstance())) {
-        $composer_0.startReplaceableGroup_majfzk_k$(-1611726252);
-        var tmp = NavSections_CONTACT_getInstance()._route;
-        ButtonLink$composable(tmp, null, ComposableSingletons$NavHeaderKt_getInstance()._lambda_1_7, $composer_0, 390, 2);
-        $composer_0.endReplaceableGroup_sv8swh_k$();
-      } else {
-        $composer_0.startReplaceableGroup_majfzk_k$(-1611725811);
-        EmSpacer$composable(2.0, null, $composer_0, 6, 2);
-        var tmp_0 = Companion_getInstance_40();
-        var tmp$ret$0;
-        $l$block: {
-          var tmp0__get_white__0 = Color_getInstance_0();
-          tmp$ret$0 = Color_1('white');
-          break $l$block;
-        }
-        var tmp_1 = backgroundColor_2(tmp_0, tmp$ret$0);
-        Button$composable(this._$onClearClick_1, tmp_1, null, ComposableSingletons$NavHeaderKt_getInstance()._lambda_2_3, $composer_0, 3072 | 14 & this._$$dirty_25 >> 3, 4);
-        EmSpacer$composable(2.0, null, $composer_0, 6, 2);
-        IconLink$composable(null, NavSections_HOME_getInstance()._route, ComposableSingletons$NavHeaderKt_getInstance()._lambda_3_0, $composer_0, 432, 1);
-        $composer_0.endReplaceableGroup_sv8swh_k$();
-      }
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-  };
-  _no_name_provided__534.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
-    var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
-    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
-    this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
-    return Unit_getInstance();
-  };
   _no_name_provided__534.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__535($currentPage, $onClearClick, $$dirty) {
-    this._$currentPage_4 = $currentPage;
-    this._$onClearClick_2 = $onClearClick;
-    this._$$dirty_26 = $$dirty;
+  function _no_name_provided__535() {
   }
-  _no_name_provided__535.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
-    var $composer_0 = $composer;
-    if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_verticalAlignment = Companion_getInstance_39()._CenterVertically;
-      var tmp1_modifier = toModifier$composable(NavBarRowStyle, null, $composer_0, 0, 1);
-      var tmp = $composer_0;
-      Row$composable(tmp1_modifier, null, tmp0_verticalAlignment, composableLambda(tmp, -819892479, true, _no_name_provided_$factory_497(this._$currentPage_4, this._$onClearClick_2, this._$$dirty_26)), $composer_0, 3072, 2);
-    } else
-      $composer_0.skipToGroupEnd_sv8swh_k$();
-  };
-  _no_name_provided__535.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
-    this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
-    return Unit_getInstance();
+  _no_name_provided__535.prototype.invoke_0_k$ = function () {
+    var tmp0_$receiver = Companion_getInstance_39();
+    var tmp1_left = _get_em_(6);
+    var tmp2_right = _get_em_(6);
+    return padding$default(tmp0_$receiver, null, tmp2_right, null, tmp1_left, 5, null);
   };
   _no_name_provided__535.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__536($currentPage, $onClearClick, $$changed) {
-    this._$currentPage_5 = $currentPage;
-    this._$onClearClick_3 = $onClearClick;
-    this._$$changed_51 = $$changed;
+  function _no_name_provided__536() {
   }
-  _no_name_provided__536.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return NavHeader$composable$lambda(this._$currentPage_5, this._$onClearClick_3, this._$$changed_51, p0, p1);
+  _no_name_provided__536.prototype.invoke_0_k$ = function () {
+    var tmp0_$receiver = Companion_getInstance_39();
+    var tmp1_left = _get_em_(6);
+    var tmp2_right = _get_em_(6);
+    return padding$default(tmp0_$receiver, null, tmp2_right, null, tmp1_left, 5, null);
   };
-  _no_name_provided__536.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__536.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__537() {
+  }
+  _no_name_provided__537.prototype.invoke_0_k$ = function () {
+    var tmp0_$receiver = Companion_getInstance_39();
+    var tmp1_left = _get_em_(24);
+    var tmp2_right = _get_em_(24);
+    return padding$default(tmp0_$receiver, null, tmp2_right, null, tmp1_left, 5, null);
+  };
+  _no_name_provided__537.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__538() {
+  }
+  _no_name_provided__538.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_500());
+    var tmp = Breakpoint_SM_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_501());
+    var tmp_0 = Breakpoint_MD_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_502());
+    var tmp_1 = Breakpoint_LG_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp_1, _no_name_provided_$factory_503());
+  };
+  _no_name_provided__538.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__538.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__539() {
+  }
+  _no_name_provided__539.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
+    Colors_getInstance_0();
+    return fontSize_0(color_1(tmp, '#7510F7'), _get_px_(24));
+  };
+  _no_name_provided__539.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__540() {
+  }
+  _no_name_provided__540.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_504());
+  };
+  _no_name_provided__540.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__540.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__541() {
+  }
+  _no_name_provided__541.prototype.invoke_0_k$ = function () {
+    return transition(fontWeight_0(fontFamily_0(color_1(padding_1(Companion_getInstance_39(), _get_em_(0.5), _get_em_(0.25)), Colors_getInstance_0()._gray), ['europa', 'sans-serif']), Companion_getInstance_29()._get_Lighter__0_k$()), 'all .2s ease-in-out');
+  };
+  _no_name_provided__541.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__542() {
+  }
+  _no_name_provided__542.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
+    Colors_getInstance_0();
+    return fontWeight_0(color_1(tmp, '#7510F7'), Companion_getInstance_29()._get_Normal__0_k$());
+  };
+  _no_name_provided__542.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__543() {
+  }
+  _no_name_provided__543.prototype.invoke_0_k$ = function () {
+    return padding_1(Companion_getInstance_39(), _get_em_(0.5), _get_em_(0.75));
+  };
+  _no_name_provided__543.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__544() {
+  }
+  _no_name_provided__544.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_505());
+    var tmp = _get_hover_($this$$receiver);
+    tmp.invoke_if27nh_k$(_no_name_provided_$factory_506());
+    var tmp_0 = Breakpoint_SM_getInstance();
+    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_507());
+  };
+  _no_name_provided__544.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__544.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function invoke$lambda_13($onClearClick) {
+    return _no_name_provided_$factory_513($onClearClick);
+  }
+  function _no_name_provided__545($onClearClick) {
+    this._$onClearClick_1 = $onClearClick;
+  }
+  _no_name_provided__545.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_13(this._$onClearClick_1);
+  };
+  _no_name_provided__545.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__546($onClearClick) {
+    this._$onClearClick_2 = $onClearClick;
+  }
+  _no_name_provided__546.prototype.invoke_9dcepc_k$ = function (it) {
+    this._$onClearClick_2();
+  };
+  _no_name_provided__546.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__546.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function invoke$lambda_14($onClearClick) {
+    return _no_name_provided_$factory_511($onClearClick);
+  }
+  function _no_name_provided__547($onClearClick) {
+    this._$onClearClick_3 = $onClearClick;
+  }
+  _no_name_provided__547.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_14(this._$onClearClick_3);
+  };
+  _no_name_provided__547.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__548($$dirty, $onClearClick) {
+    this._$$dirty_29 = $$dirty;
+    this._$onClearClick_4 = $onClearClick;
+  }
+  _no_name_provided__548.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var tmp = toModifier$composable(IconLinkStyle, null, $composer_0, 0, 1);
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_512(this._$onClearClick_4);
+        var tmp1_remember$composable_0 = $composer_0;
+        var tmp2_remember$composable_0 = 14 & this._$$dirty_29 >> 3;
+        var $composer_1 = tmp1_remember$composable_0;
+        $composer_1.startReplaceableGroup_majfzk_k$(884179877);
+        sourceInformation($composer_1, 'C(remember$composable)P(1):Composables.kt#9igjgp');
+        var tmp$ret$2;
+        $l$block_1: {
+          var tmp1_cache_0_3 = $composer_1;
+          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$onClearClick_4);
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
+            {
+            }
+            var tmp$ret$0;
+            $l$block: {
+              var tmp_0;
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
+                var value_2_2_6 = tmp0_remember$composable_0();
+                tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
+                tmp_0 = value_2_2_6;
+              } else {
+                tmp_0 = tmp0_let_0_5;
+              }
+              tmp$ret$0 = tmp_0;
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0;
+            break $l$block_0;
+          }
+          var tmp_1 = tmp$ret$1;
+          tmp$ret$2 = (tmp_1 == null ? true : isObject(tmp_1)) ? tmp_1 : THROW_CCE();
+          break $l$block_1;
+        }
+        var tmp0_2 = tmp$ret$2;
+        $composer_1.endReplaceableGroup_sv8swh_k$();
+        tmp$ret$3 = tmp0_2;
+        break $l$block_2;
+      }
+      FaRedo$composable(cursor_0(onClick(tmp, tmp$ret$3), Companion_getInstance_28()._get_Pointer__0_k$()), $composer_0, 0, 0);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__548.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
+    this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__548.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__549($onClearClick) {
+    this._$onClearClick_5 = $onClearClick;
+  }
+  _no_name_provided__549.prototype.invoke_sv8swh_k$ = function () {
+    this._$onClearClick_5();
+  };
+  _no_name_provided__549.prototype.invoke_0_k$ = function () {
+    this.invoke_sv8swh_k$();
+    return Unit_getInstance();
+  };
+  _no_name_provided__549.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__550($currentPage, $$dirty, $onClearClick) {
+    this._$currentPage_3 = $currentPage;
+    this._$$dirty_30 = $$dirty;
+    this._$onClearClick_6 = $onClearClick;
+  }
+  _no_name_provided__550.prototype.invoke_fpi9a8_k$ = function ($this$Row, $composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      AWLogo$composable(null, null, $composer_0, 0, 3);
+      Spacer$composable($composer_0, 0);
+      $composer_0.startReplaceableGroup_majfzk_k$(-1611726341);
+      if (!this._$currentPage_3.equals(NavSections_RESUME_getInstance()) ? !this._$currentPage_3.equals(NavSections_CONTACT_getInstance()) : false) {
+        TextLink$composable(NavSections_RESUME_getInstance()._title, NavSections_RESUME_getInstance()._route, Colors_getInstance_0()._gray, $composer_0, 438, 0);
+      }$composer_0.endReplaceableGroup_sv8swh_k$();
+      if (!this._$currentPage_3.equals(NavSections_CONTACT_getInstance())) {
+        $composer_0.startReplaceableGroup_majfzk_k$(-1611726006);
+        var tmp = NavSections_CONTACT_getInstance()._route;
+        ButtonLink$composable(tmp, null, ComposableSingletons$NavHeaderKt_getInstance()._lambda_1_7, $composer_0, 390, 2);
+        $composer_0.endReplaceableGroup_sv8swh_k$();
+      } else {
+        $composer_0.startReplaceableGroup_majfzk_k$(-1611725565);
+        var tmp$ret$3;
+        $l$block_2: {
+          var tmp0_remember$composable_0 = _no_name_provided_$factory_509(this._$onClearClick_6);
+          var tmp1_remember$composable_0 = $composer_0;
+          var tmp2_remember$composable_0 = 14 & this._$$dirty_30 >> 3;
+          var $composer_1 = tmp1_remember$composable_0;
+          $composer_1.startReplaceableGroup_majfzk_k$(884179877);
+          sourceInformation($composer_1, 'C(remember$composable)P(1):Composables.kt#9igjgp');
+          var tmp$ret$2;
+          $l$block_1: {
+            var tmp1_cache_0_3 = $composer_1;
+            var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$onClearClick_6);
+            var tmp$ret$1;
+            $l$block_0: {
+              var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
+              {
+              }
+              var tmp$ret$0;
+              $l$block: {
+                var tmp_0;
+                if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
+                  var value_2_2_6 = tmp0_remember$composable_0();
+                  tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
+                  tmp_0 = value_2_2_6;
+                } else {
+                  tmp_0 = tmp0_let_0_5;
+                }
+                tmp$ret$0 = tmp_0;
+                break $l$block;
+              }
+              tmp$ret$1 = tmp$ret$0;
+              break $l$block_0;
+            }
+            var tmp_1 = tmp$ret$1;
+            tmp$ret$2 = (tmp_1 == null ? true : isObject(tmp_1)) ? tmp_1 : THROW_CCE();
+            break $l$block_1;
+          }
+          var tmp0_2 = tmp$ret$2;
+          $composer_1.endReplaceableGroup_sv8swh_k$();
+          tmp$ret$3 = tmp0_2;
+          break $l$block_2;
+        }
+        var tmp_2 = tmp$ret$3;
+        var tmp_3 = Companion_getInstance_39();
+        var tmp$ret$4;
+        $l$block_3: {
+          var tmp3__get_white__0 = Color_getInstance_0();
+          tmp$ret$4 = Color_1('white');
+          break $l$block_3;
+        }
+        var tmp_4 = backgroundColor_2(tmp_3, tmp$ret$4);
+        var tmp_5 = $composer_0;
+        Button$composable(tmp_2, tmp_4, null, composableLambda(tmp_5, -819894042, true, _no_name_provided_$factory_510(this._$$dirty_30, this._$onClearClick_6)), $composer_0, 3072, 4);
+        EmSpacer$composable(2.0, null, $composer_0, 6, 2);
+        IconLink$composable(null, NavSections_HOME_getInstance()._route, ComposableSingletons$NavHeaderKt_getInstance()._lambda_2_3, $composer_0, 432, 1);
+        $composer_0.endReplaceableGroup_sv8swh_k$();
+      }
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__550.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+    var tmp = p1 instanceof RowScope ? p1 : THROW_CCE();
+    var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
+    this.invoke_fpi9a8_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__550.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__551($currentPage, $$dirty, $onClearClick) {
+    this._$currentPage_4 = $currentPage;
+    this._$$dirty_31 = $$dirty;
+    this._$onClearClick_7 = $onClearClick;
+  }
+  _no_name_provided__551.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+    var $composer_0 = $composer;
+    if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
+      var tmp0_verticalAlignment = Companion_getInstance_38()._CenterVertically;
+      var tmp1_modifier = toModifier$composable(NavBarRowStyle, null, $composer_0, 0, 1);
+      var tmp = $composer_0;
+      Row$composable(tmp1_modifier, null, tmp0_verticalAlignment, composableLambda(tmp, -819893237, true, _no_name_provided_$factory_508(this._$currentPage_4, this._$$dirty_31, this._$onClearClick_7)), $composer_0, 3072, 2);
+    } else
+      $composer_0.skipToGroupEnd_sv8swh_k$();
+  };
+  _no_name_provided__551.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
+    this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__551.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__552($currentPage, $onClearClick, $$changed) {
+    this._$currentPage_5 = $currentPage;
+    this._$onClearClick_8 = $onClearClick;
+    this._$$changed_53 = $$changed;
+  }
+  _no_name_provided__552.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return NavHeader$composable$lambda(this._$currentPage_5, this._$onClearClick_8, this._$$changed_53, p0, p1);
+  };
+  _no_name_provided__552.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__536.$metadata$ = {
+  _no_name_provided__552.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -52559,120 +53188,140 @@
     NavSections_initEntries();
     return NavSections_CONTACT_instance;
   }
-  function _no_name_provided_$factory_480() {
-    var i = new _no_name_provided__526();
+  function _no_name_provided_$factory_493() {
+    var i = new _no_name_provided__538();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_481() {
-    var i = new _no_name_provided__529();
+  function _no_name_provided_$factory_494() {
+    var i = new _no_name_provided__540();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_482() {
-    var i = new _no_name_provided__533();
+  function _no_name_provided_$factory_495() {
+    var i = new _no_name_provided__544();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_483() {
-    var i = new _no_name_provided__519();
+  function _no_name_provided_$factory_496() {
+    var i = new _no_name_provided__532();
     return function (p1, p2, p3) {
       i.invoke_1hof6l_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_484() {
-    var i = new _no_name_provided__520();
+  function _no_name_provided_$factory_497() {
+    var i = new _no_name_provided__533();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_485() {
-    var i = new _no_name_provided__521();
+  function _no_name_provided_$factory_498($currentPage, $$dirty, $onClearClick) {
+    var i = new _no_name_provided__551($currentPage, $$dirty, $onClearClick);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_486($currentPage, $onClearClick, $$dirty) {
-    var i = new _no_name_provided__535($currentPage, $onClearClick, $$dirty);
-    return function (p1, p2) {
-      i.invoke_5vwf3d_k$(p1, p2);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_487($currentPage, $onClearClick, $$changed) {
-    var i = new _no_name_provided__536($currentPage, $onClearClick, $$changed);
+  function _no_name_provided_$factory_499($currentPage, $onClearClick, $$changed) {
+    var i = new _no_name_provided__552($currentPage, $onClearClick, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_488() {
-    var i = new _no_name_provided__522();
+  function _no_name_provided_$factory_500() {
+    var i = new _no_name_provided__534();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_489() {
-    var i = new _no_name_provided__523();
+  function _no_name_provided_$factory_501() {
+    var i = new _no_name_provided__535();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_490() {
-    var i = new _no_name_provided__524();
+  function _no_name_provided_$factory_502() {
+    var i = new _no_name_provided__536();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_491() {
-    var i = new _no_name_provided__525();
+  function _no_name_provided_$factory_503() {
+    var i = new _no_name_provided__537();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_492() {
-    var i = new _no_name_provided__527();
+  function _no_name_provided_$factory_504() {
+    var i = new _no_name_provided__539();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_493() {
-    var i = new _no_name_provided__528();
+  function _no_name_provided_$factory_505() {
+    var i = new _no_name_provided__541();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_494() {
-    var i = new _no_name_provided__530();
+  function _no_name_provided_$factory_506() {
+    var i = new _no_name_provided__542();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_495() {
-    var i = new _no_name_provided__531();
+  function _no_name_provided_$factory_507() {
+    var i = new _no_name_provided__543();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_496() {
-    var i = new _no_name_provided__532();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_497($currentPage, $onClearClick, $$dirty) {
-    var i = new _no_name_provided__534($currentPage, $onClearClick, $$dirty);
+  function _no_name_provided_$factory_508($currentPage, $$dirty, $onClearClick) {
+    var i = new _no_name_provided__550($currentPage, $$dirty, $onClearClick);
     return function (p1, p2, p3) {
       i.invoke_fpi9a8_k$(p1, p2, p3);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_509($onClearClick) {
+    var i = new _no_name_provided__547($onClearClick);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_510($$dirty, $onClearClick) {
+    var i = new _no_name_provided__548($$dirty, $onClearClick);
+    return function (p1, p2) {
+      i.invoke_5vwf3d_k$(p1, p2);
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_511($onClearClick) {
+    var i = new _no_name_provided__549($onClearClick);
+    return function () {
+      i.invoke_sv8swh_k$();
+      return Unit_getInstance();
+    };
+  }
+  function _no_name_provided_$factory_512($onClearClick) {
+    var i = new _no_name_provided__545($onClearClick);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_513($onClearClick) {
+    var i = new _no_name_provided__546($onClearClick);
+    return function (p1) {
+      i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
@@ -52682,7 +53331,7 @@
     this._description = description;
     this._image = image;
     this._url = url;
-    this._$stable_122 = 0;
+    this._$stable_121 = 0;
   }
   Work.prototype.toString = function () {
     return '' + 'Work(title=' + this._title_0 + ', description=' + this._description + ', image=' + this._image + ', url=' + this._url + ')';
@@ -52717,9 +53366,9 @@
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__537() {
+  function _no_name_provided__553() {
   }
-  _no_name_provided__537.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
+  _no_name_provided__553.prototype.invoke_1hof6l_k$ = function (isHovered, $composer, $changed) {
     var $composer_0 = $composer;
     var $dirty = $changed;
     if (($changed & 14) === 0)
@@ -52737,19 +53386,19 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__537.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__553.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? typeof p1 === 'boolean' : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_1hof6l_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__537.$metadata$ = {
+  _no_name_provided__553.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__538() {
+  function _no_name_provided__554() {
   }
-  _no_name_provided__538.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__554.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       EmSpacer$composable(0.0, null, $composer_0, 0, 3);
@@ -52759,7 +53408,7 @@
       H2Subtitle$composable("Here are a few projects I've worked on recently. Want to see more?", null, null, null, $composer_0, 6, 14);
       EmSpacer$composable(0.0, null, $composer_0, 0, 3);
       Home_getInstance();
-      TextLink$composable('Email me.', 'mailto:adrianwitaszak@gmail.com', null, $composer_0, 54, 4);
+      TextMailto$composable('Email me.', 'mailto:adrianwitaszak@gmail.com', null, $composer_0, 54, 4);
       WorkGrid$composable(null, $composer_0, 0, 1);
       Footer_getInstance();
       Home_getInstance();
@@ -52768,45 +53417,45 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__538.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__554.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__538.$metadata$ = {
+  _no_name_provided__554.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__539() {
+  function _no_name_provided__555() {
   }
-  _no_name_provided__539.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__555.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_horizontalAlignment = Companion_getInstance_39()._CenterHorizontally;
-      var tmp = Companion_getInstance_40();
+      var tmp0_horizontalAlignment = Companion_getInstance_38()._CenterHorizontally;
+      var tmp = Companion_getInstance_39();
       var tmp1_modifier = maxWidth_0(padding_1(fillMaxWidth$default(tmp, null, 1, null), _get_em_(1), _get_em_(1)), _get_px_(1200));
       Column$composable(tmp1_modifier, null, tmp0_horizontalAlignment, ComposableSingletons$RecentWorkKt_getInstance()._lambda_2_4, $composer_0, 3072, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__539.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__555.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__539.$metadata$ = {
+  _no_name_provided__555.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$RecentWorkKt() {
     ComposableSingletons$RecentWorkKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_8 = composableLambdaInstance(-985531059, false, _no_name_provided_$factory_498());
+    tmp._lambda_1_8 = composableLambdaInstance(-985531132, false, _no_name_provided_$factory_514());
     var tmp_0 = this;
-    tmp_0._lambda_2_4 = composableLambdaInstance(-985531558, false, _no_name_provided_$factory_499());
+    tmp_0._lambda_2_4 = composableLambdaInstance(-985531629, false, _no_name_provided_$factory_515());
     var tmp_1 = this;
-    tmp_1._lambda_3_1 = composableLambdaInstance(-985532322, false, _no_name_provided_$factory_500());
+    tmp_1._lambda_3_0 = composableLambdaInstance(-985532393, false, _no_name_provided_$factory_516());
   }
   ComposableSingletons$RecentWorkKt.$metadata$ = {
     simpleName: 'ComposableSingletons$RecentWorkKt',
@@ -52821,23 +53470,23 @@
   }
   function RecentWork$composable($composer, $changed) {
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1761857428);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1761857483);
     sourceInformation($composer_0, 'C(RecentWork$composable)');
     if (!($changed === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      FullWidthLayout$composable(null, null, false, ComposableSingletons$RecentWorkKt_getInstance()._lambda_3_1, $composer_0, 3072, 7);
+      FullWidthLayout$composable(null, null, false, ComposableSingletons$RecentWorkKt_getInstance()._lambda_3_0, $composer_0, 3072, 7);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_501($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_517($changed));
     }
   }
   function WorkGrid$composable(modifier, $composer, $changed, $default) {
     var modifier_0 = {_v: modifier};
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(699306535);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(699306592);
     sourceInformation($composer_0, 'C(WorkGrid$composable)');
     var $dirty = $changed;
     if (!(($default & 1) === 0))
@@ -52846,7 +53495,7 @@
       $dirty = $dirty | ($composer_0.changed_wi7j7l_k$(modifier_0._v) ? 4 : 2);
     if (!(($dirty & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       if (!(($default & 1) === 0))
-        modifier_0._v = Companion_getInstance_40();
+        modifier_0._v = Companion_getInstance_39();
       var tmp$ret$4;
       $l$block_3: {
         var tmp0_remember$composable_0 = $composer_0;
@@ -52864,7 +53513,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = works;
@@ -52899,19 +53548,19 @@
       var tmp_4 = _get_em_(3);
       var tmp_5 = maxWidth_0(padding$default(tmp_2, tmp_3, null, tmp_4, null, 10, null), _get_px_(1000));
       var tmp_6 = $composer_0;
-      SimpleGrid$composable(tmp_1, tmp_5, null, composableLambda(tmp_6, -819894017, true, _no_name_provided_$factory_502(workList)), $composer_0, 3072, 4);
+      SimpleGrid$composable(tmp_1, tmp_5, null, composableLambda(tmp_6, -819894236, true, _no_name_provided_$factory_518(workList)), $composer_0, 3072, 4);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_503(modifier_0, $changed, $default));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_519(modifier_0, $changed, $default));
     }
   }
   function workItem$composable(work, $composer, $changed) {
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1877476264);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(1877476321);
     sourceInformation($composer_0, 'C(workItem$composable)');
     var $dirty = $changed;
     if (($changed & 14) === 0)
@@ -52934,7 +53583,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = mutableStateOf$default(false, null, 2, null);
@@ -52964,14 +53613,14 @@
       }
       var isHovered$delegate = tmp$ret$4;
       var tmp_1 = $composer_0;
-      Link$composable(work._url, null, composableLambda(tmp_1, -819893832, true, _no_name_provided_$factory_504(work, isHovered$delegate)), $composer_0, 384, 2);
+      Link$composable(work._url, null, composableLambda(tmp_1, -819893791, true, _no_name_provided_$factory_520(work, isHovered$delegate)), $composer_0, 384, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_505(work, $changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_521(work, $changed));
     }
   }
   function RecentWork$composable$lambda($$changed, $composer, $force) {
@@ -53000,25 +53649,25 @@
   function workItem$composable$lambda_1($work, $$changed, $composer, $force) {
     return workItem$composable($work, $composer, $$changed | 1);
   }
-  function _no_name_provided__540($$changed) {
-    this._$$changed_52 = $$changed;
+  function _no_name_provided__556($$changed) {
+    this._$$changed_54 = $$changed;
   }
-  _no_name_provided__540.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return RecentWork$composable$lambda(this._$$changed_52, p0, p1);
+  _no_name_provided__556.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return RecentWork$composable$lambda(this._$$changed_54, p0, p1);
   };
-  _no_name_provided__540.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__556.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__540.$metadata$ = {
+  _no_name_provided__556.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__541($workList) {
+  function _no_name_provided__557($workList) {
     this._$workList = $workList;
   }
-  _no_name_provided__541.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__557.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       {
@@ -53033,97 +53682,97 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__541.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__557.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__541.$metadata$ = {
+  _no_name_provided__557.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__542($modifier, $$changed, $$default) {
+  function _no_name_provided__558($modifier, $$changed, $$default) {
     this._$modifier_24 = $modifier;
-    this._$$changed_53 = $$changed;
-    this._$$default_38 = $$default;
+    this._$$changed_55 = $$changed;
+    this._$$default_40 = $$default;
   }
-  _no_name_provided__542.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return WorkGrid$composable$lambda(this._$modifier_24, this._$$changed_53, this._$$default_38, p0, p1);
+  _no_name_provided__558.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return WorkGrid$composable$lambda(this._$modifier_24, this._$$changed_55, this._$$default_40, p0, p1);
   };
-  _no_name_provided__542.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__558.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__542.$metadata$ = {
+  _no_name_provided__558.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function invoke$lambda_9($isHovered$delegate) {
-    return _no_name_provided_$factory_509($isHovered$delegate);
+  function invoke$lambda_15($isHovered$delegate) {
+    return _no_name_provided_$factory_525($isHovered$delegate);
   }
-  function invoke$lambda_10($isHovered$delegate) {
-    return _no_name_provided_$factory_510($isHovered$delegate);
+  function invoke$lambda_16($isHovered$delegate) {
+    return _no_name_provided_$factory_526($isHovered$delegate);
   }
-  function _no_name_provided__543($isHovered$delegate) {
-    this._$isHovered$delegate_17 = $isHovered$delegate;
+  function _no_name_provided__559($isHovered$delegate) {
+    this._$isHovered$delegate_29 = $isHovered$delegate;
   }
-  _no_name_provided__543.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_9(this._$isHovered$delegate_17);
+  _no_name_provided__559.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_15(this._$isHovered$delegate_29);
   };
-  _no_name_provided__543.$metadata$ = {
+  _no_name_provided__559.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__544($isHovered$delegate) {
-    this._$isHovered$delegate_18 = $isHovered$delegate;
+  function _no_name_provided__560($isHovered$delegate) {
+    this._$isHovered$delegate_30 = $isHovered$delegate;
   }
-  _no_name_provided__544.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_10(this._$isHovered$delegate_18);
+  _no_name_provided__560.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_16(this._$isHovered$delegate_30);
   };
-  _no_name_provided__544.$metadata$ = {
+  _no_name_provided__560.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__545($isHovered$delegate) {
-    this._$isHovered$delegate_19 = $isHovered$delegate;
+  function _no_name_provided__561($isHovered$delegate) {
+    this._$isHovered$delegate_31 = $isHovered$delegate;
   }
-  _no_name_provided__545.prototype.invoke_9dcepc_k$ = function (it) {
-    workItem$composable$lambda_0(this._$isHovered$delegate_19, true);
+  _no_name_provided__561.prototype.invoke_9dcepc_k$ = function (it) {
+    workItem$composable$lambda_0(this._$isHovered$delegate_31, true);
   };
-  _no_name_provided__545.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__561.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__545.$metadata$ = {
+  _no_name_provided__561.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__546($isHovered$delegate) {
-    this._$isHovered$delegate_20 = $isHovered$delegate;
+  function _no_name_provided__562($isHovered$delegate) {
+    this._$isHovered$delegate_32 = $isHovered$delegate;
   }
-  _no_name_provided__546.prototype.invoke_9dcepc_k$ = function (it) {
-    workItem$composable$lambda_0(this._$isHovered$delegate_20, false);
+  _no_name_provided__562.prototype.invoke_9dcepc_k$ = function (it) {
+    workItem$composable$lambda_0(this._$isHovered$delegate_32, false);
   };
-  _no_name_provided__546.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__562.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_9dcepc_k$(p1 instanceof SyntheticMouseEvent ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__546.$metadata$ = {
+  _no_name_provided__562.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__547($work, $isHovered$delegate) {
+  function _no_name_provided__563($work, $isHovered$delegate) {
     this._$work = $work;
-    this._$isHovered$delegate_21 = $isHovered$delegate;
+    this._$isHovered$delegate_33 = $isHovered$delegate;
   }
-  _no_name_provided__547.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
+  _no_name_provided__563.prototype.invoke_jpel0v_k$ = function ($this$Box, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = Companion_getInstance_40();
+      var tmp = Companion_getInstance_39();
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_507(this._$isHovered$delegate_21);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_523(this._$isHovered$delegate_33);
         var tmp1_remember$composable_0 = $composer_0;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884179877);
@@ -53131,7 +53780,7 @@
         var tmp$ret$2;
         $l$block_1: {
           var tmp1_cache_0_3 = $composer_1;
-          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$isHovered$delegate_21);
+          var tmp2_cache_0_4 = $composer_1.changed_wi7j7l_k$(this._$isHovered$delegate_33);
           var tmp$ret$1;
           $l$block_0: {
             var tmp0_let_0_5 = tmp1_cache_0_3.rememberedValue_0_k$();
@@ -53140,7 +53789,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_0;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_0 = value_2_2_6;
@@ -53165,7 +53814,7 @@
       var tmp_2 = onMouseEnter(tmp, tmp$ret$3);
       var tmp$ret$7;
       $l$block_6: {
-        var tmp2_remember$composable_0 = _no_name_provided_$factory_508(this._$isHovered$delegate_21);
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_524(this._$isHovered$delegate_33);
         var tmp3_remember$composable_0 = $composer_0;
         var $composer_1_0 = tmp3_remember$composable_0;
         $composer_1_0.startReplaceableGroup_majfzk_k$(884179877);
@@ -53173,7 +53822,7 @@
         var tmp$ret$6;
         $l$block_5: {
           var tmp1_cache_0_3_0 = $composer_1_0;
-          var tmp2_cache_0_4_0 = $composer_1_0.changed_wi7j7l_k$(this._$isHovered$delegate_21);
+          var tmp2_cache_0_4_0 = $composer_1_0.changed_wi7j7l_k$(this._$isHovered$delegate_33);
           var tmp$ret$5;
           $l$block_4: {
             var tmp0_let_0_5_0 = tmp1_cache_0_3_0.rememberedValue_0_k$();
@@ -53182,7 +53831,7 @@
             var tmp$ret$4;
             $l$block_3: {
               var tmp_3;
-              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6_0 = tmp2_remember$composable_0();
                 tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6_0);
                 tmp_3 = value_2_2_6_0;
@@ -53209,149 +53858,149 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__547.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__563.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof BoxScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_jpel0v_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__547.$metadata$ = {
+  _no_name_provided__563.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__548($work, $isHovered$delegate) {
+  function _no_name_provided__564($work, $isHovered$delegate) {
     this._$work_0 = $work;
-    this._$isHovered$delegate_22 = $isHovered$delegate;
+    this._$isHovered$delegate_34 = $isHovered$delegate;
   }
-  _no_name_provided__548.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
+  _no_name_provided__564.prototype.invoke_sv8dqv_k$ = function ($this$Link, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_contentAlignment = Companion_getInstance_39()._Center_0;
-      var tmp1_modifier = boxShadow(borderRadius_0(margin_0(Companion_getInstance_40(), _get_em_(1)), _get_px_(20)), '0 5px 5px 0 rgb(233 240 243 / 50%), 0 0 0 1px #e6ecf8');
+      var tmp0_contentAlignment = Companion_getInstance_38()._Center_0;
+      var tmp1_modifier = boxShadow(borderRadius_0(margin_0(Companion_getInstance_39(), _get_em_(1)), _get_px_(20)), '0 5px 5px 0 rgb(233 240 243 / 50%), 0 0 0 1px #e6ecf8');
       var tmp = $composer_0;
-      Box$composable(tmp1_modifier, tmp0_contentAlignment, composableLambda(tmp, -819890503, true, _no_name_provided_$factory_506(this._$work_0, this._$isHovered$delegate_22)), $composer_0, 384, 0);
-      var tmp_0 = Companion_getInstance_40();
+      Box$composable(tmp1_modifier, tmp0_contentAlignment, composableLambda(tmp, -819890434, true, _no_name_provided_$factory_522(this._$work_0, this._$isHovered$delegate_34)), $composer_0, 384, 0);
+      var tmp_0 = Companion_getInstance_39();
       var tmp$ret$0;
       $l$block: {
         var tmp0__get_darkslateblue__0 = Color_getInstance_0();
         tmp$ret$0 = Color_1('darkslateblue');
         break $l$block;
       }
-      var tmp_1 = transition(opacity_1(backgroundColor_2(tmp_0, tmp$ret$0), workItem$composable$lambda(this._$isHovered$delegate_22) ? 100 : 0), 'all .2s ease-in-out');
+      var tmp_1 = transition(opacity_1(backgroundColor_2(tmp_0, tmp$ret$0), workItem$composable$lambda(this._$isHovered$delegate_34) ? 100 : 0), 'all .2s ease-in-out');
       Box$composable(tmp_1, null, null, $composer_0, 0, 6);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__548.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__564.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = (!(p1 == null) ? isInterface(p1, ElementScope) : false) ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_sv8dqv_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__548.$metadata$ = {
+  _no_name_provided__564.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__549($work, $$changed) {
+  function _no_name_provided__565($work, $$changed) {
     this._$work_1 = $work;
-    this._$$changed_54 = $$changed;
+    this._$$changed_56 = $$changed;
   }
-  _no_name_provided__549.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return workItem$composable$lambda_1(this._$work_1, this._$$changed_54, p0, p1);
+  _no_name_provided__565.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return workItem$composable$lambda_1(this._$work_1, this._$$changed_56, p0, p1);
   };
-  _no_name_provided__549.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__565.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__549.$metadata$ = {
+  _no_name_provided__565.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_498() {
-    var i = new _no_name_provided__537();
+  function _no_name_provided_$factory_514() {
+    var i = new _no_name_provided__553();
     return function (p1, p2, p3) {
       i.invoke_1hof6l_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_499() {
-    var i = new _no_name_provided__538();
+  function _no_name_provided_$factory_515() {
+    var i = new _no_name_provided__554();
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_500() {
-    var i = new _no_name_provided__539();
+  function _no_name_provided_$factory_516() {
+    var i = new _no_name_provided__555();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_501($$changed) {
-    var i = new _no_name_provided__540($$changed);
+  function _no_name_provided_$factory_517($$changed) {
+    var i = new _no_name_provided__556($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_502($workList) {
-    var i = new _no_name_provided__541($workList);
+  function _no_name_provided_$factory_518($workList) {
+    var i = new _no_name_provided__557($workList);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_503($modifier, $$changed, $$default) {
-    var i = new _no_name_provided__542($modifier, $$changed, $$default);
+  function _no_name_provided_$factory_519($modifier, $$changed, $$default) {
+    var i = new _no_name_provided__558($modifier, $$changed, $$default);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_504($work, $isHovered$delegate) {
-    var i = new _no_name_provided__548($work, $isHovered$delegate);
+  function _no_name_provided_$factory_520($work, $isHovered$delegate) {
+    var i = new _no_name_provided__564($work, $isHovered$delegate);
     return function (p1, p2, p3) {
       i.invoke_sv8dqv_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_505($work, $$changed) {
-    var i = new _no_name_provided__549($work, $$changed);
+  function _no_name_provided_$factory_521($work, $$changed) {
+    var i = new _no_name_provided__565($work, $$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_506($work, $isHovered$delegate) {
-    var i = new _no_name_provided__547($work, $isHovered$delegate);
+  function _no_name_provided_$factory_522($work, $isHovered$delegate) {
+    var i = new _no_name_provided__563($work, $isHovered$delegate);
     return function (p1, p2, p3) {
       i.invoke_jpel0v_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_507($isHovered$delegate) {
-    var i = new _no_name_provided__543($isHovered$delegate);
+  function _no_name_provided_$factory_523($isHovered$delegate) {
+    var i = new _no_name_provided__559($isHovered$delegate);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_508($isHovered$delegate) {
-    var i = new _no_name_provided__544($isHovered$delegate);
+  function _no_name_provided_$factory_524($isHovered$delegate) {
+    var i = new _no_name_provided__560($isHovered$delegate);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_509($isHovered$delegate) {
-    var i = new _no_name_provided__545($isHovered$delegate);
+  function _no_name_provided_$factory_525($isHovered$delegate) {
+    var i = new _no_name_provided__561($isHovered$delegate);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_510($isHovered$delegate) {
-    var i = new _no_name_provided__546($isHovered$delegate);
+  function _no_name_provided_$factory_526($isHovered$delegate) {
+    var i = new _no_name_provided__562($isHovered$delegate);
     return function (p1) {
       i.invoke_9dcepc_k$(p1);
       return Unit_getInstance();
@@ -53359,51 +54008,51 @@
   }
   var tools;
   var SkillsColumnStyle;
-  function _no_name_provided__550() {
+  function _no_name_provided__566() {
   }
-  _no_name_provided__550.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__566.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       SkillsContent$composable($composer_0, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__550.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__566.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__550.$metadata$ = {
+  _no_name_provided__566.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__551() {
+  function _no_name_provided__567() {
   }
-  _no_name_provided__551.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__567.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_horizontalAlignment = Companion_getInstance_39()._CenterHorizontally;
+      var tmp0_horizontalAlignment = Companion_getInstance_38()._CenterHorizontally;
       var tmp1_modifier = toModifier$composable(SkillsColumnStyle, null, $composer_0, 0, 1);
       Column$composable(tmp1_modifier, null, tmp0_horizontalAlignment, ComposableSingletons$SkillsKt_getInstance()._lambda_1_9, $composer_0, 3072, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__551.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__567.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__551.$metadata$ = {
+  _no_name_provided__567.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$SkillsKt() {
     ComposableSingletons$SkillsKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_9 = composableLambdaInstance(-985532851, false, _no_name_provided_$factory_512());
+    tmp._lambda_1_9 = composableLambdaInstance(-985532851, false, _no_name_provided_$factory_528());
     var tmp_0 = this;
-    tmp_0._lambda_2_5 = composableLambdaInstance(-985532609, false, _no_name_provided_$factory_513());
+    tmp_0._lambda_2_5 = composableLambdaInstance(-985532609, false, _no_name_provided_$factory_529());
   }
   ComposableSingletons$SkillsKt.$metadata$ = {
     simpleName: 'ComposableSingletons$SkillsKt',
@@ -53428,7 +54077,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_514($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_530($changed));
     }
   }
   function SkillsContent$composable($composer, $changed) {
@@ -53436,7 +54085,7 @@
     $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-478221554);
     sourceInformation($composer_0, 'C(SkillsContent$composable)');
     if (!($changed === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp = fontSize_0(Companion_getInstance_40(), _get_px_(80));
+      var tmp = fontSize_0(Companion_getInstance_39(), _get_px_(80));
       Colors_getInstance_0();
       FaMobile$composable(color_1(tmp, '#7510F7'), $composer_0, 0, 0);
       Home_getInstance();
@@ -53465,7 +54114,7 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_515($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_531($changed));
     }
   }
   function Skills$composable$lambda($$changed, $composer, $force) {
@@ -53474,10 +54123,10 @@
   function SkillsContent$composable$lambda($$changed, $composer, $force) {
     return SkillsContent$composable($composer, $$changed | 1);
   }
-  function _no_name_provided__552() {
+  function _no_name_provided__568() {
   }
-  _no_name_provided__552.prototype.invoke_0_k$ = function () {
-    var tmp = Companion_getInstance_40();
+  _no_name_provided__568.prototype.invoke_0_k$ = function () {
+    var tmp = Companion_getInstance_39();
     var tmp0_$receiver = maxWidth_0(fillMaxWidth$default(tmp, null, 1, null), _get_px_(1000));
     var tmp1_leftRight = _get_em_(2);
     var tmp2_topBottom = _get_em_(3);
@@ -53493,97 +54142,97 @@
     }
     return boxShadow(borderColor(tmp_3, tmp$ret$0), '0 5px 5px 0 rgb(233 240 243 / 50%), 0 0 0 1px #e6ecf8');
   };
-  _no_name_provided__552.$metadata$ = {
+  _no_name_provided__568.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__553() {
+  function _no_name_provided__569() {
   }
-  _no_name_provided__553.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_516());
+  _no_name_provided__569.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_532());
   };
-  _no_name_provided__553.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__569.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__553.$metadata$ = {
+  _no_name_provided__569.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__554($$changed) {
-    this._$$changed_55 = $$changed;
+  function _no_name_provided__570($$changed) {
+    this._$$changed_57 = $$changed;
   }
-  _no_name_provided__554.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Skills$composable$lambda(this._$$changed_55, p0, p1);
+  _no_name_provided__570.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return Skills$composable$lambda(this._$$changed_57, p0, p1);
   };
-  _no_name_provided__554.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__570.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__554.$metadata$ = {
+  _no_name_provided__570.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__555($$changed) {
-    this._$$changed_56 = $$changed;
+  function _no_name_provided__571($$changed) {
+    this._$$changed_58 = $$changed;
   }
-  _no_name_provided__555.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return SkillsContent$composable$lambda(this._$$changed_56, p0, p1);
+  _no_name_provided__571.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return SkillsContent$composable$lambda(this._$$changed_58, p0, p1);
   };
-  _no_name_provided__555.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__571.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__555.$metadata$ = {
+  _no_name_provided__571.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_511() {
-    var i = new _no_name_provided__553();
+  function _no_name_provided_$factory_527() {
+    var i = new _no_name_provided__569();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_512() {
-    var i = new _no_name_provided__550();
+  function _no_name_provided_$factory_528() {
+    var i = new _no_name_provided__566();
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_513() {
-    var i = new _no_name_provided__551();
+  function _no_name_provided_$factory_529() {
+    var i = new _no_name_provided__567();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_514($$changed) {
-    var i = new _no_name_provided__554($$changed);
+  function _no_name_provided_$factory_530($$changed) {
+    var i = new _no_name_provided__570($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_515($$changed) {
-    var i = new _no_name_provided__555($$changed);
+  function _no_name_provided_$factory_531($$changed) {
+    var i = new _no_name_provided__571($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_516() {
-    var i = new _no_name_provided__552();
+  function _no_name_provided_$factory_532() {
+    var i = new _no_name_provided__568();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided__556() {
+  function _no_name_provided__572() {
   }
-  _no_name_provided__556.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
+  _no_name_provided__572.prototype.invoke_9s02y_k$ = function ($this$Column, $composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 81 ^ 16) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       Home_getInstance();
@@ -53595,42 +54244,42 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__556.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
+  _no_name_provided__572.prototype.invoke_ifn5k1_k$ = function (p1, p2, p3) {
     var tmp = p1 instanceof ColumnScope ? p1 : THROW_CCE();
     var tmp_0 = (p2 == null ? true : isInterface(p2, Composer)) ? p2 : THROW_CCE();
     this.invoke_9s02y_k$(tmp, tmp_0, (!(p3 == null) ? typeof p3 === 'number' : false) ? p3 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__556.$metadata$ = {
+  _no_name_provided__572.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__557() {
+  function _no_name_provided__573() {
   }
-  _no_name_provided__557.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__573.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
-      var tmp0_horizontalAlignment = Companion_getInstance_39()._CenterHorizontally;
-      var tmp1_modifier = padding_1(Companion_getInstance_40(), _get_em_(3), _get_em_(2));
+      var tmp0_horizontalAlignment = Companion_getInstance_38()._CenterHorizontally;
+      var tmp1_modifier = padding_1(Companion_getInstance_39(), _get_em_(3), _get_em_(2));
       Column$composable(tmp1_modifier, null, tmp0_horizontalAlignment, ComposableSingletons$WelcomeKt_getInstance()._lambda_1_10, $composer_0, 3072, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__557.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__573.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__557.$metadata$ = {
+  _no_name_provided__573.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$WelcomeKt() {
     ComposableSingletons$WelcomeKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_10 = composableLambdaInstance(-985533916, false, _no_name_provided_$factory_517());
+    tmp._lambda_1_10 = composableLambdaInstance(-985533916, false, _no_name_provided_$factory_533());
     var tmp_0 = this;
-    tmp_0._lambda_2_6 = composableLambdaInstance(-985533444, false, _no_name_provided_$factory_518());
+    tmp_0._lambda_2_6 = composableLambdaInstance(-985533444, false, _no_name_provided_$factory_534());
   }
   ComposableSingletons$WelcomeKt.$metadata$ = {
     simpleName: 'ComposableSingletons$WelcomeKt',
@@ -53655,43 +54304,43 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_519($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_535($changed));
     }
   }
   function Welcome$composable$lambda($$changed, $composer, $force) {
     return Welcome$composable($composer, $$changed | 1);
   }
-  function _no_name_provided__558($$changed) {
-    this._$$changed_57 = $$changed;
+  function _no_name_provided__574($$changed) {
+    this._$$changed_59 = $$changed;
   }
-  _no_name_provided__558.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return Welcome$composable$lambda(this._$$changed_57, p0, p1);
+  _no_name_provided__574.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return Welcome$composable$lambda(this._$$changed_59, p0, p1);
   };
-  _no_name_provided__558.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__574.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__558.$metadata$ = {
+  _no_name_provided__574.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_517() {
-    var i = new _no_name_provided__556();
+  function _no_name_provided_$factory_533() {
+    var i = new _no_name_provided__572();
     return function (p1, p2, p3) {
       i.invoke_9s02y_k$(p1, p2, p3);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_518() {
-    var i = new _no_name_provided__557();
+  function _no_name_provided_$factory_534() {
+    var i = new _no_name_provided__573();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_519($$changed) {
-    var i = new _no_name_provided__558($$changed);
+  function _no_name_provided_$factory_535($$changed) {
+    var i = new _no_name_provided__574($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -53717,7 +54366,7 @@
     }
     tmp_0._gray = toString_1(tmp$ret$1);
     this._darkGray = '#141c3a';
-    this._$stable_123 = 0;
+    this._$stable_122 = 0;
   }
   Colors_0.$metadata$ = {
     simpleName: 'Colors',
@@ -53747,7 +54396,7 @@
     Navigation_instance = this;
     this._resume = 'Resume';
     this._sayHello = 'Say hello';
-    this._$stable_124 = 0;
+    this._$stable_123 = 0;
   }
   Navigation.$metadata$ = {
     simpleName: 'Navigation',
@@ -53775,7 +54424,7 @@
     this._recentWorkDescription = "Here are a few projects I've worked on recently. Want to see more?";
     this._emailMe = 'Email me.';
     this._seeMore = 'See more on Github';
-    this._$stable_125 = 0;
+    this._$stable_124 = 0;
   }
   Home.$metadata$ = {
     simpleName: 'Home',
@@ -53792,7 +54441,7 @@
     Contact_instance = this;
     this._howCanIHelp = 'Thanks for taking the time to reach out. How can I help you today?';
     this._submit = 'Submit';
-    this._$stable_126 = 0;
+    this._$stable_125 = 0;
   }
   Contact.$metadata$ = {
     simpleName: 'Contact',
@@ -53821,7 +54470,7 @@
     this._and = 'and';
     this._kobweb = 'Kobweb';
     this._kobwebLink = 'https://github.com/varabyte/kobweb';
-    this._$stable_127 = 0;
+    this._$stable_126 = 0;
   }
   Footer_0.$metadata$ = {
     simpleName: 'Footer',
@@ -53837,7 +54486,7 @@
   var ContactHeaderStyle;
   function ContactPage$composable($composer, $changed) {
     var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-815580889);
+    $composer_0 = $composer_0.startRestartGroup_ha5a7z_k$(-815580836);
     sourceInformation($composer_0, 'C(ContactPage$composable)');
     if (!($changed === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       var tmp$ret$4;
@@ -53857,7 +54506,7 @@
             var tmp$ret$1;
             $l$block_0: {
               var tmp;
-              if (false ? true : tmp0_let_0_4 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$0;
                 $l$block: {
                   var tmp0_return_7 = mutableStateOf$default('', null, 2, null);
@@ -53903,7 +54552,7 @@
             var tmp$ret$6;
             $l$block_5: {
               var tmp_1;
-              if (false ? true : tmp0_let_0_4_0 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4_0 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$5;
                 $l$block_4: {
                   var tmp0_return_7_0 = mutableStateOf$default('', null, 2, null);
@@ -53949,7 +54598,7 @@
             var tmp$ret$11;
             $l$block_10: {
               var tmp_3;
-              if (false ? true : tmp0_let_0_4_1 === Companion_getInstance_9()._Empty) {
+              if (false ? true : tmp0_let_0_4_1 === Companion_getInstance_8()._Empty) {
                 var tmp$ret$10;
                 $l$block_9: {
                   var tmp0_return_7_1 = mutableStateOf$default('', null, 2, null);
@@ -53981,7 +54630,7 @@
       var tmp_5 = NavSections_CONTACT_getInstance();
       var tmp$ret$18;
       $l$block_17: {
-        var tmp3_remember$composable_0 = _no_name_provided_$factory_521(name$delegate, email$delegate, message$delegate);
+        var tmp3_remember$composable_0 = _no_name_provided_$factory_537(name$delegate, email$delegate, message$delegate);
         var tmp4_remember$composable_0 = $composer_0;
         var $composer_1_2 = tmp4_remember$composable_0;
         $composer_1_2.startReplaceableGroup_majfzk_k$(884180712);
@@ -53998,7 +54647,7 @@
             var tmp$ret$15;
             $l$block_14: {
               var tmp_6;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp3_remember$composable_0();
                 tmp1_cache_0_3_2.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_6 = value_2_2_6;
@@ -54022,14 +54671,14 @@
       }
       var tmp_8 = tmp$ret$18;
       var tmp_9 = $composer_0;
-      PageLayout$composable(tmp_5, tmp_8, composableLambda(tmp_9, -819896145, true, _no_name_provided_$factory_522(name$delegate, email$delegate, message$delegate)), $composer_0, 390, 0);
+      PageLayout$composable(tmp_5, tmp_8, composableLambda(tmp_9, -819896104, true, _no_name_provided_$factory_538(name$delegate, email$delegate, message$delegate)), $composer_0, 390, 0);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
     var tmp0_safe_receiver = $composer_0.endRestartGroup_0_k$();
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_523($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_539($changed));
     }
   }
   function ContactPage$composable$lambda($name$delegate) {
@@ -54084,165 +54733,165 @@
     return $message$delegate._set_value__iav7o_k$(value);
   }
   function ContactPage$composable$lambda_5($name$delegate, $email$delegate, $message$delegate) {
-    return _no_name_provided_$factory_524($name$delegate, $email$delegate, $message$delegate);
+    return _no_name_provided_$factory_540($name$delegate, $email$delegate, $message$delegate);
   }
   function ContactPage$composable$lambda_6($$changed, $composer, $force) {
     return ContactPage$composable($composer, $$changed | 1);
   }
-  function _no_name_provided__559() {
+  function _no_name_provided__575() {
   }
-  _no_name_provided__559.prototype.invoke_0_k$ = function () {
-    var tmp = maxWidth_0(Companion_getInstance_40(), _get_px_(800));
+  _no_name_provided__575.prototype.invoke_0_k$ = function () {
+    var tmp = maxWidth_0(Companion_getInstance_39(), _get_px_(800));
     Colors_getInstance_0();
     var tmp0_$receiver = fontSize_0(color_1(tmp, '#141c3a'), _get_em_(1.5));
     var tmp1_leftRight = _get_em_(0.5);
     var tmp2_topBottom = _get_em_(2);
     return margin_2(tmp0_$receiver, tmp2_topBottom, tmp1_leftRight);
   };
-  _no_name_provided__559.$metadata$ = {
+  _no_name_provided__575.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__560() {
+  function _no_name_provided__576() {
   }
-  _no_name_provided__560.prototype.invoke_0_k$ = function () {
-    var tmp0_$receiver = fontSize_0(Companion_getInstance_40(), _get_em_(2));
+  _no_name_provided__576.prototype.invoke_0_k$ = function () {
+    var tmp0_$receiver = fontSize_0(Companion_getInstance_39(), _get_em_(2));
     var tmp1_leftRight = _get_em_(0.5);
     var tmp2_topBottom = _get_em_(2);
     return margin_2(tmp0_$receiver, tmp2_topBottom, tmp1_leftRight);
   };
-  _no_name_provided__560.$metadata$ = {
+  _no_name_provided__576.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__561() {
+  function _no_name_provided__577() {
   }
-  _no_name_provided__561.prototype.invoke_0_k$ = function () {
-    var tmp0_$receiver = fontSize_0(Companion_getInstance_40(), _get_em_(3));
+  _no_name_provided__577.prototype.invoke_0_k$ = function () {
+    var tmp0_$receiver = fontSize_0(Companion_getInstance_39(), _get_em_(3));
     var tmp1_leftRight = _get_em_(1);
     var tmp2_topBottom = _get_em_(3);
     return margin_2(tmp0_$receiver, tmp2_topBottom, tmp1_leftRight);
   };
-  _no_name_provided__561.$metadata$ = {
+  _no_name_provided__577.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__562() {
+  function _no_name_provided__578() {
   }
-  _no_name_provided__562.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
-    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_525());
+  _no_name_provided__578.prototype.invoke_sbq6jm_k$ = function ($this$$receiver) {
+    $this$$receiver.base_if27nh_k$(_no_name_provided_$factory_541());
     var tmp = Breakpoint_SM_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_526());
+    $this$$receiver.invoke_jx6wx7_k$(tmp, _no_name_provided_$factory_542());
     var tmp_0 = Breakpoint_LG_getInstance();
-    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_527());
+    $this$$receiver.invoke_jx6wx7_k$(tmp_0, _no_name_provided_$factory_543());
   };
-  _no_name_provided__562.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__578.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_sbq6jm_k$(p1 instanceof ComponentModifiers ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__562.$metadata$ = {
+  _no_name_provided__578.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__563($name$delegate, $email$delegate, $message$delegate) {
+  function _no_name_provided__579($name$delegate, $email$delegate, $message$delegate) {
     this._$name$delegate = $name$delegate;
     this._$email$delegate = $email$delegate;
     this._$message$delegate = $message$delegate;
   }
-  _no_name_provided__563.prototype.invoke_0_k$ = function () {
+  _no_name_provided__579.prototype.invoke_0_k$ = function () {
     return ContactPage$composable$lambda_5(this._$name$delegate, this._$email$delegate, this._$message$delegate);
   };
-  _no_name_provided__563.$metadata$ = {
+  _no_name_provided__579.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function invoke$lambda_11($name$delegate) {
-    return _no_name_provided_$factory_531($name$delegate);
+  function invoke$lambda_17($name$delegate) {
+    return _no_name_provided_$factory_547($name$delegate);
   }
-  function invoke$lambda_12($email$delegate) {
-    return _no_name_provided_$factory_532($email$delegate);
+  function invoke$lambda_18($email$delegate) {
+    return _no_name_provided_$factory_548($email$delegate);
   }
-  function invoke$lambda_13($message$delegate) {
-    return _no_name_provided_$factory_533($message$delegate);
+  function invoke$lambda_19($message$delegate) {
+    return _no_name_provided_$factory_549($message$delegate);
   }
-  function _no_name_provided__564($name$delegate) {
+  function _no_name_provided__580($name$delegate) {
     this._$name$delegate_0 = $name$delegate;
   }
-  _no_name_provided__564.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_11(this._$name$delegate_0);
+  _no_name_provided__580.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_17(this._$name$delegate_0);
   };
-  _no_name_provided__564.$metadata$ = {
+  _no_name_provided__580.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__565($email$delegate) {
+  function _no_name_provided__581($email$delegate) {
     this._$email$delegate_0 = $email$delegate;
   }
-  _no_name_provided__565.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_12(this._$email$delegate_0);
+  _no_name_provided__581.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_18(this._$email$delegate_0);
   };
-  _no_name_provided__565.$metadata$ = {
+  _no_name_provided__581.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__566($message$delegate) {
+  function _no_name_provided__582($message$delegate) {
     this._$message$delegate_0 = $message$delegate;
   }
-  _no_name_provided__566.prototype.invoke_0_k$ = function () {
-    return invoke$lambda_13(this._$message$delegate_0);
+  _no_name_provided__582.prototype.invoke_0_k$ = function () {
+    return invoke$lambda_19(this._$message$delegate_0);
   };
-  _no_name_provided__566.$metadata$ = {
+  _no_name_provided__582.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__567($name$delegate) {
+  function _no_name_provided__583($name$delegate) {
     this._$name$delegate_1 = $name$delegate;
   }
-  _no_name_provided__567.prototype.invoke_a4enbm_k$ = function (it) {
+  _no_name_provided__583.prototype.invoke_a4enbm_k$ = function (it) {
     ContactPage$composable$lambda_0(this._$name$delegate_1, it);
   };
-  _no_name_provided__567.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__583.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_a4enbm_k$((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__567.$metadata$ = {
+  _no_name_provided__583.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__568($email$delegate) {
+  function _no_name_provided__584($email$delegate) {
     this._$email$delegate_1 = $email$delegate;
   }
-  _no_name_provided__568.prototype.invoke_a4enbm_k$ = function (it) {
+  _no_name_provided__584.prototype.invoke_a4enbm_k$ = function (it) {
     ContactPage$composable$lambda_2(this._$email$delegate_1, it);
   };
-  _no_name_provided__568.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__584.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_a4enbm_k$((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__568.$metadata$ = {
+  _no_name_provided__584.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__569($message$delegate) {
+  function _no_name_provided__585($message$delegate) {
     this._$message$delegate_1 = $message$delegate;
   }
-  _no_name_provided__569.prototype.invoke_a4enbm_k$ = function (it) {
+  _no_name_provided__585.prototype.invoke_a4enbm_k$ = function (it) {
     ContactPage$composable$lambda_4(this._$message$delegate_1, it);
   };
-  _no_name_provided__569.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__585.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_a4enbm_k$((!(p1 == null) ? typeof p1 === 'string' : false) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__569.$metadata$ = {
+  _no_name_provided__585.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__570($name$delegate, $email$delegate, $message$delegate) {
+  function _no_name_provided__586($name$delegate, $email$delegate, $message$delegate) {
     this._$name$delegate_2 = $name$delegate;
     this._$email$delegate_2 = $email$delegate;
     this._$message$delegate_2 = $message$delegate;
   }
-  _no_name_provided__570.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__586.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       LogoHeader$composable($composer_0, 0);
@@ -54254,7 +54903,7 @@
       var tmp_2 = ContactPage$composable$lambda_3(this._$message$delegate_2);
       var tmp$ret$3;
       $l$block_2: {
-        var tmp0_remember$composable_0 = _no_name_provided_$factory_528(this._$name$delegate_2);
+        var tmp0_remember$composable_0 = _no_name_provided_$factory_544(this._$name$delegate_2);
         var tmp1_remember$composable_0 = $composer_0;
         var $composer_1 = tmp1_remember$composable_0;
         $composer_1.startReplaceableGroup_majfzk_k$(884179877);
@@ -54271,7 +54920,7 @@
             var tmp$ret$0;
             $l$block: {
               var tmp_3;
-              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4 ? true : tmp0_let_0_5 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6 = tmp0_remember$composable_0();
                 tmp1_cache_0_3.updateRememberedValue_qi8yb4_k$(value_2_2_6);
                 tmp_3 = value_2_2_6;
@@ -54296,7 +54945,7 @@
       var tmp_5 = tmp$ret$3;
       var tmp$ret$7;
       $l$block_6: {
-        var tmp2_remember$composable_0 = _no_name_provided_$factory_529(this._$email$delegate_2);
+        var tmp2_remember$composable_0 = _no_name_provided_$factory_545(this._$email$delegate_2);
         var tmp3_remember$composable_0 = $composer_0;
         var $composer_1_0 = tmp3_remember$composable_0;
         $composer_1_0.startReplaceableGroup_majfzk_k$(884179877);
@@ -54313,7 +54962,7 @@
             var tmp$ret$4;
             $l$block_3: {
               var tmp_6;
-              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4_0 ? true : tmp0_let_0_5_0 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6_0 = tmp2_remember$composable_0();
                 tmp1_cache_0_3_0.updateRememberedValue_qi8yb4_k$(value_2_2_6_0);
                 tmp_6 = value_2_2_6_0;
@@ -54338,7 +54987,7 @@
       var tmp_8 = tmp$ret$7;
       var tmp$ret$11;
       $l$block_10: {
-        var tmp4_remember$composable_0 = _no_name_provided_$factory_530(this._$message$delegate_2);
+        var tmp4_remember$composable_0 = _no_name_provided_$factory_546(this._$message$delegate_2);
         var tmp5_remember$composable_0 = $composer_0;
         var $composer_1_1 = tmp5_remember$composable_0;
         $composer_1_1.startReplaceableGroup_majfzk_k$(884179877);
@@ -54355,7 +55004,7 @@
             var tmp$ret$8;
             $l$block_7: {
               var tmp_9;
-              if (tmp2_cache_0_4_1 ? true : tmp0_let_0_5_1 === Companion_getInstance_9()._Empty) {
+              if (tmp2_cache_0_4_1 ? true : tmp0_let_0_5_1 === Companion_getInstance_8()._Empty) {
                 var value_2_2_6_1 = tmp4_remember$composable_0();
                 tmp1_cache_0_3_1.updateRememberedValue_qi8yb4_k$(value_2_2_6_1);
                 tmp_9 = value_2_2_6_1;
@@ -54378,146 +55027,147 @@
         break $l$block_10;
       }
       ContactForm$composable(tmp_0, tmp_1, tmp_2, tmp_5, tmp_8, tmp$ret$11, $composer_0, 0);
+      EmSpacer$composable(4.0, null, $composer_0, 6, 2);
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__570.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__586.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__570.$metadata$ = {
+  _no_name_provided__586.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__571($$changed) {
-    this._$$changed_58 = $$changed;
+  function _no_name_provided__587($$changed) {
+    this._$$changed_60 = $$changed;
   }
-  _no_name_provided__571.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return ContactPage$composable$lambda_6(this._$$changed_58, p0, p1);
+  _no_name_provided__587.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return ContactPage$composable$lambda_6(this._$$changed_60, p0, p1);
   };
-  _no_name_provided__571.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__587.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__571.$metadata$ = {
+  _no_name_provided__587.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__572($name$delegate, $email$delegate, $message$delegate) {
+  function _no_name_provided__588($name$delegate, $email$delegate, $message$delegate) {
     this._$name$delegate_3 = $name$delegate;
     this._$email$delegate_3 = $email$delegate;
     this._$message$delegate_3 = $message$delegate;
   }
-  _no_name_provided__572.prototype.invoke_sv8swh_k$ = function () {
+  _no_name_provided__588.prototype.invoke_sv8swh_k$ = function () {
     ContactPage$composable$lambda_0(this._$name$delegate_3, '');
     ContactPage$composable$lambda_2(this._$email$delegate_3, '');
     ContactPage$composable$lambda_4(this._$message$delegate_3, '');
     println('cleared');
   };
-  _no_name_provided__572.prototype.invoke_0_k$ = function () {
+  _no_name_provided__588.prototype.invoke_0_k$ = function () {
     this.invoke_sv8swh_k$();
     return Unit_getInstance();
   };
-  _no_name_provided__572.$metadata$ = {
+  _no_name_provided__588.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_520() {
-    var i = new _no_name_provided__562();
+  function _no_name_provided_$factory_536() {
+    var i = new _no_name_provided__578();
     return function (p1) {
       i.invoke_sbq6jm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_521($name$delegate, $email$delegate, $message$delegate) {
-    var i = new _no_name_provided__563($name$delegate, $email$delegate, $message$delegate);
+  function _no_name_provided_$factory_537($name$delegate, $email$delegate, $message$delegate) {
+    var i = new _no_name_provided__579($name$delegate, $email$delegate, $message$delegate);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_522($name$delegate, $email$delegate, $message$delegate) {
-    var i = new _no_name_provided__570($name$delegate, $email$delegate, $message$delegate);
+  function _no_name_provided_$factory_538($name$delegate, $email$delegate, $message$delegate) {
+    var i = new _no_name_provided__586($name$delegate, $email$delegate, $message$delegate);
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_523($$changed) {
-    var i = new _no_name_provided__571($$changed);
+  function _no_name_provided_$factory_539($$changed) {
+    var i = new _no_name_provided__587($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_524($name$delegate, $email$delegate, $message$delegate) {
-    var i = new _no_name_provided__572($name$delegate, $email$delegate, $message$delegate);
+  function _no_name_provided_$factory_540($name$delegate, $email$delegate, $message$delegate) {
+    var i = new _no_name_provided__588($name$delegate, $email$delegate, $message$delegate);
     return function () {
       i.invoke_sv8swh_k$();
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_525() {
-    var i = new _no_name_provided__559();
+  function _no_name_provided_$factory_541() {
+    var i = new _no_name_provided__575();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_526() {
-    var i = new _no_name_provided__560();
+  function _no_name_provided_$factory_542() {
+    var i = new _no_name_provided__576();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_527() {
-    var i = new _no_name_provided__561();
+  function _no_name_provided_$factory_543() {
+    var i = new _no_name_provided__577();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_528($name$delegate) {
-    var i = new _no_name_provided__564($name$delegate);
+  function _no_name_provided_$factory_544($name$delegate) {
+    var i = new _no_name_provided__580($name$delegate);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_529($email$delegate) {
-    var i = new _no_name_provided__565($email$delegate);
+  function _no_name_provided_$factory_545($email$delegate) {
+    var i = new _no_name_provided__581($email$delegate);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_530($message$delegate) {
-    var i = new _no_name_provided__566($message$delegate);
+  function _no_name_provided_$factory_546($message$delegate) {
+    var i = new _no_name_provided__582($message$delegate);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_531($name$delegate) {
-    var i = new _no_name_provided__567($name$delegate);
+  function _no_name_provided_$factory_547($name$delegate) {
+    var i = new _no_name_provided__583($name$delegate);
     return function (p1) {
       i.invoke_a4enbm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_532($email$delegate) {
-    var i = new _no_name_provided__568($email$delegate);
+  function _no_name_provided_$factory_548($email$delegate) {
+    var i = new _no_name_provided__584($email$delegate);
     return function (p1) {
       i.invoke_a4enbm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_533($message$delegate) {
-    var i = new _no_name_provided__569($message$delegate);
+  function _no_name_provided_$factory_549($message$delegate) {
+    var i = new _no_name_provided__585($message$delegate);
     return function (p1) {
       i.invoke_a4enbm_k$(p1);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided__573() {
+  function _no_name_provided__589() {
   }
-  _no_name_provided__573.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
+  _no_name_provided__589.prototype.invoke_5vwf3d_k$ = function ($composer, $changed) {
     var $composer_0 = $composer;
     if (!(($changed & 11 ^ 2) === 0) ? true : !$composer_0._get_skipping__0_k$()) {
       Welcome$composable($composer_0, 0);
@@ -54527,19 +55177,19 @@
     } else
       $composer_0.skipToGroupEnd_sv8swh_k$();
   };
-  _no_name_provided__573.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__589.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : isInterface(p1, Composer)) ? p1 : THROW_CCE();
     this.invoke_5vwf3d_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__573.$metadata$ = {
+  _no_name_provided__589.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function ComposableSingletons$IndexKt() {
     ComposableSingletons$IndexKt_instance = this;
     var tmp = this;
-    tmp._lambda_1_11 = composableLambdaInstance(-985534308, false, _no_name_provided_$factory_534());
+    tmp._lambda_1_11 = composableLambdaInstance(-985534308, false, _no_name_provided_$factory_550());
   }
   ComposableSingletons$IndexKt.$metadata$ = {
     simpleName: 'ComposableSingletons$IndexKt',
@@ -54565,36 +55215,36 @@
     if (tmp0_safe_receiver === null)
       null;
     else {
-      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_535($changed));
+      tmp0_safe_receiver.updateScope_wte2v3_k$(_no_name_provided_$factory_551($changed));
     }
   }
   function HomePage$composable$lambda($$changed, $composer, $force) {
     return HomePage$composable($composer, $$changed | 1);
   }
-  function _no_name_provided__574($$changed) {
-    this._$$changed_59 = $$changed;
+  function _no_name_provided__590($$changed) {
+    this._$$changed_61 = $$changed;
   }
-  _no_name_provided__574.prototype.invoke_xtxync_k$ = function (p0, p1) {
-    return HomePage$composable$lambda(this._$$changed_59, p0, p1);
+  _no_name_provided__590.prototype.invoke_xtxync_k$ = function (p0, p1) {
+    return HomePage$composable$lambda(this._$$changed_61, p0, p1);
   };
-  _no_name_provided__574.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__590.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Composer) : false) ? p1 : THROW_CCE();
     this.invoke_xtxync_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__574.$metadata$ = {
+  _no_name_provided__590.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided_$factory_534() {
-    var i = new _no_name_provided__573();
+  function _no_name_provided_$factory_550() {
+    var i = new _no_name_provided__589();
     return function (p1, p2) {
       i.invoke_5vwf3d_k$(p1, p2);
       return Unit_getInstance();
     };
   }
-  function _no_name_provided_$factory_535($$changed) {
-    var i = new _no_name_provided__574($$changed);
+  function _no_name_provided_$factory_551($$changed) {
+    var i = new _no_name_provided__590($$changed);
     return function (p1, p2) {
       i.invoke_xtxync_k$(p1, p2);
       return Unit_getInstance();
@@ -54808,7 +55458,7 @@
   emptyLambda = emptyLambda$init$();
   threadSnapshot = new SnapshotThreadLocal();
   lock = new Object();
-  openSnapshots = Companion_getInstance_16()._EMPTY_4;
+  openSnapshots = Companion_getInstance_15()._EMPTY_4;
   nextSnapshotId = 1;
   applyObservers = applyObservers$init$();
   globalWriteObservers = globalWriteObservers$init$();
@@ -54895,54 +55545,54 @@
   inputRestoreControlledStateEffect = inputRestoreControlledStateEffect$init$();
   radioGroupScopeImpl = new RadioGroupScope();
   generatedRadioGroupNamesCounter = 0;
-  radioGroupCompositionLocalValue = compositionLocalOf$default(null, _no_name_provided_$factory_141(), 1, null);
-  radioGroupCompositionLocalName = compositionLocalOf$default(null, _no_name_provided_$factory_142(), 1, null);
+  radioGroupCompositionLocalValue = compositionLocalOf$default(null, _no_name_provided_$factory_138(), 1, null);
+  radioGroupCompositionLocalName = compositionLocalOf$default(null, _no_name_provided_$factory_139(), 1, null);
   normalizedKeys = mapOf([to('Esc', 'Escape'), to('Spacebar', ' '), to('Left', 'ArrowLeft'), to('Up', 'ArrowUp'), to('Right', 'ArrowRight'), to('Down', 'ArrowDown'), to('Del', 'Delete'), to('Apps', 'ContextMenu'), to('Menu', 'ContextMenu'), to('Scroll', 'ScrollLock'), to('MozPrintableKey', 'Unidentified')]);
-  ButtonStyle = new ComponentStyle('silk-button', _no_name_provided_$factory_256());
-  CanvasStyle = new ComponentStyle('silk-canvas', _no_name_provided_$factory_268());
+  ButtonStyle = new ComponentStyle('silk-button', _no_name_provided_$factory_253());
+  CanvasStyle = new ComponentStyle('silk-canvas', _no_name_provided_$factory_265());
   SimpleGridStyle = SimpleGridStyle$init$();
   SimpleGridColumnVariants = SimpleGridColumnVariants$init$();
-  SurfaceStyle = new ComponentStyle('silk-surface', _no_name_provided_$factory_278());
-  DisplayIfSmStyle = new ComponentStyle('silk-display-if-sm', _no_name_provided_$factory_283());
-  DisplayIfMdStyle = new ComponentStyle('silk-display-if-md', _no_name_provided_$factory_284());
-  DisplayIfLgStyle = new ComponentStyle('silk-display-if-lg', _no_name_provided_$factory_285());
-  DisplayIfXlStyle = new ComponentStyle('silk-display-if-xl', _no_name_provided_$factory_286());
-  DisplayUntilSmStyle = new ComponentStyle('silk-display-until-sm', _no_name_provided_$factory_287());
-  DisplayUntilMdStyle = new ComponentStyle('silk-display-until-md', _no_name_provided_$factory_288());
-  DisplayUntilLgStyle = new ComponentStyle('silk-display-until-lg', _no_name_provided_$factory_289());
-  DisplayUntilXlStyle = new ComponentStyle('silk-display-until-xl', _no_name_provided_$factory_290());
-  LinkStyle_0 = new ComponentStyle('silk-link', _no_name_provided_$factory_303());
-  UndecoratedLinkVariant = LinkStyle_0.addVariant_ft6p7_k$('undecorated', _no_name_provided_$factory_304());
-  UncoloredLinkVariant = LinkStyle_0.addVariant_ft6p7_k$('uncolored', _no_name_provided_$factory_305());
-  TextStyle = new ComponentStyle('silk-text', _no_name_provided_$factory_319());
+  SurfaceStyle = new ComponentStyle('silk-surface', _no_name_provided_$factory_275());
+  DisplayIfSmStyle = new ComponentStyle('silk-display-if-sm', _no_name_provided_$factory_280());
+  DisplayIfMdStyle = new ComponentStyle('silk-display-if-md', _no_name_provided_$factory_281());
+  DisplayIfLgStyle = new ComponentStyle('silk-display-if-lg', _no_name_provided_$factory_282());
+  DisplayIfXlStyle = new ComponentStyle('silk-display-if-xl', _no_name_provided_$factory_283());
+  DisplayUntilSmStyle = new ComponentStyle('silk-display-until-sm', _no_name_provided_$factory_284());
+  DisplayUntilMdStyle = new ComponentStyle('silk-display-until-md', _no_name_provided_$factory_285());
+  DisplayUntilLgStyle = new ComponentStyle('silk-display-until-lg', _no_name_provided_$factory_286());
+  DisplayUntilXlStyle = new ComponentStyle('silk-display-until-xl', _no_name_provided_$factory_287());
+  LinkStyle_0 = new ComponentStyle('silk-link', _no_name_provided_$factory_300());
+  UndecoratedLinkVariant = LinkStyle_0.addVariant_ft6p7_k$('undecorated', _no_name_provided_$factory_301());
+  UncoloredLinkVariant = LinkStyle_0.addVariant_ft6p7_k$('uncolored', _no_name_provided_$factory_302());
+  TextStyle = new ComponentStyle('silk-text', _no_name_provided_$factory_316());
   _SilkTheme = null;
-  colorModeState$delegate = lazy(_no_name_provided_$factory_324());
+  colorModeState$delegate = lazy(_no_name_provided_$factory_321());
   LightSilkPalette = LightSilkPalette$init$();
   DarkSilkPalette = DarkSilkPalette$init$();
   apiFetcherInstance = new ApiFetcher();
   initSilkHook = initSilkHook$init$();
-  ButtonStyle_0 = new ComponentStyle('button-style', _no_name_provided_$factory_367());
-  LinkTextStyle = new ComponentStyle('link-item-text', _no_name_provided_$factory_368());
-  OutlinedButtonStyle = new ComponentStyle('white-button', _no_name_provided_$factory_369());
-  HeroStyle = new ComponentStyle('hero', _no_name_provided_$factory_400());
-  ButtonIconStyle = new ComponentStyle('button-icon', _no_name_provided_$factory_401());
-  LinkStyle_1 = new ComponentStyle('link-icon', _no_name_provided_$factory_402());
-  TextStyle_0 = new ComponentStyle('text', _no_name_provided_$factory_413());
-  LightTextStyleVariant = TextStyle_0.addVariant_ft6p7_k$('light-text', _no_name_provided_$factory_414());
-  BoldTextStyle = TextStyle_0.addVariant_ft6p7_k$('bold-text', _no_name_provided_$factory_415());
-  NormalTextStyle = TextStyle_0.addVariant_ft6p7_k$('normal-text', _no_name_provided_$factory_416());
-  AboutMeColumnStyle = new ComponentStyle('about-column', _no_name_provided_$factory_436());
+  ButtonStyle_0 = new ComponentStyle('button-style', _no_name_provided_$factory_364());
+  LinkTextStyle = new ComponentStyle('link-item-text', _no_name_provided_$factory_365());
+  OutlinedButtonStyle = new ComponentStyle('white-button', _no_name_provided_$factory_366());
+  HeroStyle = new ComponentStyle('hero', _no_name_provided_$factory_413());
+  ButtonIconStyle = new ComponentStyle('button-icon', _no_name_provided_$factory_414());
+  LinkStyle_1 = new ComponentStyle('link-icon', _no_name_provided_$factory_415());
+  TextStyle_0 = new ComponentStyle('text', _no_name_provided_$factory_426());
+  LightTextStyleVariant = TextStyle_0.addVariant_ft6p7_k$('light-text', _no_name_provided_$factory_427());
+  BoldTextStyle = TextStyle_0.addVariant_ft6p7_k$('bold-text', _no_name_provided_$factory_428());
+  NormalTextStyle = TextStyle_0.addVariant_ft6p7_k$('normal-text', _no_name_provided_$factory_429());
+  AboutMeColumnStyle = new ComponentStyle('about-column', _no_name_provided_$factory_449());
   ContactFormStyle = ContactFormStyle$init$();
   InputTextStyle = InputTextStyle$init$();
-  ResizableStyle = new ComponentStyle('resizable', _no_name_provided_$factory_446());
-  InputStyle = new ComponentStyle('form-input', _no_name_provided_$factory_447());
-  NavBarRowStyle = new ComponentStyle('navbar', _no_name_provided_$factory_480());
-  IconLinkStyle = new ComponentStyle('icon-link-style', _no_name_provided_$factory_481());
-  NavItemTextStyle = new ComponentStyle('nav-item-text', _no_name_provided_$factory_482());
+  ResizableStyle = new ComponentStyle('resizable', _no_name_provided_$factory_459());
+  InputStyle = new ComponentStyle('form-input', _no_name_provided_$factory_460());
+  NavBarRowStyle = new ComponentStyle('navbar-row', _no_name_provided_$factory_493());
+  IconLinkStyle = new ComponentStyle('icon-link-style', _no_name_provided_$factory_494());
+  NavItemTextStyle = new ComponentStyle('nav-item-text', _no_name_provided_$factory_495());
   works = listOf([new Work('Pex Wallpapers', 'Wallpaper app in Jetpack Compose', 'images/wallpapers.png', 'https://github.com/adrianwitaszak/PexWallpapers'), new Work('Pex Walls XML', 'Wallpaper app in Xml', 'images/walls.png', 'https://github.com/adrianwitaszak/PexWallpapersXml'), new Work('Shoppe', 'Shopping app - for Sellers', 'images/shoppe.png', 'https://github.com/adrianwitaszak/shoppe'), new Work('Shoppe - backend', 'Backend for Shoppe app', 'images/shoppe-backend.png', 'https://github.com/adrianwitaszak/shoppe-backend'), new Work('Betty', 'Odds Checking App', 'images/betty.png', 'https://github.com/adrianwitaszak/Betty')]);
   tools = listOf(['Android Studio', 'IntelliJ IDEA']);
-  SkillsColumnStyle = new ComponentStyle('skills-column', _no_name_provided_$factory_511());
-  ContactHeaderStyle = new ComponentStyle('contact-header-style', _no_name_provided_$factory_520());
+  SkillsColumnStyle = new ComponentStyle('skills-column', _no_name_provided_$factory_527());
+  ContactHeaderStyle = new ComponentStyle('contact-header-style', _no_name_provided_$factory_536());
   var $kotlinx = _.kotlinx || (_.kotlinx = {});
   var $kotlinx$atomicfu = $kotlinx.atomicfu || ($kotlinx.atomicfu = {});
   $kotlinx$atomicfu.atomic$ref$ = atomic_2;

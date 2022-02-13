@@ -26,6 +26,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.onClick
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.transition
+import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.icons.fa.FaRedo
 import com.varabyte.kobweb.silk.components.icons.fa.FaTelegramPlane
@@ -38,7 +39,6 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.px
-import org.w3c.xhr.XMLHttpRequest
 
 enum class NavSections(val title: String, val route: String) {
     HOME("Home", "/"),
@@ -50,7 +50,10 @@ enum class NavSections(val title: String, val route: String) {
 @Composable
 fun NavHeader(
     currentPage: NavSections,
+    onClearClick: () -> Unit,
 ) {
+    val ctx = rememberPageContext()
+
     FullWidthLayout {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -77,13 +80,23 @@ fun NavHeader(
                     }
                 )
             } else {
+                Button(
+                    onClick = { onClearClick() },
+                    modifier = Modifier.backgroundColor(Color.white)
+                ) {
+                    FaRedo(
+                        modifier = IconLinkStyle.toModifier()
+                            .onClick { onClearClick() }
+                            .cursor(Cursor.Pointer)
+                    )
+                }
                 EmSpacer(2.0)
-                IconLink(href = NavSections.HOME.route) {
+                IconLink(
+                    href = NavSections.HOME.route
+                ) {
                     FaWindowClose(
                         style = IconStyle.OUTLINE,
                         modifier = IconLinkStyle.toModifier()
-                            .onClick {  }
-                            .cursor(Cursor.Pointer)
                     )
                 }
             }
@@ -91,7 +104,7 @@ fun NavHeader(
     }
 }
 
-val NavBarRowStyle = ComponentStyle("navbar") {
+val NavBarRowStyle = ComponentStyle("navbar-row") {
     base {
         Modifier
             .fillMaxWidth()
@@ -113,10 +126,7 @@ val IconLinkStyle = ComponentStyle("icon-link-style") {
     base {
         Modifier
             .color(Colors.primary)
-            .fontSize(32.px)
-    }
-    hover {
-        Modifier.fontSize(24.px)
+            .fontSize(24.px)
     }
 }
 

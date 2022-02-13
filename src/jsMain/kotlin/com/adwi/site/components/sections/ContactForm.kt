@@ -1,10 +1,6 @@
 package com.adwi.site.components.sections
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import com.adwi.site.components.composables.ButtonIconStyle
 import com.adwi.site.components.composables.ButtonMailto
 import com.adwi.site.components.composables.EmSpacer
@@ -14,11 +10,14 @@ import com.adwi.site.components.theme.contentColor
 import com.adwi.site.components.utils.Strings
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Overflow
+import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.asAttributesBuilder
+import com.varabyte.kobweb.compose.ui.modifiers.alignContent
+import com.varabyte.kobweb.compose.ui.modifiers.alignItems
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
 import com.varabyte.kobweb.compose.ui.modifiers.border
 import com.varabyte.kobweb.compose.ui.modifiers.borderColor
@@ -34,8 +33,8 @@ import com.varabyte.kobweb.compose.ui.modifiers.minHeight
 import com.varabyte.kobweb.compose.ui.modifiers.overflowX
 import com.varabyte.kobweb.compose.ui.modifiers.overflowY
 import com.varabyte.kobweb.compose.ui.modifiers.padding
+import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.modifiers.transition
-import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.icons.fa.FaTelegramPlane
 import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIf
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
@@ -43,9 +42,7 @@ import com.varabyte.kobweb.silk.components.style.active
 import com.varabyte.kobweb.silk.components.style.base
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
-import com.varabyte.kobweb.silk.components.text.Text
 import org.jetbrains.compose.web.attributes.InputType
-import org.jetbrains.compose.web.attributes.name
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.em
@@ -75,8 +72,8 @@ fun ContactForm(
                 Input(
                     type = InputType.Text,
                     attrs = listOf(InputTextStyle, InputStyle).toModifier().asAttributesBuilder() {
-                        name(name)
-                        onChange { onNameChanged(it.value) }
+                        value(name)
+                        onInput { onNameChanged(it.value) }
                     }
                 )
             }
@@ -90,8 +87,8 @@ fun ContactForm(
                 Input(
                     type = InputType.Email,
                     attrs = listOf(InputTextStyle, InputStyle).toModifier().asAttributesBuilder() {
-                        name(email)
-                        onChange { onEmailChanged(it.value) }
+                        value(email)
+                        onInput { onEmailChanged(it.value) }
                     }
                 )
             }
@@ -105,8 +102,8 @@ fun ContactForm(
             Input(
                 type = InputType.Text,
                 attrs = listOf(InputTextStyle, InputStyle, ResizableStyle).toModifier().asAttributesBuilder() {
-                    name(message)
-                    onChange { onMessageChanged(it.value) }
+                    value(message)
+                    onInput { onMessageChanged(it.value) }
                 }
             )
         }
@@ -140,8 +137,8 @@ val InputTextStyle = ComponentStyle.base("input-text") {
         .overflowX(Overflow.Hidden)
         .overflowY(Overflow.Scroll)
         .margin(top = 1.em, bottom = 1.5.em)
+        .textAlign(TextAlign.Start)
 }
-
 val ResizableStyle = ComponentStyle("resizable") {
     base {
         Modifier

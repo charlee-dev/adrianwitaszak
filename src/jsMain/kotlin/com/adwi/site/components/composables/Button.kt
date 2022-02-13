@@ -28,6 +28,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.size
 import com.varabyte.kobweb.compose.ui.modifiers.textDecorationLine
 import com.varabyte.kobweb.compose.ui.modifiers.transition
+import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.navigation.Link
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
@@ -41,6 +42,7 @@ import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.A
+import org.jetbrains.compose.web.dom.Button
 
 @Composable
 fun TextLink(
@@ -168,12 +170,11 @@ fun IconLink(
     href: String,
     icon: @Composable () -> Unit,
 ) {
-    val isHovered by remember { mutableStateOf(false) }
+    val ctx = rememberPageContext()
 
-    Link(
-        href = href,
-        attrs = modifier.textDecorationLine(if (isHovered) TextDecorationLine.Underline else TextDecorationLine.None)
-            .asAttributesBuilder()
+    Button(
+        onClick = { ctx.router.navigateTo(href)},
+        modifier = modifier.backgroundColor(Color.white)
     ) {
         icon()
     }
