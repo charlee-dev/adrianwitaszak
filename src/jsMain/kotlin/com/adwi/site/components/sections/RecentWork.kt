@@ -6,7 +6,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.adwi.site.components.composables.ButtonLink
-import com.adwi.site.components.composables.TextLink
 import com.adwi.site.components.composables.ButtonIconStyle
 import com.adwi.site.components.composables.EmSpacer
 import com.adwi.site.components.composables.H1Text
@@ -15,6 +14,8 @@ import com.adwi.site.components.composables.TextMailto
 import com.adwi.site.components.layouts.FullWidthLayout
 import com.adwi.site.components.theme.Colors
 import com.adwi.site.components.utils.Strings
+import com.adwi.site.model.Experience
+import com.adwi.site.model.experiences
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -56,7 +57,7 @@ fun RecentWork() {
         ) {
             EmSpacer()
             H1Text(
-                text = Strings.Home.recentWork,
+                text = Strings.Home.recentExperience,
             )
             H2Subtitle(text = Strings.Home.recentWorkDescription)
             EmSpacer()
@@ -85,7 +86,7 @@ fun RecentWork() {
 fun WorkGrid(
     modifier: Modifier = Modifier,
 ) {
-    val workList = remember { works }
+    val workList = remember { experiences }
 
     SimpleGrid(
         numColumns = ResponsiveValues(1, 2, 3, 3, 3),
@@ -93,18 +94,18 @@ fun WorkGrid(
             .padding(top = 3.em, bottom = 3.em)
             .maxWidth(1000.px)
     ) {
-        workList.forEach { workItem(it) }
+        workList.forEach { WorkItem(it) }
     }
 }
 
 @Composable
-fun workItem(
-    work: Work,
+fun WorkItem(
+    item: Experience,
 ) {
     var isHovered by remember { mutableStateOf(false) }
 
     Link(
-        href = work.url,
+        href = item.url,
     ) {
         Box(
             contentAlignment = Alignment.Center,
@@ -114,8 +115,8 @@ fun workItem(
                 .boxShadow("0 5px 5px 0 rgb(233 240 243 / 50%), 0 0 0 1px #e6ecf8")
         ) {
             Img(
-                src = work.image,
-                alt = work.title,
+                src = item.image,
+                alt = item.title,
                 attrs = Modifier
                     .onMouseEnter { isHovered = true }
                     .onMouseLeave { isHovered = false }
@@ -133,39 +134,3 @@ fun workItem(
         )
     }
 }
-
-data class Work(
-    val title: String,
-    val description: String,
-    val image: String,
-    val url: String,
-)
-
-val works = listOf(
-    Work(
-        "Pex Wallpapers",
-        "Wallpaper app in Jetpack Compose",
-        "images/wallpapers.png",
-        "https://github.com/adrianwitaszak/PexWallpapers"),
-    Work(
-        "Pex Walls XML",
-        "Wallpaper app in Xml",
-        "images/walls.png",
-        "https://github.com/adrianwitaszak/PexWallpapersXml"),
-    Work(
-        "Shoppe",
-        "Shopping app - for Sellers",
-        "images/shoppe.png",
-        "https://github.com/adrianwitaszak/shoppe"),
-    Work(
-        "Shoppe - backend",
-        "Backend for Shoppe app",
-        "images/shoppe-backend.png",
-        "https://github.com/adrianwitaszak/shoppe-backend"),
-    Work(
-        "Betty",
-        "Odds Checking App",
-        "images/betty.png",
-        "https://github.com/adrianwitaszak/Betty"
-    )
-)

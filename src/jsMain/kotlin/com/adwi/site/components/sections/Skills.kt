@@ -29,16 +29,16 @@ import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.px
 
-val tools = listOf("Android Studio", "IntelliJ IDEA")
+val tools = listOf("Android Studio", "IntelliJ IDEA", "Xcode")
 
 @Composable
-fun Skills() {
+fun Skills(content: @Composable () -> Unit) {
     FullWidthLayout {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = SkillsColumnStyle.toModifier()
         ) {
-            SkillsContent()
+            content()
         }
     }
 }

@@ -35,6 +35,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.overflowY
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.modifiers.transition
+import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.icons.fa.FaTelegramPlane
 import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIf
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
@@ -58,6 +59,8 @@ fun ContactForm(
     onEmailChanged: (String) -> Unit,
     onMessageChanged: (String) -> Unit,
 ) {
+    val ctx = rememberPageContext()
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = ContactFormStyle.toModifier()
@@ -110,6 +113,7 @@ fun ContactForm(
         EmSpacer(2.0)
         ButtonMailto(
             href = "mailto:adrianwitaszak@gmail.com?subject=$name-$email&body=$message",
+            route = NavSections.MESSAGE_RECEIVED.route,
             text = Strings.Contact.submit,
             icon = { isHovered ->
                 FaTelegramPlane(

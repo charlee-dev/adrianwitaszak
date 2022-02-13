@@ -6,6 +6,7 @@ import com.adwi.site.components.layouts.PageLayout
 import com.adwi.site.components.sections.NavSections
 import com.adwi.site.components.sections.RecentWork
 import com.adwi.site.components.sections.Skills
+import com.adwi.site.components.sections.SkillsContent
 import com.adwi.site.components.sections.Welcome
 import com.varabyte.kobweb.core.Page
 
@@ -17,7 +18,7 @@ fun HomePage() {
     ) {
         Welcome()
         AboutMe()
-        Skills()
+        Skills() { SkillsContent() }
         RecentWork()
     }
 }

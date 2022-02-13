@@ -5,6 +5,7 @@ object Strings {
     object Navigation {
         const val resume = "Resume"
         const val sayHello = "Say hello"
+        const val backToHome = "Back to home"
     }
 
     object Home {
@@ -17,12 +18,12 @@ object Strings {
         const val aboutSubtitle =
             "Since beginning my journey as a freelance designer nearly 2 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time."
 
-        const val iLikeToCode = "I like to code things from scratch, and enjoy bringing ideas to life in the browser."
+        const val iLikeToCode = "I like to code things from scratch, and enjoy bringing ideas to life on mobile."
         const val languages = "Languages I speak:"
-        const val languagesList = "Kotlin, Java, Flutter"
+        const val languagesList = "Kotlin, Java, Swift"
         const val devTools = "Dev tools:"
 
-        const val recentWork = "My Recent Work"
+        const val recentExperience = "My Recent Experience"
         const val recentWorkDescription = "Here are a few projects I've worked on recently. Want to see more?"
         const val emailMe = "Email me."
         const val seeMore = "See more on Github"
@@ -31,6 +32,15 @@ object Strings {
     object Contact {
         const val howCanIHelp = "Thanks for taking the time to reach out. How can I help you today?"
         const val submit = "Submit"
+        const val messageReceived = "Message received. Thanks!"
+        const val inTouch = "I'll be in touch with you shortly."
+        const val email = "adrianwitaszak@gmail.com"
+        const val address = "York, UK"
+        const val name = "Adrian Witaszak"
+    }
+
+    object Resume {
+        const val resume = "Resume"
     }
 
     object Footer {

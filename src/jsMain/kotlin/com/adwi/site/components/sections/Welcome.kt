@@ -20,7 +20,7 @@ fun Welcome() {
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(topBottom = 3.em, leftRight = 2.em)
         ) {
-            H1Text(text = Strings.Home.welcomeHeader)
+            H1Text(text = Strings.Contact.name)
             H2Subtitle(text = Strings.Home.welcomeHeaderSubtitle)
             AWAvatar()
             AWHeroImage()

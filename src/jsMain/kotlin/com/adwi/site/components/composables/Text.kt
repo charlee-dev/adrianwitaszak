@@ -30,8 +30,7 @@ fun H1Text(
     H1 {
         Text(
             text = text,
-            modifier = TextStyle
-                .toModifier(BoldTextStyle)
+            modifier = TextStyle.toModifier(BoldTextStyle)
                 .color(color)
         )
     }

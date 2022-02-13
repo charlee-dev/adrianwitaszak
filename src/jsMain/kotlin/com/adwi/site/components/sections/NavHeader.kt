@@ -44,6 +44,7 @@ enum class NavSections(val title: String, val route: String) {
     HOME("Home", "/"),
     RESUME("Resume", "/resume"),
     CONTACT("Contact", "/contact"),
+    MESSAGE_RECEIVED("Message received", "/success"),
 //    MARKDOWN("Markdown", "/markdown") // Kept it for now
 }
 

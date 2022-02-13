@@ -28,8 +28,8 @@ fun PageLayout(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         NavHeader(
-        currentPage = currentPage,
-        onClearClick = onClearClick
+            currentPage = currentPage,
+            onClearClick = onClearClick
         )
         content()
         Footer()

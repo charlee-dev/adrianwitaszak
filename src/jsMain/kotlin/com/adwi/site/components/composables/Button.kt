@@ -5,7 +5,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.adwi.site.components.sections.NavSections
 import com.adwi.site.components.theme.Colors
+import com.adwi.site.components.theme.contentColor
 import com.adwi.site.components.utils.Strings
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
@@ -31,6 +33,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.transition
 import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.navigation.Link
 import com.varabyte.kobweb.silk.components.forms.Button
+import com.varabyte.kobweb.silk.components.icons.fa.FaHome
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.hover
@@ -43,6 +46,20 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Button
+
+@Composable
+fun GoHomeButton() {
+    ButtonLink(
+        href = NavSections.HOME.route,
+        text = Strings.Navigation.backToHome
+    ) { isHovered ->
+        FaHome(
+            modifier = Modifier
+                .color(contentColor(isHovered))
+                .margin(right = 1.em)
+        )
+    }
+}
 
 @Composable
 fun TextLink(
@@ -129,10 +146,12 @@ fun ButtonLink(
 @Composable
 fun ButtonMailto(
     href: String,
+    route: String = "",
     text: String = Strings.Navigation.sayHello,
     icon: @Composable (isHovered: Boolean) -> Unit,
 ) {
     var isHovered by remember { mutableStateOf(false) }
+    val ctx = rememberPageContext()
 
     A(
         href = href,
@@ -141,7 +160,9 @@ fun ButtonMailto(
             .asAttributesBuilder()
     ) {
         Button(
-            onClick = {},
+            onClick = { if (route.isNotEmpty()) {
+                ctx.router.navigateTo(route)
+            } },
             modifier = OutlinedButtonStyle
                 .toModifier()
                 .onMouseEnter { isHovered = true }
