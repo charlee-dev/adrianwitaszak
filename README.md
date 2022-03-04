@@ -32,8 +32,12 @@ me.learn { -> code
 }
                    
 var currentlyLearning = KMP.Observe(me, { progress ->
-      make(progress).everyDay
-)
+        make(progress).everyDay
+     )
+
+var followedBy = TDD.collect {
+        skills = it
+     }
 
 ```
 ---------------
