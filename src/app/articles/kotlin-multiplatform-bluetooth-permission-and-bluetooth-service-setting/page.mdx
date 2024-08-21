@@ -1,0 +1,339 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Img1 from './image-1.png'
+
+export const article = {
+  author: 'Adrian Witaszak',
+  date: '2023-06-18',
+  title: 'Kotlin Multiplatform — Bluetooth Permission and Bluetooth Service Setting',
+  description:
+    'This article will focus on implementing the platform-specific Bluetooth permission and the Bluetooth service system setting. By integrating these permissions into our existing permission framework, we can provide a comprehensive solution for handling Bluetooth-related functionality in our multiplatform app.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+<Image src={Img1} alt="Kotlin Multiplatform Mobile — Permissions by Adrian Witaszak"/>
+
+Welcome back to our series on permissions in **Kotlin Multiplatform Mobile.** This article will focus on implementing the platform-specific **Bluetooth** permission and the **Bluetooth service** system setting. By integrating these permissions into our existing permission framework, we can provide a comprehensive solution for *handling Bluetooth-related functionality* in our multiplatform app.
+
+Before we dive into the implementation details, let’s briefly understand the importance of these permissions in a mobile app.
+
+**Bluetooth Permission:** Bluetooth technology allows devices to communicate wirelessly. To utilize Bluetooth functionality in our app, we need to request the necessary Bluetooth permission from the user. By requesting this permission, we ensure that our app has the necessary access to use Bluetooth features effectively.
+
+**Bluetooth Service System Setting:** In addition to the Bluetooth permission, some platforms require the user to enable the system-level Bluetooth service. This setting ensures that the device’s Bluetooth functionality is enabled and available for use. We will integrate this capability into our app, allowing users to seamlessly enable the Bluetooth service when required.
+
+We will follow the same pattern we established in the previous article to implement these permissions in our Kotlin Multiplatform Mobile app. We will create a platform-specific BluetoothPermissionDelegate that will handle the Bluetooth permission logic. Similarly, we will introduce a `BluetoothServiceSettingDelegate` to handle the **Bluetooth service** system setting.
+
+First, we add permissions in the **Android’s** `Manifest.xml` in `androidMain/kotlin`:
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.app">
+    
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+</manifest>
+```
+
+## Android Bluetooth delegate
+Here are the implementations for the **Bluetooth** permission and **Bluetooth service** setting delegates specifically for *Android*. These delegates handle the platform-specific logic for obtaining the Bluetooth permission and opening the Bluetooth service settings page.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import android.Manifest
+import android.app.Activity
+import android.content.Context
+import android.os.Build
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.PermissionRequestException
+import com.adrianwitaszak.kmmpermissions.permissions.util.checkPermissions
+import com.adrianwitaszak.kmmpermissions.permissions.util.openAppSettingsPage
+import com.adrianwitaszak.kmmpermissions.permissions.util.providePermissions
+
+internal class BluetoothPermissionDelegate(
+    private val context: Context,
+    private val activity: Lazy<Activity>,
+) : PermissionDelegate {
+    override fun getPermissionState(): PermissionState {
+        return checkPermissions(context, activity, bluetoothPermissions)
+    }
+
+    override suspend fun providePermission() {
+        activity.value.providePermissions(bluetoothPermissions) {
+            throw PermissionRequestException(Permission.BLUETOOTH.name)
+        }
+    }
+
+    override fun openSettingPage() {
+        context.openAppSettingsPage(Permission.BLUETOOTH)
+    }
+}
+
+private val bluetoothPermissions: List<String> =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        listOf(
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH_SCAN,
+        )
+    } else listOf(Manifest.permission.BLUETOOTH)
+```
+
+The `BluetoothPermissionDelegate handles the Bluetooth permission logic. It utilizes the checkPermissions function to check the current state of the Bluetooth permission. When providing the permission, it delegates the task to the providePermissions function and throws a PermissionRequestException if the permission request is unsuccessful. When opening the settings page, it uses the openAppSettingsPage function to open the appropriate settings page for Bluetooth.
+
+## Android Bluetooth settings delegate
+
+The `BluetoothServicePermissionDelegate` handles the **Bluetooth service** setting logic. It checks the state of the *Bluetooth adapter* to determine if the service is *enabled* or *disabled*. When providing the permission, it delegates to the `openSettingPage` function. To open the Bluetooth service settings page, it uses the openPage function with the appropriate `Settings.ACTION_BLUETOOTH_SETTINGS` action. If there is an error while opening the settings page, it throws a `CannotOpenSettingsException`.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import android.bluetooth.BluetoothAdapter
+import android.content.Context
+import android.provider.Settings
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.CannotOpenSettingsException
+import com.adrianwitaszak.kmmpermissions.permissions.util.openPage
+
+internal class BluetoothServicePermissionDelegate(
+    private val context: Context,
+    private val bluetoothAdapter: BluetoothAdapter?,
+) : PermissionDelegate {
+    override fun getPermissionState(): PermissionState {
+        return if (bluetoothAdapter?.isEnabled == true)
+            PermissionState.GRANTED else PermissionState.DENIED
+    }
+
+    override suspend fun providePermission() {
+        openSettingPage()
+    }
+
+    override fun openSettingPage() {
+        context.openPage(
+            action = Settings.ACTION_BLUETOOTH_SETTINGS,
+            onError = { throw CannotOpenSettingsException(Permission.BLUETOOTH_SERVICE_ON.name) }
+        )
+    }
+}
+```
+
+Here are the Android extensions and the `checkPermissions` function:
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.util
+
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.provider.Settings
+import androidx.core.app.ActivityCompat
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+
+internal fun Context.openPage(
+    action: String,
+    newData: Uri? = null,
+    onError: (Exception) -> Unit,
+) {
+    try {
+        val intent = Intent(action).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            newData?.let { data = it }
+        }
+        startActivity(intent)
+    } catch (e: Exception) {
+        onError(e)
+    }
+}
+
+internal fun checkPermissions(
+    context: Context,
+    activity: Lazy<Activity>,
+    permissions: List<String>,
+): PermissionState {
+    permissions.ifEmpty { return PermissionState.GRANTED } // no permissions needed
+    val status: List<Int> = permissions.map {
+        context.checkSelfPermission(it)
+    }
+    val isAllGranted: Boolean = status.all { it == PackageManager.PERMISSION_GRANTED }
+    if (isAllGranted) return PermissionState.GRANTED
+
+    val isAllRequestRationale: Boolean = try {
+        permissions.all {
+            !activity.value.shouldShowRequestPermissionRationale(it)
+        }
+    } catch (t: Throwable) {
+        t.printStackTrace()
+        true
+    }
+    return if (isAllRequestRationale) PermissionState.NOT_DETERMINED
+    else PermissionState.DENIED
+}
+
+internal fun Activity.providePermissions(
+    permissions: List<String>,
+    onError: (Throwable) -> Unit,
+) {
+    try {
+        ActivityCompat.requestPermissions(
+            this, permissions.toTypedArray(), 100
+        )
+    } catch (t: Throwable) {
+        onError(t)
+    }
+}
+
+internal fun Context.openAppSettingsPage(permission: Permission) {
+    openPage(
+        action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+        newData = Uri.parse("package:$packageName"),
+        onError = { throw CannotOpenSettingsException(permission.name) }
+    )
+}
+```
+
+The `openPage` extension function allows us to open different system settings pages or any other desired actions in Android. It takes an action string, optional new data URI, and an error handling lambda. It creates an intent with the given action, sets the appropriate flags, and starts the activity. If an exception occurs, the provided onError lambda is called.
+
+The `checkPermissions` function takes a `Context`, a lazy `Activity`, and a list of permissions. It checks if the list of permissions is empty and returns `PermissionState.GRANTED` if no permissions are needed. It then maps the status of each permission using `checkSelfPermission` and checks if all permissions are granted. If all permissions are granted, it returns `PermissionState.GRANTED`.
+
+In cases where the activity is not yet available, it returns `PermissionState.NOT_DETERMINED` because we cannot check the permission rationale. Otherwise, it checks if all permissions have their rationale dismissed and returns `PermissionState.NOT_DETERMINED` if so, or `PermissionState.DENIED` otherwise.
+
+## iOS Bluetooth permission delegate
+The `BluetoothPermissionDelegate` for iOS utilizes the **CoreBluetooth** framework to handle the **Bluetooth** permission logic. The `getPermissionState()` function checks the current authorization status using `CBCentralManager.authorization`. It maps the authorization status to the corresponding `PermissionState`.
+
+To provide the Bluetooth permission, the delegate uses `CBCentralManager().authorization()`, which prompts the user to grant the permission if it hasn't been determined yet.
+
+For opening the Bluetooth settings page, the delegate calls the `openAppSettingsPage()` function, which opens the settings page for the app. Users can then navigate to the Bluetooth settings section to manage their Bluetooth permissions.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.openAppSettingsPage
+import platform.CoreBluetooth.CBCentralManager
+import platform.CoreBluetooth.CBManagerAuthorizationAllowedAlways
+import platform.CoreBluetooth.CBManagerAuthorizationDenied
+import platform.CoreBluetooth.CBManagerAuthorizationNotDetermined
+import platform.CoreBluetooth.CBManagerAuthorizationRestricted
+
+internal class BluetoothPermissionDelegate : PermissionDelegate {
+    override fun getPermissionState(): PermissionState {
+        return when (CBCentralManager.authorization) {
+            CBManagerAuthorizationNotDetermined -> PermissionState.NOT_DETERMINED
+            CBManagerAuthorizationAllowedAlways, CBManagerAuthorizationRestricted -> PermissionState.GRANTED
+            CBManagerAuthorizationDenied -> PermissionState.DENIED
+            else -> PermissionState.NOT_DETERMINED
+        }
+    }
+
+    override suspend fun providePermission() {
+        CBCentralManager().authorization()
+    }
+
+    override fun openSettingPage() {
+        openAppSettingsPage()
+    }
+}
+```
+
+## IOS Bluetooth Service delegate
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.openNSUrl
+import platform.CoreBluetooth.CBCentralManager
+import platform.CoreBluetooth.CBCentralManagerDelegateProtocol
+import platform.CoreBluetooth.CBManagerAuthorizationAllowedAlways
+import platform.CoreBluetooth.CBManagerAuthorizationRestricted
+import platform.CoreBluetooth.CBManagerStatePoweredOn
+import platform.darwin.NSObject
+
+internal class BluetoothServicePermissionDelegate : PermissionDelegate {
+    private val cbCentralManager: CBCentralManager by lazy {
+        CBCentralManager(
+            object : NSObject(), CBCentralManagerDelegateProtocol {
+                override fun centralManagerDidUpdateState(central: CBCentralManager) {}
+            },
+            null
+        )
+    }
+
+    override fun getPermissionState(): PermissionState {
+        val hasBluetoothPermissionGranted =
+            CBCentralManager.authorization == CBManagerAuthorizationAllowedAlways ||
+                    CBCentralManager.authorization == CBManagerAuthorizationRestricted
+        return if (hasBluetoothPermissionGranted) {
+            if (cbCentralManager.state() == CBManagerStatePoweredOn)
+                PermissionState.GRANTED else PermissionState.DENIED
+        } else PermissionState.NOT_DETERMINED
+    }
+
+    override suspend fun providePermission() {
+        openSettingPage()
+    }
+
+    override fun openSettingPage() {
+        openNSUrl("App-Prefs:Bluetooth")
+    }
+}
+```
+
+The corrected `BluetoothPermissionDelegate` for iOS utilizes the `CoreBluetooth` framework to handle the Bluetooth permission logic. The `getPermissionState()` function checks the current authorization status using `CBCentralManager.authorization`. It maps the authorization status to the corresponding PermissionState.
+
+To provide the Bluetooth permission, the delegate uses `CBCentralManager().requestAuthorization()`, which prompts the user to grant the permission if it hasn't been determined yet.
+
+Here are the iOS extensions:
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.util
+
+import platform.Foundation.NSURL
+import platform.UIKit.UIApplication
+import platform.UIKit.UIApplicationOpenSettingsURLString
+
+fun openNSUrl(string: String) {
+    val settingsUrl: NSURL = NSURL.URLWithString(string)!!
+    if (UIApplication.sharedApplication.canOpenURL(settingsUrl)) {
+        UIApplication.sharedApplication.openURL(settingsUrl)
+    } else throw CannotOpenSettingsException(string)
+}
+
+internal fun openAppSettingsPage() {
+    openNSUrl(UIApplicationOpenSettingsURLString)
+}
+```
+
+The `openNSUrl` function takes a URL string and attempts to open it using `UIApplication.sharedApplication.openURL`. Before opening the URL, it checks if the app can handle the URL using `UIApplication.sharedApplication.canOpenURL`. If the app can handle the URL, it opens it; otherwise, it throws a CannotOpenSettingsException.
+
+The `openAppSettingsPage` function uses the `openNSUrl` function to open the app settings page. It calls `openNSUrl` with the `UIApplicationOpenSettingsURLString` constant, which represents the URL for opening the app settings.
+
+These extensions provide the necessary functionality to open system settings pages and handle URL-based navigation in iOS.
+
+Also, on iOS we need to provide a reason for requesting Bluetooth permission always in the `info.plist`.
+
+```swift
+// info.plist
+<key>NSBluetoothAlwaysUsageDescription</key>
+<string>Our app uses bluetooth to find, connect and transfer data between different devices</string>
+```
+
+***
+
+Link to the project branch with Bluetooth permissions: [Kotlin Multiplatform Permissions](https://github.com/charlee-dev/KMM_Permissions-Medium/tree/1_bluetooth_permission)
+
+***
+
+Stay tuned for the next article, where we will dive deeper into the implementation details of location permissions. We will explore how to integrate the necessary delegates for location permission and location service on both Android and iOS platforms. Follow along as we take another step towards building a robust multiplatform app with Kotlin Multiplatform Mobile and empower your app with location-based functionality.
+
+Thank you for reading! I hope you found this post helpful. Please consider sharing it with your friends and colleagues if you enjoyed it. You can also follow me on [LinkedIn](https://www.linkedin.com/in/adrian-witaszak/) or [Twitter](https://x.com/adrianwita) to stay up-to-date on my latest posts. As always, I welcome your feedback and comments. Thank you again for your support!

@@ -1,0 +1,421 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Img1 from './image-1.png'
+
+export const article = {
+  author: 'Adrian Witaszak',
+  date: '2023-06-25',
+  title: 'Kotlin Multiplatform — Location Permission and Location Service Setting',
+  description:
+    'In this article, we will explore the implementation of location permissions on both the Android and iOS platforms. We will focus on fine location and background location on Android, as well as location when in use and location always-on on iOS. By leveraging Kotlin Multiplatform Mobile, you can efficiently handle location permissions across both platforms and ensure a consistent user experience.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+<Image src={Img1} alt="Kotlin Multiplatform — Location Permissions by Adrian Witaszak"/>
+
+A Guide to Managing Location Permissions in *Kotlin Multiplatform Mobile*.
+
+Welcome to our blog post series on *Kotlin Multiplatform*. In this article, we will explore the implementation of **location permissions* on both the *Android* and *iOS platforms*. We will focus on *fine location* and *background location* on Android, as well as *location when in use* and *location always-on* on **iOS**. By leveraging *Kotlin Multiplatform*, you can efficiently handle location permissions across both platforms and ensure a consistent user experience.
+
+## Understanding Location Permissions
+Location permissions are vital for mobile apps that require access to a user’s location data. You can provide location-based services, such as mapping, navigation, and personalized recommendations by requesting these permissions. It is crucial to handle location permissions responsibly to protect user privacy and ensure a smooth app experience.
+
+Add new permissions to the Permission enum class in `commonMain`:
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.model
+
+/**
+ * This enum represents the permissions used in the application.
+ * It provides constant values for various permissions related to system services and features.
+ */
+enum class Permission {
+
+    // Previous permissions
+
+    /**
+     * Indicates that the system setting location service is on.
+     */
+    LOCATION_SERVICE_ON,
+
+    /**
+     * App location fine permission.
+     */
+    LOCATION_FOREGROUND,
+
+    /**
+     * App location background permission.
+     */
+    LOCATION_BACKGROUND,
+}
+```
+
+## Fine Location and Background Location on Android
+On the Android platform, fine location permission grants access to precise location information, including GPS coordinates. This permission is essential for apps that require accurate *location-based* functionality. Additionally, background location permission allows your app to receive location updates even when running in the background, enabling features like geofencing and location tracking.
+
+## Implementation on Android
+First, we add coarse, fine and background location permission in the `Android Manifest`.
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Previous permissions -->
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+</manifest>
+```
+
+To implement location permissions on Android using Kotlin Multiplatform Mobile, we can follow a similar approach to the one described in our previous articles. We will create a platform-specific `LocationPermissionDelegate` that handles the logic for obtaining fine location and background location permissions. The delegate will utilize the checkPermissions function to check the current permission state and request the necessary permissions using the `providePermissions` function.
+
+## Android Fine location
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import android.Manifest
+import android.app.Activity
+import android.content.Context
+import android.os.Build
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.checkPermissions
+import com.adrianwitaszak.kmmpermissions.permissions.util.openAppSettingsPage
+import com.adrianwitaszak.kmmpermissions.permissions.util.providePermissions
+
+internal class LocationForegroundPermissionDelegate(
+    private val context: Context,
+    private val activity: Lazy<Activity>,
+) : PermissionDelegate {
+    override fun getPermissionState(): PermissionState {
+        return checkPermissions(context, activity, fineLocationPermissions)
+    }
+
+    override suspend fun providePermission() {
+        activity.value.providePermissions(fineLocationPermissions) {
+            throw Exception(
+                it.localizedMessage ?: "Failed to request foreground location permission"
+            )
+        }
+    }
+
+    override fun openSettingPage() {
+        context.openAppSettingsPage(Permission.LOCATION_FOREGROUND)
+    }
+}
+
+internal val fineLocationPermissions: List<String> =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        listOf(
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+        )
+    } else {
+        listOf(Manifest.permission.ACCESS_FINE_LOCATION)
+    }
+```
+
+## Android Background location
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import android.Manifest
+import android.app.Activity
+import android.content.Context
+import android.os.Build
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.checkPermissions
+import com.adrianwitaszak.kmmpermissions.permissions.util.openAppSettingsPage
+import com.adrianwitaszak.kmmpermissions.permissions.util.providePermissions
+
+internal class LocationBackgroundPermissionDelegate(
+    private val context: Context,
+    private val activity: Lazy<Activity>,
+    private val locationForegroundPermissionDelegate: PermissionDelegate,
+) : PermissionDelegate {
+    override fun getPermissionState(): PermissionState {
+        return when (locationForegroundPermissionDelegate.getPermissionState()) {
+            PermissionState.GRANTED ->
+                checkPermissions(context, activity, backgroundLocationPermissions)
+
+            PermissionState.DENIED,
+            PermissionState.NOT_DETERMINED,
+            -> PermissionState.NOT_DETERMINED
+        }
+    }
+
+    override suspend fun providePermission() {
+        activity.value.providePermissions(backgroundLocationPermissions) {
+            throw Exception(
+                it.localizedMessage ?: "Failed to request background location permission"
+            )
+        }
+        getPermissionState()
+    }
+
+    override fun openSettingPage() {
+        context.openAppSettingsPage(Permission.LOCATION_BACKGROUND)
+    }
+}
+
+private val backgroundLocationPermissions: List<String> =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        listOf(Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+    } else emptyList()
+```
+
+## Android Location Service
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import android.content.Context
+import android.location.LocationManager
+import android.provider.Settings
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.PermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.CannotOpenSettingsException
+import com.adrianwitaszak.kmmpermissions.permissions.util.openPage
+
+internal class LocationServicePermissionDelegate(
+    private val context: Context,
+    private val locationManager: LocationManager,
+) : PermissionDelegate {
+    override fun getPermissionState(): PermissionState {
+        val granted = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
+                locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+        return if (granted)
+            PermissionState.GRANTED else PermissionState.DENIED
+    }
+
+    override suspend fun providePermission() {
+        openSettingPage()
+    }
+
+    override fun openSettingPage() {
+        context.openPage(
+            action = Settings.ACTION_LOCATION_SOURCE_SETTINGS,
+            onError = { throw CannotOpenSettingsException(Permission.LOCATION_SERVICE_ON.name) }
+        )
+    }
+}
+```
+
+And we add those delegates in the `PlatformModule.kt` for Android.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions
+
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.LocationBackgroundPermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.LocationForegroundPermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.LocationServicePermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.PermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import org.koin.core.module.Module
+import org.koin.core.qualifier.named
+import org.koin.dsl.module
+
+internal actual fun platformModule(): Module = module {
+
+    // Previous dependencies
+    
+    single<PermissionDelegate>(named(Permission.LOCATION_SERVICE_ON.name)) {
+        LocationServicePermissionDelegate(
+            context = get(),
+            locationManager = get(),
+        )
+    }
+    single<PermissionDelegate>(named(Permission.LOCATION_FOREGROUND.name)) {
+        LocationForegroundPermissionDelegate(
+            context = get(),
+            activity = inject(),
+        )
+    }
+    single<PermissionDelegate>(named(Permission.LOCATION_BACKGROUND.name)) {
+        LocationBackgroundPermissionDelegate(
+            context = get(),
+            activity = inject(),
+            locationForegroundPermissionDelegate = get(named(Permission.LOCATION_FOREGROUND.name)),
+        )
+    }
+}
+```
+
+## iOS Permissions
+`Location When In Use` and `Location Always On` on iOS: On iOS, the location permissions model differs slightly. Instead of fine location and background location, iOS distinguishes between location when in use and location always on. Location when in use permission allows your app to access the device’s location only while the app is in use, respecting user privacy. Location always on permission grants continuous access to the device’s location, even when the app is running in the background.
+
+## Implementation on iOS:
+In Kotlin Multiplatform, implementing location permissions on iOS can be done by leveraging the **Core Location** framework. We will create a `LocationPermissionDelegate` for iOS that uses the framework’s APIs to determine the authorization status and prompt the user to grant the necessary permission if it hasn’t been determined yet. Additionally, we will provide a function to open the app settings page, where users can manage their location permissions.
+
+## IOS Location When-in-use permission
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.openAppSettingsPage
+import platform.CoreLocation.CLLocationManager
+import platform.CoreLocation.kCLAuthorizationStatusAuthorizedAlways
+import platform.CoreLocation.kCLAuthorizationStatusAuthorizedWhenInUse
+import platform.CoreLocation.kCLAuthorizationStatusDenied
+import platform.CoreLocation.kCLAuthorizationStatusNotDetermined
+import platform.CoreLocation.kCLAuthorizationStatusRestricted
+
+internal class LocationForegroundPermissionDelegate : PermissionDelegate {
+    private var locationManager = CLLocationManager()
+
+    override fun getPermissionState(): PermissionState {
+        return when (locationManager.authorizationStatus()) {
+            kCLAuthorizationStatusAuthorizedAlways,
+            kCLAuthorizationStatusAuthorizedWhenInUse,
+            kCLAuthorizationStatusRestricted -> PermissionState.GRANTED
+
+            kCLAuthorizationStatusNotDetermined -> PermissionState.NOT_DETERMINED
+            kCLAuthorizationStatusDenied -> PermissionState.DENIED
+            else -> PermissionState.NOT_DETERMINED
+        }
+    }
+
+    override suspend fun providePermission() {
+        locationManager.requestWhenInUseAuthorization()
+    }
+
+    override fun openSettingPage() {
+        openAppSettingsPage()
+    }
+}
+```
+
+## IOS Location Always permission
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.openAppSettingsPage
+import platform.CoreLocation.CLLocationManager
+import platform.CoreLocation.kCLAuthorizationStatusAuthorizedAlways
+import platform.CoreLocation.kCLAuthorizationStatusDenied
+
+internal class LocationBackgroundPermissionDelegate(
+    private val locationForegroundPermissionDelegate: PermissionDelegate,
+) : PermissionDelegate {
+    override fun getPermissionState(): PermissionState {
+        val foregroundPermissionStatus =
+            locationForegroundPermissionDelegate.getPermissionState()
+        return when (foregroundPermissionStatus) {
+            PermissionState.GRANTED -> checkBackgroundLocationPermission()
+
+            PermissionState.DENIED,
+            PermissionState.NOT_DETERMINED,
+            -> foregroundPermissionStatus
+        }
+    }
+
+    override suspend fun providePermission() {
+        CLLocationManager().requestAlwaysAuthorization()
+    }
+
+    override fun openSettingPage() {
+        openAppSettingsPage()
+    }
+
+    private fun checkBackgroundLocationPermission(): PermissionState {
+        return when (CLLocationManager.authorizationStatus()) {
+            kCLAuthorizationStatusAuthorizedAlways -> PermissionState.GRANTED
+            kCLAuthorizationStatusDenied -> PermissionState.DENIED
+            else -> PermissionState.NOT_DETERMINED
+        }
+    }
+}
+```
+
+## IOS Location Service
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.util.openNSUrl
+import platform.CoreLocation.CLLocationManager
+
+internal class LocationServicePermissionDelegate : PermissionDelegate {
+    private val locationManager = CLLocationManager()
+
+    override fun getPermissionState(): PermissionState {
+        return if (locationManager.locationServicesEnabled())
+            PermissionState.GRANTED else PermissionState.DENIED
+    }
+
+    override suspend fun providePermission() {
+        openSettingPage()
+    }
+
+    override fun openSettingPage() {
+        openNSUrl("App-Prefs:Privacy&path=LOCATION")
+    }
+}
+```
+
+And we add those delegates in the `PlatformModule.kt` in `iosMain`.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions
+
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.LocationBackgroundPermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.LocationForegroundPermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.LocationServicePermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.delegate.PermissionDelegate
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import org.koin.core.module.Module
+import org.koin.core.qualifier.named
+import org.koin.dsl.module
+
+internal actual fun platformModule(): Module = module {
+
+    // Previous dependencies
+
+    single<PermissionDelegate>(named(Permission.LOCATION_SERVICE_ON.name)) {
+        LocationServicePermissionDelegate()
+    }
+    single<PermissionDelegate>(named(Permission.LOCATION_FOREGROUND.name)) {
+        LocationForegroundPermissionDelegate()
+    }
+    single<PermissionDelegate>(named(Permission.LOCATION_BACKGROUND.name)) {
+        LocationBackgroundPermissionDelegate(
+            locationForegroundPermissionDelegate = get(named(Permission.LOCATION_FOREGROUND.name)),
+        )
+    }
+}
+```
+
+Also, on iOS we need to provide a reason for requesting Location Always permission in the `info.plist`.
+
+```swift
+// info.plist
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Our app uses location always for tracking user's location while on the racce track.</string>
+```
+
+## Conclusion
+In this blog post, we have explored the implementation of location permissions on Android and iOS platforms using **Kotlin Multiplatform**. By efficiently handling *fine location, background location, location when in use, and location always on* permissions, you can ensure a seamless and privacy-conscious location-based experience for your users. Remember to follow platform guidelines and provide clear explanations to users about why your app requires location access. With Kotlin Multiplatform, you can streamline the development process and create a consistent user experience across platforms.
+
+***
+
+Link to the KMMPermissions project with [Location Permissions branch](https://github.com/charlee-dev/KMM_Permissions-Medium/tree/2_location_permission).
+
+***
+
+Stay tuned for our next blog post, where we will delve into another essential topic in Kotlin Multiplatform Mobile development. Happy coding!
+
+Thank you for reading! I hope you found this post helpful. Please consider sharing it with your friends and colleagues if you enjoyed it. You can also follow me on [LinkedIn](https://www.linkedin.com/in/adrian-witaszak/) or [Twitter](https://x.com/adrianwita) to stay up-to-date on my latest posts. As always, I welcome your feedback and comments. Thank you again for your support!

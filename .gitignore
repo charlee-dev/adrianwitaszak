@@ -1,31 +1,35 @@
-# General ignores
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-build
-out
+*.pem
 
-# IntelliJ ignores
-*.iml
-/*.ipr
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/gradle.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-/.idea/artifacts
-/.idea/compiler.xml
-/.idea/jarRepositories.xml
-/.idea/*.iml
-/.idea/modules
-/.idea/libraries-with-intellij-classes.xml
+# local env files
+.env*.local
 
-# Gradle ignores
-.gradle
+# vercel
+.vercel
 
-# Kobweb ignores
-.kobweb/server/*
-!.kobweb/conf.yaml
-!.kobweb/conf.yaml.ftl
-!.kobweb/template.yaml
+# typescript
+*.tsbuildinfo
+next-env.d.ts

@@ -1,0 +1,210 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Img1 from './image-1.png'
+
+export const article = {
+  author: 'Adrian Witaszak',
+  date: '2023-06-11',
+  title: 'Kotlin Multiplatform — Permissions',
+  description:
+    'In this article, we will explore how to handle permissions in a setup where we have a UI layer with shared UI using Compose Multiplatform, and the business logic containing our permissions module.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+<Image src={Img1} alt="Kotlin Multiplatform Mobile — Permissions by Adrian Witaszak"/>
+
+Welcome to the series on permissions in Kotlin Multiplatform Mobile. In this article, we will explore how to handle permissions in a setup where we have a UI layer with shared UI using Compose Multiplatform, and the business logic containing our permissions module.
+
+To make the learning process easier, we have created a small sample project that consists of the following components:
+
+- **Android App** — This module contains an Android manifest and MainActivity, which calls the Compose UI component.
+- **IOS App** — Similar to AndroidApp, this module has a basic setup with AppDelegate calling the Compose UI component.
+- **Shared module** — This module contains the Compose Multiplatform UI. It includes a screen with a list of permissions, the permission status icon, a button to request permission (visible only if permission is not granted), and a button to open the Settings page so that users can manually enable the permission. Additionally, the shared module initializes the Koin application with all the necessary modules.
+- **Permissions module** — This module contains the business logic for handling permissions. It provides the necessary APIs and abstractions to interact with the underlying platform’s permission system.
+
+## Permissions
+
+Our app will utilize several permissions, including location, location service, Bluetooth, Bluetooth service, motion, push, and local notifications. To handle permissions effectively, we will define an enum called `Permission` in the `commonMain` module. Currently, we have created the `Permission` enum for Bluetooth and Bluetooth Service, which represents a system Bluetooth setting.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.model
+
+enum class Permission {
+    BLUETOOTH_SERVICE_ON,
+    BLUETOOTH,
+}
+```
+
+## Permissions State
+
+Each of the permissions will have its `PermissionState`. Based on this state, we will know if the Permission was:
+
+- **GRANTED** —This state indicates that the permission *has been requested and granted* by the user. When the permission is granted, the app can proceed with the necessary functionality associated with that permission.
+- **DENIED** — This state signifies that the permission *has been requested* but denied by the user. When the permission is denied, the app might need to handle this situation gracefully, providing appropriate feedback or alternative workflows to the user.
+- **NOT_DETERMINED** — This state implies that the permission has *not yet been requested.* When the permission state is not determined, the app can display UI elements or initiate the permission request flow to ask the user for permission.
+
+By leveraging the `PermissionState` for each permission, the app can effectively manage the permission flow and provide a seamless experience to the user. The state allows the app to keep track of the permission status and make informed decisions based on whether the permission is granted, denied, or pending.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.model
+
+enum class PermissionState {
+    NOT_DETERMINED,
+    GRANTED,
+    DENIED;
+
+    fun notGranted(): Boolean {
+        return this != GRANTED
+    }
+}
+```
+
+## Permissions Service interface
+
+To facilitate the handling of permissions in our Kotlin Multiplatform Mobile project, we introduce the PermissionsService interface. This interface defines a set of functions for checking, providing, and managing permissions. The implementation of this interface will reside in the common codebase and utilize platform-specific PermissionDelegate instances for each permission.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.service
+
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import kotlinx.coroutines.flow.Flow
+
+interface PermissionsService {
+    fun checkPermission(permission: Permission): PermissionState
+    fun checkPermissionFlow(permission: Permission): Flow<PermissionState>
+    suspend fun providePermission(permission: Permission)
+    fun openSettingPage(permission: Permission)
+
+    companion object {
+        const val PERMISSION_CHECK_FLOW_FREQUENCY = 1000L
+    }
+}
+```
+
+The functions provided by the `PermissionsService` interface allow for *checking* the permission state, *requesting* permissions, *providing* permissions manually, and opening the system settings page. The `checkPermission` function retrieves the current status of a permission, while the `checkPermissionFlow` function returns a Flow that emits the permission state updates over time. The `providePermission` function is used to manually provide a permission without going through the regular permission request flow. Finally, the `openSettingPage` function opens the system settings page to allow the user to manage permissions manually.
+
+The implementation of the `PermissionsService` interface in the common codebase will leverage platform-specific `PermissionDelegate` instances for each permission. These `PermissionDelegate` implementations will handle the platform-specific permission logic and interact with the underlying platform APIs.
+
+By adopting the `PermissionsService` interface and utilizing platform-specific `PermissionDelegate` instances, you can achieve a consistent and unified approach to handling permissions across different platforms in your *Kotlin Multiplatform* app.
+
+## Permissions Service Implementation
+
+The `PermissionsServiceImpl` class is an internal implementation of the `PermissionsService` interface. It is responsible for handling the logic related to permissions in our *Kotlin Multiplatform Mobile* project. This implementation utilizes the `KoinComponent` interface, allowing it to access the required dependencies.
+
+The class overrides the functions defined in the `PermissionsService` interface:
+
+- `checkPermission(permission: Permission)` — This function checks the permission state by delegating the task to the appropriate PermissionDelegate. It retrieves the current permission state using the getPermissionDelegate(permission).getPermissionState() call. If any exceptions occur during the process, it catches them, prints an error message, and returns PermissionState.NOT_DETERMINED.
+- `checkPermissionFlow(permission: Permission)` — This function creates a Flow that continuously emits the current permission state. It achieves this by calling checkPermission(permission) in an infinite loop, emitting the permission state using emit(permissionState), and then delaying the emission by PERMISSION_CHECK_FLOW_FREQUENCY milliseconds.
+- `providePermission(permission: Permission)` — This function delegates the task of providing the permission to the corresponding PermissionDelegate using the getPermissionDelegate(permission).providePermission() call.
+- `openSettingPage(permission: Permission)` — This function opens the system settings page for the specified permission by calling getPermissionDelegate(permission).openSettingPage(). It catches any exceptions that occur during the process, prints error messages, and continues execution.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.service
+
+import com.adrianwitaszak.kmmpermissions.permissions.model.Permission
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+import com.adrianwitaszak.kmmpermissions.permissions.service.PermissionsService.Companion.PERMISSION_CHECK_FLOW_FREQUENCY
+import com.adrianwitaszak.kmmpermissions.permissions.util.getPermissionDelegate
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import org.koin.core.component.KoinComponent
+
+internal class PermissionsServiceImpl : PermissionsService, KoinComponent {
+    override fun checkPermission(permission: Permission): PermissionState {
+        return try {
+            return getPermissionDelegate(permission).getPermissionState()
+        } catch (e: Exception) {
+            println("Failed to check permission $permission")
+            e.printStackTrace()
+            PermissionState.NOT_DETERMINED
+        }
+    }
+
+    override fun checkPermissionFlow(permission: Permission): Flow<PermissionState> {
+        return flow {
+            while (true) {
+                val permissionState = checkPermission(permission)
+                emit(permissionState)
+                delay(PERMISSION_CHECK_FLOW_FREQUENCY)
+            }
+        }
+    }
+
+    override suspend fun providePermission(permission: Permission) {
+        try {
+            getPermissionDelegate(permission).providePermission()
+        } catch (e: Exception) {
+            println("Failed to request permission $permission")
+            e.printStackTrace()
+        }
+    }
+
+    override fun openSettingPage(permission: Permission) {
+        println("Open settings for permission $permission")
+        try {
+            getPermissionDelegate(permission).openSettingPage()
+        } catch (e: Exception) {
+            println("Failed to open settings for permission $permission")
+            e.printStackTrace()
+        }
+    }
+}
+```
+
+By utilizing the `PermissionsServiceImpl` class, we can *effectively manage permissions* in a multiplatform environment while keeping the platform-specific permission logic encapsulated within the appropriate `PermissionDelegate`.
+
+## Permission Delegate
+The `PermissionDelegate` interface is an internal interface that defines the contract for platform-specific permission handling. It encapsulates the logic related to obtaining the permission state, providing the permission, and opening the system settings page for a specific permission.
+
+The `PermissionDelegate` interface includes the following functions:
+
+- `getPermissionState()`: This function retrieves the current state of the permission. The implementation of this function will vary depending on the platform, as each platform has its own way of obtaining the permission state.
+- `providePermission()`: This function provides the permission manually, without going through the regular permission request flow. It can be used when the permission is granted by some other means, such as a system-level setting.
+- `openSettingPage()`: This function opens the system settings page for the corresponding permission. It allows the user to manually grant the required permission if it has been denied or not determined.
+
+By implementing the PermissionDelegate interface for each platform, we can encapsulate the platform-specific permission logic and provide a unified interface to the PermissionsService. The PermissionsServiceImpl class we discussed earlier utilizes the PermissionDelegate to handle the platform-specific permission operations.
+
+```kotlin
+package com.adrianwitaszak.kmmpermissions.permissions.delegate
+
+import com.adrianwitaszak.kmmpermissions.permissions.model.PermissionState
+
+internal interface PermissionDelegate {
+    fun getPermissionState(): PermissionState
+    suspend fun providePermission()
+    fun openSettingPage()
+}
+```
+
+Now that we have established the foundation of our permission handling in **Kotlin Multiplatform Mobile**, we are ready to expand our implementation to include additional permissions. The `PermissionsService` and `PermissionDelegate` provide a flexible and extensible architecture that allows us to easily integrate new permissions into our app.
+
+In the upcoming articles, we will focus on implementing a platform-specific permission for **Bluetooth** and the **Bluetooth service** system setting. We will demonstrate how to integrate the necessary platform-specific logic into our existing permission framework.
+
+By following the pattern established with the `PermissionsService` and `PermissionDelegate`, you can easily add support for other permissions such as **location, motion, push notifications**, and more. The modular structure of our implementation ensures that permission handling remains organized and maintainable as our app grows.
+
+Stay tuned for the next article, where we will dive into the implementation details of the platform-specific Bluetooth permission and Bluetooth service system setting. We will show you how to integrate these permissions into the existing framework and provide a seamless permission-handling experience in your **Kotlin Multiplatform Mobile** app.
+
+Continue following this series to learn more about handling permissions effectively in a multiplatform environment and ensure a smooth user experience in your app.
+
+***
+
+To explore the complete project code on GitHub, visit the [KMM_Permissions-Medium](https://github.com/charlee-dev/KMM_Permissions-Medium) repository.
+
+***
+
+This project supports a range of platform-specific permissions, including:
+
+- **Bluetooth** and Bluetooth Service permissions
+- **Location** and Location Service permissions
+- **Push** and **Local** notification permissions
+
+By leveraging **Kotlin Multiplatform Mobile**, you can handle these permissions seamlessly across different platforms, ensuring a consistent user experience.
+
+Thank you for reading! I hope you found this post helpful. Please consider sharing it with your friends and colleagues if you enjoyed it. You can also follow me on [LinkedIn](https://www.linkedin.com/in/adrian-witaszak/) or [Twitter](https://x.com/adrianwita) to stay up-to-date on my latest posts. As always, I welcome your feedback and comments. Thank you again for your support!

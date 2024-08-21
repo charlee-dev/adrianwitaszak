@@ -1,62 +1,42 @@
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=adrianwitaszak)
-![](https://img.shields.io/github/followers/adrianwitaszak)
-![](https://img.shields.io/github/stars/adrianwitaszak)
-![](https://img.shields.io/github/watchers/adrianwitaszak)
-![Android](https://img.shields.io/badge/-Android-black?style=flat&logo=android)
-![Kotlin](https://img.shields.io/badge/-Kotlin-black?style=flat&logo=kotlin)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+# Spotlight
 
+Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
+## Getting started
 
+To get started with this template, first install the npm dependencies:
 
-```kotlin
-package com.android.dev.uk.adwi
+```bash
+npm install
+```
 
-import com.android.dev.uk.adwi.User
-
-
-data class User(
-    val firstName: String = "Adrian"
-    val lastName: String = "Witaszak"
-    var age: Int = 35
-    var location: Country = Country.UnitedKingdom
-    var nationality: String = "Polish"
-)   
-   
-me = User()
-
-me.learn { -> code 
-    code.eat?.apply {
-       sleep(duration = Duration.SHORT)                      
-    }
-}
-                   
-var currentlyLearning = KMP.Observe(me, { progress ->
-        make(progress).everyDay
-     )
-
-var followedBy = TDD.collect {
-        skills = it
-     }
+Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
 
 ```
----------------
+NEXT_PUBLIC_SITE_URL=https://example.com
+```
 
-### Hi there 👋 I'm Adrian
+Next, run the development server:
 
-- <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>I love connecting with different people</b> so if you want to say <b>hi, I'll be happy to meet you more!</b> :)</em>
-- 📫 How to reach me: 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adrian-witaszak-860801176/)](https://www.linkedin.com/in/adrian-witaszak-860801176/)
-[![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:adrianwitaszak@gmail.com)](mailto:adrianwitaszak@gmail.com)
-[![](https://img.shields.io/twitter/url?style=social&url=https://twitter.com/adrianwita)](https://twitter.com/adrianwita)
-- I'm a self motivated software engineer :computer: passionate about the mobile space :iphone:
+```bash
+npm run dev
+```
 
----------------
+Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-<a href="https://github.com/charlee-dev">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=charlee-dev&hide=c%2B%2B,c,matlab,assembly&title_color=6aa6f8&text_color=8a919a&icon_color=6aa6f8&bg_color=22272e" alt="Adrian's GitHub Stats" />
-</a> 
+## Customizing
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=charlee-dev)](https://github.com/anuraghazra/github-readme-stats)
+You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
 
---------------- 
+## License
+
+This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
+
+## Learn more
+
+To learn more about the technologies used in this site template, see the following resources:
+
+- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
+- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
+- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
+- [MDX](https://mdxjs.com) - the MDX documentation
